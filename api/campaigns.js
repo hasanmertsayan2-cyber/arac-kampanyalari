@@ -93,6 +93,11 @@ tools: [
     }
 
     const data = await response.json();
+    if (data.stop_reason === "max_tokens") {
+  throw new Error(
+    "Claude cevabı max_tokens sınırına ulaştığı için yarıda kesildi."
+  );
+}
     console.log("CLAUDE DEBUG:", {
   stop_reason: data.stop_reason,
   contentTypes: (data.content || []).map((b) => b.type),
