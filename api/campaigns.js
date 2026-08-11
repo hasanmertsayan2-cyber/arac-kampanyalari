@@ -9,12 +9,7 @@ const runtimeCache = getCache();
 // API anahtarı burada DOĞRUDAN yazılmaz; Vercel'in Environment Variables
 // bölümünden ANTHROPIC_API_KEY adıyla eklenmesi gerekir.
 
-// Basit bellek-içi önbellek: her istekte yeni sorgu atmamak için
-// (maliyeti düşürür, siteyi hızlandırır). Vercel'in serverless yapısı
-// nedeniyle bu önbellek fonksiyon "soğukken" sıfırlanabilir; kalıcı bir
-// önbellek istersen Vercel KV / Upstash Redis gibi bir servis eklenebilir.
-let cache = { data: null, timestamp: 0 };
-const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 saat - sen zaten her sabah elle tetikleyeceksin
+const CAMPAIGNS_CACHE_KEY = "campaigns-latest";
 
 export default async function handler(req, res) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
