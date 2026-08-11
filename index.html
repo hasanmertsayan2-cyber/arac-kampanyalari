@@ -118,7 +118,6 @@ async function loadData(){
     if(!res.ok) throw new Error(json.error || 'Bilinmeyen hata');
 
     ALL_DATA = json.campaigns || [];
-    const updated = new Date(json.updatedAt);
     renderAll();
   }catch(err){
     content.innerHTML = `<div class="error">Veri alınamadı: ${err.message}<br>Lütfen daha sonra tekrar deneyin.</div>`;
