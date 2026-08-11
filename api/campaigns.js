@@ -139,7 +139,10 @@ tools: [
       updatedAt: new Date().toISOString(),
     };
 
-    cache = { data: payload, timestamp: now };
+    await runtimeCache.set(CAMPAIGNS_CACHE_KEY, payload, {
+  name: "Guncel arac kampanyalari",
+  tags: ["campaigns"],
+});
 
     res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
     res.status(200).json({ ...payload, cached: false });
