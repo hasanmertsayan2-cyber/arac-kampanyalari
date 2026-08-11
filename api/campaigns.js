@@ -1,3 +1,6 @@
+import { getCache } from "@vercel/functions";
+
+const runtimeCache = getCache();
 // Bu dosya Vercel'de otomatik olarak /api/campaigns adresinde çalışan
 // bir sunucu fonksiyonudur (serverless function). Tarayıcı bu adrese
 // istek attığında, Claude'a "güncel kampanyaları web'de ara" görevini
