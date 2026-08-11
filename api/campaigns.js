@@ -82,6 +82,13 @@ Sonucu SADECE aşağıdaki JSON dizisi formatında ver. Açıklama, markdown iş
     }
 
     const data = await response.json();
+    console.log("CLAUDE DEBUG:", {
+  stop_reason: data.stop_reason,
+  contentTypes: (data.content || []).map((b) => b.type),
+  textLength: (data.content || [])
+    .filter((b) => b.type === "text")
+    .reduce((total, b) => total + (b.text?.length || 0), 0),
+});
 
     const textBlocks = (data.content || [])
       .filter((block) => block.type === "text")
