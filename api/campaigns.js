@@ -93,6 +93,11 @@ tools: [
     }
 
     const data = await response.json();
+    console.log("CLAUDE USAGE:", {
+  input_tokens: data.usage?.input_tokens,
+  output_tokens: data.usage?.output_tokens,
+  web_search_requests: data.usage?.server_tool_use?.web_search_requests,
+});
     if (data.stop_reason === "max_tokens") {
   throw new Error(
     "Claude cevabı max_tokens sınırına ulaştığı için yarıda kesildi."
