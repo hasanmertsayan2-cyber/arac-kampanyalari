@@ -74,9 +74,7 @@
     <p class="eyebrow">Veriler her sabah 10:00'da yenilenir</p>
    <h1>SIFIR KM OTOMOBİL KAMPANYALARI</h1>
 <p class="sub">Tasarım & Geliştirme · Hasan Mert SAYAN</p>
-    <div class="status-row">
-      <span id="statusText">Yükleniyor…</span>
-    </div>
+    
   </div>
 
   <div class="filters">
@@ -92,8 +90,6 @@
 
   <footer>
     Kesin ve güncel koşullar için ilgili markanın yetkili satıcısına başvurmanız önerilir.
-    <br><br>
-    Bu site Hasan Mert SAYAN tarafından tasarlanmış ve geliştirilmiştir.
   </footer>
 </div>
 
@@ -110,9 +106,7 @@ let activeCat = "Tümü";
 let searchTerm = "";
 
 async function loadData(){
-  const statusText = document.getElementById('statusText');
   const content = document.getElementById('content');
-  statusText.textContent = "Yükleniyor…";
   content.innerHTML = '<div class="loading">Kampanyalar getiriliyor…</div>';
 
   try{
@@ -125,12 +119,9 @@ async function loadData(){
 
     ALL_DATA = json.campaigns || [];
     const updated = new Date(json.updatedAt);
-    statusText.textContent = (json.cached ? "Önbellekten · " : "Az önce güncellendi · ") +
-      "Son güncelleme: " + updated.toLocaleString('tr-TR');
     renderAll();
   }catch(err){
     content.innerHTML = `<div class="error">Veri alınamadı: ${err.message}<br>Lütfen daha sonra tekrar deneyin.</div>`;
-    statusText.textContent = "Hata oluştu";
   }
 }
 
