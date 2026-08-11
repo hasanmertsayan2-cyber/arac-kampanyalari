@@ -33,14 +33,23 @@ export default async function handler(req, res) {
     return;
   }
 
-  const forceRefresh = wantsRefresh; // artık buraya geldiyse yetkilendirilmiş demektir
-  const now = Date.now();
+  if (!wantsRefresh) {
+  const cachedPayload = await runtimeCache.get(CAMPAIGNS_CACHE_KEY);
 
-  if (!forceRefresh && cache.data && now - cache.timestamp < CACHE_TTL_MS) {
-    res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
-    res.status(200).json({ ...cache.data, cached: true });
+  if (cachedPayload == null) {
+    res.status(503).json({
+      error: "Henüz kampanya verisi yok. İlk yenilemenin site sahibi tarafından yapılması gerekiyor.",
+    });
     return;
   }
+
+  res.setHeader("Cache-Control", "no-store");
+  res.status(200).json({
+    ...cachedPayload,
+    cached: true,
+  });
+  return;
+}
 
   try {
     const prompt = `Türkiye'de bu ay geçerli olan sıfır kilometre otomobil satış kampanyalarını web'de araştır.
