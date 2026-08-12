@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gram Altın Fiyatları</title>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+:root{
+  --bg:#12151a;
+  --surface:#1b1f26;
+  --surface2:#232833;
+  --border:#2a303c;
+  --text:#edeff2;
+  --muted:#8b93a1;
+  --teal:#00d4b8;
+  --amber:#ffb020;
+  --red:#ff5c5c;
+  --blue:#5b9dff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+
+  background:
+    radial-gradient(
+      ellipse at 20% -10%,
+      rgba(255,176,32,.08),
+      transparent 45%
+    ),
+    var(--bg);
+
+  color:var(--text);
+
+  font-family:
+    'IBM Plex Sans',
+    sans-serif;
+}
+
+.wrap{
+  max-width:1150px;
+  margin:auto;
+  padding:30px 20px 80px;
+}
+
+
+/* NAV */
+
+.topnav{
+  display:flex;
+  gap:8px;
+  margin-bottom:22px;
+  flex-wrap:wrap;
+}
+
+.nav{
+  padding:10px 16px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  text-decoration:none;
+  color:var(--muted);
+  background:var(--surface);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+}
+
+.nav:hover{
+  border-color:var(--amber);
+  color:var(--text);
+}
+
+.nav.active{
+  background:var(--amber);
+  color:#191207;
+  border-color:var(--amber);
+  font-weight:700;
+}
+
+
+/* HERO */
+
+.hero{
+  padding:26px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--surface),
+      var(--surface2)
+    );
+
+  margin-bottom:22px;
+}
+
+h1{
+  margin:0 0 8px;
+
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-size:
+    clamp(28px,5vw,42px);
+
+  text-transform:uppercase;
+}
+
+.hero p{
+  color:var(--muted);
+  margin:0;
+  font-size:13px;
+}
+
+.status{
+  margin-top:14px;
+
+  color:var(--muted);
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:11px;
+}
+
+
+/* ÖZET KARTLAR */
+
+.summary-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:14px;
+
+  margin-bottom:22px;
+}
+
+.summary-card{
+  border:
+    1px solid var(--border);
+
+  border-radius:12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--surface),
+      #181c22
+    );
+
+  padding:18px;
+}
+
+.summary-label{
+  color:var(--muted);
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:10px;
+
+  margin-bottom:8px;
+}
+
+.summary-name{
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-size:22px;
+
+  margin-bottom:6px;
+}
+
+.summary-value{
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-size:28px;
+
+  color:var(--amber);
+
+  line-height:1.1;
+}
+
+.summary-sub{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:6px;
+}
+
+
+/* ARAÇLAR */
+
+.toolbar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.search{
+  flex:1 1 260px;
+
+  background:var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:9px;
+
+  padding:12px 14px;
+
+  color:var(--text);
+
+  font-size:14px;
+}
+
+.search:focus{
+  outline:none;
+  border-color:var(--amber);
+}
+
+.sort{
+  background:var(--surface);
+
+  color:var(--text);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:9px;
+
+  padding:10px 12px;
+}
+
+
+/* TABLO */
+
+.table-wrap{
+  border:
+    1px solid var(--border);
+
+  border-radius:12px;
+
+  overflow:auto;
+
+  background:var(--surface);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:720px;
+}
+
+th,
+td{
+  padding:13px 14px;
+
+  border-bottom:
+    1px solid var(--border);
+
+  text-align:right;
+
+  white-space:nowrap;
+}
+
+th{
+  position:sticky;
+  top:0;
+
+  background:#161a20;
+
+  color:var(--muted);
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:10px;
+
+  z-index:2;
+}
+
+th:first-child,
+td:first-child{
+  text-align:left;
+}
+
+tbody tr:hover{
+  background:
+    rgba(255,255,255,.025);
+}
+
+.institution{
+  font-weight:600;
+}
+
+.buy{
+  color:var(--teal);
+}
+
+.sell{
+  color:var(--amber);
+}
+
+.spread-good{
+  color:var(--teal);
+}
+
+.spread-mid{
+  color:var(--amber);
+}
+
+.spread-bad{
+  color:var(--red);
+}
+
+
+/* ETİKET */
+
+.tag{
+  display:inline-block;
+
+  margin-left:7px;
+
+  padding:2px 6px;
+
+  border-radius:999px;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:8px;
+
+  font-weight:700;
+}
+
+.tag-market{
+  background:rgba(255,176,32,.15);
+  color:var(--amber);
+}
+
+.tag-bank{
+  background:rgba(91,157,255,.15);
+  color:var(--blue);
+}
+
+
+/* DURUM */
+
+.loading,
+.error{
+  padding:60px 20px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:12px;
+}
+
+.error{
+  color:var(--red);
+}
+
+
+/* NOT */
+
+.note{
+  margin-top:16px;
+
+  padding:12px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:9px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  line-height:1.6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .wrap{
+    padding:
+      18px 14px 50px;
+  }
+
+  .summary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:
+      22px 18px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+
+  <div class="topnav">
+
+    <a
+      class="nav"
+      href="/"
+    >
+      Kampanyalar
+    </a>
+
+    <a
+      class="nav"
+      href="/hesaplama.html"
+    >
+      Hesaplama Araçları
+    </a>
+
+    <a
+      class="nav active"
+      href="/altin.html"
+    >
+      Altın Fiyatları
+    </a>
+
+  </div>
+
+
+  <div class="hero">
+
+    <h1>
+      GRAM ALTIN FİYATLARI
+    </h1>
+
+    <p>
+      Kapalıçarşı ve bankaların gram altın alış, satış ve makas karşılaştırması.
+    </p>
+
+    <div
+      id="lastUpdated"
+      class="status"
+    >
+      Güncel veri yükleniyor...
+    </div>
+
+  </div>
+
+
+  <div
+    id="summary"
+    class="summary-grid"
+  ></div>
+
+
+  <div class="toolbar">
+
+    <input
+      id="searchInput"
+      class="search"
+      type="text"
+      placeholder="Banka veya kurum ara..."
+    >
+
+    <select
+      id="sortSelect"
+      class="sort"
+    >
+
+      <option value="sellAsc">
+        Almak için en ucuz
+      </option>
+
+      <option value="buyDesc">
+        Satmak için en yüksek
+      </option>
+
+      <option value="spreadAsc">
+        En düşük makas
+      </option>
+
+      <option value="nameAsc">
+        Kurum adına göre
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div
+    id="content"
+    class="table-wrap"
+  >
+
+    <div class="loading">
+      Altın fiyatları yükleniyor...
+    </div>
+
+  </div>
+
+
+  <div class="note">
+
+    Alış fiyatı, kurumun sizden gram altını aldığı fiyatı;
+    satış fiyatı ise size gram altın sattığı fiyatı ifade eder.
+    Fiyatlar kaynak sayfadaki son kayıt üzerinden gösterilir ve
+    banka uygulamasındaki anlık fiyatla kısa süreli farklılık gösterebilir.
+
+  </div>
+
+</div>
+
+
+<script>
+
+let DATA = [];
+let META = null;
+
+
+/* FORMAT */
+
+function money(value){
+
+  return new Intl
+    .NumberFormat(
+      "tr-TR",
+      {
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }
+    )
+    .format(
+      Number(value) || 0
+    ) +
+    " TL";
+
+}
+
+
+function pct(value){
+
+  return "%" +
+    new Intl
+      .NumberFormat(
+        "tr-TR",
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      )
+      .format(
+        Number(value) || 0
+      );
+
+}
+
+
+/* SINIFLANDIRMA */
+
+function spreadClass(value){
+
+  const n =
+    Number(value) || 0;
+
+  if(n <= 50){
+    return "spread-good";
+  }
+
+  if(n <= 200){
+    return "spread-mid";
+  }
+
+  return "spread-bad";
+}
+
+
+/* VERİ */
+
+async function loadData(){
+
+  try{
+
+    const res =
+      await fetch(
+        "/data/gold-latest.json",
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!res.ok){
+
+      throw new Error(
+        "Altın verisi okunamadı."
+      );
+
+    }
+
+
+    const json =
+      await res.json();
+
+
+    META =
+      json;
+
+
+    DATA =
+      Array.isArray(
+        json.prices
+      )
+        ? json.prices
+        : [];
+
+
+    if(
+      DATA.length === 0
+    ){
+
+      throw new Error(
+        "Henüz altın fiyatı bulunmuyor."
+      );
+
+    }
+
+
+    renderSummary();
+
+    renderDate();
+
+    renderTable();
+
+
+  }catch(error){
+
+    document
+      .getElementById(
+        "content"
+      )
+      .innerHTML =
+        `
+          <div class="error">
+            ${error.message}
+          </div>
+        `;
+
+  }
+
+}
+
+
+/* TARİH */
+
+function renderDate(){
+
+  const element =
+    document.getElementById(
+      "lastUpdated"
+    );
+
+
+  if(
+    !META ||
+    !META.updatedAt
+  ){
+
+    element.textContent =
+      `${DATA.length} kurum listeleniyor`;
+
+    return;
+
+  }
+
+
+  const date =
+    new Date(
+      META.updatedAt
+    );
+
+
+  const formatted =
+    date.toLocaleString(
+      "tr-TR",
+      {
+
+        timeZone:
+          "Europe/Istanbul",
+
+        day:
+          "2-digit",
+
+        month:
+          "long",
+
+        year:
+          "numeric",
+
+        hour:
+          "2-digit",
+
+        minute:
+          "2-digit"
+
+      }
+    );
+
+
+  element.textContent =
+    `Son güncelleme: ${formatted} · ${DATA.length} kurum`;
+
+}
+
+
+/* ÖZET */
+
+function renderSummary(){
+
+  const summary =
+    document.getElementById(
+      "summary"
+    );
+
+
+  const bestBuy =
+    META.bestBuy;
+
+
+  const bestSell =
+    META.bestSell;
+
+
+  const bestSpread =
+    META.bestSpread;
+
+
+  summary.innerHTML = `
+
+    <div class="summary-card">
+
+      <div class="summary-label">
+        ALTIN SATMAK İÇİN EN YÜKSEK ALIŞ
+      </div>
+
+      <div class="summary-name">
+        ${bestBuy?.institution || "—"}
+      </div>
+
+      <div class="summary-value">
+        ${
+          bestBuy
+            ? money(bestBuy.buy)
+            : "—"
+        }
+      </div>
+
+      <div class="summary-sub">
+        Kurumun sizden alış fiyatı
+      </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+      <div class="summary-label">
+        ALTIN ALMAK İÇİN EN DÜŞÜK SATIŞ
+      </div>
+
+      <div class="summary-name">
+        ${bestSell?.institution || "—"}
+      </div>
+
+      <div class="summary-value">
+        ${
+          bestSell
+            ? money(bestSell.sell)
+            : "—"
+        }
+      </div>
+
+      <div class="summary-sub">
+        Kurumun size satış fiyatı
+      </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+      <div class="summary-label">
+        EN DÜŞÜK MAKAS
+      </div>
+
+      <div class="summary-name">
+        ${bestSpread?.institution || "—"}
+      </div>
+
+      <div class="summary-value">
+        ${
+          bestSpread
+            ? money(bestSpread.spread)
+            : "—"
+        }
+      </div>
+
+      <div class="summary-sub">
+        ${
+          bestSpread
+            ? pct(
+                bestSpread
+                  .spreadPercent
+              )
+            : "—"
+        }
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* FİLTRE + SIRALAMA */
+
+function filteredData(){
+
+  const term =
+    document
+      .getElementById(
+        "searchInput"
+      )
+      .value
+      .toLocaleLowerCase(
+        "tr-TR"
+      )
+      .trim();
+
+
+  const sort =
+    document
+      .getElementById(
+        "sortSelect"
+      )
+      .value;
+
+
+  let result =
+    DATA.filter(
+      item=>
+
+        !term ||
+
+        String(
+          item.institution || ""
+        )
+        .toLocaleLowerCase(
+          "tr-TR"
+        )
+        .includes(
+          term
+        )
+
+    );
+
+
+  result =
+    [...result];
+
+
+  if(
+    sort ===
+    "buyDesc"
+  ){
+
+    result.sort(
+      (a,b)=>
+        b.buy -
+        a.buy
+    );
+
+  }else if(
+    sort ===
+    "spreadAsc"
+  ){
+
+    result.sort(
+      (a,b)=>
+        a.spread -
+        b.spread
+    );
+
+  }else if(
+    sort ===
+    "nameAsc"
+  ){
+
+    result.sort(
+      (a,b)=>
+        a.institution
+          .localeCompare(
+            b.institution,
+            "tr"
+          )
+    );
+
+  }else{
+
+    result.sort(
+      (a,b)=>
+        a.sell -
+        b.sell
+    );
+
+  }
+
+
+  return result;
+
+}
+
+
+/* TABLO */
+
+function renderTable(){
+
+  const content =
+    document.getElementById(
+      "content"
+    );
+
+
+  const items =
+    filteredData();
+
+
+  if(
+    items.length === 0
+  ){
+
+    content.innerHTML =
+      `
+        <div class="loading">
+          Aramanızla eşleşen kurum bulunamadı.
+        </div>
+      `;
+
+    return;
+
+  }
+
+
+  let html = `
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>
+            Kurum
+          </th>
+
+          <th>
+            Alış
+          </th>
+
+          <th>
+            Satış
+          </th>
+
+          <th>
+            Makas
+          </th>
+
+          <th>
+            Makas %
+          </th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+  `;
+
+
+  items.forEach(
+    item=>{
+
+      const market =
+        item.institution ===
+        "Kapalıçarşı";
+
+
+      html += `
+
+        <tr>
+
+          <td>
+
+            <span class="institution">
+              ${item.institution}
+            </span>
+
+            <span
+              class="tag ${
+                market
+                  ? "tag-market"
+                  : "tag-bank"
+              }"
+            >
+              ${
+                market
+                  ? "PİYASA"
+                  : "KURUM"
+              }
+            </span>
+
+          </td>
+
+
+          <td class="buy">
+            ${money(item.buy)}
+          </td>
+
+
+          <td class="sell">
+            ${money(item.sell)}
+          </td>
+
+
+          <td
+            class="${
+              spreadClass(
+                item.spread
+              )
+            }"
+          >
+            ${money(item.spread)}
+          </td>
+
+
+          <td
+            class="${
+              spreadClass(
+                item.spread
+              )
+            }"
+          >
+            ${pct(item.spreadPercent)}
+          </td>
+
+        </tr>
+
+      `;
+
+    }
+  );
+
+
+  html += `
+
+      </tbody>
+
+    </table>
+
+  `;
+
+
+  content.innerHTML =
+    html;
+
+}
+
+
+/* EVENTLER */
+
+document
+  .getElementById(
+    "searchInput"
+  )
+  .addEventListener(
+    "input",
+    renderTable
+  );
+
+
+document
+  .getElementById(
+    "sortSelect"
+  )
+  .addEventListener(
+    "change",
+    renderTable
+  );
+
+
+/* BAŞLAT */
+
+loadData();
+
+</script>
+
+</body>
+
+</html>
