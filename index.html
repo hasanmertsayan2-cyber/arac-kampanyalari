@@ -111,7 +111,9 @@
     <p class="eyebrow">Veriler her sabah 10:00'da yenilenir</p>
    <h1>SIFIR KM OTOMOBİL KAMPANYALARI</h1>
 <p class="sub">Tasarım & Geliştirme · Hasan Mert SAYAN</p>
-    
+    <div class="status-row" id="lastUpdated">
+  Son güncelleme bilgisi yükleniyor...
+</div>
   </div>
 
   <div class="filters">
@@ -155,7 +157,29 @@ async function loadData(){
     if(!res.ok) throw new Error(json.error || 'Bilinmeyen hata');
 
     ALL_DATA = json.campaigns || [];
-    renderAll();
+
+const lastUpdated = document.getElementById('lastUpdated');
+
+if(json.updatedAt){
+  const date = new Date(json.updatedAt);
+
+  const formatted = date.toLocaleString('tr-TR', {
+    timeZone: 'Europe/Istanbul',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  lastUpdated.textContent =
+    `Son güncelleme: ${formatted} · ${ALL_DATA.length} kampanya`;
+}else{
+  lastUpdated.textContent =
+    `${ALL_DATA.length} kampanya`;
+}
+
+renderAll();
   }catch(err){
     content.innerHTML = `<div class="error">Veri alınamadı: ${err.message}<br>Lütfen daha sonra tekrar deneyin.</div>`;
   }
