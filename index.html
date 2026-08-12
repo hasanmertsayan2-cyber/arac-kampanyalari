@@ -6,13 +6,25 @@
 
 <title>Sıfır KM Otomobil Kampanyaları</title>
 
-<meta name="description" content="Güncel sıfır km otomobil kampanyaları · Hasan Mert SAYAN">
+<meta
+  name="description"
+  content="Güncel sıfır km otomobil kampanyaları · Hasan Mert SAYAN"
+>
 
 <meta property="og:title" content="Sıfır KM Otomobil Kampanyaları">
-<meta property="og:description" content="Güncel Sıfır KM Otomobil Kampanyaları · Hasan Mert SAYAN">
+<meta
+  property="og:description"
+  content="Güncel Sıfır KM Otomobil Kampanyaları · Hasan Mert SAYAN"
+>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://arac-kampanyalari-ruxm.vercel.app/">
-<meta property="og:site_name" content="Sıfır KM Otomobil Kampanyaları">
+<meta
+  property="og:url"
+  content="https://arac-kampanyalari-ruxm.vercel.app/"
+>
+<meta
+  property="og:site_name"
+  content="Sıfır KM Otomobil Kampanyaları"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -27,6 +39,7 @@
   --bg:#12151a;
   --surface:#1b1f26;
   --surface-2:#232833;
+  --surface-3:#161a20;
   --border:#2a303c;
 
   --text:#edeff2;
@@ -79,7 +92,6 @@ body{
 
 .hero{
   border:1px solid var(--border);
-
   border-radius:14px;
 
   background:
@@ -90,98 +102,66 @@ body{
     );
 
   padding:32px 28px;
-
   position:relative;
-
   overflow:hidden;
-
   margin-bottom:22px;
 }
 
 .eyebrow{
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono', monospace;
   font-size:11px;
-
   letter-spacing:.18em;
-
   color:var(--teal);
-
   text-transform:uppercase;
-
   margin:0 0 10px;
 }
 
 h1{
-  font-family:
-    'Oswald',
-    sans-serif;
-
+  font-family:'Oswald', sans-serif;
   font-weight:700;
-
-  font-size:
-    clamp(28px,5vw,44px);
-
+  font-size:clamp(28px,5vw,44px);
   text-transform:uppercase;
-
   margin:0 0 8px;
-
   line-height:1.05;
 }
 
 .hero p.sub{
   color:var(--text-muted);
-
   max-width:560px;
-
   margin:0 0 20px;
-
   font-size:14.5px;
-
   line-height:1.55;
 }
 
 .status-row{
   display:flex;
-
   align-items:center;
-
   gap:12px;
-
   flex-wrap:wrap;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono', monospace;
   font-size:12px;
-
   color:var(--text-muted);
 }
 
 
-/* ANA SEKMELER */
+/* ANA SEKME */
 
 .main-tabs{
   display:flex;
-
   align-items:center;
-
   gap:8px;
-
   margin-bottom:22px;
-
-  padding-bottom:10px;
 
   border-bottom:
     1px solid var(--border);
+
+  padding-bottom:10px;
 }
 
 .main-tab{
-  border:
-    1px solid var(--border);
+  position:relative;
+
+  border:1px solid var(--border);
 
   background:
     var(--surface);
@@ -201,17 +181,17 @@ h1{
   font-size:12px;
 
   cursor:pointer;
+
+  transition:
+    border-color .15s,
+    color .15s,
+    background .15s;
 }
 
 .main-tab.active{
   color:#0a1512;
-
-  background:
-    var(--teal);
-
-  border-color:
-    var(--teal);
-
+  background:var(--teal);
+  border-color:var(--teal);
   font-weight:700;
 }
 
@@ -221,38 +201,34 @@ h1{
 }
 
 .soon{
-  margin-left:6px;
+  margin-left:7px;
 
   font-size:9px;
 
   background:
     var(--surface-2);
 
-  color:
-    var(--amber);
-
   padding:
     2px 6px;
 
   border-radius:999px;
+
+  color:
+    var(--amber);
 }
 
 
-/* SEARCH */
+/* FILTER */
 
 .filters{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:10px;
-
   margin-bottom:16px;
 }
 
 .search{
-  flex:
-    1 1 220px;
+  flex:1 1 220px;
 
   background:
     var(--surface);
@@ -273,26 +249,20 @@ h1{
 
 .search:focus{
   outline:none;
-
-  border-color:
-    var(--teal);
+  border-color:var(--teal);
 }
 
 .search::placeholder{
-  color:
-    var(--text-muted);
+  color:var(--text-muted);
 }
 
 
-/* MARKA FİLTRELERİ */
+/* MARKALAR */
 
 .chip-row{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:8px;
-
   margin-bottom:14px;
 }
 
@@ -318,42 +288,29 @@ h1{
     var(--text-muted);
 
   cursor:pointer;
-
   white-space:nowrap;
-
   flex:0 0 auto;
 }
 
 .chip:hover{
-  border-color:
-    var(--teal);
-
-  color:
-    var(--text);
+  border-color:var(--teal);
+  color:var(--text);
 }
 
 .chip.active{
-  background:
-    var(--teal);
-
+  background:var(--teal);
   color:#0a1512;
-
-  border-color:
-    var(--teal);
-
+  border-color:var(--teal);
   font-weight:600;
 }
 
 
-/* KATEGORİ */
+/* KATEGORİLER */
 
 .cat-row{
   display:flex;
-
   gap:8px;
-
   margin-bottom:22px;
-
   flex-wrap:wrap;
 }
 
@@ -378,10 +335,8 @@ h1{
 }
 
 .cat-btn:hover{
+  color:var(--text);
   border-color:#4c5668;
-
-  color:
-    var(--text);
 }
 
 .cat-btn.active{
@@ -397,15 +352,9 @@ h1{
 
 .count-line{
   font-size:12.5px;
-
-  color:
-    var(--text-muted);
-
+  color:var(--text-muted);
   margin-bottom:14px;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
+  font-family:'IBM Plex Mono', monospace;
 }
 
 
@@ -445,12 +394,9 @@ h1{
   position:relative;
 
   display:flex;
-
   flex-direction:column;
 
   min-height:265px;
-
-  overflow:hidden;
 
   transition:
     transform .15s,
@@ -463,10 +409,7 @@ h1{
     translateY(-3px);
 
   border-color:
-    var(
-      --cat-color,
-      var(--teal)
-    );
+    var(--cat-color,var(--teal));
 }
 
 .card.clickable:hover{
@@ -481,18 +424,95 @@ h1{
   position:absolute;
 
   top:0;
-
   left:18px;
-
   right:18px;
 
   height:3px;
+
+  border-radius:
+    0 0 4px 4px;
 
   background:
     var(
       --cat-color,
       var(--teal)
     );
+}
+
+
+/* MARKA + LOGO */
+
+.card-brand-row{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  min-width:0;
+}
+
+.brand-logo{
+  width:34px;
+  height:34px;
+
+  flex:
+    0 0 34px;
+
+  border-radius:8px;
+
+  background:#fff;
+
+  padding:5px;
+
+  object-fit:contain;
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+.logo-fallback{
+  width:34px;
+  height:34px;
+
+  border-radius:8px;
+
+  background:
+    var(--surface-2);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  color:
+    var(--text);
+}
+
+.brand{
+  font-family:'Oswald', sans-serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+
+.model{
+  font-family:'Oswald', sans-serif;
+  font-size:21px;
+  font-weight:600;
+  margin-top:2px;
+  line-height:1.18;
 }
 
 
@@ -507,136 +527,19 @@ h1{
   align-items:
     flex-start;
 
-  gap:12px;
-
-  margin-bottom:16px;
-}
-
-
-/* LOGO */
-
-.card-brand-row{
-  display:flex;
-
-  align-items:center;
+  margin-bottom:15px;
 
   gap:12px;
-
-  min-width:0;
-
-  flex:1;
-}
-
-.logo-area{
-  width:52px;
-
-  height:42px;
-
-  flex:
-    0 0 52px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-}
-
-.brand-logo{
-  display:block;
-
-  width:100%;
-
-  height:100%;
-
-  max-width:52px;
-
-  max-height:40px;
-
-  object-fit:contain;
-
-  background:transparent;
-
-  border:0;
-
-  padding:0;
-
-  filter:
-    brightness(0)
-    invert(1);
-
-  opacity:.92;
-}
-
-.logo-fallback{
-  width:44px;
-
-  height:36px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:11px;
-
-  color:
-    var(--text-muted);
-
-  font-weight:700;
 }
 
 
-/* MARKA / MODEL */
-
-.brand{
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:11px;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:
-    var(--text-muted);
-}
-
-.model{
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:21px;
-
-  font-weight:600;
-
-  line-height:1.18;
-
-  margin-top:2px;
-}
-
-
-/* ROZETLER */
+/* BADGE */
 
 .status-badges{
   display:flex;
-
   gap:5px;
-
   flex-wrap:wrap;
-
-  justify-content:
-    flex-end;
-
-  max-width:125px;
+  justify-content:flex-end;
 }
 
 .badge{
@@ -658,11 +561,8 @@ h1{
     );
 
   color:#0a1512;
-
   font-weight:700;
-
   text-transform:uppercase;
-
   white-space:nowrap;
 }
 
@@ -678,15 +578,12 @@ h1{
     4px 8px;
 
   border-radius:999px;
-
   font-weight:700;
-
   white-space:nowrap;
 }
 
 .new-badge{
   background:#ff5c5c;
-
   color:#fff;
 
   box-shadow:
@@ -696,12 +593,11 @@ h1{
 
 .updated-badge{
   background:#ffb020;
-
   color:#16120a;
 }
 
 
-/* KAMPANYA */
+/* KAMPANYA AVANTAJI */
 
 .headline{
   font-family:
@@ -715,10 +611,10 @@ h1{
   color:
     var(--text);
 
-  line-height:1.25;
-
   margin:
-    3px 0 8px;
+    4px 0 8px;
+
+  line-height:1.25;
 }
 
 .detail{
@@ -760,17 +656,14 @@ h1{
 }
 
 
-/* KAMPANYAYI İNCELE */
+/* BUTON */
 
 .campaign-btn{
   width:100%;
 
   border:
     1px solid
-    var(
-      --cat-color,
-      var(--teal)
-    );
+    var(--cat-color,var(--teal));
 
   background:
     rgba(255,255,255,.025);
@@ -779,7 +672,7 @@ h1{
     var(--text);
 
   padding:
-    10px 12px;
+    9px 12px;
 
   border-radius:8px;
 
@@ -800,16 +693,13 @@ h1{
 
 .campaign-btn:hover{
   background:
-    var(
-      --cat-color,
-      var(--teal)
-    );
+    var(--cat-color,var(--teal));
 
   color:#0a1512;
 }
 
 
-/* YÜKLENİYOR */
+/* EMPTY */
 
 .empty,
 .loading,
@@ -830,8 +720,7 @@ h1{
 }
 
 .error{
-  color:
-    var(--red);
+  color:var(--red);
 }
 
 
@@ -882,52 +771,48 @@ footer{
   }
 
   .main-tab{
-    flex:
-      0 0 auto;
+    flex:0 0 auto;
   }
 
-
-  /* MARKALAR YATAY */
+  /*
+   * Marka butonları mobilde
+   * yatay kayar.
+   */
 
   .chip-row{
     flex-wrap:nowrap;
 
     overflow-x:auto;
 
+    padding-bottom:5px;
+
+    margin-left:-14px;
+    margin-right:-14px;
+
+    padding-left:14px;
+    padding-right:14px;
+
     scrollbar-width:none;
 
     -webkit-overflow-scrolling:
       touch;
-
-    margin-left:-14px;
-
-    margin-right:-14px;
-
-    padding-left:14px;
-
-    padding-right:14px;
-
-    padding-bottom:5px;
   }
 
   .chip-row::-webkit-scrollbar{
     display:none;
   }
 
-
-  /* KATEGORİ YATAY */
-
   .cat-row{
     flex-wrap:nowrap;
 
     overflow-x:auto;
 
+    padding-bottom:5px;
+
     scrollbar-width:none;
 
     -webkit-overflow-scrolling:
       touch;
-
-    padding-bottom:5px;
   }
 
   .cat-row::-webkit-scrollbar{
@@ -935,10 +820,8 @@ footer{
   }
 
   .cat-btn{
-    flex:
-      0 0 auto;
+    flex:0 0 auto;
   }
-
 
   .grid{
     grid-template-columns:
@@ -955,21 +838,15 @@ footer{
   }
 
   .card-top{
-    gap:8px;
+    margin-bottom:13px;
   }
 
-  .logo-area{
-    width:45px;
+  .brand-logo,
+  .logo-fallback{
+    width:32px;
+    height:32px;
 
-    height:36px;
-
-    flex-basis:45px;
-  }
-
-  .brand-logo{
-    max-width:45px;
-
-    max-height:34px;
+    flex-basis:32px;
   }
 
   .model{
@@ -984,10 +861,6 @@ footer{
     font-size:13px;
   }
 
-  .status-badges{
-    max-width:115px;
-  }
-
   .badge,
   .new-badge,
   .updated-badge{
@@ -997,7 +870,6 @@ footer{
 }
 
 </style>
-
 </head>
 
 
@@ -1033,16 +905,16 @@ footer{
   <div class="main-tabs">
 
     <button
-      type="button"
       class="main-tab active"
+      type="button"
     >
       Kampanyalar
     </button>
 
     <button
-      type="button"
       class="main-tab disabled"
-      title="Sıfır araç fiyatları hazırlanıyor"
+      type="button"
+      title="Sıfır araç fiyatları bölümü hazırlanıyor"
     >
       Sıfır Araç Fiyatları
 
@@ -1068,20 +940,20 @@ footer{
 
 
   <div
-    id="brandChips"
     class="chip-row"
+    id="brandChips"
   ></div>
 
 
   <div
-    id="catRow"
     class="cat-row"
+    id="catRow"
   ></div>
 
 
   <div
-    id="countLine"
     class="count-line"
+    id="countLine"
   ></div>
 
 
@@ -1111,9 +983,7 @@ footer{
 
 
 /*
- * -------------------------------------------------------
- * MODEL / KAMPANYA LINKLERİ
- * -------------------------------------------------------
+ * MODEL LİNKLERİ
  */
 
 let MODEL_LINKS = {};
@@ -1141,129 +1011,136 @@ function getModelLink(d){
 
 
 /*
- * -------------------------------------------------------
- * ŞEFFAF MARKA LOGOLARI
- * -------------------------------------------------------
+ * LOGOLAR
  *
- * Simple Icons CDN kullanılıyor.
+ * Google favicon servisi üzerinden
+ * marka resmi web sitesinin faviconu
+ * gösteriliyor.
  *
- * Beyaz kutu / favicon YOK.
- * SVG şeffaf olarak gösteriliyor.
- * Claude API maliyeti YOK.
+ * API maliyeti oluşturmaz.
  */
 
-const BRAND_LOGOS = {
+const BRAND_DOMAINS = {
 
   "Volkswagen":
-    "https://cdn.simpleicons.org/volkswagen/FFFFFF",
+    "volkswagen.com.tr",
 
   "Skoda":
-    "https://cdn.simpleicons.org/skoda/FFFFFF",
+    "skoda.com.tr",
 
   "Škoda":
-    "https://cdn.simpleicons.org/skoda/FFFFFF",
+    "skoda.com.tr",
 
   "Cupra":
-    "https://cdn.simpleicons.org/cupra/FFFFFF",
+    "cupraofficial.com.tr",
 
   "Renault":
-    "https://cdn.simpleicons.org/renault/FFFFFF",
+    "renault.com.tr",
 
   "Dacia":
-    "https://cdn.simpleicons.org/dacia/FFFFFF",
+    "dacia.com.tr",
 
   "Peugeot":
-    "https://cdn.simpleicons.org/peugeot/FFFFFF",
+    "peugeot.com.tr",
 
   "Citroen":
-    "https://cdn.simpleicons.org/citroen/FFFFFF",
+    "citroen.com.tr",
 
   "Citroën":
-    "https://cdn.simpleicons.org/citroen/FFFFFF",
+    "citroen.com.tr",
 
   "Opel":
-    "https://cdn.simpleicons.org/opel/FFFFFF",
+    "opel.com.tr",
 
   "Ford":
-    "https://cdn.simpleicons.org/ford/FFFFFF",
+    "ford.com.tr",
 
   "Fiat":
-    "https://cdn.simpleicons.org/fiat/FFFFFF",
+    "fiat.com.tr",
 
   "Toyota":
-    "https://cdn.simpleicons.org/toyota/FFFFFF",
+    "toyota.com.tr",
 
   "Honda":
-    "https://cdn.simpleicons.org/honda/FFFFFF",
+    "honda.com.tr",
 
   "Hyundai":
-    "https://cdn.simpleicons.org/hyundai/FFFFFF",
+    "hyundai.com",
 
   "Kia":
-    "https://cdn.simpleicons.org/kia/FFFFFF",
+    "kia.com",
 
   "Nissan":
-    "https://cdn.simpleicons.org/nissan/FFFFFF",
+    "nissan.com.tr",
 
   "Chery":
-    "https://cdn.simpleicons.org/chery/FFFFFF",
+    "chery.com.tr",
 
   "BYD":
-    "https://cdn.simpleicons.org/byd/FFFFFF",
+    "bydauto.com.tr",
 
   "MG":
-    "https://cdn.simpleicons.org/mg/FFFFFF",
+    "mg-turkey.com",
 
   "Jaecoo":
-    "https://cdn.simpleicons.org/jaecoo/FFFFFF",
+    "omodajaecoo.com.tr",
 
   "Omoda":
-    "https://cdn.simpleicons.org/omoda/FFFFFF",
+    "omodajaecoo.com.tr",
 
   "Suzuki":
-    "https://cdn.simpleicons.org/suzuki/FFFFFF",
+    "suzuki.com.tr",
 
   "BMW":
-    "https://cdn.simpleicons.org/bmw/FFFFFF",
+    "bmw.com.tr",
 
   "Mercedes-Benz":
-    "https://cdn.simpleicons.org/mercedes/FFFFFF",
+    "mercedes-benz.com.tr",
 
   "Audi":
-    "https://cdn.simpleicons.org/audi/FFFFFF",
+    "audi.com.tr",
 
   "Volvo":
-    "https://cdn.simpleicons.org/volvo/FFFFFF",
+    "volvocars.com",
 
   "Lexus":
-    "https://cdn.simpleicons.org/lexus/FFFFFF",
+    "lexus.com.tr",
 
   "Porsche":
-    "https://cdn.simpleicons.org/porsche/FFFFFF",
+    "porsche.com.tr",
 
   "Land Rover":
-    "https://cdn.simpleicons.org/landrover/FFFFFF",
+    "landrover.com.tr",
 
   "Jaguar":
-    "https://cdn.simpleicons.org/jaguar/FFFFFF",
+    "jaguar.com.tr",
 
   "Alfa Romeo":
-    "https://cdn.simpleicons.org/alfaromeo/FFFFFF",
+    "alfaromeo.com.tr",
 
   "Togg":
-    "https://cdn.simpleicons.org/togg/FFFFFF",
+    "togg.com.tr",
 
   "DS Automobiles":
-    "https://cdn.simpleicons.org/dsautomobiles/FFFFFF"
+    "dsautomobiles.com.tr"
 
 };
 
 
 function getBrandLogo(brand){
 
+  const domain =
+    BRAND_DOMAINS[brand];
+
+  if(!domain){
+    return null;
+  }
+
   return (
-    BRAND_LOGOS[brand] ||
-    null
+    "https://www.google.com/s2/favicons" +
+    "?domain=" +
+    encodeURIComponent(domain) +
+    "&sz=128"
   );
 
 }
@@ -1271,15 +1148,11 @@ function getBrandLogo(brand){
 
 function initials(brand){
 
-  return String(
-    brand || ""
-  )
+  return String(brand || "")
     .split(/\s+/)
     .filter(Boolean)
     .slice(0,2)
-    .map(
-      x=>x.charAt(0)
-    )
+    .map(x=>x.charAt(0))
     .join("")
     .toUpperCase();
 
@@ -1287,9 +1160,7 @@ function initials(brand){
 
 
 /*
- * -------------------------------------------------------
  * KATEGORİLER
- * -------------------------------------------------------
  */
 
 const CATS = {
@@ -1325,9 +1196,7 @@ let searchTerm =
 
 
 /*
- * -------------------------------------------------------
- * VERİYİ YÜKLE
- * -------------------------------------------------------
+ * VERİ YÜKLE
  */
 
 async function loadData(){
@@ -1346,7 +1215,7 @@ async function loadData(){
 
 
     /*
-     * MODEL LINKLERİ
+     * Model/kampanya linkleri
      */
 
     try{
@@ -1365,20 +1234,17 @@ async function loadData(){
         const linkJson =
           await linkRes.json();
 
-
         MODEL_LINKS =
           linkJson.exact || {};
 
       }
 
-
-    }catch(linkError){
+    }catch(error){
 
       console.warn(
         "Model linkleri yüklenemedi",
-        linkError
+        error
       );
-
 
       MODEL_LINKS = {};
 
@@ -1386,12 +1252,10 @@ async function loadData(){
 
 
     /*
-     * MEVCUT KAMPANYALARI OKU
+     * Kayıtlı kampanya verisi.
      *
-     * refresh=1 YOK.
-     *
-     * CLAUDE / ANTHROPIC API
-     * ÇALIŞTIRILMAZ.
+     * REFRESH YAPILMAZ.
+     * CLAUDE API ÇALIŞMAZ.
      */
 
     const res =
@@ -1408,7 +1272,7 @@ async function loadData(){
 
       throw new Error(
         json.error ||
-        "Bilinmeyen hata"
+        'Bilinmeyen hata'
       );
 
     }
@@ -1419,7 +1283,7 @@ async function loadData(){
 
 
     /*
-     * SON GÜNCELLEME
+     * Güncelleme tarihi
      */
 
     const lastUpdated =
@@ -1477,18 +1341,13 @@ async function loadData(){
     renderAll();
 
 
-  }catch(error){
+  }catch(err){
 
-    content.innerHTML = `
-
-      <div class="error">
-
+    content.innerHTML =
+      `<div class="error">
         Veri alınamadı:
-        ${error.message}
-
-      </div>
-
-    `;
+        ${err.message}
+      </div>`;
 
   }
 
@@ -1496,9 +1355,7 @@ async function loadData(){
 
 
 /*
- * -------------------------------------------------------
  * MARKALAR
- * -------------------------------------------------------
  */
 
 function uniqueBrands(){
@@ -1507,21 +1364,19 @@ function uniqueBrands(){
 
     "Tümü",
 
-    ...Array
-      .from(
-        new Set(
-          ALL_DATA.map(
-            d=>d.brand
-          )
+    ...Array.from(
+      new Set(
+        ALL_DATA.map(
+          d=>d.brand
         )
       )
-      .sort(
-        (a,b)=>
-          a.localeCompare(
-            b,
-            'tr'
-          )
-      )
+    ).sort(
+      (a,b)=>
+        a.localeCompare(
+          b,
+          'tr'
+        )
+    )
 
   ];
 
@@ -1536,8 +1391,7 @@ function renderChips(){
     );
 
 
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
 
   uniqueBrands()
@@ -1570,7 +1424,6 @@ function renderChips(){
             activeBrand =
               brand;
 
-
             renderAll();
 
           };
@@ -1587,9 +1440,7 @@ function renderChips(){
 
 
 /*
- * -------------------------------------------------------
  * KATEGORİLER
- * -------------------------------------------------------
  */
 
 function renderCats(){
@@ -1600,8 +1451,7 @@ function renderCats(){
     );
 
 
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
 
   const all =
@@ -1630,7 +1480,6 @@ function renderCats(){
       activeCat =
         'Tümü';
 
-
       renderAll();
 
     };
@@ -1643,55 +1492,51 @@ function renderCats(){
 
   Object.entries(
     CATS
-  )
-    .forEach(
-      ([key,val])=>{
+  ).forEach(
+    ([key,val])=>{
 
-        const btn =
-          document.createElement(
-            'button'
-          );
-
-
-        btn.className =
-          'cat-btn' +
-          (
-            activeCat === key
-              ? ' active'
-              : ''
-          );
-
-
-        btn.textContent =
-          val.label;
-
-
-        btn.onclick =
-          ()=>{
-
-            activeCat =
-              key;
-
-
-            renderAll();
-
-          };
-
-
-        container.appendChild(
-          btn
+      const btn =
+        document.createElement(
+          'button'
         );
 
-      }
-    );
+
+      btn.className =
+        'cat-btn' +
+        (
+          activeCat === key
+            ? ' active'
+            : ''
+        );
+
+
+      btn.textContent =
+        val.label;
+
+
+      btn.onclick =
+        ()=>{
+
+          activeCat =
+            key;
+
+          renderAll();
+
+        };
+
+
+      container.appendChild(
+        btn
+      );
+
+    }
+  );
 
 }
 
 
 /*
- * -------------------------------------------------------
- * FİLTRELE
- * -------------------------------------------------------
+ * FİLTRE
  */
 
 function filtered(){
@@ -1701,16 +1546,13 @@ function filtered(){
     .filter(
       d=>{
 
-
         if(
           activeBrand !==
           "Tümü" &&
           d.brand !==
           activeBrand
         ){
-
           return false;
-
         }
 
 
@@ -1720,9 +1562,7 @@ function filtered(){
           d.cat !==
           activeCat
         ){
-
           return false;
-
         }
 
 
@@ -1734,15 +1574,9 @@ function filtered(){
               " " +
               d.model +
               " " +
-              (
-                d.headline ||
-                ""
-              ) +
+              (d.headline || "") +
               " " +
-              (
-                d.detail ||
-                ""
-              )
+              (d.detail || "")
             )
             .toLocaleLowerCase(
               'tr-TR'
@@ -1757,9 +1591,7 @@ function filtered(){
                 )
             )
           ){
-
             return false;
-
           }
 
         }
@@ -1780,19 +1612,13 @@ function filtered(){
 
 
 /*
- * -------------------------------------------------------
- * YENİ / GÜNCELLENDİ
- * -------------------------------------------------------
+ * YENİ DURUMU
  */
 
-function daysSince(
-  dateString
-){
+function daysSince(dateString){
 
   if(!dateString){
-
     return Infinity;
-
   }
 
 
@@ -1807,9 +1633,7 @@ function daysSince(
       date.getTime()
     )
   ){
-
     return Infinity;
-
   }
 
 
@@ -1844,18 +1668,14 @@ function getCampaignStatus(d){
   if(
     firstSeenDays < 3
   ){
-
     return 'new';
-
   }
 
 
   if(
     changedDays < 3
   ){
-
     return 'updated';
-
   }
 
 
@@ -1865,9 +1685,7 @@ function getCampaignStatus(d){
 
 
 /*
- * -------------------------------------------------------
  * KARTLAR
- * -------------------------------------------------------
  */
 
 function renderGrid(){
@@ -1900,7 +1718,6 @@ function renderGrid(){
     content.innerHTML =
       '<div class="empty">Aramanızla eşleşen kampanya bulunamadı.</div>';
 
-
     return;
 
   }
@@ -1918,7 +1735,6 @@ function renderGrid(){
 
   items.forEach(
     d=>{
-
 
       const cat =
         CATS[d.cat] ||
@@ -1959,74 +1775,6 @@ function renderGrid(){
 
       }
 
-
-      /*
-       * LOGO HTML
-       */
-
-      const logoHtml =
-        logo
-        ? `
-
-          <div class="logo-area">
-
-            <img
-              class="brand-logo"
-              src="${logo}"
-              alt="${d.brand} logosu"
-              loading="lazy"
-
-              onerror="
-                this.style.display='none';
-                this.nextElementSibling.style.display='flex';
-              "
-            >
-
-            <div
-              class="logo-fallback"
-              style="display:none"
-            >
-              ${initials(d.brand)}
-            </div>
-
-          </div>
-
-        `
-        : `
-
-          <div class="logo-area">
-
-            <div class="logo-fallback">
-              ${initials(d.brand)}
-            </div>
-
-          </div>
-
-        `;
-
-
-      /*
-       * BUTON
-       */
-
-      const buttonHtml =
-        modelLink
-        ? `
-
-          <button
-            type="button"
-            class="campaign-btn"
-          >
-            Kampanyayı İncele →
-          </button>
-
-        `
-        : '';
-
-
-      /*
-       * KART
-       */
 
       const card =
         document.createElement(
@@ -2069,22 +1817,64 @@ function renderGrid(){
       }
 
 
+      const logoHtml =
+        logo
+
+          ? `
+            <img
+              class="brand-logo"
+              src="${logo}"
+              alt="${d.brand}"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='flex';
+              "
+            >
+
+            <div
+              class="logo-fallback"
+              style="display:none"
+            >
+              ${initials(d.brand)}
+            </div>
+          `
+
+          : `
+            <div class="logo-fallback">
+              ${initials(d.brand)}
+            </div>
+          `;
+
+
+      const buttonHtml =
+        modelLink
+
+          ? `
+            <button
+              type="button"
+              class="campaign-btn"
+            >
+              Kampanyayı İncele →
+            </button>
+          `
+
+          : '';
+
+
       card.innerHTML = `
 
         <div class="card-top">
 
-
           <div class="card-brand-row">
 
             ${logoHtml}
-
 
             <div>
 
               <div class="brand">
                 ${d.brand}
               </div>
-
 
               <div class="model">
                 ${d.model}
@@ -2105,7 +1895,6 @@ function renderGrid(){
 
           </div>
 
-
         </div>
 
 
@@ -2121,26 +1910,17 @@ function renderGrid(){
 
         <div class="card-foot">
 
-
           <div class="validity">
-
             Geçerlilik:
             ${d.until || "—"}
-
           </div>
 
-
           ${buttonHtml}
-
 
         </div>
 
       `;
 
-
-      /*
-       * BUTTON CLICK
-       */
 
       if(modelLink){
 
@@ -2153,6 +1933,11 @@ function renderGrid(){
         button.onclick =
           event=>{
 
+            /*
+             * Kart onclick'inin
+             * ikinci kez çalışmasını
+             * engelle.
+             */
 
             event.stopPropagation();
 
@@ -2176,8 +1961,7 @@ function renderGrid(){
   );
 
 
-  content.innerHTML =
-    "";
+  content.innerHTML = "";
 
 
   content.appendChild(
@@ -2188,9 +1972,7 @@ function renderGrid(){
 
 
 /*
- * -------------------------------------------------------
- * EKRANI ÇİZ
- * -------------------------------------------------------
+ * TAM RENDER
  */
 
 function renderAll(){
@@ -2205,9 +1987,7 @@ function renderAll(){
 
 
 /*
- * -------------------------------------------------------
  * ARAMA
- * -------------------------------------------------------
  */
 
 document
@@ -2218,10 +1998,8 @@ document
     'input',
     event=>{
 
-
       searchTerm =
         event.target.value;
-
 
       renderGrid();
 
@@ -2230,9 +2008,7 @@ document
 
 
 /*
- * -------------------------------------------------------
  * BAŞLAT
- * -------------------------------------------------------
  */
 
 loadData();
