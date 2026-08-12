@@ -19,10 +19,8 @@
   --surface:#1b1f26;
   --surface2:#232833;
   --border:#2a303c;
-
   --text:#edeff2;
   --muted:#8b93a1;
-
   --teal:#00d4b8;
   --amber:#ffb020;
   --red:#ff5c5c;
@@ -45,10 +43,7 @@ body{
     var(--bg);
 
   color:var(--text);
-
-  font-family:
-    'IBM Plex Sans',
-    sans-serif;
+  font-family:'IBM Plex Sans',sans-serif;
 }
 
 .wrap{
@@ -57,7 +52,8 @@ body{
   padding:30px 20px 80px;
 }
 
-/* NAV */
+
+/* ÜST MENÜ */
 
 .topnav{
   display:flex;
@@ -89,6 +85,7 @@ body{
   font-weight:700;
 }
 
+
 /* HERO */
 
 .hero{
@@ -119,7 +116,8 @@ h1{
   font-size:13px;
 }
 
-/* TAB */
+
+/* ANA ARAÇ SEKMELERİ */
 
 .tool-tabs{
   display:flex;
@@ -153,6 +151,9 @@ h1{
   font-weight:700;
 }
 
+
+/* PANEL */
+
 .panel{
   display:none;
 }
@@ -161,11 +162,11 @@ h1{
   display:block;
 }
 
-/* BOX */
-
 .calc-grid{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(0,1fr);
   gap:18px;
 }
 
@@ -188,6 +189,9 @@ h1{
   margin:0 0 18px;
   font-size:23px;
 }
+
+
+/* FORM */
 
 .field{
   margin-bottom:15px;
@@ -240,7 +244,8 @@ select:focus{
   color:var(--text);
 }
 
-/* RESULT */
+
+/* SONUÇ */
 
 .result{
   display:flex;
@@ -300,21 +305,14 @@ select:focus{
   line-height:1.6;
 }
 
-/* MAAŞ */
 
-.salary-toolbar{
-  display:grid;
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
-  gap:12px;
-  margin-bottom:16px;
-}
+/* MAAŞ */
 
 .salary-mode{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
 .salary-mode button{
@@ -335,12 +333,21 @@ select:focus{
   font-weight:700;
 }
 
+.salary-toolbar{
+  display:grid;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-bottom:18px;
+  max-width:750px;
+}
+
 .salary-input-grid{
   display:grid;
   grid-template-columns:
     repeat(4,minmax(0,1fr));
   gap:10px;
-  margin-bottom:16px;
+  margin-bottom:20px;
 }
 
 .month-card{
@@ -365,7 +372,7 @@ select:focus{
   background:transparent;
   color:var(--teal);
   border-radius:7px;
-  padding:7px;
+  padding:7px 5px;
   cursor:pointer;
   font-size:10px;
 }
@@ -375,16 +382,20 @@ select:focus{
   color:#071410;
 }
 
+
+/* MAAŞ TABLOSU */
+
 .salary-table-wrap{
   overflow-x:auto;
   border:1px solid var(--border);
   border-radius:10px;
+  margin-top:8px;
 }
 
 .salary-table{
   width:100%;
   border-collapse:collapse;
-  min-width:1200px;
+  min-width:1250px;
   font-size:11px;
 }
 
@@ -410,13 +421,24 @@ select:focus{
   position:sticky;
   left:0;
   background:#181c22;
-  z-index:1;
+  z-index:2;
+}
+
+.salary-table tbody tr:hover td{
+  background-color:rgba(255,255,255,.02);
+}
+
+.salary-table tbody tr:hover td:first-child{
+  background:#1c2129;
 }
 
 .salary-total{
   font-weight:700;
   color:var(--teal);
 }
+
+
+/* YILLIK ÖZET */
 
 .salary-summary{
   margin-top:16px;
@@ -446,12 +468,17 @@ select:focus{
   font-size:22px;
 }
 
-/* MOBILE */
+
+/* MOBİL */
 
 @media(max-width:800px){
 
   .wrap{
     padding:18px 14px 50px;
+  }
+
+  .hero{
+    padding:21px 18px;
   }
 
   .calc-grid{
@@ -471,14 +498,23 @@ select:focus{
     grid-template-columns:1fr;
   }
 
+  .box{
+    padding:16px;
+  }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 <div class="wrap">
+
+
+  <!-- ÜST MENÜ -->
 
   <div class="topnav">
 
@@ -499,6 +535,8 @@ select:focus{
   </div>
 
 
+  <!-- BAŞLIK -->
+
   <div class="hero">
 
     <h1>
@@ -511,6 +549,8 @@ select:focus{
 
   </div>
 
+
+  <!-- SEKMELER -->
 
   <div class="tool-tabs">
 
@@ -539,7 +579,7 @@ select:focus{
       class="tool-tab"
       data-panel="mevduat"
     >
-      Mevduat
+      Mevduat Getirisi
     </button>
 
     <button
@@ -563,11 +603,15 @@ select:focus{
 
       <div class="box">
 
-        <h2>Zam Hesaplama</h2>
+        <h2>
+          Zam Hesaplama
+        </h2>
 
         <div class="field">
 
-          <label>MEVCUT TUTAR</label>
+          <label>
+            MEVCUT TUTAR
+          </label>
 
           <input
             id="zamTutar"
@@ -579,13 +623,54 @@ select:focus{
 
         <div class="field">
 
-          <label>ZAM ORANI (%)</label>
+          <label>
+            ZAM ORANI (%)
+          </label>
 
           <input
             id="zamOran"
             type="number"
             value="10"
           >
+
+          <div class="quick-row">
+
+            <button
+              class="quick"
+              onclick="setValue('zamOran',5)"
+            >
+              %5
+            </button>
+
+            <button
+              class="quick"
+              onclick="setValue('zamOran',10)"
+            >
+              %10
+            </button>
+
+            <button
+              class="quick"
+              onclick="setValue('zamOran',20)"
+            >
+              %20
+            </button>
+
+            <button
+              class="quick"
+              onclick="setValue('zamOran',25)"
+            >
+              %25
+            </button>
+
+            <button
+              class="quick"
+              onclick="setValue('zamOran',50)"
+            >
+              %50
+            </button>
+
+          </div>
 
         </div>
 
@@ -606,8 +691,17 @@ select:focus{
         </div>
 
         <div class="result-row">
-          <span>Zam Tutarı</span>
-          <strong id="zamMiktar">—</strong>
+
+          <span>
+            Zam Tutarı
+          </span>
+
+          <strong
+            id="zamMiktar"
+          >
+            —
+          </strong>
+
         </div>
 
       </div>
@@ -628,11 +722,15 @@ select:focus{
 
       <div class="box">
 
-        <h2>İndirim Hesaplama</h2>
+        <h2>
+          İndirim Hesaplama
+        </h2>
 
         <div class="field">
 
-          <label>MEVCUT FİYAT</label>
+          <label>
+            MEVCUT FİYAT
+          </label>
 
           <input
             id="indirimTutar"
@@ -644,7 +742,9 @@ select:focus{
 
         <div class="field">
 
-          <label>İNDİRİM ORANI (%)</label>
+          <label>
+            İNDİRİM ORANI (%)
+          </label>
 
           <input
             id="indirimOran"
@@ -671,8 +771,17 @@ select:focus{
         </div>
 
         <div class="result-row">
-          <span>İndirim Tutarı</span>
-          <strong id="indirimMiktar">—</strong>
+
+          <span>
+            İndirim Tutarı
+          </span>
+
+          <strong
+            id="indirimMiktar"
+          >
+            —
+          </strong>
+
         </div>
 
       </div>
@@ -682,7 +791,7 @@ select:focus{
   </section>
 
 
-  <!-- FARK -->
+  <!-- YÜZDE FARK -->
 
   <section
     id="fark"
@@ -693,11 +802,15 @@ select:focus{
 
       <div class="box">
 
-        <h2>Yüzde Fark</h2>
+        <h2>
+          Yüzde Fark Hesaplama
+        </h2>
 
         <div class="field">
 
-          <label>ESKİ TUTAR</label>
+          <label>
+            ESKİ TUTAR
+          </label>
 
           <input
             id="farkEski"
@@ -709,7 +822,9 @@ select:focus{
 
         <div class="field">
 
-          <label>YENİ TUTAR</label>
+          <label>
+            YENİ TUTAR
+          </label>
 
           <input
             id="farkYeni"
@@ -736,8 +851,17 @@ select:focus{
         </div>
 
         <div class="result-row">
-          <span>Tutar Farkı</span>
-          <strong id="farkMiktar">—</strong>
+
+          <span>
+            Tutar Farkı
+          </span>
+
+          <strong
+            id="farkMiktar"
+          >
+            —
+          </strong>
+
         </div>
 
       </div>
@@ -758,11 +882,15 @@ select:focus{
 
       <div class="box">
 
-        <h2>Mevduat Getirisi</h2>
+        <h2>
+          Mevduat Getirisi
+        </h2>
 
         <div class="field">
 
-          <label>ANA PARA</label>
+          <label>
+            ANA PARA
+          </label>
 
           <input
             id="mevduatTutar"
@@ -774,7 +902,9 @@ select:focus{
 
         <div class="field">
 
-          <label>YILLIK FAİZ (%)</label>
+          <label>
+            YILLIK FAİZ ORANI (%)
+          </label>
 
           <input
             id="mevduatFaiz"
@@ -786,11 +916,14 @@ select:focus{
 
         <div class="field">
 
-          <label>VADE (GÜN)</label>
+          <label>
+            VADE (GÜN)
+          </label>
 
           <input
             id="mevduatGun"
             type="number"
+            min="1"
             value="32"
           >
 
@@ -801,6 +934,13 @@ select:focus{
               onclick="setValue('mevduatGun',1)"
             >
               1 Gün
+            </button>
+
+            <button
+              class="quick"
+              onclick="setValue('mevduatGun',7)"
+            >
+              7 Gün
             </button>
 
             <button
@@ -830,7 +970,9 @@ select:focus{
 
         <div class="field">
 
-          <label>STOPAJ (%)</label>
+          <label>
+            STOPAJ ORANI (%)
+          </label>
 
           <input
             id="mevduatStopaj"
@@ -857,18 +999,46 @@ select:focus{
         </div>
 
         <div class="result-row">
-          <span>Brüt Faiz</span>
-          <strong id="mevduatBrut">—</strong>
+
+          <span>
+            Brüt Faiz
+          </span>
+
+          <strong
+            id="mevduatBrut"
+          >
+            —
+          </strong>
+
         </div>
 
         <div class="result-row">
-          <span>Stopaj</span>
-          <strong id="mevduatVergi">—</strong>
+
+          <span>
+            Stopaj
+          </span>
+
+          <strong
+            id="mevduatVergi"
+          >
+            —
+          </strong>
+
         </div>
 
         <div class="result-row">
-          <span>Net Kazanç</span>
-          <strong id="mevduatNet">—</strong>
+
+          <span>
+            Net Kazanç
+          </span>
+
+          <strong
+            class="positive"
+            id="mevduatNet"
+          >
+            —
+          </strong>
+
         </div>
 
       </div>
@@ -892,11 +1062,14 @@ select:focus{
       </h2>
 
 
+      <!-- BRÜT / NET MODU -->
+
       <div class="salary-mode">
 
         <button
           id="grossModeBtn"
           class="active"
+          type="button"
           onclick="setSalaryMode('gross')"
         >
           Brütten Nete
@@ -904,6 +1077,7 @@ select:focus{
 
         <button
           id="netModeBtn"
+          type="button"
           onclick="setSalaryMode('net')"
         >
           Netten Brüte
@@ -912,11 +1086,15 @@ select:focus{
       </div>
 
 
+      <!-- AYARLAR -->
+
       <div class="salary-toolbar">
 
         <div class="field">
 
-          <label>YIL</label>
+          <label>
+            YIL
+          </label>
 
           <select disabled>
             <option>2026</option>
@@ -927,7 +1105,9 @@ select:focus{
 
         <div class="field">
 
-          <label>İŞVEREN MALİYETİ</label>
+          <label>
+            İŞVEREN MALİYETİ
+          </label>
 
           <select
             id="showEmployer"
@@ -948,11 +1128,15 @@ select:focus{
       </div>
 
 
+      <!-- AYLIK MAAŞ GİRİŞLERİ -->
+
       <div
         class="salary-input-grid"
         id="salaryInputs"
       ></div>
 
+
+      <!-- SONUÇ TABLOSU -->
 
       <div class="salary-table-wrap">
 
@@ -963,18 +1147,54 @@ select:focus{
             <tr>
 
               <th>Ay</th>
-              <th>Brüt</th>
-              <th>SGK İşçi</th>
-              <th>İşsizlik İşçi</th>
-              <th>Vergi Matrahı</th>
-              <th>Kümülatif Matrah</th>
-              <th>Gelir Vergisi</th>
-              <th>GV İstisnası</th>
-              <th>Damga Vergisi</th>
-              <th>Net</th>
-              <th class="employer-col">SGK İşveren</th>
-              <th class="employer-col">İşsizlik İşveren</th>
-              <th class="employer-col">Toplam Maliyet</th>
+
+              <th>
+                Brüt
+              </th>
+
+              <th>
+                SGK İşçi
+              </th>
+
+              <th>
+                İşsizlik İşçi
+              </th>
+
+              <th>
+                Vergi Matrahı
+              </th>
+
+              <th>
+                Kümülatif Matrah
+              </th>
+
+              <th>
+                Gelir Vergisi
+              </th>
+
+              <th>
+                GV İstisnası
+              </th>
+
+              <th>
+                Damga Vergisi
+              </th>
+
+              <th>
+                Net
+              </th>
+
+              <th class="employer-col">
+                SGK İşveren
+              </th>
+
+              <th class="employer-col">
+                İşsizlik İşveren
+              </th>
+
+              <th class="employer-col">
+                Toplam Maliyet
+              </th>
 
             </tr>
 
@@ -990,11 +1210,15 @@ select:focus{
       </div>
 
 
+      <!-- YILLIK TOPLAMLAR -->
+
       <div class="salary-summary">
 
         <div class="summary-card">
 
-          <span>YILLIK BRÜT</span>
+          <span>
+            YILLIK BRÜT
+          </span>
 
           <strong
             id="yearGross"
@@ -1007,7 +1231,9 @@ select:focus{
 
         <div class="summary-card">
 
-          <span>YILLIK NET</span>
+          <span>
+            YILLIK NET
+          </span>
 
           <strong
             id="yearNet"
@@ -1018,9 +1244,13 @@ select:focus{
         </div>
 
 
-        <div class="summary-card employer-col">
+        <div
+          class="summary-card employer-col"
+        >
 
-          <span>YILLIK İŞVEREN MALİYETİ</span>
+          <span>
+            YILLIK İŞVEREN MALİYETİ
+          </span>
 
           <strong
             id="yearEmployer"
@@ -1035,10 +1265,11 @@ select:focus{
 
       <div class="note">
 
-        Bu hesaplama 2026 yılı standart 4/a özel sektör ücret bordrosu
-        mantığına göre yaklaşık sonuç üretir. BES, özel sigorta,
-        engellilik indirimi, prim/ikramiye, Ar-Ge/teknopark,
-        özel teşvikler veya farklı bordro uygulamaları sonucu değiştirebilir.
+        Hesaplama 2026 yılı standart 4/a özel sektör
+        ücret bordrosu mantığına göre yaklaşık sonuç üretir.
+        BES, engellilik indirimi, özel sigorta,
+        prim/ikramiye, Ar-Ge/teknopark ve özel bordro
+        uygulamaları sonucu değiştirebilir.
 
       </div>
 
@@ -1051,19 +1282,31 @@ select:focus{
 
 <script>
 
-/* GENEL */
+
+/* ========================================
+   GENEL
+======================================== */
+
 
 function num(id){
 
-  const n =
+  const element =
+    document.getElementById(id);
+
+
+  if(!element){
+    return 0;
+  }
+
+
+  const value =
     Number(
-      document
-        .getElementById(id)
-        .value
+      element.value
     );
 
-  return Number.isFinite(n)
-    ? n
+
+  return Number.isFinite(value)
+    ? value
     : 0;
 
 }
@@ -1079,7 +1322,9 @@ function money(value){
         maximumFractionDigits:2
       }
     )
-    .format(value) +
+    .format(
+      Number(value) || 0
+    ) +
     " TL";
 
 }
@@ -1095,37 +1340,63 @@ function percent(value){
           maximumFractionDigits:2
         }
       )
-      .format(value);
+      .format(
+        Number(value) || 0
+      );
 
 }
 
 
-function setValue(id,value){
+function setValue(
+  id,
+  value
+){
 
-  document
-    .getElementById(id)
-    .value =
-      value;
+  const element =
+    document.getElementById(id);
+
+
+  if(!element){
+    return;
+  }
+
+
+  element.value =
+    value;
+
 
   calculateSimple();
 
 }
 
 
-/* BASİT ARAÇLAR */
+/* ========================================
+   BASİT HESAPLAMALAR
+======================================== */
+
 
 function calculateSimple(){
 
+
+  /* ZAM */
+
   const zamTutar =
-    num("zamTutar");
+    num(
+      "zamTutar"
+    );
+
 
   const zamOran =
-    num("zamOran");
+    num(
+      "zamOran"
+    );
+
 
   const zam =
     zamTutar *
     zamOran /
     100;
+
 
   document
     .getElementById(
@@ -1133,6 +1404,7 @@ function calculateSimple(){
     )
     .textContent =
       money(zam);
+
 
   document
     .getElementById(
@@ -1145,16 +1417,31 @@ function calculateSimple(){
       );
 
 
+  /* İNDİRİM */
+
   const indirimTutar =
-    num("indirimTutar");
+    num(
+      "indirimTutar"
+    );
+
 
   const indirimOran =
-    num("indirimOran");
+    Math.min(
+      Math.max(
+        num(
+          "indirimOran"
+        ),
+        0
+      ),
+      100
+    );
+
 
   const indirim =
     indirimTutar *
     indirimOran /
     100;
+
 
   document
     .getElementById(
@@ -1162,6 +1449,7 @@ function calculateSimple(){
     )
     .textContent =
       money(indirim);
+
 
   document
     .getElementById(
@@ -1174,20 +1462,32 @@ function calculateSimple(){
       );
 
 
+  /* YÜZDE FARK */
+
   const eski =
-    num("farkEski");
+    num(
+      "farkEski"
+    );
+
 
   const yeni =
-    num("farkYeni");
+    num(
+      "farkYeni"
+    );
+
 
   const fark =
     yeni -
     eski;
 
+
   const oran =
-    eski
-      ? fark / eski * 100
+    eski !== 0
+      ? fark /
+        eski *
+        100
       : 0;
+
 
   document
     .getElementById(
@@ -1195,11 +1495,12 @@ function calculateSimple(){
     )
     .textContent =
       (
-        oran >= 0
+        oran > 0
           ? "+"
           : ""
       ) +
       percent(oran);
+
 
   document
     .getElementById(
@@ -1209,39 +1510,58 @@ function calculateSimple(){
       money(fark);
 
 
+  /* MEVDUAT */
+
   const ana =
-    num("mevduatTutar");
+    num(
+      "mevduatTutar"
+    );
+
 
   const faiz =
-    num("mevduatFaiz");
+    num(
+      "mevduatFaiz"
+    );
+
 
   const gun =
     Math.max(
-      num("mevduatGun"),
+      num(
+        "mevduatGun"
+      ),
       1
     );
 
+
   const stopaj =
-    num("mevduatStopaj");
+    num(
+      "mevduatStopaj"
+    );
 
 
   const brutFaiz =
     ana *
-    faiz /
-    100 *
-    gun /
-    365;
+    (
+      faiz /
+      100
+    ) *
+    (
+      gun /
+      365
+    );
 
 
-  const vergi =
+  const stopajTutari =
     brutFaiz *
-    stopaj /
-    100;
+    (
+      stopaj /
+      100
+    );
 
 
   const netFaiz =
     brutFaiz -
-    vergi;
+    stopajTutari;
 
 
   document
@@ -1251,12 +1571,14 @@ function calculateSimple(){
     .textContent =
       money(brutFaiz);
 
+
   document
     .getElementById(
       "mevduatVergi"
     )
     .textContent =
-      money(vergi);
+      money(stopajTutari);
+
 
   document
     .getElementById(
@@ -1264,6 +1586,7 @@ function calculateSimple(){
     )
     .textContent =
       money(netFaiz);
+
 
   document
     .getElementById(
@@ -1278,7 +1601,10 @@ function calculateSimple(){
 }
 
 
-/* 2026 MAAŞ PARAMETRELERİ */
+/* ========================================
+   2026 MAAŞ PARAMETRELERİ
+======================================== */
+
 
 const SALARY_2026 = {
 
@@ -1294,7 +1620,12 @@ const SALARY_2026 = {
   employeeUnemployment:
     0.01,
 
-  employerSgkBase:
+  /*
+   * SGK işveren payı.
+   * Kullanıcıya teşvik/indirim seçtirmiyoruz.
+   */
+
+  employerSgk:
     0.2175,
 
   employerUnemployment:
@@ -1333,18 +1664,24 @@ let salaryValues =
     .fill(100000);
 
 
-/*
- * 2026 ÜCRET GELİR VERGİSİ
- */
+/* ========================================
+   GELİR VERGİSİ
+======================================== */
+
 
 function annualIncomeTax(base){
 
-  if(base <= 0){
-    return 0;
-  }
+  base =
+    Math.max(
+      Number(base) || 0,
+      0
+    );
 
 
-  if(base <= 190000){
+  if(
+    base <=
+    190000
+  ){
 
     return base *
       0.15;
@@ -1352,7 +1689,10 @@ function annualIncomeTax(base){
   }
 
 
-  if(base <= 400000){
+  if(
+    base <=
+    400000
+  ){
 
     return 28500 +
       (
@@ -1364,7 +1704,10 @@ function annualIncomeTax(base){
   }
 
 
-  if(base <= 1500000){
+  if(
+    base <=
+    1500000
+  ){
 
     return 70500 +
       (
@@ -1376,7 +1719,10 @@ function annualIncomeTax(base){
   }
 
 
-  if(base <= 5300000){
+  if(
+    base <=
+    5300000
+  ){
 
     return 367500 +
       (
@@ -1398,15 +1744,15 @@ function annualIncomeTax(base){
 }
 
 
-/*
- * BİR AY BRÜTTEN NETE
- */
+/* ========================================
+   BRÜTTEN NETE - TEK AY
+======================================== */
+
 
 function calculateGrossMonth(
   gross,
   previousCumBase,
-  previousMinCumBase,
-  employerDiscount
+  previousMinimumCumBase
 ){
 
   gross =
@@ -1416,12 +1762,20 @@ function calculateGrossMonth(
     );
 
 
+  /*
+   * SGK prime esas kazanç
+   */
+
   const sgkBase =
     Math.min(
       gross,
       SALARY_2026.sgkCeiling
     );
 
+
+  /*
+   * Çalışan kesintileri
+   */
 
   const employeeSgk =
     sgkBase *
@@ -1432,6 +1786,10 @@ function calculateGrossMonth(
     sgkBase *
     SALARY_2026.employeeUnemployment;
 
+
+  /*
+   * Gelir vergisi matrahı
+   */
 
   const taxBase =
     Math.max(
@@ -1447,6 +1805,10 @@ function calculateGrossMonth(
     taxBase;
 
 
+  /*
+   * İstisna öncesi aylık gelir vergisi
+   */
+
   const grossIncomeTax =
     annualIncomeTax(
       cumulativeBase
@@ -1457,27 +1819,27 @@ function calculateGrossMonth(
 
 
   /*
-   * ASGARİ ÜCRET GV İSTİSNASI
+   * Asgari ücret gelir vergisi istisnası
    */
 
-  const minSgk =
+  const minimumSgk =
     SALARY_2026.minimumGross *
     SALARY_2026.employeeSgk;
 
 
-  const minUnemployment =
+  const minimumUnemployment =
     SALARY_2026.minimumGross *
     SALARY_2026.employeeUnemployment;
 
 
   const minimumTaxBase =
     SALARY_2026.minimumGross -
-    minSgk -
-    minUnemployment;
+    minimumSgk -
+    minimumUnemployment;
 
 
   const newMinimumCumBase =
-    previousMinCumBase +
+    previousMinimumCumBase +
     minimumTaxBase;
 
 
@@ -1486,7 +1848,7 @@ function calculateGrossMonth(
       newMinimumCumBase
     ) -
     annualIncomeTax(
-      previousMinCumBase
+      previousMinimumCumBase
     );
 
 
@@ -1506,9 +1868,8 @@ function calculateGrossMonth(
 
 
   /*
-   * DAMGA VERGİSİ
-   *
-   * Brüt asgari ücret kısmı istisna.
+   * Damga vergisinde
+   * asgari ücret kısmı istisna
    */
 
   const stampTax =
@@ -1520,6 +1881,10 @@ function calculateGrossMonth(
     SALARY_2026.stampTax;
 
 
+  /*
+   * NET
+   */
+
   const net =
     gross -
     employeeSgk -
@@ -1529,27 +1894,14 @@ function calculateGrossMonth(
 
 
   /*
-   * İŞVEREN
+   * İŞVEREN MALİYETİ
+   *
+   * Kullanıcıya teşvik seçtirmiyoruz.
    */
-
-  const discount =
-    Number(
-      employerDiscount || 0
-    ) /
-    100;
-
-
-  const employerSgkRate =
-    Math.max(
-      SALARY_2026.employerSgkBase -
-      discount,
-      0
-    );
-
 
   const employerSgk =
     sgkBase *
-    employerSgkRate;
+    SALARY_2026.employerSgk;
 
 
   const employerUnemployment =
@@ -1599,15 +1951,15 @@ function calculateGrossMonth(
 }
 
 
-/*
- * NETTEN BRÜTE
- */
+/* ========================================
+   NETTEN BRÜTE
+======================================== */
+
 
 function solveGrossFromNet(
   wantedNet,
   previousCumBase,
-  previousMinCumBase,
-  employerDiscount
+  previousMinimumCumBase
 ){
 
   wantedNet =
@@ -1617,35 +1969,39 @@ function solveGrossFromNet(
     );
 
 
-  if(wantedNet === 0){
+  if(
+    wantedNet === 0
+  ){
 
     return calculateGrossMonth(
       0,
       previousCumBase,
-      previousMinCumBase,
-      employerDiscount
+      previousMinimumCumBase
     );
 
   }
 
 
+  /*
+   * Net tutardan başlayıp
+   * yeterli üst sınır bul.
+   */
+
   let low =
     wantedNet;
 
+
   let high =
     Math.max(
-      wantedNet * 2,
+      wantedNet *
+      2,
       SALARY_2026.minimumGross
     );
 
 
-  /*
-   * ÜST SINIRI BUL
-   */
-
   for(
     let i = 0;
-    i < 30;
+    i < 40;
     i++
   ){
 
@@ -1653,8 +2009,7 @@ function solveGrossFromNet(
       calculateGrossMonth(
         high,
         previousCumBase,
-        previousMinCumBase,
-        employerDiscount
+        previousMinimumCumBase
       );
 
 
@@ -1666,18 +2021,19 @@ function solveGrossFromNet(
     }
 
 
-    high *= 1.5;
+    high *=
+      1.5;
 
   }
 
 
   /*
-   * BINARY SEARCH
+   * Binary search
    */
 
   for(
     let i = 0;
-    i < 70;
+    i < 80;
     i++
   ){
 
@@ -1689,17 +2045,16 @@ function solveGrossFromNet(
       2;
 
 
-    const result =
+    const test =
       calculateGrossMonth(
         middle,
         previousCumBase,
-        previousMinCumBase,
-        employerDiscount
+        previousMinimumCumBase
       );
 
 
     if(
-      result.net <
+      test.net <
       wantedNet
     ){
 
@@ -1719,16 +2074,16 @@ function solveGrossFromNet(
   return calculateGrossMonth(
     high,
     previousCumBase,
-    previousMinCumBase,
-    employerDiscount
+    previousMinimumCumBase
   );
 
 }
 
 
-/*
- * MAAŞ INPUTLARI
- */
+/* ========================================
+   AYLIK MAAŞ KUTULARI
+======================================== */
+
 
 function renderSalaryInputs(){
 
@@ -1748,34 +2103,36 @@ function renderSalaryInputs(){
       index
     )=>{
 
-      const div =
+      const card =
         document.createElement(
           "div"
         );
 
 
-      div.className =
+      card.className =
         "month-card";
 
 
-      div.innerHTML = `
+      const modeText =
+        salaryMode ===
+        "gross"
+          ? "BRÜT"
+          : "NET";
+
+
+      card.innerHTML = `
 
         <label>
-          ${month}
-          ${
-            salaryMode ===
-            "gross"
-              ? "BRÜT"
-              : "NET"
-          }
+          ${month} ${modeText}
         </label>
 
         <input
           type="number"
+          min="0"
+          step="100"
           class="salary-month-input"
           data-index="${index}"
           value="${salaryValues[index]}"
-          min="0"
         >
 
         <button
@@ -1790,11 +2147,17 @@ function renderSalaryInputs(){
 
 
       container
-        .appendChild(div);
+        .appendChild(
+          card
+        );
 
     }
   );
 
+
+  /*
+   * Maaş input değişikliği
+   */
 
   document
     .querySelectorAll(
@@ -1809,7 +2172,10 @@ function renderSalaryInputs(){
 
             const index =
               Number(
-                event.target.dataset.index
+                event
+                  .target
+                  .dataset
+                  .index
               );
 
 
@@ -1829,6 +2195,10 @@ function renderSalaryInputs(){
     );
 
 
+  /*
+   * Bu aydan itibaren uygula
+   */
+
   document
     .querySelectorAll(
       "[data-apply]"
@@ -1842,7 +2212,10 @@ function renderSalaryInputs(){
 
             const index =
               Number(
-                event.target.dataset.apply
+                event
+                  .currentTarget
+                  .dataset
+                  .apply
               );
 
 
@@ -1851,7 +2224,8 @@ function renderSalaryInputs(){
 
 
             for(
-              let i = index;
+              let i =
+                index;
               i < 12;
               i++
             ){
@@ -1875,11 +2249,20 @@ function renderSalaryInputs(){
 }
 
 
-/*
- * MOD DEĞİŞTİR
- */
+/* ========================================
+   BRÜT / NET MODU
+======================================== */
+
 
 function setSalaryMode(mode){
+
+  if(
+    mode !== "gross" &&
+    mode !== "net"
+  ){
+    return;
+  }
+
 
   if(
     mode ===
@@ -1890,8 +2273,7 @@ function setSalaryMode(mode){
 
 
   /*
-   * Mevcut sonuçlardan
-   * karşı moda geçir.
+   * Önce mevcut sonuçları hesapla.
    */
 
   const currentRows =
@@ -1900,6 +2282,11 @@ function setSalaryMode(mode){
     );
 
 
+  /*
+   * Mod değiştirirken mevcut
+   * sonuçları karşı tarafa aktar.
+   */
+
   if(
     currentRows &&
     currentRows.length
@@ -1907,19 +2294,22 @@ function setSalaryMode(mode){
 
     salaryValues =
       currentRows.map(
-        row=>
-          mode ===
-          "gross"
-            ? Math.round(
-                row.gross *
-                100
-              ) /
-              100
-            : Math.round(
-                row.net *
-                100
-              ) /
-              100
+        row=>{
+
+          const value =
+            mode ===
+            "gross"
+              ? row.gross
+              : row.net;
+
+
+          return Math.round(
+            value *
+            100
+          ) /
+          100;
+
+        }
       );
 
   }
@@ -1936,8 +2326,7 @@ function setSalaryMode(mode){
     .classList
     .toggle(
       "active",
-      mode ===
-      "gross"
+      mode === "gross"
     );
 
 
@@ -1948,8 +2337,7 @@ function setSalaryMode(mode){
     .classList
     .toggle(
       "active",
-      mode ===
-      "net"
+      mode === "net"
     );
 
 
@@ -1960,29 +2348,20 @@ function setSalaryMode(mode){
 }
 
 
-/*
- * YILLIK MAAŞ HESABI
- */
+/* ========================================
+   12 AY HESAPLA
+======================================== */
+
 
 function calculateSalary(
   returnOnly = false
 ){
 
-  const employerDiscount =
-    Number(
-      document
-        .getElementById(
-          "employerDiscount"
-        )
-        .value
-    );
-
-
   let previousCumBase =
     0;
 
 
-  let previousMinCumBase =
+  let previousMinimumCumBase =
     0;
 
 
@@ -2008,8 +2387,7 @@ function calculateSalary(
         calculateGrossMonth(
           salaryValues[i],
           previousCumBase,
-          previousMinCumBase,
-          employerDiscount
+          previousMinimumCumBase
         );
 
     }else{
@@ -2018,28 +2396,33 @@ function calculateSalary(
         solveGrossFromNet(
           salaryValues[i],
           previousCumBase,
-          previousMinCumBase,
-          employerDiscount
+          previousMinimumCumBase
         );
 
     }
 
 
-    rows.push(result);
+    rows.push(
+      result
+    );
 
 
     previousCumBase =
-      result.cumulativeBase;
+      result
+        .cumulativeBase;
 
 
-    previousMinCumBase =
-      result.minimumCumBase;
+    previousMinimumCumBase =
+      result
+        .minimumCumBase;
 
   }
 
 
   if(returnOnly){
+
     return rows;
+
   }
 
 
@@ -2053,9 +2436,10 @@ function calculateSalary(
 }
 
 
-/*
- * TABLO
- */
+/* ========================================
+   TABLOYU ÇİZ
+======================================== */
+
 
 function renderSalaryTable(rows){
 
@@ -2070,16 +2454,26 @@ function renderSalaryTable(rows){
 
 
   let totalGross = 0;
-  let totalSgk = 0;
-  let totalUnemp = 0;
+
+  let totalEmployeeSgk = 0;
+
+  let totalEmployeeUnemployment = 0;
+
   let totalTaxBase = 0;
-  let totalTax = 0;
-  let totalTaxExemption = 0;
-  let totalStamp = 0;
+
+  let totalIncomeTax = 0;
+
+  let totalIncomeTaxExemption = 0;
+
+  let totalStampTax = 0;
+
   let totalNet = 0;
+
   let totalEmployerSgk = 0;
-  let totalEmployerUnemp = 0;
-  let totalEmployer = 0;
+
+  let totalEmployerUnemployment = 0;
+
+  let totalEmployerCost = 0;
 
 
   rows.forEach(
@@ -2091,34 +2485,44 @@ function renderSalaryTable(rows){
       totalGross +=
         row.gross;
 
-      totalSgk +=
+
+      totalEmployeeSgk +=
         row.employeeSgk;
 
-      totalUnemp +=
+
+      totalEmployeeUnemployment +=
         row.employeeUnemployment;
+
 
       totalTaxBase +=
         row.taxBase;
 
-      totalTax +=
+
+      totalIncomeTax +=
         row.incomeTax;
 
-      totalTaxExemption +=
+
+      totalIncomeTaxExemption +=
         row.incomeTaxExemption;
 
-      totalStamp +=
+
+      totalStampTax +=
         row.stampTax;
+
 
       totalNet +=
         row.net;
 
+
       totalEmployerSgk +=
         row.employerSgk;
 
-      totalEmployerUnemp +=
+
+      totalEmployerUnemployment +=
         row.employerUnemployment;
 
-      totalEmployer +=
+
+      totalEmployerCost +=
         row.employerCost;
 
 
@@ -2193,6 +2597,10 @@ function renderSalaryTable(rows){
   );
 
 
+  /*
+   * TOPLAM SATIRI
+   */
+
   const totalRow =
     document.createElement(
       "tr"
@@ -2205,36 +2613,56 @@ function renderSalaryTable(rows){
 
   totalRow.innerHTML = `
 
-    <td>TOPLAM</td>
+    <td>
+      TOPLAM
+    </td>
 
-    <td>${money(totalGross)}</td>
+    <td>
+      ${money(totalGross)}
+    </td>
 
-    <td>${money(totalSgk)}</td>
+    <td>
+      ${money(totalEmployeeSgk)}
+    </td>
 
-    <td>${money(totalUnemp)}</td>
+    <td>
+      ${money(totalEmployeeUnemployment)}
+    </td>
 
-    <td>${money(totalTaxBase)}</td>
+    <td>
+      ${money(totalTaxBase)}
+    </td>
 
-    <td>—</td>
+    <td>
+      —
+    </td>
 
-    <td>${money(totalTax)}</td>
+    <td>
+      ${money(totalIncomeTax)}
+    </td>
 
-    <td>${money(totalTaxExemption)}</td>
+    <td>
+      ${money(totalIncomeTaxExemption)}
+    </td>
 
-    <td>${money(totalStamp)}</td>
+    <td>
+      ${money(totalStampTax)}
+    </td>
 
-    <td>${money(totalNet)}</td>
+    <td>
+      ${money(totalNet)}
+    </td>
 
     <td class="employer-col">
       ${money(totalEmployerSgk)}
     </td>
 
     <td class="employer-col">
-      ${money(totalEmployerUnemp)}
+      ${money(totalEmployerUnemployment)}
     </td>
 
     <td class="employer-col">
-      ${money(totalEmployer)}
+      ${money(totalEmployerCost)}
     </td>
 
   `;
@@ -2245,12 +2673,18 @@ function renderSalaryTable(rows){
   );
 
 
+  /*
+   * YILLIK ÖZET
+   */
+
   document
     .getElementById(
       "yearGross"
     )
     .textContent =
-      money(totalGross);
+      money(
+        totalGross
+      );
 
 
   document
@@ -2258,7 +2692,9 @@ function renderSalaryTable(rows){
       "yearNet"
     )
     .textContent =
-      money(totalNet);
+      money(
+        totalNet
+      );
 
 
   document
@@ -2266,7 +2702,9 @@ function renderSalaryTable(rows){
       "yearEmployer"
     )
     .textContent =
-      money(totalEmployer);
+      money(
+        totalEmployerCost
+      );
 
 
   updateEmployerVisibility();
@@ -2274,19 +2712,27 @@ function renderSalaryTable(rows){
 }
 
 
-/*
- * İŞVEREN KOLONLARI
- */
+/* ========================================
+   İŞVEREN MALİYETİNİ GÖSTER/GİZLE
+======================================== */
+
 
 function updateEmployerVisibility(){
 
+  const selector =
+    document.getElementById(
+      "showEmployer"
+    );
+
+
+  if(!selector){
+    return;
+  }
+
+
   const visible =
-    document
-      .getElementById(
-        "showEmployer"
-      )
-      .value ===
-      "1";
+    selector.value ===
+    "1";
 
 
   document
@@ -2294,9 +2740,9 @@ function updateEmployerVisibility(){
       ".employer-col"
     )
     .forEach(
-      el=>{
+      element=>{
 
-        el.style.display =
+        element.style.display =
           visible
             ? ""
             : "none";
@@ -2307,9 +2753,10 @@ function updateEmployerVisibility(){
 }
 
 
-/*
- * ANA TABLAR
- */
+/* ========================================
+   ANA SEKMELER
+======================================== */
+
 
 document
   .querySelectorAll(
@@ -2327,10 +2774,15 @@ document
               ".tool-tab"
             )
             .forEach(
-              x=>
-                x.classList.remove(
-                  "active"
-                )
+              item=>{
+
+                item
+                  .classList
+                  .remove(
+                    "active"
+                  );
+
+              }
             );
 
 
@@ -2339,10 +2791,15 @@ document
               ".panel"
             )
             .forEach(
-              x=>
-                x.classList.remove(
-                  "active"
-                )
+              panel=>{
+
+                panel
+                  .classList
+                  .remove(
+                    "active"
+                  );
+
+              }
             );
 
 
@@ -2353,14 +2810,21 @@ document
             );
 
 
-          document
-            .getElementById(
+          const target =
+            document.getElementById(
               button.dataset.panel
-            )
-            .classList
-            .add(
-              "active"
             );
+
+
+          if(target){
+
+            target
+              .classList
+              .add(
+                "active"
+              );
+
+          }
 
         }
       );
@@ -2369,9 +2833,10 @@ document
   );
 
 
-/*
- * EVENTLER
- */
+/* ========================================
+   BASİT INPUT EVENTLERİ
+======================================== */
+
 
 document
   .querySelectorAll(
@@ -2392,14 +2857,9 @@ document
   );
 
 
-document
-  .getElementById(
-    "employerDiscount"
-  )
-  .addEventListener(
-    "change",
-    calculateSalary
-  );
+/* ========================================
+   İŞVEREN GÖSTER/GİZLE
+======================================== */
 
 
 document
@@ -2412,9 +2872,10 @@ document
   );
 
 
-/*
- * BAŞLAT
- */
+/* ========================================
+   BAŞLAT
+======================================== */
+
 
 calculateSimple();
 
@@ -2425,5 +2886,4 @@ calculateSalary();
 </script>
 
 </body>
-
 </html>
