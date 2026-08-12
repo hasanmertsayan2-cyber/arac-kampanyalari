@@ -3,317 +3,1630 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sıfır KM Otomobil Kampanyaları</title>
+
+<meta
+  name="description"
+  content="Güncel sıfır km otomobil kampanyaları · Hasan Mert SAYAN"
+>
+
 <meta property="og:title" content="Sıfır KM Otomobil Kampanyaları">
-<meta property="og:description" content="Güncel Sıfır km Otomobil Kampanyalrı · Hasan Mert SAYAN">
+<meta
+  property="og:description"
+  content="Güncel Sıfır KM Otomobil Kampanyaları · Hasan Mert SAYAN"
+>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://arac-kampanyalari-ruxm.vercel.app/">
+<meta
+  property="og:url"
+  content="https://arac-kampanyalari-ruxm.vercel.app/"
+>
+<meta
+  property="og:site_name"
+  content="Sıfır KM Otomobil Kampanyaları"
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<meta name="description" content="Güncel sıfır km otomobil kampanyaları · Hasan Mert SAYAN">
-<meta property="og:site_name" content="Sıfır KM Otomobil Kampanyaları">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+
 <style>
-  :root{
-    --bg:#12151a; --surface:#1b1f26; --surface-2:#232833; --border:#2a303c;
-    --text:#edeff2; --text-muted:#8b93a1;
-    --amber:#ffb020; --teal:#00d4b8; --red:#ff5c5c; --blue:#5b9dff;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:
-      radial-gradient(ellipse at 20% -10%, rgba(0,212,184,0.08), transparent 45%),
-      radial-gradient(ellipse at 90% 0%, rgba(255,176,32,0.06), transparent 40%),
-      var(--bg);
-    color:var(--text);
-    font-family:'IBM Plex Sans', sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
-  .hero{
-    border:1px solid var(--border); border-radius:14px;
-    background:linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
-    padding:32px 28px; position:relative; overflow:hidden; margin-bottom:28px;
-  }
-  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.18em; color:var(--teal); text-transform:uppercase; margin:0 0 10px;}
-  h1{font-family:'Oswald', sans-serif; font-weight:700; font-size:clamp(28px,5vw,44px); text-transform:uppercase; margin:0 0 8px; line-height:1.05;}
-  .hero p.sub{color:var(--text-muted); max-width:560px; margin:0 0 20px; font-size:14.5px; line-height:1.55;}
-  .status-row{display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-muted);}
-  .refresh-btn{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; padding:8px 14px; border-radius:8px;
-    border:1px solid var(--teal); background:transparent; color:var(--teal); cursor:pointer; font-weight:600;
-  }
-  .refresh-btn:hover{background:var(--teal); color:#0a1512;}
-  .refresh-btn:disabled{opacity:.5; cursor:default;}
-  .filters{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px;}
-  .search{flex:1 1 220px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:11px 14px; color:var(--text); font-size:14px;}
-  .search:focus{outline:none; border-color:var(--teal);}
-  .search::placeholder{color:var(--text-muted);}
-  .chip-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;}
-  .chip{font-family:'IBM Plex Mono', monospace; font-size:12px; padding:7px 13px; border-radius:999px; border:1px solid var(--border); background:var(--surface); color:var(--text-muted); cursor:pointer; white-space:nowrap;}
-  .chip:hover{border-color:var(--teal); color:var(--text);}
-  .chip.active{background:var(--teal); color:#0a1512; border-color:var(--teal); font-weight:600;}
-  .cat-row{display:flex; gap:8px; margin-bottom:22px; flex-wrap:wrap;}
-  .cat-btn{font-size:12.5px; padding:7px 14px; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer;}
-  .cat-btn.active{background:var(--surface-2); color:var(--text); border-color:var(--amber);}
-  .count-line{font-size:12.5px; color:var(--text-muted); margin-bottom:14px; font-family:'IBM Plex Mono', monospace;}
-  .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px;}
-  .card{border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:18px 18px 16px; position:relative; transition:transform .15s, border-color .15s;}
-  .card:hover{transform:translateY(-3px); border-color:var(--teal);}
-  .card::before{content:""; position:absolute; top:0; left:18px; right:18px; height:3px; background:var(--cat-color, var(--teal)); opacity:.8;}
-  .card-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;}
-  .brand{font-family:'Oswald', sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted);}
-  .model{font-family:'Oswald', sans-serif; font-size:19px; font-weight:600; margin-top:2px;}
-  .badge{font-family:'IBM Plex Mono', monospace; font-size:10.5px; padding:3px 9px; border-radius:6px; background:var(--cat-color, var(--teal)); color:#0a1512; font-weight:700; text-transform:uppercase; white-space:nowrap;}
-  
-  .status-badges{
+
+:root{
+  --bg:#12151a;
+  --surface:#1b1f26;
+  --surface-2:#232833;
+  --border:#2a303c;
+
+  --text:#edeff2;
+  --text-muted:#8b93a1;
+
+  --amber:#ffb020;
+  --teal:#00d4b8;
+  --red:#ff5c5c;
+  --blue:#5b9dff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+
+  background:
+    radial-gradient(
+      ellipse at 20% -10%,
+      rgba(0,212,184,0.08),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(255,176,32,0.06),
+      transparent 40%
+    ),
+    var(--bg);
+
+  color:var(--text);
+
+  font-family:
+    'IBM Plex Sans',
+    sans-serif;
+
+  -webkit-font-smoothing:
+    antialiased;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:36px 20px 80px;
+}
+
+
+/* HERO */
+
+.hero{
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--surface) 0%,
+      var(--surface-2) 100%
+    );
+
+  padding:32px 28px;
+
+  position:relative;
+  overflow:hidden;
+
+  margin-bottom:28px;
+}
+
+.eyebrow{
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:11px;
+
+  letter-spacing:.18em;
+
+  color:var(--teal);
+
+  text-transform:uppercase;
+
+  margin:
+    0 0 10px;
+}
+
+h1{
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-weight:700;
+
+  font-size:
+    clamp(
+      28px,
+      5vw,
+      44px
+    );
+
+  text-transform:uppercase;
+
+  margin:
+    0 0 8px;
+
+  line-height:1.05;
+}
+
+.hero p.sub{
+  color:
+    var(--text-muted);
+
+  max-width:560px;
+
+  margin:
+    0 0 20px;
+
+  font-size:14.5px;
+
+  line-height:1.55;
+}
+
+.status-row{
   display:flex;
-  gap:6px;
+
+  align-items:center;
+
+  gap:12px;
+
   flex-wrap:wrap;
-  justify-content:flex-end;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:12px;
+
+  color:
+    var(--text-muted);
+}
+
+
+/* FILTERS */
+
+.filters{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:16px;
+}
+
+.search{
+  flex:
+    1 1 220px;
+
+  background:
+    var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:8px;
+
+  padding:
+    11px 14px;
+
+  color:
+    var(--text);
+
+  font-size:14px;
+}
+
+.search:focus{
+  outline:none;
+
+  border-color:
+    var(--teal);
+}
+
+.search::placeholder{
+  color:
+    var(--text-muted);
+}
+
+
+/* MARKA BUTONLARI */
+
+.chip-row{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-bottom:14px;
+}
+
+.chip{
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:12px;
+
+  padding:
+    7px 13px;
+
+  border-radius:999px;
+
+  border:
+    1px solid var(--border);
+
+  background:
+    var(--surface);
+
+  color:
+    var(--text-muted);
+
+  cursor:pointer;
+
+  white-space:nowrap;
+}
+
+.chip:hover{
+  border-color:
+    var(--teal);
+
+  color:
+    var(--text);
+}
+
+.chip.active{
+  background:
+    var(--teal);
+
+  color:#0a1512;
+
+  border-color:
+    var(--teal);
+
+  font-weight:600;
+}
+
+
+/* KATEGORİ BUTONLARI */
+
+.cat-row{
+  display:flex;
+
+  gap:8px;
+
+  margin-bottom:22px;
+
+  flex-wrap:wrap;
+}
+
+.cat-btn{
+  font-size:12.5px;
+
+  padding:
+    7px 14px;
+
+  border-radius:8px;
+
+  border:
+    1px solid var(--border);
+
+  background:
+    transparent;
+
+  color:
+    var(--text-muted);
+
+  cursor:pointer;
+}
+
+.cat-btn.active{
+  background:
+    var(--surface-2);
+
+  color:
+    var(--text);
+
+  border-color:
+    var(--amber);
+}
+
+
+/* SAYI */
+
+.count-line{
+  font-size:12.5px;
+
+  color:
+    var(--text-muted);
+
+  margin-bottom:14px;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+}
+
+
+/* GRID */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(260px,1fr)
+    );
+
+  gap:14px;
+}
+
+
+/* KART */
+
+.card{
+  border:
+    1px solid var(--border);
+
+  background:
+    var(--surface);
+
+  border-radius:12px;
+
+  padding:
+    18px 18px 16px;
+
+  position:relative;
+
+  transition:
+    transform .15s,
+    border-color .15s,
+    box-shadow .15s;
+}
+
+.card:hover{
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--teal);
+}
+
+.card.clickable:hover{
+  box-shadow:
+    0 8px 28px
+    rgba(0,0,0,.20);
+}
+
+.card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:18px;
+  right:18px;
+
+  height:3px;
+
+  background:
+    var(
+      --cat-color,
+      var(--teal)
+    );
+
+  opacity:.8;
+}
+
+.card-top{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-start;
+
+  margin-bottom:10px;
+
+  gap:12px;
+}
+
+.brand{
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-size:12px;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  color:
+    var(--text-muted);
+}
+
+.model{
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-size:19px;
+
+  font-weight:600;
+
+  margin-top:2px;
+}
+
+
+/* ROZETLER */
+
+.status-badges{
+  display:flex;
+
+  gap:6px;
+
+  flex-wrap:wrap;
+
+  justify-content:
+    flex-end;
+}
+
+.badge{
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:10.5px;
+
+  padding:
+    3px 9px;
+
+  border-radius:6px;
+
+  background:
+    var(
+      --cat-color,
+      var(--teal)
+    );
+
+  color:#0a1512;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  white-space:nowrap;
 }
 
 .new-badge,
 .updated-badge{
-  font-family:'IBM Plex Mono', monospace;
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
   font-size:10px;
-  padding:4px 8px;
+
+  padding:
+    4px 8px;
+
   border-radius:999px;
+
   font-weight:700;
+
   white-space:nowrap;
 }
 
 .new-badge{
   background:#ff5c5c;
+
   color:#fff;
-  box-shadow:0 0 0 1px rgba(255,92,92,.25);
+
+  box-shadow:
+    0 0 0 1px
+    rgba(255,92,92,.25);
 }
 
 .updated-badge{
   background:#ffb020;
+
   color:#16120a;
 }
 
-.headline{...
-  
-  .headline{font-family:'IBM Plex Mono', monospace; font-size:17px; font-weight:600; color:var(--cat-color, var(--teal)); margin:6px 0 8px; line-height:1.3;}
-  .detail{font-size:13px; color:var(--text-muted); line-height:1.5; margin-bottom:10px;}
-  .card-foot{display:flex; justify-content:space-between; border-top:1px dashed var(--border); padding-top:10px; font-size:11.5px; color:var(--text-muted); font-family:'IBM Plex Mono', monospace;}
-  .empty, .loading, .error{text-align:center; padding:60px 20px; color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:13px;}
-  .error{color:var(--red);}
-  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--border); font-size:12px; color:var(--text-muted); line-height:1.6;}
+
+/* KART İÇERİĞİ */
+
+.headline{
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:17px;
+
+  font-weight:600;
+
+  color:
+    var(
+      --cat-color,
+      var(--teal)
+    );
+
+  margin:
+    6px 0 8px;
+
+  line-height:1.3;
+}
+
+.detail{
+  font-size:13px;
+
+  color:
+    var(--text-muted);
+
+  line-height:1.5;
+
+  margin-bottom:10px;
+}
+
+.card-foot{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  border-top:
+    1px dashed var(--border);
+
+  padding-top:10px;
+
+  font-size:11.5px;
+
+  color:
+    var(--text-muted);
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  gap:10px;
+}
+
+.official-link{
+  color:
+    var(--teal);
+
+  white-space:nowrap;
+}
+
+
+/* DURUMLAR */
+
+.empty,
+.loading,
+.error{
+  text-align:center;
+
+  padding:
+    60px 20px;
+
+  color:
+    var(--text-muted);
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:13px;
+}
+
+.error{
+  color:
+    var(--red);
+}
+
+
+/* FOOTER */
+
+footer{
+  margin-top:40px;
+
+  padding-top:20px;
+
+  border-top:
+    1px solid var(--border);
+
+  font-size:12px;
+
+  color:
+    var(--text-muted);
+
+  line-height:1.6;
+}
+
 </style>
 </head>
+
+
 <body>
+
 <div class="wrap">
 
   <div class="hero">
-    <p class="eyebrow">Veriler her sabah 10:00'da yenilenir</p>
-   <h1>SIFIR KM OTOMOBİL KAMPANYALARI</h1>
-<p class="sub">Tasarım & Geliştirme · Hasan Mert SAYAN</p>
-    <div class="status-row" id="lastUpdated">
-  Son güncelleme bilgisi yükleniyor...
-</div>
+
+    <p class="eyebrow">
+      Veriler her sabah 10:00'da yenilenir
+    </p>
+
+    <h1>
+      SIFIR KM OTOMOBİL KAMPANYALARI
+    </h1>
+
+    <p class="sub">
+      Tasarım & Geliştirme · Hasan Mert SAYAN
+    </p>
+
+    <div
+      class="status-row"
+      id="lastUpdated"
+    >
+      Son güncelleme bilgisi yükleniyor...
+    </div>
+
   </div>
+
 
   <div class="filters">
-    <input class="search" id="searchInput" type="text" placeholder="Marka veya model ara...">
+
+    <input
+      class="search"
+      id="searchInput"
+      type="text"
+      placeholder="Marka veya model ara..."
+    >
+
   </div>
-  <div class="chip-row" id="brandChips"></div>
-  <div class="cat-row" id="catRow"></div>
-  <div class="count-line" id="countLine"></div>
+
+
+  <div
+    class="chip-row"
+    id="brandChips"
+  ></div>
+
+
+  <div
+    class="cat-row"
+    id="catRow"
+  ></div>
+
+
+  <div
+    class="count-line"
+    id="countLine"
+  ></div>
+
 
   <div id="content">
-    <div class="loading">Güncel kampanyalar aranıyor, bu birkaç saniye sürebilir…</div>
+
+    <div class="loading">
+      Güncel kampanyalar yükleniyor…
+    </div>
+
   </div>
 
+
   <footer>
-    Kesin ve güncel koşullar için ilgili markanın yetkili satıcısına başvurmanız önerilir.
+
+    Kesin ve güncel koşullar için
+    ilgili markanın resmi kampanya
+    sayfasını ve yetkili satıcısını
+    kontrol etmeniz önerilir.
+
   </footer>
+
 </div>
 
+
 <script>
+
+/*
+ * -------------------------------------------------------
+ * MODEL / KAMPANYA LİNKLERİ
+ * -------------------------------------------------------
+ */
+
+let MODEL_LINKS = {};
+
+
+function normalizeLinkKey(value){
+
+  return String(value || "")
+    .toLocaleLowerCase("tr-TR")
+    .replace(/\s+/g, " ")
+    .trim();
+
+}
+
+
+function getModelLink(d){
+
+  const key =
+    `${normalizeLinkKey(d.brand)}|` +
+    `${normalizeLinkKey(d.model)}`;
+
+  return MODEL_LINKS[key] || null;
+
+}
+
+
+/*
+ * -------------------------------------------------------
+ * KATEGORİLER
+ * -------------------------------------------------------
+ */
+
 const CATS = {
-  indirim: {label:"Nakit İndirim", color:"#ffb020"},
-  kredi: {label:"Kredi / Faiz", color:"#5b9dff"},
-  takas: {label:"Takas Desteği", color:"#00d4b8"},
+
+  indirim: {
+    label:"Nakit İndirim",
+    color:"#ffb020"
+  },
+
+  kredi: {
+    label:"Kredi / Faiz",
+    color:"#5b9dff"
+  },
+
+  takas: {
+    label:"Takas Desteği",
+    color:"#00d4b8"
+  }
+
 };
 
+
+/*
+ * -------------------------------------------------------
+ * GLOBAL DEĞİŞKENLER
+ * -------------------------------------------------------
+ */
+
 let ALL_DATA = [];
+
 let activeBrand = "Tümü";
+
 let activeCat = "Tümü";
+
 let searchTerm = "";
 
+
+/*
+ * -------------------------------------------------------
+ * VERİLERİ YÜKLE
+ * -------------------------------------------------------
+ */
+
 async function loadData(){
-  const content = document.getElementById('content');
-  content.innerHTML = '<div class="loading">Kampanyalar getiriliyor…</div>';
+
+  const content =
+    document.getElementById(
+      'content'
+    );
+
+  content.innerHTML =
+    '<div class="loading">Kampanyalar getiriliyor…</div>';
+
 
   try{
-    // Not: Buradan sadece önbellekteki veri okunur, yeni bir ücretli
-    // arama TETİKLENMEZ. Verinin güncellenmesi ayrı, gizli bir bağlantı
-    // üzerinden (sadece site sahibinin bildiği) yapılır.
-    const res = await fetch('/api/campaigns');
-    const json = await res.json();
-    if(!res.ok) throw new Error(json.error || 'Bilinmeyen hata');
 
-    ALL_DATA = json.campaigns || [];
+    /*
+     * Önce resmi model/kampanya
+     * bağlantılarını yükle.
+     *
+     * BU İŞLEM ANTHROPIC API
+     * ÇAĞRISI YAPMAZ.
+     */
 
-const lastUpdated = document.getElementById('lastUpdated');
+    try{
 
-if(json.updatedAt){
-  const date = new Date(json.updatedAt);
+      const linkRes =
+        await fetch(
+          '/data/model-links.json',
+          {
+            cache:'no-store'
+          }
+        );
 
-  const formatted = date.toLocaleString('tr-TR', {
-    timeZone: 'Europe/Istanbul',
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
 
-  lastUpdated.textContent =
-    `Son güncelleme: ${formatted} · ${ALL_DATA.length} kampanya`;
-}else{
-  lastUpdated.textContent =
-    `${ALL_DATA.length} kampanya`;
-}
+      if(linkRes.ok){
 
-renderAll();
+        const linkJson =
+          await linkRes.json();
+
+        MODEL_LINKS =
+          linkJson.exact || {};
+
+      }else{
+
+        console.warn(
+          'model-links.json yüklenemedi:',
+          linkRes.status
+        );
+
+      }
+
+    }catch(linkError){
+
+      /*
+       * Link dosyası hata verse bile
+       * kampanya sitesi çalışmaya
+       * devam etsin.
+       */
+
+      console.warn(
+        'Model linkleri yüklenemedi:',
+        linkError
+      );
+
+      MODEL_LINKS = {};
+
+    }
+
+
+    /*
+     * Kampanya API'sinden yalnızca
+     * kayıtlı mevcut veriyi oku.
+     *
+     * refresh=1 kullanılmadığı için
+     * ücretli Claude sorgusu
+     * tetiklenmez.
+     */
+
+    const res =
+      await fetch(
+        '/api/campaigns'
+      );
+
+
+    const json =
+      await res.json();
+
+
+    if(!res.ok){
+
+      throw new Error(
+        json.error ||
+        'Bilinmeyen hata'
+      );
+
+    }
+
+
+    ALL_DATA =
+      json.campaigns || [];
+
+
+    /*
+     * Son güncelleme
+     */
+
+    const lastUpdated =
+      document.getElementById(
+        'lastUpdated'
+      );
+
+
+    if(json.updatedAt){
+
+      const date =
+        new Date(
+          json.updatedAt
+        );
+
+
+      const formatted =
+        date.toLocaleString(
+          'tr-TR',
+          {
+
+            timeZone:
+              'Europe/Istanbul',
+
+            day:
+              '2-digit',
+
+            month:
+              'long',
+
+            year:
+              'numeric',
+
+            hour:
+              '2-digit',
+
+            minute:
+              '2-digit'
+
+          }
+        );
+
+
+      lastUpdated.textContent =
+        `Son güncelleme: ${formatted} · ${ALL_DATA.length} kampanya`;
+
+    }else{
+
+      lastUpdated.textContent =
+        `${ALL_DATA.length} kampanya`;
+
+    }
+
+
+    renderAll();
+
+
   }catch(err){
-    content.innerHTML = `<div class="error">Veri alınamadı: ${err.message}<br>Lütfen daha sonra tekrar deneyin.</div>`;
+
+    content.innerHTML =
+      `<div class="error">
+        Veri alınamadı:
+        ${err.message}
+        <br>
+        Lütfen daha sonra tekrar deneyin.
+      </div>`;
+
   }
+
 }
+
+
+/*
+ * -------------------------------------------------------
+ * MARKALAR
+ * -------------------------------------------------------
+ */
 
 function uniqueBrands(){
-  return ["Tümü", ...Array.from(new Set(ALL_DATA.map(d=>d.brand))).sort()];
+
+  return [
+
+    "Tümü",
+
+    ...Array.from(
+      new Set(
+        ALL_DATA.map(
+          d => d.brand
+        )
+      )
+    ).sort(
+      (a,b)=>
+        a.localeCompare(
+          b,
+          'tr'
+        )
+    )
+
+  ];
+
 }
+
 
 function renderChips(){
-  const container = document.getElementById('brandChips');
+
+  const container =
+    document.getElementById(
+      'brandChips'
+    );
+
+
   container.innerHTML = "";
-  uniqueBrands().forEach(b=>{
-    const el = document.createElement('div');
-    el.className = 'chip' + (b===activeBrand ? ' active' : '');
-    el.textContent = b;
-    el.onclick = ()=>{ activeBrand = b; renderAll(); };
-    container.appendChild(el);
-  });
+
+
+  uniqueBrands().forEach(
+    b => {
+
+      const el =
+        document.createElement(
+          'div'
+        );
+
+
+      el.className =
+        'chip' +
+        (
+          b === activeBrand
+            ? ' active'
+            : ''
+        );
+
+
+      el.textContent = b;
+
+
+      el.onclick = ()=>{
+
+        activeBrand = b;
+
+        renderAll();
+
+      };
+
+
+      container.appendChild(
+        el
+      );
+
+    }
+  );
+
 }
+
+
+/*
+ * -------------------------------------------------------
+ * KATEGORİLER
+ * -------------------------------------------------------
+ */
 
 function renderCats(){
-  const container = document.getElementById('catRow');
+
+  const container =
+    document.getElementById(
+      'catRow'
+    );
+
+
   container.innerHTML = "";
-  const all = document.createElement('button');
-  all.className = 'cat-btn' + (activeCat==='Tümü' ? ' active':'');
-  all.textContent = 'Tüm kategoriler';
-  all.onclick = ()=>{ activeCat='Tümü'; renderAll(); };
-  container.appendChild(all);
-  Object.entries(CATS).forEach(([key,val])=>{
-    const btn = document.createElement('button');
-    btn.className = 'cat-btn' + (activeCat===key ? ' active':'');
-    btn.textContent = val.label;
-    btn.onclick = ()=>{ activeCat=key; renderAll(); };
-    container.appendChild(btn);
-  });
+
+
+  const all =
+    document.createElement(
+      'button'
+    );
+
+
+  all.className =
+    'cat-btn' +
+    (
+      activeCat === 'Tümü'
+        ? ' active'
+        : ''
+    );
+
+
+  all.textContent =
+    'Tüm kategoriler';
+
+
+  all.onclick = ()=>{
+
+    activeCat =
+      'Tümü';
+
+    renderAll();
+
+  };
+
+
+  container.appendChild(
+    all
+  );
+
+
+  Object.entries(
+    CATS
+  ).forEach(
+    ([key,val])=>{
+
+      const btn =
+        document.createElement(
+          'button'
+        );
+
+
+      btn.className =
+        'cat-btn' +
+        (
+          activeCat === key
+            ? ' active'
+            : ''
+        );
+
+
+      btn.textContent =
+        val.label;
+
+
+      btn.onclick = ()=>{
+
+        activeCat = key;
+
+        renderAll();
+
+      };
+
+
+      container.appendChild(
+        btn
+      );
+
+    }
+  );
+
 }
+
+
+/*
+ * -------------------------------------------------------
+ * FİLTRE
+ * -------------------------------------------------------
+ */
 
 function filtered(){
-  return ALL_DATA.filter(d=>{
-    if(activeBrand!=="Tümü" && d.brand!==activeBrand) return false;
-    if(activeCat!=="Tümü" && d.cat!==activeCat) return false;
-    if(searchTerm){
-      const hay = (d.brand+" "+d.model+" "+(d.detail||"")).toLowerCase();
-      if(!hay.includes(searchTerm.toLowerCase())) return false;
-    }
-    return true;
-  }).sort((a,b)=> (b.amount||0) - (a.amount||0));
-}
-function daysSince(dateString){
-  if(!dateString) return Infinity;
 
-  const date = new Date(dateString);
-  if(Number.isNaN(date.getTime())) return Infinity;
+  return ALL_DATA
+    .filter(
+      d => {
 
-  return (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
+        if(
+          activeBrand !==
+          "Tümü" &&
+          d.brand !==
+          activeBrand
+        ){
+          return false;
+        }
+
+
+        if(
+          activeCat !==
+          "Tümü" &&
+          d.cat !==
+          activeCat
+        ){
+          return false;
+        }
+
+
+        if(searchTerm){
+
+          const hay =
+            (
+              d.brand +
+              " " +
+              d.model +
+              " " +
+              (
+                d.detail ||
+                ""
+              ) +
+              " " +
+              (
+                d.headline ||
+                ""
+              )
+            )
+            .toLocaleLowerCase(
+              'tr-TR'
+            );
+
+
+          if(
+            !hay.includes(
+              searchTerm
+                .toLocaleLowerCase(
+                  'tr-TR'
+                )
+            )
+          ){
+            return false;
+          }
+
+        }
+
+
+        return true;
+
+      }
+    )
+
+    .sort(
+      (a,b)=>
+        (b.amount || 0) -
+        (a.amount || 0)
+    );
+
 }
+
+
+/*
+ * -------------------------------------------------------
+ * YENİ / GÜNCELLENDİ
+ * -------------------------------------------------------
+ */
+
+function daysSince(
+  dateString
+){
+
+  if(!dateString){
+    return Infinity;
+  }
+
+
+  const date =
+    new Date(
+      dateString
+    );
+
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  ){
+    return Infinity;
+  }
+
+
+  return (
+    Date.now() -
+    date.getTime()
+  ) /
+  (
+    1000 *
+    60 *
+    60 *
+    24
+  );
+
+}
+
 
 function getCampaignStatus(d){
-  const firstSeenDays = daysSince(d.firstSeenAt);
-  const changedDays = daysSince(d.lastChangedAt);
 
-  // İlk görüldüğü tarihten itibaren 3 gün YENİ
-  if(firstSeenDays < 3){
+  const firstSeenDays =
+    daysSince(
+      d.firstSeenAt
+    );
+
+
+  const changedDays =
+    daysSince(
+      d.lastChangedAt
+    );
+
+
+  /*
+   * İlk görüldüğü günden
+   * itibaren 3 gün YENİ.
+   */
+
+  if(
+    firstSeenDays < 3
+  ){
     return 'new';
   }
 
-  // Eski bir kampanyada değişiklik olmuşsa 3 gün GÜNCELLENDİ
-  if(changedDays < 3){
+
+  /*
+   * Daha eski kampanyada
+   * değişiklik olmuşsa
+   * 3 gün GÜNCELLENDİ.
+   */
+
+  if(
+    changedDays < 3
+  ){
     return 'updated';
   }
 
-  return null;
-}
-function renderGrid(){
-  const items = filtered();
-  const content = document.getElementById('content');
-  const countLine = document.getElementById('countLine');
-  countLine.textContent = items.length + " kampanya listeleniyor";
 
-  if(items.length===0){
-    content.innerHTML = '<div class="empty">Aramanızla eşleşen kampanya bulunamadı.</div>';
+  return null;
+
+}
+
+
+/*
+ * -------------------------------------------------------
+ * KARTLAR
+ * -------------------------------------------------------
+ */
+
+function renderGrid(){
+
+  const items =
+    filtered();
+
+
+  const content =
+    document.getElementById(
+      'content'
+    );
+
+
+  const countLine =
+    document.getElementById(
+      'countLine'
+    );
+
+
+  countLine.textContent =
+    items.length +
+    " kampanya listeleniyor";
+
+
+  if(
+    items.length === 0
+  ){
+
+    content.innerHTML =
+      '<div class="empty">Aramanızla eşleşen kampanya bulunamadı.</div>';
+
     return;
+
   }
 
-  const grid = document.createElement('div');
-  grid.className = 'grid';
-  items.forEach(d=>{
-    const cat = CATS[d.cat] || CATS.indirim;
-    const status = getCampaignStatus(d);
 
-    let statusBadge = '';
+  const grid =
+    document.createElement(
+      'div'
+    );
 
-    if(status === 'new'){
-      statusBadge = '<div class="new-badge">✦ YENİ</div>';
-    }else if(status === 'updated'){
-      statusBadge = '<div class="updated-badge">↻ GÜNCELLENDİ</div>';
-    }
 
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.style.setProperty('--cat-color', cat.color);
-    card.innerHTML = `
-      <div class="card-top">
-        <div>
-          <div class="brand">${d.brand}</div>
-          <div class="model">${d.model}</div>
+  grid.className =
+    'grid';
+
+
+  items.forEach(
+    d => {
+
+      const cat =
+        CATS[d.cat] ||
+        CATS.indirim;
+
+
+      const status =
+        getCampaignStatus(d);
+
+
+      const modelLink =
+        getModelLink(d);
+
+
+      let statusBadge = '';
+
+
+      if(
+        status === 'new'
+      ){
+
+        statusBadge =
+          '<div class="new-badge">✦ YENİ</div>';
+
+      }else if(
+        status === 'updated'
+      ){
+
+        statusBadge =
+          '<div class="updated-badge">↻ GÜNCELLENDİ</div>';
+
+      }
+
+
+      const card =
+        document.createElement(
+          'div'
+        );
+
+
+      card.className =
+        'card';
+
+
+      card.style.setProperty(
+        '--cat-color',
+        cat.color
+      );
+
+
+      /*
+       * Resmi bağlantı varsa
+       * kartı tıklanabilir yap.
+       */
+
+      if(modelLink){
+
+        card.classList.add(
+          'clickable'
+        );
+
+
+        card.style.cursor =
+          'pointer';
+
+
+        card.title =
+          'Resmi kampanya/model sayfasını aç';
+
+
+        card.setAttribute(
+          'role',
+          'link'
+        );
+
+
+        card.setAttribute(
+          'tabindex',
+          '0'
+        );
+
+
+        card.onclick = ()=>{
+
+          window.open(
+            modelLink,
+            '_blank',
+            'noopener,noreferrer'
+          );
+
+        };
+
+
+        card.onkeydown =
+          event => {
+
+            if(
+              event.key ===
+              'Enter'
+            ){
+
+              window.open(
+                modelLink,
+                '_blank',
+                'noopener,noreferrer'
+              );
+
+            }
+
+          };
+
+      }
+
+
+      /*
+       * Kart altındaki
+       * yönlendirme yazısı.
+       */
+
+      const officialLinkText =
+        modelLink
+          ? '<span class="official-link">Resmi sayfa ↗</span>'
+          : '';
+
+
+      card.innerHTML = `
+
+        <div class="card-top">
+
+          <div>
+
+            <div class="brand">
+              ${d.brand}
+            </div>
+
+            <div class="model">
+              ${d.model}
+            </div>
+
+          </div>
+
+
+          <div class="status-badges">
+
+            ${statusBadge}
+
+            <div class="badge">
+              ${cat.label}
+            </div>
+
+          </div>
+
         </div>
-        <div class="status-badges">
-  ${statusBadge}
-  <div class="badge">${cat.label}</div>
-</div>
-      </div>
-      <div class="headline">${d.headline}</div>
-      <div class="detail">${d.detail || ""}</div>
-      <div class="card-foot"><span>Geçerlilik: ${d.until || "—"}</span></div>
-    `;
-    grid.appendChild(card);
-  });
+
+
+        <div class="headline">
+          ${d.headline}
+        </div>
+
+
+        <div class="detail">
+          ${d.detail || ""}
+        </div>
+
+
+        <div class="card-foot">
+
+          <span>
+            Geçerlilik:
+            ${d.until || "—"}
+          </span>
+
+          ${officialLinkText}
+
+        </div>
+
+      `;
+
+
+      grid.appendChild(
+        card
+      );
+
+    }
+  );
+
+
   content.innerHTML = "";
-  content.appendChild(grid);
+
+
+  content.appendChild(
+    grid
+  );
+
 }
+
+
+/*
+ * -------------------------------------------------------
+ * TÜM EKRANI YENİLE
+ * -------------------------------------------------------
+ */
 
 function renderAll(){
+
   renderChips();
+
   renderCats();
+
   renderGrid();
+
 }
 
-document.getElementById('searchInput').addEventListener('input', (e)=>{
-  searchTerm = e.target.value;
-  renderGrid();
-});
+
+/*
+ * -------------------------------------------------------
+ * ARAMA
+ * -------------------------------------------------------
+ */
+
+document
+  .getElementById(
+    'searchInput'
+  )
+  .addEventListener(
+    'input',
+    e => {
+
+      searchTerm =
+        e.target.value;
+
+      renderGrid();
+
+    }
+  );
+
+
+/*
+ * -------------------------------------------------------
+ * BAŞLAT
+ * -------------------------------------------------------
+ */
+
 loadData();
+
 </script>
+
 </body>
 </html>
