@@ -205,12 +205,19 @@ Toyota, Honda, Hyundai, Kia, Nissan, Renault, Dacia,
 Peugeot, Citroen, Opel, Ford, Fiat,
 Chery, BYD, MG, Jaecoo, Omoda ve Türkiye'de aktif satış yapan diğer markalar.
 
+Lüks / premium otomobil markaları için özel kural:
+
+BMW, Mercedes-Benz, Audi, Volvo, Lexus, Porsche, Land Rover, Jaguar ve Alfa Romeo markalarını mutlaka ayrı ayrı kontrol et.
+
+Bu markalardan güncel ve doğrulanabilir en az bir kampanya varsa sonuç listesine mutlaka ekle.
+Bu markalardan kampanya bulamadıysan yalnızca gerçekten güncel kampanya bulunamadığından emin olduktan sonra liste dışı bırak.
+
+Premium markaları sonuç sayısını azaltmak amacıyla eleme.
 Öncelikli kaynaklar:
 1. Markaların Türkiye resmi web siteleri
 2. Resmi distribütör ve finansman sayfaları
 3. Yetkili satıcı kampanyaları
 
-Eski, süresi bitmiş veya doğrulanamayan kampanyaları ekleme.
 
 Kampanyalar:
 - nakit indirim
@@ -268,7 +275,7 @@ yoksa null olsun.
           {
             type: "web_search_20250305",
             name: "web_search",
-            max_uses: 10,
+            max_uses: 15,
           },
         ],
 
