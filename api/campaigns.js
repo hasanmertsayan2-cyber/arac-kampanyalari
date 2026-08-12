@@ -196,7 +196,21 @@ async function fetchCampaignsFromClaude() {
   const prompt = `
 Türkiye'de şu anda geçerli olan sıfır kilometre otomobil satış kampanyalarını web'de araştır.
 
-Mümkün olduğunca farklı markalardan en az 15, en fazla 25 güncel kampanya bul.
+Türkiye'de aktif satış yapan markaları mümkün olduğunca kapsamlı şekilde tara.
+Kampanya sayısına üst sınır koyma.
+
+Özellikle şu markaları mutlaka ayrı ayrı kontrol et:
+BMW, Mercedes-Benz, Audi, Volvo, Volkswagen, Skoda, Cupra,
+Toyota, Honda, Hyundai, Kia, Nissan, Renault, Dacia,
+Peugeot, Citroen, Opel, Ford, Fiat,
+Chery, BYD, MG, Jaecoo, Omoda ve Türkiye'de aktif satış yapan diğer markalar.
+
+Öncelikli kaynaklar:
+1. Markaların Türkiye resmi web siteleri
+2. Resmi distribütör ve finansman sayfaları
+3. Yetkili satıcı kampanyaları
+
+Eski, süresi bitmiş veya doğrulanamayan kampanyaları ekleme.
 
 Kampanyalar:
 - nakit indirim
@@ -254,7 +268,7 @@ yoksa null olsun.
           {
             type: "web_search_20250305",
             name: "web_search",
-            max_uses: 3,
+            max_uses: 10,
           },
         ],
 
