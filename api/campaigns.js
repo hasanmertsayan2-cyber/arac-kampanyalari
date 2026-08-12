@@ -1,74 +1,241 @@
-import { getCache } from "@vercel/functions";
+const GITHUB_OWNER = "hasanmertsayan2-cyber";
+const GITHUB_REPO = "arac-kampanyalari";
+const GITHUB_BRANCH = "main";
 
-const runtimeCache = getCache();
-// Bu dosya Vercel'de otomatik olarak /api/campaigns adresinde çalışan
-// bir sunucu fonksiyonudur (serverless function). Tarayıcı bu adrese
-// istek attığında, Claude'a "güncel kampanyaları web'de ara" görevini
-// verir ve sonucu düzenli bir JSON olarak tarayıcıya geri döner.
-//
-// API anahtarı burada DOĞRUDAN yazılmaz; Vercel'in Environment Variables
-// bölümünden ANTHROPIC_API_KEY adıyla eklenmesi gerekir.
+const LATEST_PATH = "data/campaigns-latest.json";
+const ARCHIVE_DIR = "data/archive";
 
-const CAMPAIGNS_CACHE_KEY = "campaigns-latest";
-
-export default async function handler(req, res) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  const refreshSecret = process.env.REFRESH_SECRET;
-
-  if (!apiKey) {
-    res.status(500).json({
-      error: "ANTHROPIC_API_KEY tanımlı değil. Vercel proje ayarlarından Environment Variables bölümüne eklemeyi unutma.",
-    });
-    return;
-  }
-
-  const wantsRefresh = req.query?.refresh === "1";
-  const providedKey = req.query?.key;
-
-  // Zorla yenileme isteği geldiyse, gizli anahtar doğru değilse reddet.
-  // Bu sayede siteyi ziyaret eden rastgele biri "refresh=1" ekleyerek
-  // sana ücret çıkartamaz - sadece bu URL'yi bilen (yani sen) tetikleyebilir.
-  if (wantsRefresh && (!refreshSecret || providedKey !== refreshSecret)) {
-    res.status(401).json({ error: "Yetkisiz yenileme isteği. Doğru anahtar gerekli." });
-    return;
-  }
-
-  if (!wantsRefresh) {
-  const cachedPayload = await runtimeCache.get(CAMPAIGNS_CACHE_KEY);
-
-  if (cachedPayload == null) {
-    res.status(503).json({
-      error: "Henüz kampanya verisi yok. İlk yenilemenin site sahibi tarafından yapılması gerekiyor.",
-    });
-    return;
-  }
-
-  res.setHeader("Cache-Control", "no-store");
-  res.status(200).json({
-    ...cachedPayload,
-    cached: true,
-  });
-  return;
+function githubHeaders() {
+  return {
+    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "arac-kampanyalari-vercel",
+  };
 }
 
-  try {
-    const prompt = `Türkiye'de bu ay geçerli olan sıfır kilometre otomobil satış kampanyalarını web'de araştır.
-En az 15, en fazla 25 tane, mümkün olduğunca farklı markalardan kampanya bul (nakit indirim, kredi/faiz kampanyası, takas desteği gibi).
-Sonucu SADECE aşağıdaki JSON dizisi formatında ver. Açıklama, markdown işareti (backtick), başlık ya da başka hiçbir metin ekleme, cevabın tamamı geçerli bir JSON dizisi olsun:
+function normalize(value) {
+  return String(value || "")
+    .toLocaleLowerCase("tr-TR")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function campaignKey(item) {
+  return [
+    normalize(item.brand),
+    normalize(item.model),
+    normalize(item.cat),
+  ].join("|");
+}
+
+function campaignChanged(oldItem, newItem) {
+  const fields = ["headline", "detail", "until", "amount"];
+
+  return fields.some(
+    (field) =>
+      normalize(oldItem?.[field]) !== normalize(newItem?.[field])
+  );
+}
+
+async function readGitHubJson(path) {
+  const url =
+    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}` +
+    `/contents/${path}?ref=${GITHUB_BRANCH}`;
+
+  const response = await fetch(url, {
+    headers: githubHeaders(),
+  });
+
+  if (response.status === 404) {
+    return null;
+  }
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(
+      `GitHub okuma hatası: ${response.status} ${errorText}`
+    );
+  }
+
+  const file = await response.json();
+
+  const jsonText = Buffer.from(
+    file.content.replace(/\n/g, ""),
+    "base64"
+  ).toString("utf8");
+
+  return {
+    sha: file.sha,
+    data: JSON.parse(jsonText),
+  };
+}
+
+async function writeGitHubJson(path, data, message, sha = null) {
+  const url =
+    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}` +
+    `/contents/${path}`;
+
+  const body = {
+    message,
+    content: Buffer.from(
+      JSON.stringify(data, null, 2),
+      "utf8"
+    ).toString("base64"),
+    branch: GITHUB_BRANCH,
+  };
+
+  if (sha) {
+    body.sha = sha;
+  }
+
+  const response = await fetch(url, {
+    method: "PUT",
+    headers: {
+      ...githubHeaders(),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(
+      `GitHub yazma hatası (${path}): ${response.status} ${errorText}`
+    );
+  }
+
+  return response.json();
+}
+
+function archiveDate(payload) {
+  const date = new Date(payload?.updatedAt || Date.now());
+
+  if (Number.isNaN(date.getTime())) {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  return date.toISOString().slice(0, 10);
+}
+
+async function archivePreviousData(previous) {
+  if (!previous?.data?.campaigns?.length) {
+    return;
+  }
+
+  const date = archiveDate(previous.data);
+  const path = `${ARCHIVE_DIR}/${date}.json`;
+
+  const existingArchive = await readGitHubJson(path);
+
+  await writeGitHubJson(
+    path,
+    previous.data,
+    `archive: kampanya verileri ${date}`,
+    existingArchive?.sha || null
+  );
+}
+
+function mergeCampaignHistory(newCampaigns, previousPayload) {
+  const now = new Date().toISOString();
+
+  const previousCampaigns = Array.isArray(previousPayload?.campaigns)
+    ? previousPayload.campaigns
+    : [];
+
+  const previousMap = new Map();
+
+  for (const campaign of previousCampaigns) {
+    previousMap.set(campaignKey(campaign), campaign);
+  }
+
+  return newCampaigns.map((campaign) => {
+    const previous = previousMap.get(campaignKey(campaign));
+
+    if (!previous) {
+      return {
+        ...campaign,
+        firstSeenAt: now,
+        lastSeenAt: now,
+        lastChangedAt: now,
+      };
+    }
+
+    const changed = campaignChanged(previous, campaign);
+
+    return {
+      ...campaign,
+
+      firstSeenAt:
+        previous.firstSeenAt ||
+        previous.updatedAt ||
+        previousPayload?.updatedAt ||
+        now,
+
+      lastSeenAt: now,
+
+      lastChangedAt: changed
+        ? now
+        : previous.lastChangedAt ||
+          previous.firstSeenAt ||
+          previousPayload?.updatedAt ||
+          now,
+    };
+  });
+}
+
+async function fetchCampaignsFromClaude() {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+
+  if (!apiKey) {
+    throw new Error(
+      "ANTHROPIC_API_KEY Vercel Environment Variables içinde tanımlı değil."
+    );
+  }
+
+  const prompt = `
+Türkiye'de şu anda geçerli olan sıfır kilometre otomobil satış kampanyalarını web'de araştır.
+
+Mümkün olduğunca farklı markalardan en az 15, en fazla 25 güncel kampanya bul.
+
+Kampanyalar:
+- nakit indirim
+- kredi / faiz kampanyası
+- takas desteği
+
+olabilir.
+
+Eski, süresi bitmiş veya doğrulanamayan kampanyaları ekleme.
+
+Sonucu SADECE geçerli bir JSON dizisi olarak döndür.
+Markdown, açıklama veya kod bloğu kullanma.
+
+Format:
 
 [
   {
-    "brand": "Marka adı",
-    "model": "Model adı",
-    "cat": "indirim" | "kredi" | "takas",
-    "headline": "Kısa ve çarpıcı özet, örn. '150.000 TL indirim' veya '12 ay %0,99 faiz'",
-    "detail": "Bir cümlelik ek açıklama",
-    "until": "Geçerlilik tarihi ya da 'Ağustos 2026' gibi bir ifade",
-    "amount": sayısal_TL_tutarı_varsa_yoksa_null
+    "brand": "Marka",
+    "model": "Model",
+    "cat": "indirim",
+    "headline": "150.000 TL indirim",
+    "detail": "Kampanyanın kısa açıklaması",
+    "until": "31 Ağustos 2026",
+    "amount": 150000
   }
-]`;
+]
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+cat sadece şu değerlerden biri olabilir:
+"indirim"
+"kredi"
+"takas"
+
+amount TL cinsinden anlamlı sayısal tutar varsa sayı,
+yoksa null olsun.
+`;
+
+  const response = await fetch(
+    "https://api.anthropic.com/v1/messages",
+    {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,79 +244,213 @@ Sonucu SADECE aşağıdaki JSON dizisi formatında ver. Açıklama, markdown iş
       },
       body: JSON.stringify({
         model: "claude-sonnet-5",
-max_tokens: 4000,
+        max_tokens: 4000,
 
-thinking: {
-  type: "disabled",
-},
+        thinking: {
+          type: "disabled",
+        },
 
-tools: [
-  {
-    type: "web_search_20250305",
-    name: "web_search",
-    max_uses: 3,
-  },
-],
-        messages: [{ role: "user", content: prompt }],
+        tools: [
+          {
+            type: "web_search_20250305",
+            name: "web_search",
+            max_uses: 3,
+          },
+        ],
+
+        messages: [
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
       }),
-    });
-
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Anthropic API hata: ${response.status} ${errText}`);
     }
-
-    const data = await response.json();
-    console.log("CLAUDE USAGE:", {
-  input_tokens: data.usage?.input_tokens,
-  output_tokens: data.usage?.output_tokens,
-  web_search_requests: data.usage?.server_tool_use?.web_search_requests,
-});
-    if (data.stop_reason === "max_tokens") {
-  throw new Error(
-    "Claude cevabı max_tokens sınırına ulaştığı için yarıda kesildi."
   );
+
+  if (!response.ok) {
+    const errorText = await response.text();
+
+    throw new Error(
+      `Anthropic API hata: ${response.status} ${errorText}`
+    );
+  }
+
+  const data = await response.json();
+
+  if (data.stop_reason === "max_tokens") {
+    throw new Error(
+      "Claude cevabı token sınırında yarıda kesildi."
+    );
+  }
+
+  const text = (data.content || [])
+    .filter((block) => block.type === "text")
+    .map((block) => block.text)
+    .join("\n")
+    .replace(/```json|```/g, "")
+    .trim();
+
+  const start = text.indexOf("[");
+  const end = text.lastIndexOf("]");
+
+  if (start === -1 || end === -1) {
+    throw new Error(
+      "Claude cevabından geçerli kampanya JSON'u çıkarılamadı."
+    );
+  }
+
+  const campaigns = JSON.parse(
+    text.slice(start, end + 1)
+  );
+
+  if (!Array.isArray(campaigns)) {
+    throw new Error("Claude kampanya dizisi döndürmedi.");
+  }
+
+  /*
+   * Çok az veri geldiyse eski kampanyaları ASLA silme.
+   * Böylece Claude/API sorununda mevcut site korunur.
+   */
+  if (campaigns.length < 10) {
+    throw new Error(
+      `Yalnızca ${campaigns.length} kampanya bulundu. ` +
+        "Güvenlik nedeniyle mevcut veri değiştirilmedi."
+    );
+  }
+
+  return campaigns;
 }
-    console.log("CLAUDE DEBUG:", {
-  stop_reason: data.stop_reason,
-  contentTypes: (data.content || []).map((b) => b.type),
-  textLength: (data.content || [])
-    .filter((b) => b.type === "text")
-    .reduce((total, b) => total + (b.text?.length || 0), 0),
-});
 
-    const textBlocks = (data.content || [])
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("\n");
+export default async function handler(req, res) {
+  const githubToken = process.env.GITHUB_TOKEN;
+  const refreshSecret = process.env.REFRESH_SECRET;
 
-    const cleaned = textBlocks.replace(/```json|```/g, "").trim();
-    const jsonStart = cleaned.indexOf("[");
-    const jsonEnd = cleaned.lastIndexOf("]");
+  if (!githubToken) {
+    res.status(500).json({
+      error:
+        "GITHUB_TOKEN Vercel Environment Variables içinde tanımlı değil.",
+    });
+    return;
+  }
 
-    if (jsonStart === -1 || jsonEnd === -1) {
-      throw new Error("Claude'un cevabından geçerli bir JSON dizisi çıkarılamadı.");
+  const wantsRefresh = req.query?.refresh === "1";
+  const providedKey = req.query?.key;
+
+  /*
+   * Normal ziyaretçiler sadece kayıtlı veriyi okur.
+   * Anthropic API çağrısı yapılmaz.
+   */
+  if (!wantsRefresh) {
+    try {
+      const latest = await readGitHubJson(LATEST_PATH);
+
+      if (!latest) {
+        res.status(503).json({
+          error:
+            "Henüz kalıcı kampanya verisi oluşturulmadı. " +
+            "Site sahibi ilk yenilemeyi yapmalıdır.",
+        });
+        return;
+      }
+
+      res.setHeader(
+        "Cache-Control",
+        "public, s-maxage=60, stale-while-revalidate=300"
+      );
+
+      res.status(200).json({
+        ...latest.data,
+        cached: true,
+      });
+
+      return;
+    } catch (error) {
+      res.status(500).json({
+        error: "Kayıtlı kampanya verisi okunamadı.",
+        detail: String(error),
+      });
+      return;
     }
+  }
 
-    const jsonStr = cleaned.slice(jsonStart, jsonEnd + 1);
-    const campaigns = JSON.parse(jsonStr);
+  /*
+   * Manuel refresh yalnızca gizli REFRESH_SECRET ile yapılabilir.
+   */
+  if (
+    !refreshSecret ||
+    providedKey !== refreshSecret
+  ) {
+    res.status(401).json({
+      error:
+        "Yetkisiz yenileme isteği. Doğru anahtar gerekli.",
+    });
+    return;
+  }
+
+  try {
+    /*
+     * Önce eski veriyi oku.
+     * Yeni veri başarıyla oluşmadan eski veri değişmez.
+     */
+    const previous = await readGitHubJson(LATEST_PATH);
+
+    /*
+     * Claude + web search ile yeni veriyi çek.
+     */
+    const newCampaigns =
+      await fetchCampaignsFromClaude();
+
+    /*
+     * firstSeenAt / lastChangedAt geçmişini koru.
+     */
+    const campaigns = mergeCampaignHistory(
+      newCampaigns,
+      previous?.data || null
+    );
 
     const payload = {
       campaigns,
       updatedAt: new Date().toISOString(),
+      count: campaigns.length,
     };
 
-    await runtimeCache.set(CAMPAIGNS_CACHE_KEY, payload, {
-  name: "Guncel arac kampanyalari",
-  tags: ["campaigns"],
-});
+    /*
+     * Eski latest dosyasını günlük arşive kaydet.
+     */
+    if (previous) {
+      await archivePreviousData(previous);
+    }
 
-    res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
-    res.status(200).json({ ...payload, cached: false });
-  } catch (err) {
+    /*
+     * Yeni veri tamamen hazır olduktan sonra latest dosyasını değiştir.
+     */
+    await writeGitHubJson(
+      LATEST_PATH,
+      payload,
+      `data: kampanyalari guncelle ${new Date()
+        .toISOString()
+        .slice(0, 10)}`,
+      previous?.sha || null
+    );
+
+    res.setHeader("Cache-Control", "no-store");
+
+    res.status(200).json({
+      ...payload,
+      cached: false,
+      saved: true,
+      message:
+        "Yeni kampanyalar başarıyla kalıcı olarak GitHub'a kaydedildi.",
+    });
+  } catch (error) {
+    /*
+     * Herhangi bir hata olursa eski latest dosyasına dokunulmaz.
+     */
     res.status(500).json({
-      error: "Kampanya verisi alınamadı.",
-      detail: String(err),
+      error:
+        "Kampanyalar güncellenemedi. Eski kayıtlar korunuyor.",
+      detail: String(error),
     });
   }
 }
