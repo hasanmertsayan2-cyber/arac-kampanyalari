@@ -34,8 +34,7 @@ function campaignChanged(oldItem, newItem) {
 
   return fields.some(
     (field) =>
-      normalize(oldItem?.[field]) !==
-      normalize(newItem?.[field])
+      normalize(oldItem?.[field]) !== normalize(newItem?.[field])
   );
 }
 
@@ -73,12 +72,7 @@ async function readGitHubJson(path) {
   };
 }
 
-async function writeGitHubJson(
-  path,
-  data,
-  message,
-  sha = null
-) {
+async function writeGitHubJson(path, data, message, sha = null) {
   const url =
     `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}` +
     `/contents/${path}`;
@@ -240,9 +234,7 @@ function validateCampaign(item) {
   return true;
 }
 
-function removeDuplicateCampaigns(
-  campaigns
-) {
+function removeDuplicateCampaigns(campaigns) {
   const seen = new Set();
   const result = [];
 
@@ -270,8 +262,9 @@ function removeDuplicateCampaigns(
 }
 
 async function fetchCampaignBatch(
+  batchName,
   prompt,
-  maxSearches
+  maxSearches = 6
 ) {
   const apiKey =
     process.env.ANTHROPIC_API_KEY;
@@ -298,7 +291,7 @@ async function fetchCampaignBatch(
       body: JSON.stringify({
         model: "claude-sonnet-5",
 
-        max_tokens: 8000,
+        max_tokens: 6000,
 
         thinking: {
           type: "disabled",
@@ -328,7 +321,7 @@ async function fetchCampaignBatch(
       await response.text();
 
     throw new Error(
-      `Anthropic API hata: ${response.status} ${errorText}`
+      `${batchName} Anthropic API hata: ${response.status} ${errorText}`
     );
   }
 
@@ -340,7 +333,7 @@ async function fetchCampaignBatch(
     "max_tokens"
   ) {
     throw new Error(
-      "Claude cevabı token sınırında yarıda kesildi."
+      `${batchName} token sınırına ulaştı.`
     );
   }
 
@@ -372,7 +365,7 @@ async function fetchCampaignBatch(
     end === -1
   ) {
     throw new Error(
-      "Claude cevabından geçerli kampanya JSON'u çıkarılamadı."
+      `${batchName} cevabından geçerli JSON çıkarılamadı.`
     );
   }
 
@@ -388,50 +381,36 @@ async function fetchCampaignBatch(
     !Array.isArray(campaigns)
   ) {
     throw new Error(
-      "Claude kampanya dizisi döndürmedi."
+      `${batchName} kampanya dizisi döndürmedi.`
     );
   }
 
   return campaigns;
 }
 
-async function fetchCampaignsFromClaude() {
-  const normalPrompt = `
-Türkiye'de şu anda geçerli olan sıfır kilometre otomobil satış kampanyalarını kapsamlı şekilde araştır.
+const COMMON_RULES = `
+Yalnızca Türkiye'de şu anda geçerli sıfır kilometre otomobil kampanyalarını bul.
 
-Bu sorguda özellikle standart ve yaygın otomobil markalarına odaklan:
-
-Volkswagen, Skoda, Cupra,
-Toyota, Honda, Hyundai, Kia, Nissan,
-Renault, Dacia,
-Peugeot, Citroen, Opel,
-Ford, Fiat,
-Chery, BYD, MG, Jaecoo, Omoda
-ve Türkiye'de aktif satış yapan diğer standart otomobil markaları.
-
-Mümkün olduğunca fazla markayı kontrol et.
-
-Kampanya sayısına üst sınır koyma.
-
-Öncelikli kaynaklar:
-
-1. Markaların Türkiye resmi web siteleri
-2. Resmi distribütör ve finansman sayfaları
-3. Yetkili satıcı kampanyaları
-
-Kampanya türleri:
-
-- nakit indirim
-- kredi / faiz kampanyası
-- takas desteği
+Öncelik sırası:
+1. Markanın Türkiye resmi sitesi
+2. Resmi finansman / distribütör sayfası
+3. Yetkili satıcı
 
 Eski, süresi bitmiş veya doğrulanamayan kampanyaları ekleme.
 
-Aynı modelde birden fazla farklı kampanya varsa bunları ayrı ayrı listeleyebilirsin.
+Kampanya türleri:
+- nakit indirim
+- kredi / faiz
+- takas desteği
+- özel finansman
 
-Sonucu SADECE geçerli bir JSON dizisi olarak döndür.
+Aynı modelde birbirinden farklı kampanyalar varsa ayrı kayıtlar oluşturabilirsin.
 
-Markdown, açıklama veya kod bloğu kullanma.
+Her kampanyanın detail alanı en fazla 120 karakter olsun.
+Headline kısa olsun.
+
+Sonucu SADECE geçerli JSON dizisi olarak döndür.
+Markdown veya açıklama yazma.
 
 Format:
 
@@ -441,27 +420,74 @@ Format:
     "model": "Model",
     "cat": "indirim",
     "headline": "150.000 TL indirim",
-    "detail": "Kampanyanın kısa açıklaması",
+    "detail": "Kısa kampanya açıklaması",
     "until": "31 Ağustos 2026",
     "amount": 150000
   }
 ]
 
-cat sadece:
+cat yalnızca:
 "indirim"
 "kredi"
 "takas"
 
-değerlerinden biri olabilir.
+olabilir.
 
-amount TL cinsinden anlamlı sayısal tutar varsa sayı,
+Özel finansman kampanyalarını "kredi" kategorisine koy.
+
+amount anlamlı TL tutarı varsa sayı,
 yoksa null olsun.
 `;
 
-  const premiumPrompt = `
-Türkiye'de şu anda geçerli olan sıfır kilometre LÜKS / PREMIUM otomobil kampanyalarını kapsamlı şekilde araştır.
+async function fetchCampaignsFromClaude() {
+  const promptA = `
+${COMMON_RULES}
 
-Aşağıdaki markaları MUTLAKA AYRI AYRI kontrol et:
+Şu markaları ayrı ayrı kontrol et:
+
+Volkswagen
+Skoda
+Cupra
+Renault
+Dacia
+Peugeot
+Citroen
+Opel
+Ford
+Fiat
+Toyota
+Honda
+
+Bu markalardan doğrulanabilir kampanya varsa mutlaka listeye ekle.
+`;
+
+  const promptB = `
+${COMMON_RULES}
+
+Şu markaları ayrı ayrı kontrol et:
+
+Hyundai
+Kia
+Nissan
+Chery
+BYD
+MG
+Jaecoo
+Omoda
+Suzuki
+Mazda
+Subaru
+Mitsubishi
+
+Ayrıca Türkiye'de aktif satış yapan ve ilk grupta olmayan diğer yaygın markaları da kontrol et.
+
+Bu markalardan doğrulanabilir kampanya varsa mutlaka listeye ekle.
+`;
+
+  const promptC = `
+${COMMON_RULES}
+
+LÜKS / PREMIUM markaları ayrı ayrı ve özellikle kontrol et:
 
 BMW
 Mercedes-Benz
@@ -473,107 +499,62 @@ Land Rover
 Jaguar
 Alfa Romeo
 
-Bunlara ek olarak Türkiye'de aktif satış yapan başka premium veya lüks otomobil markalarında kampanya varsa onları da kontrol et.
+Ayrıca Türkiye'de aktif satış yapan diğer premium / lüks markaları da kontrol et.
 
-ÇOK ÖNEMLİ KURAL:
-
-Bu markalardan güncel ve doğrulanabilir herhangi bir kampanya bulursan sonuç listesine MUTLAKA ekle.
+Bu markalardan güncel ve doğrulanabilir kampanya varsa MUTLAKA listeye ekle.
 
 Premium markaları sonuç sayısını azaltmak amacıyla eleme.
-
-Bir markada kampanya bulunmadığı sonucuna varmadan önce mümkünse:
-
-1. Türkiye resmi web sitesini
-2. Kampanyalar / fırsatlar sayfasını
-3. Finansman sayfasını
-
-kontrol et.
-
-Öncelikli kaynaklar:
-
-1. Markaların Türkiye resmi web siteleri
-2. Markaların resmi finansman kuruluşları
-3. Resmi distribütör sayfaları
-4. Yetkili satıcı kampanyaları
-
-Kampanya türleri:
-
-- nakit indirim
-- kredi / faiz kampanyası
-- takas desteği
-- özel finansman fırsatı
-
-Eski, süresi bitmiş veya doğrulanamayan kampanyaları ekleme.
-
-Aynı modelde farklı kampanyalar varsa ayrı kayıtlar oluşturabilirsin.
-
-Sonucu SADECE geçerli bir JSON dizisi olarak döndür.
-
-Markdown, açıklama veya kod bloğu kullanma.
-
-Format:
-
-[
-  {
-    "brand": "BMW",
-    "model": "320i Sedan",
-    "cat": "kredi",
-    "headline": "Özel finansman kampanyası",
-    "detail": "Kampanyanın kısa açıklaması",
-    "until": "31 Ağustos 2026",
-    "amount": 1000000
-  }
-]
-
-cat sadece:
-"indirim"
-"kredi"
-"takas"
-
-değerlerinden biri olabilir.
-
-Özel finansman kampanyalarını "kredi" kategorisine koy.
-
-amount TL cinsinden anlamlı sayısal tutar varsa sayı,
-yoksa null olsun.
 `;
 
   const [
-    normalCampaigns,
-    premiumCampaigns,
+    groupA,
+    groupB,
+    groupC,
   ] = await Promise.all([
     fetchCampaignBatch(
-      normalPrompt,
-      8
+      "GRUP_A",
+      promptA,
+      6
     ),
 
     fetchCampaignBatch(
-      premiumPrompt,
-      8
+      "GRUP_B",
+      promptB,
+      6
+    ),
+
+    fetchCampaignBatch(
+      "PREMIUM",
+      promptC,
+      6
     ),
   ]);
 
   const campaigns =
     removeDuplicateCampaigns([
-      ...normalCampaigns,
-      ...premiumCampaigns,
+      ...groupA,
+      ...groupB,
+      ...groupC,
     ]);
 
   if (campaigns.length < 10) {
     throw new Error(
       `Yalnızca ${campaigns.length} kampanya bulundu. ` +
-        "Güvenlik nedeniyle mevcut veri değiştirilmedi."
+      "Güvenlik nedeniyle mevcut veri değiştirilmedi."
     );
   }
 
   console.log(
     "KAMPANYA OZETI:",
     {
-      normal:
-        normalCampaigns.length,
+      grupA:
+        groupA.length,
+
+      grupB:
+        groupB.length,
 
       premium:
-        premiumCampaigns.length,
+        groupC.length,
 
       toplam:
         campaigns.length,
