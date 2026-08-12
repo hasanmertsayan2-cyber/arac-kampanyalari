@@ -1,0 +1,55 @@
+name: Altin Fiyatlarini Guncelle
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Her 15 dakikada bir çalışır.
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-gold:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 20
+
+    steps:
+
+      - name: Repoyu indir
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Playwright kur
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Altin fiyatlarini tara
+        run: |
+          node scripts/update-gold.js
+
+      - name: Degisiklik varsa GitHub'a kaydet
+        run: |
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/gold-latest.json
+
+          if git diff --cached --quiet; then
+
+            echo "Altin fiyatlarinda degisiklik yok."
+
+          else
+
+            git commit -m "data: altin fiyatlarini guncelle"
+            git push
+
+          fi
