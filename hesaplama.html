@@ -2,13 +2,8 @@
 <html lang="tr">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Hesaplama Araçları</title>
 
@@ -57,7 +52,7 @@ body{
 }
 
 .wrap{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   padding:30px 20px 80px;
 }
@@ -73,44 +68,24 @@ body{
 
 .nav{
   padding:10px 16px;
-
   border-radius:8px;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   text-decoration:none;
-
-  color:
-    var(--muted);
-
-  background:
-    var(--surface);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  color:var(--muted);
+  background:var(--surface);
+  font-family:'IBM Plex Mono',monospace;
   font-size:12px;
 }
 
 .nav:hover{
-  border-color:
-    var(--teal);
-
-  color:
-    var(--text);
+  border-color:var(--teal);
+  color:var(--text);
 }
 
 .nav.active{
-  background:
-    var(--teal);
-
+  background:var(--teal);
   color:#071410;
-
-  border-color:
-    var(--teal);
-
+  border-color:var(--teal);
   font-weight:700;
 }
 
@@ -118,10 +93,7 @@ body{
 
 .hero{
   padding:25px;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:14px;
 
   background:
@@ -136,39 +108,25 @@ body{
 
 h1{
   margin:0 0 8px;
-
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:
-    clamp(28px,5vw,42px);
-
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(28px,5vw,42px);
   text-transform:uppercase;
 }
 
 .hero p{
-  color:
-    var(--muted);
-
+  color:var(--muted);
   margin:0;
-
   font-size:13px;
 }
 
-/* TOOL TABS */
+/* TAB */
 
 .tool-tabs{
   display:flex;
-
   gap:8px;
-
   overflow-x:auto;
-
   margin-bottom:20px;
-
   padding-bottom:5px;
-
   scrollbar-width:none;
 }
 
@@ -178,43 +136,22 @@ h1{
 
 .tool-tab{
   flex:0 0 auto;
-
-  border:
-    1px solid var(--border);
-
-  background:
-    var(--surface);
-
-  color:
-    var(--muted);
-
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
   border-radius:8px;
-
-  padding:
-    10px 15px;
-
+  padding:10px 15px;
   cursor:pointer;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:11px;
 }
 
 .tool-tab.active{
-  background:
-    var(--teal);
-
-  border-color:
-    var(--teal);
-
+  background:var(--teal);
+  border-color:var(--teal);
   color:#071410;
-
   font-weight:700;
 }
-
-/* PANEL */
 
 .panel{
   display:none;
@@ -224,19 +161,16 @@ h1{
   display:block;
 }
 
+/* BOX */
+
 .calc-grid{
   display:grid;
-
-  grid-template-columns:
-    minmax(0,1fr)
-    minmax(0,1fr);
-
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:18px;
 }
 
 .box{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
   background:
     linear-gradient(
@@ -246,18 +180,12 @@ h1{
     );
 
   border-radius:13px;
-
   padding:22px;
 }
 
 .box h2{
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  margin:
-    0 0 18px;
-
+  font-family:'Oswald',sans-serif;
+  margin:0 0 18px;
   font-size:23px;
 }
 
@@ -267,147 +195,87 @@ h1{
 
 label{
   display:block;
-
-  color:
-    var(--muted);
-
+  color:var(--muted);
   font-size:11px;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   margin-bottom:6px;
 }
 
 input,
 select{
   width:100%;
-
-  background:
-    #14181e;
-
-  border:
-    1px solid var(--border);
-
+  background:#14181e;
+  border:1px solid var(--border);
   border-radius:8px;
-
-  padding:
-    12px 13px;
-
-  color:
-    var(--text);
-
-  font-size:15px;
+  padding:12px 13px;
+  color:var(--text);
+  font-size:14px;
 }
 
 input:focus,
 select:focus{
   outline:none;
-
-  border-color:
-    var(--teal);
+  border-color:var(--teal);
 }
 
 .quick-row{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:6px;
-
   margin-top:8px;
 }
 
 .quick{
-  border:
-    1px solid var(--border);
-
-  background:
-    var(--surface2);
-
-  color:
-    var(--muted);
-
+  border:1px solid var(--border);
+  background:var(--surface2);
+  color:var(--muted);
   border-radius:7px;
-
-  padding:
-    6px 10px;
-
+  padding:6px 10px;
   cursor:pointer;
-
   font-size:11px;
 }
 
 .quick:hover{
-  border-color:
-    var(--teal);
-
-  color:
-    var(--text);
+  border-color:var(--teal);
+  color:var(--text);
 }
 
 /* RESULT */
 
 .result{
   display:flex;
-
   flex-direction:column;
-
   justify-content:center;
-
   min-height:100%;
 }
 
 .result-title{
-  color:
-    var(--muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;
   font-size:11px;
-
   margin-bottom:5px;
 }
 
 .result-big{
-  font-family:
-    'Oswald',
-    sans-serif;
-
+  font-family:'Oswald',sans-serif;
   font-size:36px;
-
   font-weight:600;
-
-  color:
-    var(--teal);
-
+  color:var(--teal);
   line-height:1.1;
-
   margin-bottom:20px;
 }
 
 .result-row{
   display:flex;
-
   justify-content:space-between;
-
   gap:15px;
-
-  border-top:
-    1px dashed var(--border);
-
-  padding:
-    11px 0;
-
+  border-top:1px dashed var(--border);
+  padding:11px 0;
   font-size:13px;
 }
 
 .result-row span:first-child{
-  color:
-    var(--muted);
+  color:var(--muted);
 }
 
 .result-row strong{
@@ -415,76 +283,202 @@ select:focus{
 }
 
 .positive{
-  color:
-    var(--teal);
+  color:var(--teal);
 }
 
 .negative{
-  color:
-    var(--red);
-}
-
-.amber{
-  color:
-    var(--amber);
+  color:var(--red);
 }
 
 .note{
   margin-top:15px;
-
   padding:12px;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:8px;
-
-  color:
-    var(--muted);
-
+  color:var(--muted);
   font-size:11px;
+  line-height:1.6;
+}
 
-  line-height:1.5;
+/* MAAŞ */
+
+.salary-toolbar{
+  display:grid;
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.salary-mode{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+
+.salary-mode button{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+}
+
+.salary-mode button.active{
+  background:var(--teal);
+  border-color:var(--teal);
+  color:#071410;
+  font-weight:700;
+}
+
+.salary-input-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:16px;
+}
+
+.month-card{
+  background:#151920;
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:10px;
+}
+
+.month-card label{
+  margin-bottom:5px;
+}
+
+.month-card input{
+  padding:9px 10px;
+}
+
+.apply-btn{
+  width:100%;
+  margin-top:6px;
+  border:1px solid var(--teal);
+  background:transparent;
+  color:var(--teal);
+  border-radius:7px;
+  padding:7px;
+  cursor:pointer;
+  font-size:10px;
+}
+
+.apply-btn:hover{
+  background:var(--teal);
+  color:#071410;
+}
+
+.salary-table-wrap{
+  overflow-x:auto;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+
+.salary-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:1200px;
+  font-size:11px;
+}
+
+.salary-table th,
+.salary-table td{
+  padding:9px 8px;
+  border-bottom:1px solid var(--border);
+  border-right:1px solid var(--border);
+  text-align:right;
+  white-space:nowrap;
+}
+
+.salary-table th{
+  background:#161a20;
+  color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+}
+
+.salary-table th:first-child,
+.salary-table td:first-child{
+  text-align:left;
+  position:sticky;
+  left:0;
+  background:#181c22;
+  z-index:1;
+}
+
+.salary-total{
+  font-weight:700;
+  color:var(--teal);
+}
+
+.salary-summary{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+
+.summary-card{
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:14px;
+  background:var(--surface);
+}
+
+.summary-card span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-bottom:5px;
+  font-family:'IBM Plex Mono',monospace;
+}
+
+.summary-card strong{
+  font-family:'Oswald',sans-serif;
+  font-size:22px;
 }
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
   .wrap{
-    padding:
-      18px 14px 50px;
-  }
-
-  .hero{
-    padding:
-      21px 18px;
+    padding:18px 14px 50px;
   }
 
   .calc-grid{
+    grid-template-columns:1fr;
+  }
+
+  .salary-toolbar{
+    grid-template-columns:1fr;
+  }
+
+  .salary-input-grid{
     grid-template-columns:
-      1fr;
+      repeat(2,minmax(0,1fr));
   }
 
-  .box{
-    padding:18px;
+  .salary-summary{
+    grid-template-columns:1fr;
   }
 
-  .result-big{
-    font-size:32px;
-  }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 <div class="wrap">
-
-  <!-- ÜST MENÜ -->
 
   <div class="topnav">
 
@@ -512,13 +506,11 @@ select:focus{
     </h1>
 
     <p>
-      Zam, indirim, yüzde fark ve mevduat getirisi hesaplama araçları.
+      Zam, indirim, yüzde fark, mevduat ve maaş hesaplama araçları.
     </p>
 
   </div>
 
-
-  <!-- ARAÇ SEKMELERİ -->
 
   <div class="tool-tabs">
 
@@ -547,7 +539,14 @@ select:focus{
       class="tool-tab"
       data-panel="mevduat"
     >
-      Mevduat Getirisi
+      Mevduat
+    </button>
+
+    <button
+      class="tool-tab"
+      data-panel="maas"
+    >
+      Maaş Hesaplama
     </button>
 
   </div>
@@ -564,79 +563,29 @@ select:focus{
 
       <div class="box">
 
-        <h2>
-          Zam Hesaplama
-        </h2>
+        <h2>Zam Hesaplama</h2>
 
         <div class="field">
 
-          <label>
-            MEVCUT TUTAR
-          </label>
+          <label>MEVCUT TUTAR</label>
 
           <input
             id="zamTutar"
             type="number"
-            min="0"
-            step="100"
             value="100000"
           >
 
         </div>
 
-
         <div class="field">
 
-          <label>
-            ZAM ORANI (%)
-          </label>
+          <label>ZAM ORANI (%)</label>
 
           <input
             id="zamOran"
             type="number"
-            min="0"
-            step="0.01"
             value="10"
           >
-
-          <div class="quick-row">
-
-            <button
-              class="quick"
-              onclick="setValue('zamOran',5)"
-            >
-              %5
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('zamOran',10)"
-            >
-              %10
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('zamOran',20)"
-            >
-              %20
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('zamOran',25)"
-            >
-              %25
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('zamOran',50)"
-            >
-              %50
-            </button>
-
-          </div>
 
         </div>
 
@@ -656,50 +605,9 @@ select:focus{
           —
         </div>
 
-
         <div class="result-row">
-
-          <span>
-            Eski Tutar
-          </span>
-
-          <strong
-            id="zamEski"
-          >
-            —
-          </strong>
-
-        </div>
-
-
-        <div class="result-row">
-
-          <span>
-            Zam Oranı
-          </span>
-
-          <strong
-            id="zamYuzde"
-          >
-            —
-          </strong>
-
-        </div>
-
-
-        <div class="result-row">
-
-          <span>
-            Zam Tutarı
-          </span>
-
-          <strong
-            class="positive"
-            id="zamMiktar"
-          >
-            —
-          </strong>
-
+          <span>Zam Tutarı</span>
+          <strong id="zamMiktar">—</strong>
         </div>
 
       </div>
@@ -720,81 +628,29 @@ select:focus{
 
       <div class="box">
 
-        <h2>
-          İndirim Hesaplama
-        </h2>
-
+        <h2>İndirim Hesaplama</h2>
 
         <div class="field">
 
-          <label>
-            MEVCUT FİYAT
-          </label>
+          <label>MEVCUT FİYAT</label>
 
           <input
             id="indirimTutar"
             type="number"
-            min="0"
-            step="100"
             value="100000"
           >
 
         </div>
 
-
         <div class="field">
 
-          <label>
-            İNDİRİM ORANI (%)
-          </label>
+          <label>İNDİRİM ORANI (%)</label>
 
           <input
             id="indirimOran"
             type="number"
-            min="0"
-            max="100"
-            step="0.01"
             value="10"
           >
-
-          <div class="quick-row">
-
-            <button
-              class="quick"
-              onclick="setValue('indirimOran',5)"
-            >
-              %5
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('indirimOran',10)"
-            >
-              %10
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('indirimOran',15)"
-            >
-              %15
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('indirimOran',20)"
-            >
-              %20
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('indirimOran',25)"
-            >
-              %25
-            </button>
-
-          </div>
 
         </div>
 
@@ -814,50 +670,9 @@ select:focus{
           —
         </div>
 
-
         <div class="result-row">
-
-          <span>
-            Normal Fiyat
-          </span>
-
-          <strong
-            id="indirimEski"
-          >
-            —
-          </strong>
-
-        </div>
-
-
-        <div class="result-row">
-
-          <span>
-            İndirim Oranı
-          </span>
-
-          <strong
-            id="indirimYuzde"
-          >
-            —
-          </strong>
-
-        </div>
-
-
-        <div class="result-row">
-
-          <span>
-            Kazancınız
-          </span>
-
-          <strong
-            class="positive"
-            id="indirimMiktar"
-          >
-            —
-          </strong>
-
+          <span>İndirim Tutarı</span>
+          <strong id="indirimMiktar">—</strong>
         </div>
 
       </div>
@@ -867,7 +682,7 @@ select:focus{
   </section>
 
 
-  <!-- YÜZDE FARK -->
+  <!-- FARK -->
 
   <section
     id="fark"
@@ -878,39 +693,27 @@ select:focus{
 
       <div class="box">
 
-        <h2>
-          Yüzde Fark Hesaplama
-        </h2>
-
+        <h2>Yüzde Fark</h2>
 
         <div class="field">
 
-          <label>
-            ESKİ TUTAR
-          </label>
+          <label>ESKİ TUTAR</label>
 
           <input
             id="farkEski"
             type="number"
-            min="0"
-            step="100"
             value="100000"
           >
 
         </div>
 
-
         <div class="field">
 
-          <label>
-            YENİ TUTAR
-          </label>
+          <label>YENİ TUTAR</label>
 
           <input
             id="farkYeni"
             type="number"
-            min="0"
-            step="100"
             value="125000"
           >
 
@@ -932,34 +735,9 @@ select:focus{
           —
         </div>
 
-
         <div class="result-row">
-
-          <span>
-            Tutar Farkı
-          </span>
-
-          <strong
-            id="farkMiktar"
-          >
-            —
-          </strong>
-
-        </div>
-
-
-        <div class="result-row">
-
-          <span>
-            Durum
-          </span>
-
-          <strong
-            id="farkDurum"
-          >
-            —
-          </strong>
-
+          <span>Tutar Farkı</span>
+          <strong id="farkMiktar">—</strong>
         </div>
 
       </div>
@@ -980,56 +758,39 @@ select:focus{
 
       <div class="box">
 
-        <h2>
-          Mevduat Getirisi
-        </h2>
-
+        <h2>Mevduat Getirisi</h2>
 
         <div class="field">
 
-          <label>
-            ANA PARA
-          </label>
+          <label>ANA PARA</label>
 
           <input
             id="mevduatTutar"
             type="number"
-            min="0"
-            step="1000"
             value="1000000"
           >
 
         </div>
 
-
         <div class="field">
 
-          <label>
-            YILLIK FAİZ ORANI (%)
-          </label>
+          <label>YILLIK FAİZ (%)</label>
 
           <input
             id="mevduatFaiz"
             type="number"
-            min="0"
-            step="0.01"
             value="45"
           >
 
         </div>
 
-
         <div class="field">
 
-          <label>
-            VADE (GÜN)
-          </label>
+          <label>VADE (GÜN)</label>
 
           <input
             id="mevduatGun"
             type="number"
-            min="1"
-            step="1"
             value="32"
           >
 
@@ -1040,13 +801,6 @@ select:focus{
               onclick="setValue('mevduatGun',1)"
             >
               1 Gün
-            </button>
-
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',7)"
-            >
-              7 Gün
             </button>
 
             <button
@@ -1070,41 +824,19 @@ select:focus{
               92 Gün
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',365)"
-            >
-              365 Gün
-            </button>
-
           </div>
 
         </div>
 
-
         <div class="field">
 
-          <label>
-            STOPAJ ORANI (%)
-          </label>
+          <label>STOPAJ (%)</label>
 
           <input
             id="mevduatStopaj"
             type="number"
-            min="0"
-            max="100"
-            step="0.01"
             value="0"
           >
-
-        </div>
-
-
-        <div class="note">
-
-          Faiz ve stopaj oranlarını
-          kendi banka/ürün koşullarınıza
-          göre değiştirebilirsiniz.
 
         </div>
 
@@ -1124,15 +856,173 @@ select:focus{
           —
         </div>
 
+        <div class="result-row">
+          <span>Brüt Faiz</span>
+          <strong id="mevduatBrut">—</strong>
+        </div>
 
         <div class="result-row">
+          <span>Stopaj</span>
+          <strong id="mevduatVergi">—</strong>
+        </div>
 
-          <span>
-            Ana Para
-          </span>
+        <div class="result-row">
+          <span>Net Kazanç</span>
+          <strong id="mevduatNet">—</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAAŞ -->
+
+  <section
+    id="maas"
+    class="panel"
+  >
+
+    <div class="box">
+
+      <h2>
+        2026 Maaş Hesaplama
+      </h2>
+
+
+      <div class="salary-mode">
+
+        <button
+          id="grossModeBtn"
+          class="active"
+          onclick="setSalaryMode('gross')"
+        >
+          Brütten Nete
+        </button>
+
+        <button
+          id="netModeBtn"
+          onclick="setSalaryMode('net')"
+        >
+          Netten Brüte
+        </button>
+
+      </div>
+
+
+      <div class="salary-toolbar">
+
+        <div class="field">
+
+          <label>YIL</label>
+
+          <select disabled>
+            <option>2026</option>
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>İŞVEREN SGK İNDİRİMİ</label>
+
+          <select
+            id="employerDiscount"
+          >
+
+            <option value="4">
+              4 Puan İndirim
+            </option>
+
+            <option value="5">
+              5 Puan İndirim (İmalat)
+            </option>
+
+            <option value="0">
+              İndirim Yok
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>İŞVEREN MALİYETİ</label>
+
+          <select
+            id="showEmployer"
+          >
+
+            <option value="1">
+              Göster
+            </option>
+
+            <option value="0">
+              Gizle
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="salary-input-grid"
+        id="salaryInputs"
+      ></div>
+
+
+      <div class="salary-table-wrap">
+
+        <table class="salary-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Ay</th>
+              <th>Brüt</th>
+              <th>SGK İşçi</th>
+              <th>İşsizlik İşçi</th>
+              <th>Vergi Matrahı</th>
+              <th>Kümülatif Matrah</th>
+              <th>Gelir Vergisi</th>
+              <th>GV İstisnası</th>
+              <th>Damga Vergisi</th>
+              <th>Net</th>
+              <th class="employer-col">SGK İşveren</th>
+              <th class="employer-col">İşsizlik İşveren</th>
+              <th class="employer-col">Toplam Maliyet</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody
+            id="salaryBody"
+          ></tbody>
+
+        </table>
+
+      </div>
+
+
+      <div class="salary-summary">
+
+        <div class="summary-card">
+
+          <span>YILLIK BRÜT</span>
 
           <strong
-            id="mevduatAna"
+            id="yearGross"
           >
             —
           </strong>
@@ -1140,14 +1030,12 @@ select:focus{
         </div>
 
 
-        <div class="result-row">
+        <div class="summary-card">
 
-          <span>
-            Brüt Faiz
-          </span>
+          <span>YILLIK NET</span>
 
           <strong
-            id="mevduatBrut"
+            id="yearNet"
           >
             —
           </strong>
@@ -1155,51 +1043,27 @@ select:focus{
         </div>
 
 
-        <div class="result-row">
+        <div class="summary-card employer-col">
 
-          <span>
-            Stopaj
-          </span>
+          <span>YILLIK İŞVEREN MALİYETİ</span>
 
           <strong
-            class="negative"
-            id="mevduatVergi"
+            id="yearEmployer"
           >
             —
           </strong>
 
         </div>
 
-
-        <div class="result-row">
-
-          <span>
-            Net Kazanç
-          </span>
-
-          <strong
-            class="positive"
-            id="mevduatNet"
-          >
-            —
-          </strong>
-
-        </div>
+      </div>
 
 
-        <div class="result-row">
+      <div class="note">
 
-          <span>
-            Günlük Ortalama Net
-          </span>
-
-          <strong
-            id="mevduatGunluk"
-          >
-            —
-          </strong>
-
-        </div>
+        Bu hesaplama 2026 yılı standart 4/a özel sektör ücret bordrosu
+        mantığına göre yaklaşık sonuç üretir. BES, özel sigorta,
+        engellilik indirimi, prim/ikramiye, Ar-Ge/teknopark,
+        özel teşvikler veya farklı bordro uygulamaları sonucu değiştirebilir.
 
       </div>
 
@@ -1212,18 +1076,19 @@ select:focus{
 
 <script>
 
+/* GENEL */
 
-function number(id){
+function num(id){
 
-  const value =
+  const n =
     Number(
       document
         .getElementById(id)
         .value
     );
 
-  return Number.isFinite(value)
-    ? value
+  return Number.isFinite(n)
+    ? n
     : 0;
 
 }
@@ -1235,6 +1100,7 @@ function money(value){
     .NumberFormat(
       "tr-TR",
       {
+        minimumFractionDigits:2,
         maximumFractionDigits:2
       }
     )
@@ -1259,60 +1125,32 @@ function percent(value){
 }
 
 
-function setValue(
-  id,
-  value
-){
+function setValue(id,value){
 
   document
     .getElementById(id)
     .value =
       value;
 
-  calculateAll();
+  calculateSimple();
 
 }
 
 
-/* ZAM */
+/* BASİT ARAÇLAR */
 
-function calculateZam(){
+function calculateSimple(){
 
-  const tutar =
-    number(
-      "zamTutar"
-    );
+  const zamTutar =
+    num("zamTutar");
 
-  const oran =
-    number(
-      "zamOran"
-    );
+  const zamOran =
+    num("zamOran");
 
   const zam =
-    tutar *
-    oran /
+    zamTutar *
+    zamOran /
     100;
-
-  const yeni =
-    tutar +
-    zam;
-
-
-  document
-    .getElementById(
-      "zamEski"
-    )
-    .textContent =
-      money(tutar);
-
-
-  document
-    .getElementById(
-      "zamYuzde"
-    )
-    .textContent =
-      percent(oran);
-
 
   document
     .getElementById(
@@ -1321,68 +1159,27 @@ function calculateZam(){
     .textContent =
       money(zam);
 
-
   document
     .getElementById(
       "zamYeni"
     )
     .textContent =
-      money(yeni);
-
-}
-
-
-/* İNDİRİM */
-
-function calculateIndirim(){
-
-  const tutar =
-    number(
-      "indirimTutar"
-    );
-
-  let oran =
-    number(
-      "indirimOran"
-    );
+      money(
+        zamTutar +
+        zam
+      );
 
 
-  oran =
-    Math.min(
-      Math.max(
-        oran,
-        0
-      ),
-      100
-    );
+  const indirimTutar =
+    num("indirimTutar");
 
+  const indirimOran =
+    num("indirimOran");
 
   const indirim =
-    tutar *
-    oran /
+    indirimTutar *
+    indirimOran /
     100;
-
-
-  const yeni =
-    tutar -
-    indirim;
-
-
-  document
-    .getElementById(
-      "indirimEski"
-    )
-    .textContent =
-      money(tutar);
-
-
-  document
-    .getElementById(
-      "indirimYuzde"
-    )
-    .textContent =
-      percent(oran);
-
 
   document
     .getElementById(
@@ -1391,230 +1188,85 @@ function calculateIndirim(){
     .textContent =
       money(indirim);
 
-
   document
     .getElementById(
       "indirimYeni"
     )
     .textContent =
-      money(yeni);
+      money(
+        indirimTutar -
+        indirim
+      );
 
-}
-
-
-/* YÜZDE FARK */
-
-function calculateDifference(){
 
   const eski =
-    number(
-      "farkEski"
-    );
+    num("farkEski");
 
   const yeni =
-    number(
-      "farkYeni"
-    );
-
+    num("farkYeni");
 
   const fark =
     yeni -
     eski;
 
-
-  let oran =
-    0;
-
-
-  if(
-    eski !== 0
-  ){
-
-    oran =
-      fark /
-      eski *
-      100;
-
-  }
-
-
-  const result =
-    document
-      .getElementById(
-        "farkYuzde"
-      );
-
-
-  const amount =
-    document
-      .getElementById(
-        "farkMiktar"
-      );
-
-
-  const durum =
-    document
-      .getElementById(
-        "farkDurum"
-      );
-
-
-  result.textContent =
-    (
-      oran >= 0
-        ? "+"
-        : ""
-    ) +
-    percent(oran);
-
-
-  amount.textContent =
-    (
-      fark >= 0
-        ? "+"
-        : ""
-    ) +
-    money(fark);
-
-
-  result.classList.remove(
-    "positive",
-    "negative"
-  );
-
-
-  amount.classList.remove(
-    "positive",
-    "negative"
-  );
-
-
-  durum.classList.remove(
-    "positive",
-    "negative"
-  );
-
-
-  if(
-    fark > 0
-  ){
-
-    result.classList.add(
-      "negative"
-    );
-
-    amount.classList.add(
-      "negative"
-    );
-
-    durum.classList.add(
-      "negative"
-    );
-
-    durum.textContent =
-      "Artış";
-
-  }else if(
-    fark < 0
-  ){
-
-    result.classList.add(
-      "positive"
-    );
-
-    amount.classList.add(
-      "positive"
-    );
-
-    durum.classList.add(
-      "positive"
-    );
-
-    durum.textContent =
-      "Düşüş";
-
-  }else{
-
-    durum.textContent =
-      "Değişiklik Yok";
-
-  }
-
-}
-
-
-/* MEVDUAT */
-
-function calculateDeposit(){
-
-  const ana =
-    number(
-      "mevduatTutar"
-    );
-
-
-  const faiz =
-    number(
-      "mevduatFaiz"
-    );
-
-
-  const gun =
-    Math.max(
-      number(
-        "mevduatGun"
-      ),
-      1
-    );
-
-
-  const stopaj =
-    number(
-      "mevduatStopaj"
-    );
-
-
-  const brut =
-    ana *
-    (
-      faiz /
-      100
-    ) *
-    (
-      gun /
-      365
-    );
-
-
-  const vergi =
-    brut *
-    (
-      stopaj /
-      100
-    );
-
-
-  const net =
-    brut -
-    vergi;
-
-
-  const toplam =
-    ana +
-    net;
-
-
-  const gunluk =
-    net /
-    gun;
-
+  const oran =
+    eski
+      ? fark / eski * 100
+      : 0;
 
   document
     .getElementById(
-      "mevduatAna"
+      "farkYuzde"
     )
     .textContent =
-      money(ana);
+      (
+        oran >= 0
+          ? "+"
+          : ""
+      ) +
+      percent(oran);
+
+  document
+    .getElementById(
+      "farkMiktar"
+    )
+    .textContent =
+      money(fark);
+
+
+  const ana =
+    num("mevduatTutar");
+
+  const faiz =
+    num("mevduatFaiz");
+
+  const gun =
+    Math.max(
+      num("mevduatGun"),
+      1
+    );
+
+  const stopaj =
+    num("mevduatStopaj");
+
+
+  const brutFaiz =
+    ana *
+    faiz /
+    100 *
+    gun /
+    365;
+
+
+  const vergi =
+    brutFaiz *
+    stopaj /
+    100;
+
+
+  const netFaiz =
+    brutFaiz -
+    vergi;
 
 
   document
@@ -1622,8 +1274,7 @@ function calculateDeposit(){
       "mevduatBrut"
     )
     .textContent =
-      money(brut);
-
+      money(brutFaiz);
 
   document
     .getElementById(
@@ -1632,49 +1283,1058 @@ function calculateDeposit(){
     .textContent =
       money(vergi);
 
-
   document
     .getElementById(
       "mevduatNet"
     )
     .textContent =
-      money(net);
-
+      money(netFaiz);
 
   document
     .getElementById(
       "mevduatToplam"
     )
     .textContent =
-      money(toplam);
+      money(
+        ana +
+        netFaiz
+      );
+
+}
+
+
+/* 2026 MAAŞ PARAMETRELERİ */
+
+const SALARY_2026 = {
+
+  minimumGross:
+    33030,
+
+  sgkCeiling:
+    297270,
+
+  employeeSgk:
+    0.14,
+
+  employeeUnemployment:
+    0.01,
+
+  employerSgkBase:
+    0.2175,
+
+  employerUnemployment:
+    0.02,
+
+  stampTax:
+    0.00759
+
+};
+
+
+const MONTHS = [
+
+  "Ocak",
+  "Şubat",
+  "Mart",
+  "Nisan",
+  "Mayıs",
+  "Haziran",
+  "Temmuz",
+  "Ağustos",
+  "Eylül",
+  "Ekim",
+  "Kasım",
+  "Aralık"
+
+];
+
+
+let salaryMode =
+  "gross";
+
+
+let salaryValues =
+  new Array(12)
+    .fill(100000);
+
+
+/*
+ * 2026 ÜCRET GELİR VERGİSİ
+ */
+
+function annualIncomeTax(base){
+
+  if(base <= 0){
+    return 0;
+  }
+
+
+  if(base <= 190000){
+
+    return base *
+      0.15;
+
+  }
+
+
+  if(base <= 400000){
+
+    return 28500 +
+      (
+        base -
+        190000
+      ) *
+      0.20;
+
+  }
+
+
+  if(base <= 1500000){
+
+    return 70500 +
+      (
+        base -
+        400000
+      ) *
+      0.27;
+
+  }
+
+
+  if(base <= 5300000){
+
+    return 367500 +
+      (
+        base -
+        1500000
+      ) *
+      0.35;
+
+  }
+
+
+  return 1697500 +
+    (
+      base -
+      5300000
+    ) *
+    0.40;
+
+}
+
+
+/*
+ * BİR AY BRÜTTEN NETE
+ */
+
+function calculateGrossMonth(
+  gross,
+  previousCumBase,
+  previousMinCumBase,
+  employerDiscount
+){
+
+  gross =
+    Math.max(
+      Number(gross) || 0,
+      0
+    );
+
+
+  const sgkBase =
+    Math.min(
+      gross,
+      SALARY_2026.sgkCeiling
+    );
+
+
+  const employeeSgk =
+    sgkBase *
+    SALARY_2026.employeeSgk;
+
+
+  const employeeUnemployment =
+    sgkBase *
+    SALARY_2026.employeeUnemployment;
+
+
+  const taxBase =
+    Math.max(
+      gross -
+      employeeSgk -
+      employeeUnemployment,
+      0
+    );
+
+
+  const cumulativeBase =
+    previousCumBase +
+    taxBase;
+
+
+  const grossIncomeTax =
+    annualIncomeTax(
+      cumulativeBase
+    ) -
+    annualIncomeTax(
+      previousCumBase
+    );
+
+
+  /*
+   * ASGARİ ÜCRET GV İSTİSNASI
+   */
+
+  const minSgk =
+    SALARY_2026.minimumGross *
+    SALARY_2026.employeeSgk;
+
+
+  const minUnemployment =
+    SALARY_2026.minimumGross *
+    SALARY_2026.employeeUnemployment;
+
+
+  const minimumTaxBase =
+    SALARY_2026.minimumGross -
+    minSgk -
+    minUnemployment;
+
+
+  const newMinimumCumBase =
+    previousMinCumBase +
+    minimumTaxBase;
+
+
+  const minimumIncomeTax =
+    annualIncomeTax(
+      newMinimumCumBase
+    ) -
+    annualIncomeTax(
+      previousMinCumBase
+    );
+
+
+  const incomeTaxExemption =
+    Math.min(
+      grossIncomeTax,
+      minimumIncomeTax
+    );
+
+
+  const incomeTax =
+    Math.max(
+      grossIncomeTax -
+      incomeTaxExemption,
+      0
+    );
+
+
+  /*
+   * DAMGA VERGİSİ
+   *
+   * Brüt asgari ücret kısmı istisna.
+   */
+
+  const stampTax =
+    Math.max(
+      gross -
+      SALARY_2026.minimumGross,
+      0
+    ) *
+    SALARY_2026.stampTax;
+
+
+  const net =
+    gross -
+    employeeSgk -
+    employeeUnemployment -
+    incomeTax -
+    stampTax;
+
+
+  /*
+   * İŞVEREN
+   */
+
+  const discount =
+    Number(
+      employerDiscount || 0
+    ) /
+    100;
+
+
+  const employerSgkRate =
+    Math.max(
+      SALARY_2026.employerSgkBase -
+      discount,
+      0
+    );
+
+
+  const employerSgk =
+    sgkBase *
+    employerSgkRate;
+
+
+  const employerUnemployment =
+    sgkBase *
+    SALARY_2026.employerUnemployment;
+
+
+  const employerCost =
+    gross +
+    employerSgk +
+    employerUnemployment;
+
+
+  return {
+
+    gross,
+
+    employeeSgk,
+
+    employeeUnemployment,
+
+    taxBase,
+
+    cumulativeBase,
+
+    grossIncomeTax,
+
+    incomeTaxExemption,
+
+    incomeTax,
+
+    stampTax,
+
+    net,
+
+    employerSgk,
+
+    employerUnemployment,
+
+    employerCost,
+
+    minimumCumBase:
+      newMinimumCumBase
+
+  };
+
+}
+
+
+/*
+ * NETTEN BRÜTE
+ */
+
+function solveGrossFromNet(
+  wantedNet,
+  previousCumBase,
+  previousMinCumBase,
+  employerDiscount
+){
+
+  wantedNet =
+    Math.max(
+      Number(wantedNet) || 0,
+      0
+    );
+
+
+  if(wantedNet === 0){
+
+    return calculateGrossMonth(
+      0,
+      previousCumBase,
+      previousMinCumBase,
+      employerDiscount
+    );
+
+  }
+
+
+  let low =
+    wantedNet;
+
+  let high =
+    Math.max(
+      wantedNet * 2,
+      SALARY_2026.minimumGross
+    );
+
+
+  /*
+   * ÜST SINIRI BUL
+   */
+
+  for(
+    let i = 0;
+    i < 30;
+    i++
+  ){
+
+    const test =
+      calculateGrossMonth(
+        high,
+        previousCumBase,
+        previousMinCumBase,
+        employerDiscount
+      );
+
+
+    if(
+      test.net >=
+      wantedNet
+    ){
+      break;
+    }
+
+
+    high *= 1.5;
+
+  }
+
+
+  /*
+   * BINARY SEARCH
+   */
+
+  for(
+    let i = 0;
+    i < 70;
+    i++
+  ){
+
+    const middle =
+      (
+        low +
+        high
+      ) /
+      2;
+
+
+    const result =
+      calculateGrossMonth(
+        middle,
+        previousCumBase,
+        previousMinCumBase,
+        employerDiscount
+      );
+
+
+    if(
+      result.net <
+      wantedNet
+    ){
+
+      low =
+        middle;
+
+    }else{
+
+      high =
+        middle;
+
+    }
+
+  }
+
+
+  return calculateGrossMonth(
+    high,
+    previousCumBase,
+    previousMinCumBase,
+    employerDiscount
+  );
+
+}
+
+
+/*
+ * MAAŞ INPUTLARI
+ */
+
+function renderSalaryInputs(){
+
+  const container =
+    document.getElementById(
+      "salaryInputs"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  MONTHS.forEach(
+    (
+      month,
+      index
+    )=>{
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.className =
+        "month-card";
+
+
+      div.innerHTML = `
+
+        <label>
+          ${month}
+          ${
+            salaryMode ===
+            "gross"
+              ? "BRÜT"
+              : "NET"
+          }
+        </label>
+
+        <input
+          type="number"
+          class="salary-month-input"
+          data-index="${index}"
+          value="${salaryValues[index]}"
+          min="0"
+        >
+
+        <button
+          type="button"
+          class="apply-btn"
+          data-apply="${index}"
+        >
+          Bu Aydan İtibaren Uygula
+        </button>
+
+      `;
+
+
+      container
+        .appendChild(div);
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(
+      ".salary-month-input"
+    )
+    .forEach(
+      input=>{
+
+        input.addEventListener(
+          "input",
+          event=>{
+
+            const index =
+              Number(
+                event.target.dataset.index
+              );
+
+
+            salaryValues[index] =
+              Number(
+                event.target.value
+              ) ||
+              0;
+
+
+            calculateSalary();
+
+          }
+        );
+
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      "[data-apply]"
+    )
+    .forEach(
+      button=>{
+
+        button.addEventListener(
+          "click",
+          event=>{
+
+            const index =
+              Number(
+                event.target.dataset.apply
+              );
+
+
+            const value =
+              salaryValues[index];
+
+
+            for(
+              let i = index;
+              i < 12;
+              i++
+            ){
+
+              salaryValues[i] =
+                value;
+
+            }
+
+
+            renderSalaryInputs();
+
+            calculateSalary();
+
+          }
+        );
+
+      }
+    );
+
+}
+
+
+/*
+ * MOD DEĞİŞTİR
+ */
+
+function setSalaryMode(mode){
+
+  if(
+    mode ===
+    salaryMode
+  ){
+    return;
+  }
+
+
+  /*
+   * Mevcut sonuçlardan
+   * karşı moda geçir.
+   */
+
+  const currentRows =
+    calculateSalary(
+      true
+    );
+
+
+  if(
+    currentRows &&
+    currentRows.length
+  ){
+
+    salaryValues =
+      currentRows.map(
+        row=>
+          mode ===
+          "gross"
+            ? Math.round(
+                row.gross *
+                100
+              ) /
+              100
+            : Math.round(
+                row.net *
+                100
+              ) /
+              100
+      );
+
+  }
+
+
+  salaryMode =
+    mode;
 
 
   document
     .getElementById(
-      "mevduatGunluk"
+      "grossModeBtn"
+    )
+    .classList
+    .toggle(
+      "active",
+      mode ===
+      "gross"
+    );
+
+
+  document
+    .getElementById(
+      "netModeBtn"
+    )
+    .classList
+    .toggle(
+      "active",
+      mode ===
+      "net"
+    );
+
+
+  renderSalaryInputs();
+
+  calculateSalary();
+
+}
+
+
+/*
+ * YILLIK MAAŞ HESABI
+ */
+
+function calculateSalary(
+  returnOnly = false
+){
+
+  const employerDiscount =
+    Number(
+      document
+        .getElementById(
+          "employerDiscount"
+        )
+        .value
+    );
+
+
+  let previousCumBase =
+    0;
+
+
+  let previousMinCumBase =
+    0;
+
+
+  const rows =
+    [];
+
+
+  for(
+    let i = 0;
+    i < 12;
+    i++
+  ){
+
+    let result;
+
+
+    if(
+      salaryMode ===
+      "gross"
+    ){
+
+      result =
+        calculateGrossMonth(
+          salaryValues[i],
+          previousCumBase,
+          previousMinCumBase,
+          employerDiscount
+        );
+
+    }else{
+
+      result =
+        solveGrossFromNet(
+          salaryValues[i],
+          previousCumBase,
+          previousMinCumBase,
+          employerDiscount
+        );
+
+    }
+
+
+    rows.push(result);
+
+
+    previousCumBase =
+      result.cumulativeBase;
+
+
+    previousMinCumBase =
+      result.minimumCumBase;
+
+  }
+
+
+  if(returnOnly){
+    return rows;
+  }
+
+
+  renderSalaryTable(
+    rows
+  );
+
+
+  return rows;
+
+}
+
+
+/*
+ * TABLO
+ */
+
+function renderSalaryTable(rows){
+
+  const body =
+    document.getElementById(
+      "salaryBody"
+    );
+
+
+  body.innerHTML =
+    "";
+
+
+  let totalGross = 0;
+  let totalSgk = 0;
+  let totalUnemp = 0;
+  let totalTaxBase = 0;
+  let totalTax = 0;
+  let totalTaxExemption = 0;
+  let totalStamp = 0;
+  let totalNet = 0;
+  let totalEmployerSgk = 0;
+  let totalEmployerUnemp = 0;
+  let totalEmployer = 0;
+
+
+  rows.forEach(
+    (
+      row,
+      index
+    )=>{
+
+      totalGross +=
+        row.gross;
+
+      totalSgk +=
+        row.employeeSgk;
+
+      totalUnemp +=
+        row.employeeUnemployment;
+
+      totalTaxBase +=
+        row.taxBase;
+
+      totalTax +=
+        row.incomeTax;
+
+      totalTaxExemption +=
+        row.incomeTaxExemption;
+
+      totalStamp +=
+        row.stampTax;
+
+      totalNet +=
+        row.net;
+
+      totalEmployerSgk +=
+        row.employerSgk;
+
+      totalEmployerUnemp +=
+        row.employerUnemployment;
+
+      totalEmployer +=
+        row.employerCost;
+
+
+      const tr =
+        document.createElement(
+          "tr"
+        );
+
+
+      tr.innerHTML = `
+
+        <td>
+          ${MONTHS[index]}
+        </td>
+
+        <td>
+          ${money(row.gross)}
+        </td>
+
+        <td>
+          ${money(row.employeeSgk)}
+        </td>
+
+        <td>
+          ${money(row.employeeUnemployment)}
+        </td>
+
+        <td>
+          ${money(row.taxBase)}
+        </td>
+
+        <td>
+          ${money(row.cumulativeBase)}
+        </td>
+
+        <td>
+          ${money(row.incomeTax)}
+        </td>
+
+        <td>
+          ${money(row.incomeTaxExemption)}
+        </td>
+
+        <td>
+          ${money(row.stampTax)}
+        </td>
+
+        <td class="positive">
+          ${money(row.net)}
+        </td>
+
+        <td class="employer-col">
+          ${money(row.employerSgk)}
+        </td>
+
+        <td class="employer-col">
+          ${money(row.employerUnemployment)}
+        </td>
+
+        <td class="employer-col">
+          ${money(row.employerCost)}
+        </td>
+
+      `;
+
+
+      body.appendChild(
+        tr
+      );
+
+    }
+  );
+
+
+  const totalRow =
+    document.createElement(
+      "tr"
+    );
+
+
+  totalRow.className =
+    "salary-total";
+
+
+  totalRow.innerHTML = `
+
+    <td>TOPLAM</td>
+
+    <td>${money(totalGross)}</td>
+
+    <td>${money(totalSgk)}</td>
+
+    <td>${money(totalUnemp)}</td>
+
+    <td>${money(totalTaxBase)}</td>
+
+    <td>—</td>
+
+    <td>${money(totalTax)}</td>
+
+    <td>${money(totalTaxExemption)}</td>
+
+    <td>${money(totalStamp)}</td>
+
+    <td>${money(totalNet)}</td>
+
+    <td class="employer-col">
+      ${money(totalEmployerSgk)}
+    </td>
+
+    <td class="employer-col">
+      ${money(totalEmployerUnemp)}
+    </td>
+
+    <td class="employer-col">
+      ${money(totalEmployer)}
+    </td>
+
+  `;
+
+
+  body.appendChild(
+    totalRow
+  );
+
+
+  document
+    .getElementById(
+      "yearGross"
     )
     .textContent =
-      money(gunluk);
+      money(totalGross);
+
+
+  document
+    .getElementById(
+      "yearNet"
+    )
+    .textContent =
+      money(totalNet);
+
+
+  document
+    .getElementById(
+      "yearEmployer"
+    )
+    .textContent =
+      money(totalEmployer);
+
+
+  updateEmployerVisibility();
 
 }
 
 
-/* TÜMÜ */
+/*
+ * İŞVEREN KOLONLARI
+ */
 
-function calculateAll(){
+function updateEmployerVisibility(){
 
-  calculateZam();
+  const visible =
+    document
+      .getElementById(
+        "showEmployer"
+      )
+      .value ===
+      "1";
 
-  calculateIndirim();
 
-  calculateDifference();
+  document
+    .querySelectorAll(
+      ".employer-col"
+    )
+    .forEach(
+      el=>{
 
-  calculateDeposit();
+        el.style.display =
+          visible
+            ? ""
+            : "none";
+
+      }
+    );
 
 }
 
 
-/* SEKME */
+/*
+ * ANA TABLAR
+ */
 
 document
   .querySelectorAll(
@@ -1734,27 +2394,61 @@ document
   );
 
 
-/* INPUT */
+/*
+ * EVENTLER
+ */
 
 document
   .querySelectorAll(
-    "input"
+    "#zam input," +
+    "#indirim input," +
+    "#fark input," +
+    "#mevduat input"
   )
   .forEach(
     input=>{
 
       input.addEventListener(
         "input",
-        calculateAll
+        calculateSimple
       );
 
     }
   );
 
 
-calculateAll();
+document
+  .getElementById(
+    "employerDiscount"
+  )
+  .addEventListener(
+    "change",
+    calculateSalary
+  );
+
+
+document
+  .getElementById(
+    "showEmployer"
+  )
+  .addEventListener(
+    "change",
+    updateEmployerVisibility
+  );
+
+
+/*
+ * BAŞLAT
+ */
+
+calculateSimple();
+
+renderSalaryInputs();
+
+calculateSalary();
 
 </script>
 
 </body>
+
 </html>
