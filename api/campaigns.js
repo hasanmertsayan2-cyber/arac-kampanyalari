@@ -244,7 +244,7 @@ yoksa null olsun.
       },
       body: JSON.stringify({
         model: "claude-sonnet-5",
-        max_tokens: 4000,
+        max_tokens: 8000,
 
         thinking: {
           type: "disabled",
