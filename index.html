@@ -39,6 +39,7 @@
   --bg:#12151a;
   --surface:#1b1f26;
   --surface-2:#232833;
+  --surface-3:#161a20;
   --border:#2a303c;
 
   --text:#edeff2;
@@ -60,12 +61,12 @@ body{
   background:
     radial-gradient(
       ellipse at 20% -10%,
-      rgba(0,212,184,0.08),
+      rgba(0,212,184,.08),
       transparent 45%
     ),
     radial-gradient(
       ellipse at 90% 0%,
-      rgba(255,176,32,0.06),
+      rgba(255,176,32,.06),
       transparent 40%
     ),
     var(--bg);
@@ -90,9 +91,7 @@ body{
 /* HERO */
 
 .hero{
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:14px;
 
   background:
@@ -103,74 +102,77 @@ body{
     );
 
   padding:32px 28px;
-
   position:relative;
   overflow:hidden;
-
-  margin-bottom:28px;
+  margin-bottom:22px;
 }
 
 .eyebrow{
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono', monospace;
   font-size:11px;
-
   letter-spacing:.18em;
-
   color:var(--teal);
-
   text-transform:uppercase;
-
-  margin:
-    0 0 10px;
+  margin:0 0 10px;
 }
 
 h1{
-  font-family:
-    'Oswald',
-    sans-serif;
-
+  font-family:'Oswald', sans-serif;
   font-weight:700;
-
-  font-size:
-    clamp(
-      28px,
-      5vw,
-      44px
-    );
-
+  font-size:clamp(28px,5vw,44px);
   text-transform:uppercase;
-
-  margin:
-    0 0 8px;
-
+  margin:0 0 8px;
   line-height:1.05;
 }
 
 .hero p.sub{
-  color:
-    var(--text-muted);
-
+  color:var(--text-muted);
   max-width:560px;
-
-  margin:
-    0 0 20px;
-
+  margin:0 0 20px;
   font-size:14.5px;
-
   line-height:1.55;
 }
 
 .status-row{
   display:flex;
-
   align-items:center;
-
   gap:12px;
-
   flex-wrap:wrap;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--text-muted);
+}
+
+
+/* ANA SEKME */
+
+.main-tabs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:22px;
+
+  border-bottom:
+    1px solid var(--border);
+
+  padding-bottom:10px;
+}
+
+.main-tab{
+  position:relative;
+
+  border:1px solid var(--border);
+
+  background:
+    var(--surface);
+
+  color:
+    var(--text-muted);
+
+  padding:
+    10px 17px;
+
+  border-radius:9px;
 
   font-family:
     'IBM Plex Mono',
@@ -178,26 +180,55 @@ h1{
 
   font-size:12px;
 
+  cursor:pointer;
+
+  transition:
+    border-color .15s,
+    color .15s,
+    background .15s;
+}
+
+.main-tab.active{
+  color:#0a1512;
+  background:var(--teal);
+  border-color:var(--teal);
+  font-weight:700;
+}
+
+.main-tab.disabled{
+  cursor:not-allowed;
+  opacity:.6;
+}
+
+.soon{
+  margin-left:7px;
+
+  font-size:9px;
+
+  background:
+    var(--surface-2);
+
+  padding:
+    2px 6px;
+
+  border-radius:999px;
+
   color:
-    var(--text-muted);
+    var(--amber);
 }
 
 
-/* FILTERS */
+/* FILTER */
 
 .filters{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:10px;
-
   margin-bottom:16px;
 }
 
 .search{
-  flex:
-    1 1 220px;
+  flex:1 1 220px;
 
   background:
     var(--surface);
@@ -205,10 +236,10 @@ h1{
   border:
     1px solid var(--border);
 
-  border-radius:8px;
+  border-radius:9px;
 
   padding:
-    11px 14px;
+    12px 14px;
 
   color:
     var(--text);
@@ -218,26 +249,20 @@ h1{
 
 .search:focus{
   outline:none;
-
-  border-color:
-    var(--teal);
+  border-color:var(--teal);
 }
 
 .search::placeholder{
-  color:
-    var(--text-muted);
+  color:var(--text-muted);
 }
 
 
-/* MARKA BUTONLARI */
+/* MARKALAR */
 
 .chip-row{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:8px;
-
   margin-bottom:14px;
 }
 
@@ -263,40 +288,29 @@ h1{
     var(--text-muted);
 
   cursor:pointer;
-
   white-space:nowrap;
+  flex:0 0 auto;
 }
 
 .chip:hover{
-  border-color:
-    var(--teal);
-
-  color:
-    var(--text);
+  border-color:var(--teal);
+  color:var(--text);
 }
 
 .chip.active{
-  background:
-    var(--teal);
-
+  background:var(--teal);
   color:#0a1512;
-
-  border-color:
-    var(--teal);
-
+  border-color:var(--teal);
   font-weight:600;
 }
 
 
-/* KATEGORİ BUTONLARI */
+/* KATEGORİLER */
 
 .cat-row{
   display:flex;
-
   gap:8px;
-
   margin-bottom:22px;
-
   flex-wrap:wrap;
 }
 
@@ -320,6 +334,11 @@ h1{
   cursor:pointer;
 }
 
+.cat-btn:hover{
+  color:var(--text);
+  border-color:#4c5668;
+}
+
 .cat-btn.active{
   background:
     var(--surface-2);
@@ -331,20 +350,11 @@ h1{
     var(--amber);
 }
 
-
-/* SAYI */
-
 .count-line{
   font-size:12.5px;
-
-  color:
-    var(--text-muted);
-
+  color:var(--text-muted);
   margin-bottom:14px;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
+  font-family:'IBM Plex Mono', monospace;
 }
 
 
@@ -356,10 +366,10 @@ h1{
   grid-template-columns:
     repeat(
       auto-fill,
-      minmax(260px,1fr)
+      minmax(290px,1fr)
     );
 
-  gap:14px;
+  gap:15px;
 }
 
 
@@ -370,14 +380,23 @@ h1{
     1px solid var(--border);
 
   background:
-    var(--surface);
+    linear-gradient(
+      145deg,
+      var(--surface) 0%,
+      #191d24 100%
+    );
 
-  border-radius:12px;
+  border-radius:13px;
 
   padding:
-    18px 18px 16px;
+    18px;
 
   position:relative;
+
+  display:flex;
+  flex-direction:column;
+
+  min-height:265px;
 
   transition:
     transform .15s,
@@ -390,13 +409,13 @@ h1{
     translateY(-3px);
 
   border-color:
-    var(--teal);
+    var(--cat-color,var(--teal));
 }
 
 .card.clickable:hover{
   box-shadow:
-    0 8px 28px
-    rgba(0,0,0,.20);
+    0 12px 35px
+    rgba(0,0,0,.25);
 }
 
 .card::before{
@@ -410,14 +429,94 @@ h1{
 
   height:3px;
 
+  border-radius:
+    0 0 4px 4px;
+
   background:
     var(
       --cat-color,
       var(--teal)
     );
-
-  opacity:.8;
 }
+
+
+/* MARKA + LOGO */
+
+.card-brand-row{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  min-width:0;
+}
+
+.brand-logo{
+  width:34px;
+  height:34px;
+
+  flex:
+    0 0 34px;
+
+  border-radius:8px;
+
+  background:#fff;
+
+  padding:5px;
+
+  object-fit:contain;
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+.logo-fallback{
+  width:34px;
+  height:34px;
+
+  border-radius:8px;
+
+  background:
+    var(--surface-2);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  color:
+    var(--text);
+}
+
+.brand{
+  font-family:'Oswald', sans-serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+
+.model{
+  font-family:'Oswald', sans-serif;
+  font-size:21px;
+  font-weight:600;
+  margin-top:2px;
+  line-height:1.18;
+}
+
+
+/* KART ÜST */
 
 .card-top{
   display:flex;
@@ -428,50 +527,19 @@ h1{
   align-items:
     flex-start;
 
-  margin-bottom:10px;
+  margin-bottom:15px;
 
   gap:12px;
 }
 
-.brand{
-  font-family:
-    'Oswald',
-    sans-serif;
 
-  font-size:12px;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:
-    var(--text-muted);
-}
-
-.model{
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:19px;
-
-  font-weight:600;
-
-  margin-top:2px;
-}
-
-
-/* ROZETLER */
+/* BADGE */
 
 .status-badges{
   display:flex;
-
-  gap:6px;
-
+  gap:5px;
   flex-wrap:wrap;
-
-  justify-content:
-    flex-end;
+  justify-content:flex-end;
 }
 
 .badge{
@@ -479,10 +547,10 @@ h1{
     'IBM Plex Mono',
     monospace;
 
-  font-size:10.5px;
+  font-size:9.5px;
 
   padding:
-    3px 9px;
+    4px 8px;
 
   border-radius:6px;
 
@@ -493,11 +561,8 @@ h1{
     );
 
   color:#0a1512;
-
   font-weight:700;
-
   text-transform:uppercase;
-
   white-space:nowrap;
 }
 
@@ -507,21 +572,18 @@ h1{
     'IBM Plex Mono',
     monospace;
 
-  font-size:10px;
+  font-size:9.5px;
 
   padding:
     4px 8px;
 
   border-radius:999px;
-
   font-weight:700;
-
   white-space:nowrap;
 }
 
 .new-badge{
   background:#ff5c5c;
-
   color:#fff;
 
   box-shadow:
@@ -531,32 +593,28 @@ h1{
 
 .updated-badge{
   background:#ffb020;
-
   color:#16120a;
 }
 
 
-/* KART İÇERİĞİ */
+/* KAMPANYA AVANTAJI */
 
 .headline{
   font-family:
-    'IBM Plex Mono',
-    monospace;
+    'IBM Plex Sans',
+    sans-serif;
 
-  font-size:17px;
+  font-size:18px;
 
-  font-weight:600;
+  font-weight:700;
 
   color:
-    var(
-      --cat-color,
-      var(--teal)
-    );
+    var(--text);
 
   margin:
-    6px 0 8px;
+    4px 0 8px;
 
-  line-height:1.3;
+  line-height:1.25;
 }
 
 .detail{
@@ -567,21 +625,25 @@ h1{
 
   line-height:1.5;
 
-  margin-bottom:10px;
+  margin-bottom:16px;
+
+  flex:1;
 }
 
+
+/* ALT */
+
 .card-foot{
-  display:flex;
-
-  justify-content:
-    space-between;
-
   border-top:
     1px dashed var(--border);
 
-  padding-top:10px;
+  padding-top:12px;
 
-  font-size:11.5px;
+  margin-top:auto;
+}
+
+.validity{
+  font-size:11px;
 
   color:
     var(--text-muted);
@@ -590,18 +652,54 @@ h1{
     'IBM Plex Mono',
     monospace;
 
-  gap:10px;
+  margin-bottom:10px;
 }
 
-.official-link{
+
+/* BUTON */
+
+.campaign-btn{
+  width:100%;
+
+  border:
+    1px solid
+    var(--cat-color,var(--teal));
+
+  background:
+    rgba(255,255,255,.025);
+
   color:
-    var(--teal);
+    var(--text);
 
-  white-space:nowrap;
+  padding:
+    9px 12px;
+
+  border-radius:8px;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:
+    background .15s,
+    color .15s;
+}
+
+.campaign-btn:hover{
+  background:
+    var(--cat-color,var(--teal));
+
+  color:#0a1512;
 }
 
 
-/* DURUMLAR */
+/* EMPTY */
 
 .empty,
 .loading,
@@ -622,8 +720,7 @@ h1{
 }
 
 .error{
-  color:
-    var(--red);
+  color:var(--red);
 }
 
 
@@ -645,6 +742,133 @@ footer{
   line-height:1.6;
 }
 
+
+/* MOBİL */
+
+@media(max-width:700px){
+
+  .wrap{
+    padding:
+      20px 14px 60px;
+  }
+
+  .hero{
+    padding:
+      25px 20px;
+  }
+
+  .main-tabs{
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+  .main-tabs::-webkit-scrollbar{
+    display:none;
+  }
+
+  .main-tab{
+    flex:0 0 auto;
+  }
+
+  /*
+   * Marka butonları mobilde
+   * yatay kayar.
+   */
+
+  .chip-row{
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    padding-bottom:5px;
+
+    margin-left:-14px;
+    margin-right:-14px;
+
+    padding-left:14px;
+    padding-right:14px;
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+  .chip-row::-webkit-scrollbar{
+    display:none;
+  }
+
+  .cat-row{
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    padding-bottom:5px;
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+  .cat-row::-webkit-scrollbar{
+    display:none;
+  }
+
+  .cat-btn{
+    flex:0 0 auto;
+  }
+
+  .grid{
+    grid-template-columns:
+      1fr;
+
+    gap:12px;
+  }
+
+  .card{
+    min-height:auto;
+
+    padding:
+      17px 16px;
+  }
+
+  .card-top{
+    margin-bottom:13px;
+  }
+
+  .brand-logo,
+  .logo-fallback{
+    width:32px;
+    height:32px;
+
+    flex-basis:32px;
+  }
+
+  .model{
+    font-size:20px;
+  }
+
+  .headline{
+    font-size:17px;
+  }
+
+  .detail{
+    font-size:13px;
+  }
+
+  .badge,
+  .new-badge,
+  .updated-badge{
+    font-size:9px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -652,6 +876,7 @@ footer{
 <body>
 
 <div class="wrap">
+
 
   <div class="hero">
 
@@ -677,13 +902,38 @@ footer{
   </div>
 
 
+  <div class="main-tabs">
+
+    <button
+      class="main-tab active"
+      type="button"
+    >
+      Kampanyalar
+    </button>
+
+    <button
+      class="main-tab disabled"
+      type="button"
+      title="Sıfır araç fiyatları bölümü hazırlanıyor"
+    >
+      Sıfır Araç Fiyatları
+
+      <span class="soon">
+        YAKINDA
+      </span>
+
+    </button>
+
+  </div>
+
+
   <div class="filters">
 
     <input
       class="search"
       id="searchInput"
       type="text"
-      placeholder="Marka veya model ara..."
+      placeholder="Marka, model veya kampanya ara..."
     >
 
   </div>
@@ -725,15 +975,15 @@ footer{
 
   </footer>
 
+
 </div>
 
 
 <script>
 
+
 /*
- * -------------------------------------------------------
- * MODEL / KAMPANYA LİNKLERİ
- * -------------------------------------------------------
+ * MODEL LİNKLERİ
  */
 
 let MODEL_LINKS = {};
@@ -743,7 +993,7 @@ function normalizeLinkKey(value){
 
   return String(value || "")
     .toLocaleLowerCase("tr-TR")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g," ")
     .trim();
 
 }
@@ -761,24 +1011,171 @@ function getModelLink(d){
 
 
 /*
- * -------------------------------------------------------
+ * LOGOLAR
+ *
+ * Google favicon servisi üzerinden
+ * marka resmi web sitesinin faviconu
+ * gösteriliyor.
+ *
+ * API maliyeti oluşturmaz.
+ */
+
+const BRAND_DOMAINS = {
+
+  "Volkswagen":
+    "volkswagen.com.tr",
+
+  "Skoda":
+    "skoda.com.tr",
+
+  "Škoda":
+    "skoda.com.tr",
+
+  "Cupra":
+    "cupraofficial.com.tr",
+
+  "Renault":
+    "renault.com.tr",
+
+  "Dacia":
+    "dacia.com.tr",
+
+  "Peugeot":
+    "peugeot.com.tr",
+
+  "Citroen":
+    "citroen.com.tr",
+
+  "Citroën":
+    "citroen.com.tr",
+
+  "Opel":
+    "opel.com.tr",
+
+  "Ford":
+    "ford.com.tr",
+
+  "Fiat":
+    "fiat.com.tr",
+
+  "Toyota":
+    "toyota.com.tr",
+
+  "Honda":
+    "honda.com.tr",
+
+  "Hyundai":
+    "hyundai.com",
+
+  "Kia":
+    "kia.com",
+
+  "Nissan":
+    "nissan.com.tr",
+
+  "Chery":
+    "chery.com.tr",
+
+  "BYD":
+    "bydauto.com.tr",
+
+  "MG":
+    "mg-turkey.com",
+
+  "Jaecoo":
+    "omodajaecoo.com.tr",
+
+  "Omoda":
+    "omodajaecoo.com.tr",
+
+  "Suzuki":
+    "suzuki.com.tr",
+
+  "BMW":
+    "bmw.com.tr",
+
+  "Mercedes-Benz":
+    "mercedes-benz.com.tr",
+
+  "Audi":
+    "audi.com.tr",
+
+  "Volvo":
+    "volvocars.com",
+
+  "Lexus":
+    "lexus.com.tr",
+
+  "Porsche":
+    "porsche.com.tr",
+
+  "Land Rover":
+    "landrover.com.tr",
+
+  "Jaguar":
+    "jaguar.com.tr",
+
+  "Alfa Romeo":
+    "alfaromeo.com.tr",
+
+  "Togg":
+    "togg.com.tr",
+
+  "DS Automobiles":
+    "dsautomobiles.com.tr"
+
+};
+
+
+function getBrandLogo(brand){
+
+  const domain =
+    BRAND_DOMAINS[brand];
+
+  if(!domain){
+    return null;
+  }
+
+  return (
+    "https://www.google.com/s2/favicons" +
+    "?domain=" +
+    encodeURIComponent(domain) +
+    "&sz=128"
+  );
+
+}
+
+
+function initials(brand){
+
+  return String(brand || "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0,2)
+    .map(x=>x.charAt(0))
+    .join("")
+    .toUpperCase();
+
+}
+
+
+/*
  * KATEGORİLER
- * -------------------------------------------------------
  */
 
 const CATS = {
 
-  indirim: {
+  indirim:{
     label:"Nakit İndirim",
     color:"#ffb020"
   },
 
-  kredi: {
+  kredi:{
     label:"Kredi / Faiz",
     color:"#5b9dff"
   },
 
-  takas: {
+  takas:{
     label:"Takas Desteği",
     color:"#00d4b8"
   }
@@ -786,25 +1183,20 @@ const CATS = {
 };
 
 
-/*
- * -------------------------------------------------------
- * GLOBAL DEĞİŞKENLER
- * -------------------------------------------------------
- */
-
 let ALL_DATA = [];
 
-let activeBrand = "Tümü";
+let activeBrand =
+  "Tümü";
 
-let activeCat = "Tümü";
+let activeCat =
+  "Tümü";
 
-let searchTerm = "";
+let searchTerm =
+  "";
 
 
 /*
- * -------------------------------------------------------
- * VERİLERİ YÜKLE
- * -------------------------------------------------------
+ * VERİ YÜKLE
  */
 
 async function loadData(){
@@ -814,18 +1206,16 @@ async function loadData(){
       'content'
     );
 
+
   content.innerHTML =
     '<div class="loading">Kampanyalar getiriliyor…</div>';
 
 
   try{
 
+
     /*
-     * Önce resmi model/kampanya
-     * bağlantılarını yükle.
-     *
-     * BU İŞLEM ANTHROPIC API
-     * ÇAĞRISI YAPMAZ.
+     * Model/kampanya linkleri
      */
 
     try{
@@ -847,26 +1237,13 @@ async function loadData(){
         MODEL_LINKS =
           linkJson.exact || {};
 
-      }else{
-
-        console.warn(
-          'model-links.json yüklenemedi:',
-          linkRes.status
-        );
-
       }
 
-    }catch(linkError){
-
-      /*
-       * Link dosyası hata verse bile
-       * kampanya sitesi çalışmaya
-       * devam etsin.
-       */
+    }catch(error){
 
       console.warn(
-        'Model linkleri yüklenemedi:',
-        linkError
+        "Model linkleri yüklenemedi",
+        error
       );
 
       MODEL_LINKS = {};
@@ -875,12 +1252,10 @@ async function loadData(){
 
 
     /*
-     * Kampanya API'sinden yalnızca
-     * kayıtlı mevcut veriyi oku.
+     * Kayıtlı kampanya verisi.
      *
-     * refresh=1 kullanılmadığı için
-     * ücretli Claude sorgusu
-     * tetiklenmez.
+     * REFRESH YAPILMAZ.
+     * CLAUDE API ÇALIŞMAZ.
      */
 
     const res =
@@ -908,7 +1283,7 @@ async function loadData(){
 
 
     /*
-     * Son güncelleme
+     * Güncelleme tarihi
      */
 
     const lastUpdated =
@@ -972,8 +1347,6 @@ async function loadData(){
       `<div class="error">
         Veri alınamadı:
         ${err.message}
-        <br>
-        Lütfen daha sonra tekrar deneyin.
       </div>`;
 
   }
@@ -982,9 +1355,7 @@ async function loadData(){
 
 
 /*
- * -------------------------------------------------------
  * MARKALAR
- * -------------------------------------------------------
  */
 
 function uniqueBrands(){
@@ -996,7 +1367,7 @@ function uniqueBrands(){
     ...Array.from(
       new Set(
         ALL_DATA.map(
-          d => d.brand
+          d=>d.brand
         )
       )
     ).sort(
@@ -1023,50 +1394,53 @@ function renderChips(){
   container.innerHTML = "";
 
 
-  uniqueBrands().forEach(
-    b => {
+  uniqueBrands()
+    .forEach(
+      brand=>{
 
-      const el =
-        document.createElement(
-          'div'
+        const el =
+          document.createElement(
+            'div'
+          );
+
+
+        el.className =
+          'chip' +
+          (
+            brand ===
+            activeBrand
+              ? ' active'
+              : ''
+          );
+
+
+        el.textContent =
+          brand;
+
+
+        el.onclick =
+          ()=>{
+
+            activeBrand =
+              brand;
+
+            renderAll();
+
+          };
+
+
+        container.appendChild(
+          el
         );
 
-
-      el.className =
-        'chip' +
-        (
-          b === activeBrand
-            ? ' active'
-            : ''
-        );
-
-
-      el.textContent = b;
-
-
-      el.onclick = ()=>{
-
-        activeBrand = b;
-
-        renderAll();
-
-      };
-
-
-      container.appendChild(
-        el
-      );
-
-    }
-  );
+      }
+    );
 
 }
 
 
 /*
- * -------------------------------------------------------
  * KATEGORİLER
- * -------------------------------------------------------
  */
 
 function renderCats(){
@@ -1089,7 +1463,8 @@ function renderCats(){
   all.className =
     'cat-btn' +
     (
-      activeCat === 'Tümü'
+      activeCat ===
+      'Tümü'
         ? ' active'
         : ''
     );
@@ -1099,14 +1474,15 @@ function renderCats(){
     'Tüm kategoriler';
 
 
-  all.onclick = ()=>{
+  all.onclick =
+    ()=>{
 
-    activeCat =
-      'Tümü';
+      activeCat =
+        'Tümü';
 
-    renderAll();
+      renderAll();
 
-  };
+    };
 
 
   container.appendChild(
@@ -1138,13 +1514,15 @@ function renderCats(){
         val.label;
 
 
-      btn.onclick = ()=>{
+      btn.onclick =
+        ()=>{
 
-        activeCat = key;
+          activeCat =
+            key;
 
-        renderAll();
+          renderAll();
 
-      };
+        };
 
 
       container.appendChild(
@@ -1158,16 +1536,15 @@ function renderCats(){
 
 
 /*
- * -------------------------------------------------------
  * FİLTRE
- * -------------------------------------------------------
  */
 
 function filtered(){
 
   return ALL_DATA
+
     .filter(
-      d => {
+      d=>{
 
         if(
           activeBrand !==
@@ -1197,15 +1574,9 @@ function filtered(){
               " " +
               d.model +
               " " +
-              (
-                d.detail ||
-                ""
-              ) +
+              (d.headline || "") +
               " " +
-              (
-                d.headline ||
-                ""
-              )
+              (d.detail || "")
             )
             .toLocaleLowerCase(
               'tr-TR'
@@ -1241,14 +1612,10 @@ function filtered(){
 
 
 /*
- * -------------------------------------------------------
- * YENİ / GÜNCELLENDİ
- * -------------------------------------------------------
+ * YENİ DURUMU
  */
 
-function daysSince(
-  dateString
-){
+function daysSince(dateString){
 
   if(!dateString){
     return Infinity;
@@ -1298,23 +1665,12 @@ function getCampaignStatus(d){
     );
 
 
-  /*
-   * İlk görüldüğü günden
-   * itibaren 3 gün YENİ.
-   */
-
   if(
     firstSeenDays < 3
   ){
     return 'new';
   }
 
-
-  /*
-   * Daha eski kampanyada
-   * değişiklik olmuşsa
-   * 3 gün GÜNCELLENDİ.
-   */
 
   if(
     changedDays < 3
@@ -1329,9 +1685,7 @@ function getCampaignStatus(d){
 
 
 /*
- * -------------------------------------------------------
  * KARTLAR
- * -------------------------------------------------------
  */
 
 function renderGrid(){
@@ -1380,7 +1734,7 @@ function renderGrid(){
 
 
   items.forEach(
-    d => {
+    d=>{
 
       const cat =
         CATS[d.cat] ||
@@ -1395,7 +1749,14 @@ function renderGrid(){
         getModelLink(d);
 
 
-      let statusBadge = '';
+      const logo =
+        getBrandLogo(
+          d.brand
+        );
+
+
+      let statusBadge =
+        '';
 
 
       if(
@@ -1431,11 +1792,6 @@ function renderGrid(){
       );
 
 
-      /*
-       * Resmi bağlantı varsa
-       * kartı tıklanabilir yap.
-       */
-
       if(modelLink){
 
         card.classList.add(
@@ -1447,62 +1803,62 @@ function renderGrid(){
           'pointer';
 
 
-        card.title =
-          'Resmi kampanya/model sayfasını aç';
+        card.onclick =
+          ()=>{
 
-
-        card.setAttribute(
-          'role',
-          'link'
-        );
-
-
-        card.setAttribute(
-          'tabindex',
-          '0'
-        );
-
-
-        card.onclick = ()=>{
-
-          window.open(
-            modelLink,
-            '_blank',
-            'noopener,noreferrer'
-          );
-
-        };
-
-
-        card.onkeydown =
-          event => {
-
-            if(
-              event.key ===
-              'Enter'
-            ){
-
-              window.open(
-                modelLink,
-                '_blank',
-                'noopener,noreferrer'
-              );
-
-            }
+            window.open(
+              modelLink,
+              '_blank',
+              'noopener,noreferrer'
+            );
 
           };
 
       }
 
 
-      /*
-       * Kart altındaki
-       * yönlendirme yazısı.
-       */
+      const logoHtml =
+        logo
 
-      const officialLinkText =
+          ? `
+            <img
+              class="brand-logo"
+              src="${logo}"
+              alt="${d.brand}"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='flex';
+              "
+            >
+
+            <div
+              class="logo-fallback"
+              style="display:none"
+            >
+              ${initials(d.brand)}
+            </div>
+          `
+
+          : `
+            <div class="logo-fallback">
+              ${initials(d.brand)}
+            </div>
+          `;
+
+
+      const buttonHtml =
         modelLink
-          ? '<span class="official-link">Resmi sayfa ↗</span>'
+
+          ? `
+            <button
+              type="button"
+              class="campaign-btn"
+            >
+              Kampanyayı İncele →
+            </button>
+          `
+
           : '';
 
 
@@ -1510,14 +1866,20 @@ function renderGrid(){
 
         <div class="card-top">
 
-          <div>
+          <div class="card-brand-row">
 
-            <div class="brand">
-              ${d.brand}
-            </div>
+            ${logoHtml}
 
-            <div class="model">
-              ${d.model}
+            <div>
+
+              <div class="brand">
+                ${d.brand}
+              </div>
+
+              <div class="model">
+                ${d.model}
+              </div>
+
             </div>
 
           </div>
@@ -1548,16 +1910,47 @@ function renderGrid(){
 
         <div class="card-foot">
 
-          <span>
+          <div class="validity">
             Geçerlilik:
             ${d.until || "—"}
-          </span>
+          </div>
 
-          ${officialLinkText}
+          ${buttonHtml}
 
         </div>
 
       `;
+
+
+      if(modelLink){
+
+        const button =
+          card.querySelector(
+            '.campaign-btn'
+          );
+
+
+        button.onclick =
+          event=>{
+
+            /*
+             * Kart onclick'inin
+             * ikinci kez çalışmasını
+             * engelle.
+             */
+
+            event.stopPropagation();
+
+
+            window.open(
+              modelLink,
+              '_blank',
+              'noopener,noreferrer'
+            );
+
+          };
+
+      }
 
 
       grid.appendChild(
@@ -1579,9 +1972,7 @@ function renderGrid(){
 
 
 /*
- * -------------------------------------------------------
- * TÜM EKRANI YENİLE
- * -------------------------------------------------------
+ * TAM RENDER
  */
 
 function renderAll(){
@@ -1596,9 +1987,7 @@ function renderAll(){
 
 
 /*
- * -------------------------------------------------------
  * ARAMA
- * -------------------------------------------------------
  */
 
 document
@@ -1607,10 +1996,10 @@ document
   )
   .addEventListener(
     'input',
-    e => {
+    event=>{
 
       searchTerm =
-        e.target.value;
+        event.target.value;
 
       renderGrid();
 
@@ -1619,9 +2008,7 @@ document
 
 
 /*
- * -------------------------------------------------------
  * BAŞLAT
- * -------------------------------------------------------
  */
 
 loadData();
