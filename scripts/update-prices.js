@@ -1,1019 +1,1054 @@
-<!DOCTYPE html>
-<html lang="tr">
+import fs from "node:fs/promises";
+import path from "node:path";
+import { chromium } from "playwright";
 
-<head>
+const OUTPUT_PATH = path.resolve("data/prices-latest.json");
 
-<meta charset="UTF-8">
+const BRANDS = [
+  {
+    brand: "Toyota",
+    home: "https://www.toyota.com.tr",
+    directUrl: "https://turkiye.toyota.com.tr/middle/fiyat-listesi/"
+  },
+  {
+    brand: "BMW",
+    home: "https://www.bmw.com.tr",
+    directUrl: "https://teknikoto.bmw.com.tr/fiyat-listesi"
+  },
+  {
+    brand: "Mercedes-Benz",
+    home: "https://www.mercedes-benz.com.tr"
+  },
+  {
+    brand: "Audi",
+    home: "https://www.audi.com.tr"
+  },
+  {
+    brand: "Volkswagen",
+    home: "https://binekarac.vw.com.tr"
+  },
+  {
+    brand: "Škoda",
+    home: "https://www.skoda.com.tr"
+  },
+  {
+    brand: "Cupra",
+    home: "https://www.cupraofficial.com.tr"
+  },
+  {
+    brand: "Renault",
+    home: "https://www.renault.com.tr"
+  },
+  {
+    brand: "Dacia",
+    home: "https://www.dacia.com.tr"
+  },
+  {
+    brand: "Peugeot",
+    home: "https://www.peugeot.com.tr"
+  },
+  {
+    brand: "Citroën",
+    home: "https://www.citroen.com.tr"
+  },
+  {
+    brand: "Opel",
+    home: "https://www.opel.com.tr"
+  },
+  {
+    brand: "Ford",
+    home: "https://www.ford.com.tr"
+  },
+  {
+    brand: "Fiat",
+    home: "https://www.fiat.com.tr"
+  },
+  {
+    brand: "Hyundai",
+    home: "https://www.hyundai.com/tr/tr"
+  },
+  {
+    brand: "Kia",
+    home: "https://www.kia.com/tr"
+  },
+  {
+    brand: "Nissan",
+    home: "https://www.nissan.com.tr"
+  },
+  {
+    brand: "Honda",
+    home: "https://www.honda.com.tr"
+  },
+  {
+    brand: "Chery",
+    home: "https://www.chery.com.tr"
+  },
+  {
+    brand: "BYD",
+    home: "https://www.bydauto.com.tr"
+  },
+  {
+    brand: "MG",
+    home: "https://www.mg-turkey.com"
+  },
+  {
+    brand: "OMODA",
+    home: "https://www.omodajaecoo.com.tr"
+  },
+  {
+    brand: "JAECOO",
+    home: "https://www.omodajaecoo.com.tr"
+  },
+  {
+    brand: "Suzuki",
+    home: "https://www.suzuki.com.tr"
+  },
+  {
+    brand: "Volvo",
+    home: "https://www.volvocars.com/tr"
+  },
+  {
+    brand: "Lexus",
+    home: "https://www.lexus.com.tr"
+  },
+  {
+    brand: "Porsche",
+    home: "https://www.porsche.com.tr"
+  },
+  {
+    brand: "Land Rover",
+    home: "https://www.landrover.com.tr"
+  },
+  {
+    brand: "Jaguar",
+    home: "https://www.jaguar.com.tr"
+  },
+  {
+    brand: "Alfa Romeo",
+    home: "https://www.alfaromeo.com.tr"
+  },
+  {
+    brand: "Togg",
+    home: "https://www.togg.com.tr"
+  },
+  {
+    brand: "DS Automobiles",
+    home: "https://www.dsautomobiles.com.tr"
+  },
+  {
+    brand: "MINI",
+    home: "https://www.mini.com.tr"
+  },
+  {
+    brand: "Subaru",
+    home: "https://www.subaru.com.tr"
+  },
+  {
+    brand: "Mazda",
+    home: "https://www.mazda.com.tr"
+  },
+  {
+    brand: "Mitsubishi",
+    home: "https://www.mitsubishi-motors.com.tr"
+  },
+  {
+    brand: "KGM",
+    home: "https://www.kgmmobility.com.tr"
+  },
+  {
+    brand: "DFSK",
+    home: "https://www.dfsk.com.tr"
+  },
+  {
+    brand: "Skywell",
+    home: "https://www.skywell.com.tr"
+  },
+  {
+    brand: "Leapmotor",
+    home: "https://www.leapmotor.net/tr"
+  }
+];
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<title>Sıfır Araç Fiyatları</title>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap"
-  rel="stylesheet"
->
-
-<style>
-
-:root{
-  --bg:#12151a;
-  --surface:#1b1f26;
-  --surface2:#232833;
-  --border:#2a303c;
-
-  --text:#edeff2;
-  --muted:#8b93a1;
-
-  --teal:#00d4b8;
-  --amber:#ffb020;
-  --red:#ff5c5c;
+function normalizeText(value) {
+  return String(value || "")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
-*{
-  box-sizing:border-box;
-}
+function parsePrice(value) {
+  if (!value) return null;
 
-body{
-  margin:0;
+  const cleaned = String(value)
+    .replace(/[^\d]/g, "");
 
-  background:
-    radial-gradient(
-      ellipse at 20% -10%,
-      rgba(0,212,184,.08),
-      transparent 45%
-    ),
-    var(--bg);
+  if (!cleaned) return null;
 
-  color:var(--text);
+  const number = Number(cleaned);
 
-  font-family:
-    'IBM Plex Sans',
-    sans-serif;
-}
-
-.wrap{
-  max-width:1150px;
-  margin:auto;
-  padding:
-    30px 20px 80px;
-}
-
-.topnav{
-  display:flex;
-  gap:8px;
-  margin-bottom:22px;
-}
-
-.nav{
-  padding:
-    10px 16px;
-
-  border-radius:8px;
-
-  border:
-    1px solid var(--border);
-
-  text-decoration:none;
-
-  color:
-    var(--muted);
-
-  background:
-    var(--surface);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:12px;
-}
-
-.nav.active{
-  background:
-    var(--teal);
-
-  color:#091511;
-
-  border-color:
-    var(--teal);
-
-  font-weight:700;
-}
-
-.hero{
-  padding:
-    25px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:14px;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--surface),
-      var(--surface2)
-    );
-
-  margin-bottom:22px;
-}
-
-h1{
-  margin:0 0 8px;
-
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:
-    clamp(28px,5vw,42px);
-
-  text-transform:uppercase;
-}
-
-.sub{
-  color:
-    var(--muted);
-
-  font-size:13px;
-
-  margin:0;
-}
-
-.controls{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:14px;
-}
-
-input{
-  flex:1;
-  min-width:220px;
-
-  padding:
-    12px 14px;
-
-  border-radius:8px;
-
-  border:
-    1px solid var(--border);
-
-  background:
-    var(--surface);
-
-  color:
-    var(--text);
-
-  font-size:14px;
-}
-
-input:focus{
-  outline:none;
-  border-color:
-    var(--teal);
-}
-
-.brands{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:20px;
-}
-
-.brand-btn{
-  border:
-    1px solid var(--border);
-
-  background:
-    var(--surface);
-
-  color:
-    var(--muted);
-
-  border-radius:999px;
-
-  padding:
-    7px 12px;
-
-  cursor:pointer;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:11px;
-}
-
-.brand-btn.active{
-  background:
-    var(--teal);
-
-  color:#071410;
-
-  border-color:
-    var(--teal);
-}
-
-.summary{
-  color:
-    var(--muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:12px;
-
-  margin-bottom:15px;
-}
-
-.grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fill,
-      minmax(310px,1fr)
-    );
-
-  gap:14px;
-}
-
-.card{
-  background:
-    linear-gradient(
-      145deg,
-      var(--surface),
-      #181c22
-    );
-
-  border:
-    1px solid var(--border);
-
-  border-radius:12px;
-
-  padding:18px;
-
-  transition:
-    transform .15s,
-    border-color .15s;
-}
-
-.card:hover{
-  transform:
-    translateY(-2px);
-
-  border-color:
-    var(--teal);
-}
-
-.brand{
-  color:
-    var(--muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:10px;
-
-  letter-spacing:.12em;
-
-  text-transform:uppercase;
-}
-
-.model{
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:22px;
-
-  margin:
-    3px 0 4px;
-}
-
-.version{
-  color:
-    var(--muted);
-
-  font-size:12.5px;
-
-  line-height:1.45;
-
-  min-height:36px;
-
-  margin-bottom:16px;
-}
-
-.price-label{
-  color:
-    var(--muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:10px;
-
-  margin-top:8px;
-}
-
-.price{
-  font-family:
-    'Oswald',
-    sans-serif;
-
-  font-size:25px;
-
-  font-weight:600;
-}
-
-.campaign-price{
-  color:
-    var(--teal);
-}
-
-.old-price{
-  color:
-    var(--muted);
-
-  text-decoration:
-    line-through;
-
-  font-size:14px;
-}
-
-.change{
-  display:inline-block;
-
-  margin-top:6px;
-
-  padding:
-    4px 7px;
-
-  border-radius:6px;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:10px;
-}
-
-.up{
-  color:
-    var(--red);
-
-  background:
-    rgba(255,92,92,.1);
-}
-
-.down{
-  color:
-    var(--teal);
-
-  background:
-    rgba(0,212,184,.1);
-}
-
-.source{
-  display:block;
-
-  text-align:center;
-
-  margin-top:16px;
-
-  padding:
-    9px 10px;
-
-  border:
-    1px solid var(--teal);
-
-  border-radius:8px;
-
-  text-decoration:none;
-
-  color:
-    var(--text);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
-  font-size:11px;
-}
-
-.source:hover{
-  background:
-    var(--teal);
-
-  color:#081411;
-}
-
-.empty,
-.loading,
-.error{
-  padding:60px 20px;
-
-  text-align:center;
-
-  color:
-    var(--muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-}
-
-.error{
-  color:
-    var(--red);
-}
-
-@media(max-width:700px){
-
-  .wrap{
-    padding:
-      18px 14px 50px;
+  if (
+    !Number.isFinite(number) ||
+    number < 500000 ||
+    number > 100000000
+  ) {
+    return null;
   }
 
-  .brands{
-    flex-wrap:nowrap;
-
-    overflow-x:auto;
-
-    scrollbar-width:none;
-  }
-
-  .brands::-webkit-scrollbar{
-    display:none;
-  }
-
-  .brand-btn{
-    flex:0 0 auto;
-  }
-
-  .grid{
-    grid-template-columns:
-      1fr;
-  }
-
+  return number;
 }
 
-</style>
+function priceMatches(text) {
+  const matches =
+    String(text || "").match(
+      /(?:\d{1,3}(?:[.\s]\d{3})+|\d{6,9})\s*(?:TL|₺)?/gi
+    ) || [];
 
-</head>
-
-
-<body>
-
-<div class="wrap">
-
-  <div class="topnav">
-
-    <a
-      href="/"
-      class="nav"
-    >
-      Kampanyalar
-    </a>
-
-    <a
-      href="/prices.html"
-      class="nav active"
-    >
-      Sıfır Araç Fiyatları
-    </a>
-
-  </div>
-
-
-  <div class="hero">
-
-    <h1>
-      SIFIR ARAÇ FİYATLARI
-    </h1>
-
-    <p
-      id="updated"
-      class="sub"
-    >
-      Fiyatlar yükleniyor...
-    </p>
-
-  </div>
-
-
-  <div class="controls">
-
-    <input
-      id="search"
-      placeholder="Marka, model veya versiyon ara..."
-    >
-
-  </div>
-
-
-  <div
-    id="brands"
-    class="brands"
-  ></div>
-
-
-  <div
-    id="summary"
-    class="summary"
-  ></div>
-
-
-  <div id="content">
-
-    <div class="loading">
-      Fiyatlar yükleniyor...
-    </div>
-
-  </div>
-
-</div>
-
-
-<script>
-
-let ALL = [];
-
-let activeBrand =
-  "Tümü";
-
-let query =
-  "";
-
-
-function money(value){
-
-  if(
-    value === null ||
-    value === undefined
-  ){
-    return "—";
-  }
-
-  return new Intl
-    .NumberFormat(
-      "tr-TR"
-    )
-    .format(value) +
-    " TL";
-
+  return matches
+    .map(parsePrice)
+    .filter(Boolean);
 }
 
-
-function changeHtml(item){
-
-  const previous =
-    item.previousListPrice;
-
-  const current =
-    item.listPrice;
-
-
-  if(
-    !previous ||
-    !current ||
-    previous === current
-  ){
-    return "";
-  }
-
-
-  const difference =
-    current -
-    previous;
-
-
-  if(
-    difference > 0
-  ){
-
-    return `
-      <div class="change up">
-        ↑ ${money(difference)}
-      </div>
-    `;
-
-  }
-
-
-  return `
-    <div class="change down">
-      ↓ ${money(
-        Math.abs(
-          difference
-        )
-      )}
-    </div>
-  `;
-
-}
-
-
-function brands(){
-
+function makeKey(item) {
   return [
-    "Tümü",
-
-    ...Array
-      .from(
-        new Set(
-          ALL.map(
-            x => x.brand
-          )
-        )
-      )
-      .sort(
-        (a,b)=>
-          a.localeCompare(
-            b,
-            "tr"
-          )
-      )
-  ];
-
+    item.brand,
+    item.model,
+    item.version
+  ]
+    .map(x =>
+      normalizeText(x)
+        .toLocaleLowerCase("tr-TR")
+    )
+    .join("|");
 }
 
+function cleanLabel(value) {
+  return normalizeText(value)
+    .replace(
+      /\b(?:tavsiye edilen|anahtar teslim|satış fiyatı|liste fiyatı|kampanyalı fiyat|fiyatlar)\b/gi,
+      ""
+    )
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
 
-function filtered(){
+async function readPrevious() {
+  try {
+    const raw =
+      await fs.readFile(
+        OUTPUT_PATH,
+        "utf8"
+      );
 
-  return ALL.filter(item => {
+    return JSON.parse(raw);
+  } catch {
+    return {
+      updatedAt: null,
+      prices: [],
+      sources: {}
+    };
+  }
+}
 
-    if(
-      activeBrand !==
-      "Tümü" &&
-      item.brand !==
-      activeBrand
-    ){
-      return false;
+async function configurePage(page) {
+  await page.setExtraHTTPHeaders({
+    "Accept-Language":
+      "tr-TR,tr;q=0.9,en;q=0.8"
+  });
+}
+
+async function discoverPriceUrls(page, brand) {
+  const urls = [];
+
+  if (brand.directUrl) {
+    urls.push(brand.directUrl);
+  }
+
+  try {
+    await page.goto(
+      brand.home,
+      {
+        waitUntil: "domcontentloaded",
+        timeout: 40000
+      }
+    );
+
+    await page.waitForTimeout(2500);
+
+    const discovered =
+      await page.evaluate(() => {
+        return Array
+          .from(
+            document.querySelectorAll("a[href]")
+          )
+          .map(a => ({
+            href: a.href,
+            text:
+              (
+                a.innerText ||
+                a.textContent ||
+                ""
+              ).trim()
+          }));
+      });
+
+    const keywords = [
+      "fiyat listesi",
+      "fiyat-listesi",
+      "fiyatlar",
+      "fiyat",
+      "price list",
+      "prices"
+    ];
+
+    const scored =
+      discovered
+        .map(item => {
+          const hay =
+            `${item.text} ${item.href}`
+              .toLocaleLowerCase("tr-TR");
+
+          let score = 0;
+
+          for (
+            let i = 0;
+            i < keywords.length;
+            i++
+          ) {
+            if (
+              hay.includes(
+                keywords[i]
+              )
+            ) {
+              score +=
+                100 - i * 10;
+            }
+          }
+
+          if (
+            hay.includes("kampanya")
+          ) {
+            score -= 15;
+          }
+
+          return {
+            ...item,
+            score
+          };
+        })
+        .filter(x => x.score > 0)
+        .sort(
+          (a, b) =>
+            b.score - a.score
+        );
+
+    for (
+      const item of scored.slice(0, 5)
+    ) {
+      urls.push(item.href);
     }
+  } catch (error) {
+    console.log(
+      `[${brand.brand}] ana sayfa taraması başarısız:`,
+      String(error)
+    );
+  }
 
+  return Array.from(
+    new Set(urls)
+  );
+}
 
-    if(query){
+async function extractTables(
+  page,
+  brand,
+  sourceUrl
+) {
+  const rows =
+    await page.evaluate(() => {
 
-      const hay =
-        [
-          item.brand,
-          item.model,
-          item.version
-        ]
-          .join(" ")
-          .toLocaleLowerCase(
-            "tr-TR"
-          );
+      function previousHeading(el) {
+        let current = el;
 
+        for (
+          let level = 0;
+          level < 6 && current;
+          level++
+        ) {
+          let sibling =
+            current.previousElementSibling;
 
-      if(
-        !hay.includes(
-          query
-            .toLocaleLowerCase(
-              "tr-TR"
-            )
-        )
-      ){
-        return false;
+          while (sibling) {
+            if (
+              sibling.matches?.(
+                "h1,h2,h3,h4,[class*='title'],[class*='model']"
+              )
+            ) {
+              const value =
+                (
+                  sibling.innerText ||
+                  sibling.textContent ||
+                  ""
+                ).trim();
+
+              if (value) {
+                return value;
+              }
+            }
+
+            const nested =
+              sibling.querySelector?.(
+                "h1,h2,h3,h4"
+              );
+
+            if (nested) {
+              const value =
+                (
+                  nested.innerText ||
+                  nested.textContent ||
+                  ""
+                ).trim();
+
+              if (value) {
+                return value;
+              }
+            }
+
+            sibling =
+              sibling.previousElementSibling;
+          }
+
+          current =
+            current.parentElement;
+        }
+
+        return "";
       }
 
+      return Array
+        .from(
+          document.querySelectorAll(
+            "table"
+          )
+        )
+        .flatMap(table => {
+          const heading =
+            previousHeading(table);
+
+          return Array
+            .from(
+              table.querySelectorAll(
+                "tr"
+              )
+            )
+            .map(row => ({
+              heading,
+              cells: Array
+                .from(
+                  row.querySelectorAll(
+                    "th,td"
+                  )
+                )
+                .map(cell =>
+                  (
+                    cell.innerText ||
+                    cell.textContent ||
+                    ""
+                  ).trim()
+                )
+            }));
+        });
+    });
+
+  const output = [];
+
+  for (const row of rows) {
+    if (
+      !row.cells ||
+      row.cells.length < 2
+    ) {
+      continue;
     }
 
+    const prices = [];
 
-    return true;
+    const textCells = [];
 
+    for (const cell of row.cells) {
+      const found =
+        priceMatches(cell);
+
+      if (found.length) {
+        prices.push(...found);
+      } else if (
+        normalizeText(cell)
+      ) {
+        textCells.push(
+          normalizeText(cell)
+        );
+      }
+    }
+
+    if (!prices.length) {
+      continue;
+    }
+
+    let model =
+      cleanLabel(
+        row.heading
+      );
+
+    let version =
+      cleanLabel(
+        textCells.join(" ")
+      );
+
+    if (!model && textCells.length) {
+      model =
+        cleanLabel(
+          textCells[0]
+        );
+
+      version =
+        cleanLabel(
+          textCells
+            .slice(1)
+            .join(" ")
+        );
+    }
+
+    if (
+      !model ||
+      model.length > 150
+    ) {
+      continue;
+    }
+
+    output.push({
+      brand: brand.brand,
+      model,
+      version:
+        version || "Standart",
+      listPrice:
+        prices[0] || null,
+      campaignPrice:
+        prices.length > 1
+          ? prices[1]
+          : null,
+      sourceUrl
+    });
+  }
+
+  return output;
+}
+
+async function extractCards(
+  page,
+  brand,
+  sourceUrl
+) {
+  const blocks =
+    await page.evaluate(() => {
+
+      const selectors = [
+        "article",
+        "li",
+        "[class*='price']",
+        "[class*='model']",
+        "[class*='vehicle']",
+        "[class*='car']"
+      ];
+
+      const elements =
+        Array.from(
+          document.querySelectorAll(
+            selectors.join(",")
+          )
+        );
+
+      return elements
+        .map(el => ({
+          text:
+            (
+              el.innerText ||
+              el.textContent ||
+              ""
+            ).trim()
+        }))
+        .filter(item => {
+          const len =
+            item.text.length;
+
+          return (
+            len >= 10 &&
+            len <= 700 &&
+            /(?:TL|₺|\d{1,3}(?:\.\d{3}){2,})/i
+              .test(item.text)
+          );
+        })
+        .slice(0, 500);
+    });
+
+  const output = [];
+
+  for (const block of blocks) {
+    const prices =
+      priceMatches(
+        block.text
+      );
+
+    if (!prices.length) {
+      continue;
+    }
+
+    const lines =
+      normalizeText(block.text)
+        .split("\n")
+        .map(normalizeText)
+        .filter(Boolean);
+
+    if (!lines.length) {
+      continue;
+    }
+
+    const labels =
+      lines.filter(line => {
+        return (
+          !priceMatches(line).length &&
+          line.length >= 2 &&
+          line.length <= 100
+        );
+      });
+
+    if (!labels.length) {
+      continue;
+    }
+
+    const model =
+      cleanLabel(labels[0]);
+
+    const version =
+      cleanLabel(
+        labels
+          .slice(1, 3)
+          .join(" ")
+      );
+
+    if (
+      !model ||
+      model.length > 100
+    ) {
+      continue;
+    }
+
+    output.push({
+      brand: brand.brand,
+      model,
+      version:
+        version || "Standart",
+      listPrice:
+        prices[0],
+      campaignPrice:
+        prices.length > 1
+          ? prices[1]
+          : null,
+      sourceUrl
+    });
+  }
+
+  return output;
+}
+
+function dedupe(records) {
+  const map = new Map();
+
+  for (const item of records) {
+    if (
+      !item.brand ||
+      !item.model ||
+      !item.listPrice
+    ) {
+      continue;
+    }
+
+    const key =
+      makeKey(item);
+
+    const existing =
+      map.get(key);
+
+    if (!existing) {
+      map.set(key, item);
+      continue;
+    }
+
+    const existingScore =
+      Number(
+        !!existing.campaignPrice
+      );
+
+    const newScore =
+      Number(
+        !!item.campaignPrice
+      );
+
+    if (
+      newScore >
+      existingScore
+    ) {
+      map.set(key, item);
+    }
+  }
+
+  return [...map.values()];
+}
+
+async function scrapeUrl(
+  page,
+  brand,
+  url
+) {
+  console.log(
+    `[${brand.brand}] deneniyor: ${url}`
+  );
+
+  await page.goto(
+    url,
+    {
+      waitUntil: "domcontentloaded",
+      timeout: 45000
+    }
+  );
+
+  await page.waitForTimeout(3500);
+
+  await page.evaluate(async () => {
+    await new Promise(resolve => {
+      let total = 0;
+
+      const timer =
+        setInterval(() => {
+          window.scrollBy(
+            0,
+            800
+          );
+
+          total += 800;
+
+          if (
+            total >
+            document.body.scrollHeight ||
+            total > 12000
+          ) {
+            clearInterval(timer);
+            resolve();
+          }
+        }, 120);
+    });
   });
 
-}
+  await page.waitForTimeout(1000);
 
-
-function renderBrands(){
-
-  const el =
-    document.getElementById(
-      "brands"
+  const tableRecords =
+    await extractTables(
+      page,
+      brand,
+      url
     );
 
-  el.innerHTML =
-    "";
-
-
-  brands().forEach(
-    brand => {
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-
-      button.className =
-        "brand-btn" +
-        (
-          brand ===
-          activeBrand
-            ? " active"
-            : ""
-        );
-
-
-      button.textContent =
-        brand;
-
-
-      button.onclick =
-        () => {
-
-          activeBrand =
-            brand;
-
-          render();
-
-        };
-
-
-      el.appendChild(
-        button
-      );
-
-    }
-  );
-
-}
-
-
-function render(){
-
-  renderBrands();
-
-
-  const items =
-    filtered();
-
-
-  document
-    .getElementById(
-      "summary"
-    )
-    .textContent =
-      `${items.length} fiyat kaydı listeleniyor`;
-
-
-  const content =
-    document.getElementById(
-      "content"
+  const cardRecords =
+    await extractCards(
+      page,
+      brand,
+      url
     );
 
+  return dedupe([
+    ...tableRecords,
+    ...cardRecords
+  ]);
+}
 
-  if(
-    !items.length
-  ){
+function mergeWithPrevious(
+  fresh,
+  previous
+) {
+  const now =
+    new Date().toISOString();
 
-    content.innerHTML =
-      `
-        <div class="empty">
-          Eşleşen fiyat bulunamadı.
-        </div>
-      `;
+  const previousMap =
+    new Map();
 
-    return;
-
+  for (
+    const item of
+    previous.prices || []
+  ) {
+    previousMap.set(
+      makeKey(item),
+      item
+    );
   }
 
-
-  const grid =
-    document.createElement(
-      "div"
-    );
-
-
-  grid.className =
-    "grid";
-
-
-  for(
-    const item of items
-  ){
-
-    const card =
-      document.createElement(
-        "div"
+  return fresh.map(item => {
+    const old =
+      previousMap.get(
+        makeKey(item)
       );
 
-
-    card.className =
-      "card";
-
-
-    const campaign =
-      item.campaignPrice &&
-      item.campaignPrice !==
-        item.listPrice;
-
-
-    card.innerHTML =
-      `
-
-        <div class="brand">
-          ${item.brand}
-        </div>
-
-        <div class="model">
-          ${item.model}
-        </div>
-
-        <div class="version">
-          ${item.version || ""}
-        </div>
-
-
-        <div class="price-label">
-          Liste Fiyatı
-        </div>
-
-        <div class="price">
-          ${money(
-            item.listPrice
-          )}
-        </div>
-
-
-        ${
-          campaign
-            ? `
-
-              <div class="price-label">
-                Kampanyalı Fiyat
-              </div>
-
-              <div class="price campaign-price">
-                ${money(
-                  item.campaignPrice
-                )}
-              </div>
-
-            `
-            : ""
-        }
-
-
-        ${changeHtml(item)}
-
-
-        ${
-          item.sourceUrl
-            ? `
-
-              <a
-                class="source"
-                href="${item.sourceUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resmi Fiyat Sayfası →
-              </a>
-
-            `
-            : ""
-        }
-
-      `;
-
-
-    grid.appendChild(
-      card
-    );
-
-  }
-
-
-  content.innerHTML =
-    "";
-
-
-  content.appendChild(
-    grid
-  );
-
-}
-
-
-async function load(){
-
-  try{
-
-    const response =
-      await fetch(
-        "/data/prices-latest.json",
-        {
-          cache:
-            "no-store"
-        }
-      );
-
-
-    if(
-      !response.ok
-    ){
-      throw new Error(
-        "Fiyat dosyası okunamadı."
-      );
+    if (!old) {
+      return {
+        ...item,
+        previousListPrice: null,
+        previousCampaignPrice: null,
+        firstSeenAt: now,
+        lastSeenAt: now,
+        lastChangedAt: now
+      };
     }
 
+    const changed =
+      old.listPrice !==
+        item.listPrice ||
+      old.campaignPrice !==
+        item.campaignPrice;
 
-    const data =
-      await response.json();
+    return {
+      ...item,
 
+      previousListPrice:
+        changed
+          ? old.listPrice
+          : old.previousListPrice ??
+            old.listPrice,
 
-    ALL =
-      data.prices || [];
+      previousCampaignPrice:
+        changed
+          ? old.campaignPrice
+          : old.previousCampaignPrice ??
+            old.campaignPrice,
 
+      firstSeenAt:
+        old.firstSeenAt ||
+        now,
 
-    const updated =
-      document.getElementById(
-        "updated"
-      );
+      lastSeenAt:
+        now,
 
+      lastChangedAt:
+        changed
+          ? now
+          : old.lastChangedAt ||
+            now
+    };
+  });
+}
 
-    if(
-      data.updatedAt
-    ){
+async function main() {
+  const previous =
+    await readPrevious();
 
-      const date =
-        new Date(
-          data.updatedAt
-        );
+  const browser =
+    await chromium.launch({
+      headless: true
+    });
 
+  const context =
+    await browser.newContext({
+      locale: "tr-TR",
 
-      updated.textContent =
-        `${data.brands || 0} marka · ${data.count || 0} fiyat · Son güncelleme: ` +
-        date.toLocaleString(
-          "tr-TR",
-          {
-            timeZone:
-              "Europe/Istanbul"
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+        "AppleWebKit/537.36 (KHTML, like Gecko) " +
+        "Chrome/138.0 Safari/537.36"
+    });
+
+  const allFresh = [];
+
+  const sourceStatus = {};
+
+  try {
+    for (const brand of BRANDS) {
+      const page =
+        await context.newPage();
+
+      await configurePage(page);
+
+      try {
+        const urls =
+          await discoverPriceUrls(
+            page,
+            brand
+          );
+
+        let brandRecords = [];
+
+        let successfulUrl =
+          null;
+
+        for (
+          const url of
+          urls.slice(0, 6)
+        ) {
+          try {
+            const records =
+              await scrapeUrl(
+                page,
+                brand,
+                url
+              );
+
+            if (
+              records.length >
+              brandRecords.length
+            ) {
+              brandRecords =
+                records;
+
+              successfulUrl =
+                url;
+            }
+
+            if (
+              brandRecords.length >= 3
+            ) {
+              break;
+            }
+          } catch (error) {
+            console.log(
+              `[${brand.brand}] sayfa hatası:`,
+              String(error)
+            );
           }
+        }
+
+        if (
+          brandRecords.length
+        ) {
+          allFresh.push(
+            ...brandRecords
+          );
+
+          sourceStatus[
+            brand.brand
+          ] = {
+            ok: true,
+            count:
+              brandRecords.length,
+            sourceUrl:
+              successfulUrl,
+            checkedAt:
+              new Date()
+                .toISOString()
+          };
+
+          console.log(
+            `[${brand.brand}] ${brandRecords.length} kayıt`
+          );
+        } else {
+          throw new Error(
+            "Geçerli fiyat kaydı çıkarılamadı."
+          );
+        }
+      } catch (error) {
+        console.log(
+          `[${brand.brand}] başarısız:`,
+          String(error)
         );
 
-    }else{
+        const oldRecords =
+          (
+            previous.prices ||
+            []
+          ).filter(
+            item =>
+              item.brand ===
+              brand.brand
+          );
 
-      updated.textContent =
-        "Henüz fiyat güncellemesi yapılmadı.";
+        allFresh.push(
+          ...oldRecords
+        );
 
+        sourceStatus[
+          brand.brand
+        ] = {
+          ok: false,
+          count:
+            oldRecords.length,
+          error:
+            String(error),
+          checkedAt:
+            new Date()
+              .toISOString(),
+          preservedPrevious:
+            oldRecords.length > 0
+        };
+      } finally {
+        await page.close();
+      }
     }
-
-
-    render();
-
-  }catch(error){
-
-    document
-      .getElementById(
-        "content"
-      )
-      .innerHTML =
-        `
-          <div class="error">
-            ${error.message}
-          </div>
-        `;
-
+  } finally {
+    await browser.close();
   }
 
-}
+  const unique =
+    dedupe(allFresh);
 
+  const merged =
+    mergeWithPrevious(
+      unique,
+      previous
+    );
 
-document
-  .getElementById(
-    "search"
-  )
-  .addEventListener(
-    "input",
-    event => {
+  const payload = {
+    updatedAt:
+      new Date()
+        .toISOString(),
 
-      query =
-        event.target.value;
+    count:
+      merged.length,
 
-      render();
+    brands:
+      Array.from(
+        new Set(
+          merged.map(
+            item => item.brand
+          )
+        )
+      ).length,
 
+    prices:
+      merged,
+
+    sources:
+      sourceStatus
+  };
+
+  await fs.mkdir(
+    path.dirname(
+      OUTPUT_PATH
+    ),
+    {
+      recursive: true
     }
   );
 
+  await fs.writeFile(
+    OUTPUT_PATH,
+    JSON.stringify(
+      payload,
+      null,
+      2
+    ) + "\n",
+    "utf8"
+  );
 
-load();
+  console.log(
+    `Tamamlandı: ${payload.count} fiyat / ${payload.brands} marka`
+  );
+}
 
-</script>
-
-</body>
-
-</html>
+main().catch(error => {
+  console.error(error);
+  process.exit(1);
+});
