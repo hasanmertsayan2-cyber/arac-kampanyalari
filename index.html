@@ -32,16 +32,6 @@
   content="website"
 >
 
-<meta
-  property="og:url"
-  content="https://arac-kampanyalari-ruxm.vercel.app/"
->
-
-<meta
-  property="og:site_name"
-  content="Sıfır KM Otomobil Kampanyaları"
->
-
 <link
   rel="preconnect"
   href="https://fonts.googleapis.com"
@@ -52,30 +42,24 @@
   rel="stylesheet"
 >
 
-
 <style>
 
 :root{
   --bg:#12151a;
   --surface:#1b1f26;
   --surface-2:#232833;
-  --surface-3:#161a20;
   --border:#2a303c;
-
   --text:#edeff2;
   --text-muted:#8b93a1;
-
   --amber:#ffb020;
   --teal:#00d4b8;
   --red:#ff5c5c;
   --blue:#5b9dff;
 }
 
-
 *{
   box-sizing:border-box;
 }
-
 
 body{
   margin:0;
@@ -99,10 +83,8 @@ body{
     'IBM Plex Sans',
     sans-serif;
 
-  -webkit-font-smoothing:
-    antialiased;
+  -webkit-font-smoothing:antialiased;
 }
-
 
 .wrap{
   max-width:1100px;
@@ -110,69 +92,40 @@ body{
   padding:36px 20px 80px;
 }
 
-
 /* HERO */
 
 .hero{
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:14px;
 
   background:
     linear-gradient(
       180deg,
-      var(--surface) 0%,
-      var(--surface-2) 100%
+      var(--surface),
+      var(--surface-2)
     );
 
-  padding:
-    32px 28px;
-
-  position:relative;
-  overflow:hidden;
-
+  padding:32px 28px;
   margin-bottom:22px;
 }
 
-
 h1{
-  font-family:
-    'Oswald',
-    sans-serif;
-
+  font-family:'Oswald',sans-serif;
   font-weight:700;
-
-  font-size:
-    clamp(28px,5vw,44px);
-
+  font-size:clamp(28px,5vw,44px);
   text-transform:uppercase;
-
-  margin:
-    0 0 8px;
-
+  margin:0 0 8px;
   line-height:1.05;
 }
 
-
 .hero p.sub{
-  color:
-    var(--text-muted);
-
-  max-width:560px;
-
-  margin:
-    0 0 20px;
-
+  color:var(--text-muted);
+  margin:0 0 20px;
   font-size:14.5px;
-
-  line-height:1.55;
 }
-
 
 .status-row{
   display:flex;
-  align-items:center;
   gap:12px;
   flex-wrap:wrap;
 
@@ -181,11 +134,8 @@ h1{
     monospace;
 
   font-size:12px;
-
-  color:
-    var(--text-muted);
+  color:var(--text-muted);
 }
-
 
 /* ANA MENÜ */
 
@@ -193,7 +143,6 @@ h1{
   display:flex;
   align-items:center;
   gap:8px;
-
   margin-bottom:22px;
 
   border-bottom:
@@ -202,22 +151,12 @@ h1{
   padding-bottom:10px;
 }
 
-
 .main-tab{
-  position:relative;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text-muted);
 
-  border:
-    1px solid var(--border);
-
-  background:
-    var(--surface);
-
-  color:
-    var(--text-muted);
-
-  padding:
-    10px 17px;
-
+  padding:10px 17px;
   border-radius:9px;
 
   font-family:
@@ -225,9 +164,7 @@ h1{
     monospace;
 
   font-size:12px;
-
   cursor:pointer;
-
   text-decoration:none;
 
   transition:
@@ -236,75 +173,51 @@ h1{
     background .15s;
 }
 
-
 .main-tab:hover{
-  color:
-    var(--text);
-
-  border-color:
-    #4c5668;
+  color:var(--text);
+  border-color:#4c5668;
 }
-
 
 .main-tab.active{
   color:#0a1512;
-
-  background:
-    var(--teal);
-
-  border-color:
-    var(--teal);
-
+  background:var(--teal);
+  border-color:var(--teal);
   font-weight:700;
 }
 
-
-/* ARAMA */
+/* SEARCH */
 
 .filters{
   display:flex;
-  flex-wrap:wrap;
   gap:10px;
-
   margin-bottom:16px;
 }
 
-
 .search{
-  flex:
-    1 1 220px;
+  flex:1;
 
-  background:
-    var(--surface);
+  background:var(--surface);
 
   border:
     1px solid var(--border);
 
   border-radius:9px;
 
-  padding:
-    12px 14px;
+  padding:12px 14px;
 
-  color:
-    var(--text);
+  color:var(--text);
 
   font-size:14px;
 }
 
-
 .search:focus{
   outline:none;
-
-  border-color:
-    var(--teal);
+  border-color:var(--teal);
 }
-
 
 .search::placeholder{
-  color:
-    var(--text-muted);
+  color:var(--text-muted);
 }
-
 
 /* MARKALAR */
 
@@ -312,10 +225,8 @@ h1{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-
   margin-bottom:14px;
 }
-
 
 .chip{
   font-family:
@@ -339,47 +250,28 @@ h1{
     var(--text-muted);
 
   cursor:pointer;
-
-  white-space:nowrap;
-
-  flex:
-    0 0 auto;
 }
-
 
 .chip:hover{
-  border-color:
-    var(--teal);
-
-  color:
-    var(--text);
+  border-color:var(--teal);
+  color:var(--text);
 }
 
-
 .chip.active{
-  background:
-    var(--teal);
-
+  background:var(--teal);
   color:#0a1512;
-
-  border-color:
-    var(--teal);
-
+  border-color:var(--teal);
   font-weight:600;
 }
 
-
-/* KATEGORİLER */
+/* KATEGORİ */
 
 .cat-row{
   display:flex;
   gap:8px;
-
   margin-bottom:22px;
-
   flex-wrap:wrap;
 }
-
 
 .cat-btn{
   font-size:12.5px;
@@ -392,49 +284,28 @@ h1{
   border:
     1px solid var(--border);
 
-  background:
-    transparent;
-
-  color:
-    var(--text-muted);
-
+  background:transparent;
+  color:var(--text-muted);
   cursor:pointer;
 }
 
-
 .cat-btn:hover{
-  color:
-    var(--text);
-
+  color:var(--text);
   border-color:#4c5668;
 }
 
-
 .cat-btn.active{
-  background:
-    var(--surface-2);
-
-  color:
-    var(--text);
-
-  border-color:
-    var(--amber);
+  background:var(--surface-2);
+  color:var(--text);
+  border-color:var(--amber);
 }
-
 
 .count-line{
   font-size:12.5px;
-
-  color:
-    var(--text-muted);
-
+  color:var(--text-muted);
   margin-bottom:14px;
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
+  font-family:'IBM Plex Mono',monospace;
 }
-
 
 /* GRID */
 
@@ -450,22 +321,19 @@ h1{
   gap:15px;
 }
 
-
-/* KART */
+/* CARD */
 
 .card{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
   background:
     linear-gradient(
       145deg,
-      var(--surface) 0%,
-      #191d24 100%
+      var(--surface),
+      #191d24
     );
 
   border-radius:13px;
-
   padding:18px;
 
   position:relative;
@@ -481,10 +349,8 @@ h1{
     box-shadow .15s;
 }
 
-
 .card:hover{
-  transform:
-    translateY(-3px);
+  transform:translateY(-3px);
 
   border-color:
     var(
@@ -493,27 +359,20 @@ h1{
     );
 }
 
-
 .card.clickable:hover{
   box-shadow:
-    0 12px 35px
-    rgba(0,0,0,.25);
+    0 12px 35px rgba(0,0,0,.25);
 }
-
 
 .card::before{
   content:"";
 
   position:absolute;
-
   top:0;
   left:18px;
   right:18px;
 
   height:3px;
-
-  border-radius:
-    0 0 4px 4px;
 
   background:
     var(
@@ -522,133 +381,74 @@ h1{
     );
 }
 
-
 /* MARKA */
 
 .card-brand-row{
   display:flex;
-
   align-items:center;
-
   gap:10px;
-
-  min-width:0;
 }
-
 
 .brand-logo{
   width:34px;
   height:34px;
-
-  flex:
-    0 0 34px;
-
   object-fit:contain;
-
-  /* Beyaz kare kaldırıldı */
   background:transparent;
-
   padding:2px;
 }
-
 
 .logo-fallback{
   width:34px;
   height:34px;
 
   border-radius:8px;
-
-  background:
-    var(--surface-2);
+  background:var(--surface-2);
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:11px;
-
   font-weight:700;
-
-  color:
-    var(--text);
 }
-
 
 .brand{
-  font-family:
-    'Oswald',
-    sans-serif;
-
+  font-family:'Oswald',sans-serif;
   font-size:11px;
-
   letter-spacing:.14em;
-
   text-transform:uppercase;
-
-  color:
-    var(--text-muted);
+  color:var(--text-muted);
 }
-
 
 .model{
-  font-family:
-    'Oswald',
-    sans-serif;
-
+  font-family:'Oswald',sans-serif;
   font-size:21px;
-
   font-weight:600;
-
   margin-top:2px;
-
-  line-height:1.18;
 }
-
-
-/* KART ÜST */
 
 .card-top{
   display:flex;
-
-  justify-content:
-    space-between;
-
-  align-items:
-    flex-start;
-
+  justify-content:space-between;
+  align-items:flex-start;
   margin-bottom:15px;
-
   gap:12px;
 }
 
-
-/* ROZET */
+/* BADGES */
 
 .status-badges{
   display:flex;
   gap:5px;
   flex-wrap:wrap;
-
   justify-content:flex-end;
 }
 
-
 .badge{
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:9.5px;
-
-  padding:
-    4px 8px;
-
+  padding:4px 8px;
   border-radius:6px;
 
   background:
@@ -658,114 +458,60 @@ h1{
     );
 
   color:#0a1512;
-
   font-weight:700;
-
   text-transform:uppercase;
-
-  white-space:nowrap;
 }
-
 
 .new-badge,
 .updated-badge{
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:9.5px;
-
-  padding:
-    4px 8px;
-
+  padding:4px 8px;
   border-radius:999px;
-
   font-weight:700;
-
-  white-space:nowrap;
 }
-
 
 .new-badge{
   background:#ff5c5c;
-
   color:#fff;
-
-  box-shadow:
-    0 0 0 1px
-    rgba(255,92,92,.25);
 }
-
 
 .updated-badge{
   background:#ffb020;
-
   color:#16120a;
 }
 
-
-/* KAMPANYA */
+/* CONTENT */
 
 .headline{
-  font-family:
-    'IBM Plex Sans',
-    sans-serif;
-
   font-size:18px;
-
   font-weight:700;
-
-  color:
-    var(--text);
-
-  margin:
-    4px 0 8px;
-
+  margin:4px 0 8px;
   line-height:1.25;
 }
 
-
 .detail{
   font-size:13px;
-
-  color:
-    var(--text-muted);
-
+  color:var(--text-muted);
   line-height:1.5;
-
   margin-bottom:16px;
-
   flex:1;
 }
-
-
-/* ALT */
 
 .card-foot{
   border-top:
     1px dashed var(--border);
 
   padding-top:12px;
-
   margin-top:auto;
 }
 
-
 .validity{
   font-size:11px;
-
-  color:
-    var(--text-muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  color:var(--text-muted);
+  font-family:'IBM Plex Mono',monospace;
   margin-bottom:10px;
 }
-
-
-/* BUTON */
 
 .campaign-btn{
   width:100%;
@@ -780,29 +526,16 @@ h1{
   background:
     rgba(255,255,255,.025);
 
-  color:
-    var(--text);
+  color:var(--text);
 
-  padding:
-    9px 12px;
-
+  padding:9px 12px;
   border-radius:8px;
 
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:11px;
-
   font-weight:600;
-
   cursor:pointer;
-
-  transition:
-    background .15s,
-    color .15s;
 }
-
 
 .campaign-btn:hover{
   background:
@@ -814,189 +547,84 @@ h1{
   color:#0a1512;
 }
 
-
-/* DURUM */
-
 .empty,
 .loading,
 .error{
   text-align:center;
+  padding:60px 20px;
 
-  padding:
-    60px 20px;
+  color:var(--text-muted);
 
-  color:
-    var(--text-muted);
-
-  font-family:
-    'IBM Plex Mono',
-    monospace;
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:13px;
 }
 
-
 .error{
-  color:
-    var(--red);
+  color:var(--red);
 }
-
-
-/* FOOTER */
 
 footer{
   margin-top:40px;
-
   padding-top:20px;
 
   border-top:
     1px solid var(--border);
 
   font-size:12px;
-
-  color:
-    var(--text-muted);
-
-  line-height:1.6;
+  color:var(--text-muted);
 }
 
-
-/* MOBİL */
+/* MOBILE */
 
 @media(max-width:700px){
 
   .wrap{
-    padding:
-      20px 14px 60px;
+    padding:20px 14px 60px;
   }
-
 
   .hero{
-    padding:
-      25px 20px;
+    padding:25px 20px;
   }
-
 
   .main-tabs{
     overflow-x:auto;
-
     scrollbar-width:none;
-
-    -webkit-overflow-scrolling:
-      touch;
   }
-
 
   .main-tabs::-webkit-scrollbar{
     display:none;
   }
 
-
   .main-tab{
-    flex:
-      0 0 auto;
+    flex:0 0 auto;
   }
-
 
   .chip-row{
     flex-wrap:nowrap;
-
     overflow-x:auto;
-
-    padding-bottom:5px;
-
-    margin-left:-14px;
-    margin-right:-14px;
-
-    padding-left:14px;
-    padding-right:14px;
-
     scrollbar-width:none;
-
-    -webkit-overflow-scrolling:
-      touch;
   }
-
 
   .chip-row::-webkit-scrollbar{
     display:none;
   }
 
-
   .cat-row{
     flex-wrap:nowrap;
-
     overflow-x:auto;
-
-    padding-bottom:5px;
-
     scrollbar-width:none;
-
-    -webkit-overflow-scrolling:
-      touch;
   }
-
 
   .cat-row::-webkit-scrollbar{
     display:none;
   }
 
-
   .cat-btn{
-    flex:
-      0 0 auto;
+    flex:0 0 auto;
   }
-
 
   .grid{
-    grid-template-columns:
-      1fr;
-
-    gap:12px;
-  }
-
-
-  .card{
-    min-height:auto;
-
-    padding:
-      17px 16px;
-  }
-
-
-  .card-top{
-    margin-bottom:13px;
-  }
-
-
-  .brand-logo,
-  .logo-fallback{
-    width:32px;
-    height:32px;
-
-    flex-basis:32px;
-  }
-
-
-  .model{
-    font-size:20px;
-  }
-
-
-  .headline{
-    font-size:17px;
-  }
-
-
-  .detail{
-    font-size:13px;
-  }
-
-
-  .badge,
-  .new-badge,
-  .updated-badge{
-    font-size:9px;
+    grid-template-columns:1fr;
   }
 
 }
@@ -1005,11 +633,9 @@ footer{
 
 </head>
 
-
 <body>
 
 <div class="wrap">
-
 
   <div class="hero">
 
@@ -1031,8 +657,6 @@ footer{
   </div>
 
 
-  <!-- ANA MENÜ -->
-
   <div class="main-tabs">
 
     <button
@@ -1049,10 +673,15 @@ footer{
       Hesaplama Araçları
     </a>
 
+    <a
+      class="main-tab"
+      href="/altin.html"
+    >
+      Altın Fiyatları
+    </a>
+
   </div>
 
-
-  <!-- ARAMA -->
 
   <div class="filters">
 
@@ -1066,15 +695,11 @@ footer{
   </div>
 
 
-  <!-- MARKA FİLTRESİ -->
-
   <div
     class="chip-row"
     id="brandChips"
   ></div>
 
-
-  <!-- KATEGORİ -->
 
   <div
     class="cat-row"
@@ -1082,15 +707,11 @@ footer{
   ></div>
 
 
-  <!-- SAYI -->
-
   <div
     class="count-line"
     id="countLine"
   ></div>
 
-
-  <!-- KAMPANYALAR -->
 
   <div id="content">
 
@@ -1102,27 +723,16 @@ footer{
 
 
   <footer>
-
-    Kesin ve güncel koşullar için
-    ilgili markanın resmi kampanya
-    sayfasını ve yetkili satıcısını
-    kontrol etmeniz önerilir.
-
+    Kesin ve güncel koşullar için ilgili markanın
+    resmi kampanya sayfasını ve yetkili satıcısını kontrol ediniz.
   </footer>
-
 
 </div>
 
 
 <script>
 
-
-/*
- * MODEL LİNKLERİ
- */
-
 let MODEL_LINKS = {};
-
 
 function normalizeLinkKey(value){
 
@@ -1132,7 +742,6 @@ function normalizeLinkKey(value){
     .trim();
 
 }
-
 
 function getModelLink(d){
 
@@ -1145,116 +754,46 @@ function getModelLink(d){
 }
 
 
-/*
- * MARKA LOGOLARI
- */
+/* MARKA LOGOLARI */
 
 const BRAND_DOMAINS = {
 
-  "Volkswagen":
-    "volkswagen.com.tr",
-
-  "Skoda":
-    "skoda.com.tr",
-
-  "Škoda":
-    "skoda.com.tr",
-
-  "Cupra":
-    "cupraofficial.com.tr",
-
-  "Renault":
-    "renault.com.tr",
-
-  "Dacia":
-    "dacia.com.tr",
-
-  "Peugeot":
-    "peugeot.com.tr",
-
-  "Citroen":
-    "citroen.com.tr",
-
-  "Citroën":
-    "citroen.com.tr",
-
-  "Opel":
-    "opel.com.tr",
-
-  "Ford":
-    "ford.com.tr",
-
-  "Fiat":
-    "fiat.com.tr",
-
-  "Toyota":
-    "toyota.com.tr",
-
-  "Honda":
-    "honda.com.tr",
-
-  "Hyundai":
-    "hyundai.com",
-
-  "Kia":
-    "kia.com",
-
-  "Nissan":
-    "nissan.com.tr",
-
-  "Chery":
-    "chery.com.tr",
-
-  "BYD":
-    "bydauto.com.tr",
-
-  "MG":
-    "mg-turkey.com",
-
-  "Jaecoo":
-    "omodajaecoo.com.tr",
-
-  "Omoda":
-    "omodajaecoo.com.tr",
-
-  "Suzuki":
-    "suzuki.com.tr",
-
-  "BMW":
-    "bmw.com.tr",
-
-  "Mercedes-Benz":
-    "mercedes-benz.com.tr",
-
-  "Audi":
-    "audi.com.tr",
-
-  "Volvo":
-    "volvocars.com",
-
-  "Lexus":
-    "lexus.com.tr",
-
-  "Porsche":
-    "porsche.com.tr",
-
-  "Land Rover":
-    "landrover.com.tr",
-
-  "Jaguar":
-    "jaguar.com.tr",
-
-  "Alfa Romeo":
-    "alfaromeo.com.tr",
-
-  "Togg":
-    "togg.com.tr",
-
-  "DS Automobiles":
-    "dsautomobiles.com.tr"
+  "Volkswagen":"volkswagen.com.tr",
+  "Skoda":"skoda.com.tr",
+  "Škoda":"skoda.com.tr",
+  "Cupra":"cupraofficial.com.tr",
+  "Renault":"renault.com.tr",
+  "Dacia":"dacia.com.tr",
+  "Peugeot":"peugeot.com.tr",
+  "Citroen":"citroen.com.tr",
+  "Citroën":"citroen.com.tr",
+  "Opel":"opel.com.tr",
+  "Ford":"ford.com.tr",
+  "Fiat":"fiat.com.tr",
+  "Toyota":"toyota.com.tr",
+  "Honda":"honda.com.tr",
+  "Hyundai":"hyundai.com",
+  "Kia":"kia.com",
+  "Nissan":"nissan.com.tr",
+  "Chery":"chery.com.tr",
+  "BYD":"bydauto.com.tr",
+  "MG":"mg-turkey.com",
+  "Jaecoo":"omodajaecoo.com.tr",
+  "Omoda":"omodajaecoo.com.tr",
+  "Suzuki":"suzuki.com.tr",
+  "BMW":"bmw.com.tr",
+  "Mercedes-Benz":"mercedes-benz.com.tr",
+  "Audi":"audi.com.tr",
+  "Volvo":"volvocars.com",
+  "Lexus":"lexus.com.tr",
+  "Porsche":"porsche.com.tr",
+  "Land Rover":"landrover.com.tr",
+  "Jaguar":"jaguar.com.tr",
+  "Alfa Romeo":"alfaromeo.com.tr",
+  "Togg":"togg.com.tr",
+  "DS Automobiles":"dsautomobiles.com.tr"
 
 };
-
 
 function getBrandLogo(brand){
 
@@ -1274,25 +813,20 @@ function getBrandLogo(brand){
 
 }
 
-
 function initials(brand){
 
   return String(brand || "")
     .split(/\s+/)
     .filter(Boolean)
     .slice(0,2)
-    .map(
-      x=>x.charAt(0)
-    )
+    .map(x=>x.charAt(0))
     .join("")
     .toUpperCase();
 
 }
 
 
-/*
- * KATEGORİLER
- */
+/* KATEGORİLER */
 
 const CATS = {
 
@@ -1315,39 +849,23 @@ const CATS = {
 
 
 let ALL_DATA = [];
-
-let activeBrand =
-  "Tümü";
-
-let activeCat =
-  "Tümü";
-
-let searchTerm =
-  "";
+let activeBrand = "Tümü";
+let activeCat = "Tümü";
+let searchTerm = "";
 
 
-/*
- * VERİYİ YÜKLE
- */
+/* VERİ */
 
 async function loadData(){
 
   const content =
-    document.getElementById(
-      "content"
-    );
-
+    document.getElementById("content");
 
   content.innerHTML =
     '<div class="loading">Kampanyalar getiriliyor…</div>';
 
 
   try{
-
-
-    /*
-     * MODEL LİNKLERİNİ OKU
-     */
 
     try{
 
@@ -1359,12 +877,10 @@ async function loadData(){
           }
         );
 
-
       if(linkRes.ok){
 
         const linkJson =
           await linkRes.json();
-
 
         MODEL_LINKS =
           linkJson.exact || {};
@@ -1383,18 +899,10 @@ async function loadData(){
     }
 
 
-    /*
-     * KAYITLI KAMPANYALARI OKU
-     *
-     * refresh çağrısı yapılmaz.
-     * Claude API çalışmaz.
-     */
-
     const res =
       await fetch(
         "/api/campaigns"
       );
-
 
     const json =
       await res.json();
@@ -1414,10 +922,6 @@ async function loadData(){
       json.campaigns || [];
 
 
-    /*
-     * SON GÜNCELLEME
-     */
-
     const lastUpdated =
       document.getElementById(
         "lastUpdated"
@@ -1431,33 +935,18 @@ async function loadData(){
           json.updatedAt
         );
 
-
       const formatted =
         date.toLocaleString(
           "tr-TR",
           {
-
-            timeZone:
-              "Europe/Istanbul",
-
-            day:
-              "2-digit",
-
-            month:
-              "long",
-
-            year:
-              "numeric",
-
-            hour:
-              "2-digit",
-
-            minute:
-              "2-digit"
-
+            timeZone:"Europe/Istanbul",
+            day:"2-digit",
+            month:"long",
+            year:"numeric",
+            hour:"2-digit",
+            minute:"2-digit"
           }
         );
-
 
       lastUpdated.textContent =
         `Son güncelleme: ${formatted} · ${ALL_DATA.length} kampanya`;
@@ -1478,8 +967,7 @@ async function loadData(){
     content.innerHTML =
       `
         <div class="error">
-          Veri alınamadı:
-          ${err.message}
+          Veri alınamadı: ${err.message}
         </div>
       `;
 
@@ -1488,9 +976,7 @@ async function loadData(){
 }
 
 
-/*
- * MARKALAR
- */
+/* MARKALAR */
 
 function uniqueBrands(){
 
@@ -1524,9 +1010,7 @@ function renderChips(){
       "brandChips"
     );
 
-
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
 
   uniqueBrands()
@@ -1538,20 +1022,16 @@ function renderChips(){
             "div"
           );
 
-
         el.className =
           "chip" +
           (
-            brand ===
-            activeBrand
+            brand === activeBrand
               ? " active"
               : ""
           );
 
-
         el.textContent =
           brand;
-
 
         el.onclick =
           ()=>{
@@ -1563,7 +1043,6 @@ function renderChips(){
 
           };
 
-
         container.appendChild(
           el
         );
@@ -1574,9 +1053,7 @@ function renderChips(){
 }
 
 
-/*
- * KATEGORİLER
- */
+/* KATEGORİ */
 
 function renderCats(){
 
@@ -1585,16 +1062,13 @@ function renderCats(){
       "catRow"
     );
 
-
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
 
   const all =
     document.createElement(
       "button"
     );
-
 
   all.className =
     "cat-btn" +
@@ -1605,10 +1079,8 @@ function renderCats(){
         : ""
     );
 
-
   all.textContent =
     "Tüm kategoriler";
-
 
   all.onclick =
     ()=>{
@@ -1619,7 +1091,6 @@ function renderCats(){
       renderAll();
 
     };
-
 
   container.appendChild(
     all
@@ -1636,7 +1107,6 @@ function renderCats(){
           "button"
         );
 
-
       btn.className =
         "cat-btn" +
         (
@@ -1645,10 +1115,8 @@ function renderCats(){
             : ""
         );
 
-
       btn.textContent =
         val.label;
-
 
       btn.onclick =
         ()=>{
@@ -1660,7 +1128,6 @@ function renderCats(){
 
         };
 
-
       container.appendChild(
         btn
       );
@@ -1671,9 +1138,7 @@ function renderCats(){
 }
 
 
-/*
- * FİLTRELE
- */
+/* FILTER */
 
 function filtered(){
 
@@ -1683,20 +1148,16 @@ function filtered(){
       d=>{
 
         if(
-          activeBrand !==
-          "Tümü" &&
-          d.brand !==
-          activeBrand
+          activeBrand !== "Tümü" &&
+          d.brand !== activeBrand
         ){
           return false;
         }
 
 
         if(
-          activeCat !==
-          "Tümü" &&
-          d.cat !==
-          activeCat
+          activeCat !== "Tümü" &&
+          d.cat !== activeCat
         ){
           return false;
         }
@@ -1732,7 +1193,6 @@ function filtered(){
 
         }
 
-
         return true;
 
       }
@@ -1747,9 +1207,7 @@ function filtered(){
 }
 
 
-/*
- * YENİ / GÜNCELLENDİ
- */
+/* STATUS */
 
 function daysSince(dateString){
 
@@ -1757,12 +1215,10 @@ function daysSince(dateString){
     return Infinity;
   }
 
-
   const date =
     new Date(
       dateString
     );
-
 
   if(
     Number.isNaN(
@@ -1771,7 +1227,6 @@ function daysSince(dateString){
   ){
     return Infinity;
   }
-
 
   return (
     Date.now() -
@@ -1789,62 +1244,46 @@ function daysSince(dateString){
 
 function getCampaignStatus(d){
 
-  const firstSeenDays =
+  if(
     daysSince(
       d.firstSeenAt
-    );
-
-
-  const changedDays =
-    daysSince(
-      d.lastChangedAt
-    );
-
-
-  if(
-    firstSeenDays < 3
+    ) < 3
   ){
     return "new";
   }
 
-
   if(
-    changedDays < 3
+    daysSince(
+      d.lastChangedAt
+    ) < 3
   ){
     return "updated";
   }
-
 
   return null;
 
 }
 
 
-/*
- * KAMPANYA KARTLARI
- */
+/* GRID */
 
 function renderGrid(){
 
   const items =
     filtered();
 
-
   const content =
     document.getElementById(
       "content"
     );
 
-
-  const countLine =
-    document.getElementById(
+  document
+    .getElementById(
       "countLine"
-    );
-
-
-  countLine.textContent =
-    items.length +
-    " kampanya listeleniyor";
+    )
+    .textContent =
+      items.length +
+      " kampanya listeleniyor";
 
 
   if(
@@ -1852,11 +1291,7 @@ function renderGrid(){
   ){
 
     content.innerHTML =
-      `
-        <div class="empty">
-          Aramanızla eşleşen kampanya bulunamadı.
-        </div>
-      `;
+      '<div class="empty">Aramanızla eşleşen kampanya bulunamadı.</div>';
 
     return;
 
@@ -1867,7 +1302,6 @@ function renderGrid(){
     document.createElement(
       "div"
     );
-
 
   grid.className =
     "grid";
@@ -1880,14 +1314,11 @@ function renderGrid(){
         CATS[d.cat] ||
         CATS.indirim;
 
-
       const status =
         getCampaignStatus(d);
 
-
       const modelLink =
         getModelLink(d);
-
 
       const logo =
         getBrandLogo(
@@ -1895,33 +1326,19 @@ function renderGrid(){
         );
 
 
-      let statusBadge =
-        "";
+      let statusBadge = "";
 
-
-      if(
-        status ===
-        "new"
-      ){
+      if(status === "new"){
 
         statusBadge =
-          `
-            <div class="new-badge">
-              ✦ YENİ
-            </div>
-          `;
+          '<div class="new-badge">✦ YENİ</div>';
 
       }else if(
-        status ===
-        "updated"
+        status === "updated"
       ){
 
         statusBadge =
-          `
-            <div class="updated-badge">
-              ↻ GÜNCELLENDİ
-            </div>
-          `;
+          '<div class="updated-badge">↻ GÜNCELLENDİ</div>';
 
       }
 
@@ -1931,10 +1348,8 @@ function renderGrid(){
           "div"
         );
 
-
       card.className =
         "card";
-
 
       card.style.setProperty(
         "--cat-color",
@@ -1948,10 +1363,8 @@ function renderGrid(){
           "clickable"
         );
 
-
         card.style.cursor =
           "pointer";
-
 
         card.onclick =
           ()=>{
@@ -1969,9 +1382,7 @@ function renderGrid(){
 
       const logoHtml =
         logo
-
           ? `
-
             <img
               class="brand-logo"
               src="${logo}"
@@ -1989,32 +1400,24 @@ function renderGrid(){
             >
               ${initials(d.brand)}
             </div>
-
           `
-
           : `
-
             <div class="logo-fallback">
               ${initials(d.brand)}
             </div>
-
           `;
 
 
       const buttonHtml =
         modelLink
-
           ? `
-
             <button
               type="button"
               class="campaign-btn"
             >
               Kampanyayı İncele →
             </button>
-
           `
-
           : "";
 
 
@@ -2085,12 +1488,10 @@ function renderGrid(){
             ".campaign-btn"
           );
 
-
         button.onclick =
           event=>{
 
             event.stopPropagation();
-
 
             window.open(
               modelLink,
@@ -2111,9 +1512,7 @@ function renderGrid(){
   );
 
 
-  content.innerHTML =
-    "";
-
+  content.innerHTML = "";
 
   content.appendChild(
     grid
@@ -2122,24 +1521,14 @@ function renderGrid(){
 }
 
 
-/*
- * HER ŞEYİ ÇİZ
- */
-
 function renderAll(){
 
   renderChips();
-
   renderCats();
-
   renderGrid();
 
 }
 
-
-/*
- * ARAMA
- */
 
 document
   .getElementById(
@@ -2157,10 +1546,6 @@ document
     }
   );
 
-
-/*
- * BAŞLAT
- */
 
 loadData();
 
