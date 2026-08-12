@@ -1,0 +1,50 @@
+name: Sifir Arac Fiyatlarini Guncelle
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Her gün Türkiye saatiyle yaklaşık 10:30
+    # GitHub Actions UTC kullanır.
+    - cron: "30 7 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 45
+
+    steps:
+      - name: Repoyu indir
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Playwright kur
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Fiyatlari resmi sitelerden tara
+        run: |
+          node scripts/update-prices.js
+
+      - name: Degisiklik varsa GitHub'a kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/prices-latest.json
+
+          if git diff --cached --quiet; then
+            echo "Fiyatlarda degisiklik yok."
+          else
+            git commit -m "data: sifir arac fiyatlarini guncelle"
+            git push
+          fi
