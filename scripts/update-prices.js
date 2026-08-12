@@ -15,158 +15,61 @@ const BRANDS = [
     home: "https://www.bmw.com.tr",
     directUrl: "https://teknikoto.bmw.com.tr/fiyat-listesi"
   },
-  {
-    brand: "Mercedes-Benz",
-    home: "https://www.mercedes-benz.com.tr"
-  },
-  {
-    brand: "Audi",
-    home: "https://www.audi.com.tr"
-  },
-  {
-    brand: "Volkswagen",
-    home: "https://binekarac.vw.com.tr"
-  },
-  {
-    brand: "Škoda",
-    home: "https://www.skoda.com.tr"
-  },
-  {
-    brand: "Cupra",
-    home: "https://www.cupraofficial.com.tr"
-  },
-  {
-    brand: "Renault",
-    home: "https://www.renault.com.tr"
-  },
-  {
-    brand: "Dacia",
-    home: "https://www.dacia.com.tr"
-  },
-  {
-    brand: "Peugeot",
-    home: "https://www.peugeot.com.tr"
-  },
-  {
-    brand: "Citroën",
-    home: "https://www.citroen.com.tr"
-  },
-  {
-    brand: "Opel",
-    home: "https://www.opel.com.tr"
-  },
-  {
-    brand: "Ford",
-    home: "https://www.ford.com.tr"
-  },
-  {
-    brand: "Fiat",
-    home: "https://www.fiat.com.tr"
-  },
-  {
-    brand: "Hyundai",
-    home: "https://www.hyundai.com/tr/tr"
-  },
-  {
-    brand: "Kia",
-    home: "https://www.kia.com/tr"
-  },
-  {
-    brand: "Nissan",
-    home: "https://www.nissan.com.tr"
-  },
-  {
-    brand: "Honda",
-    home: "https://www.honda.com.tr"
-  },
-  {
-    brand: "Chery",
-    home: "https://www.chery.com.tr"
-  },
-  {
-    brand: "BYD",
-    home: "https://www.bydauto.com.tr"
-  },
-  {
-    brand: "MG",
-    home: "https://www.mg-turkey.com"
-  },
-  {
-    brand: "OMODA",
-    home: "https://www.omodajaecoo.com.tr"
-  },
-  {
-    brand: "JAECOO",
-    home: "https://www.omodajaecoo.com.tr"
-  },
-  {
-    brand: "Suzuki",
-    home: "https://www.suzuki.com.tr"
-  },
-  {
-    brand: "Volvo",
-    home: "https://www.volvocars.com/tr"
-  },
-  {
-    brand: "Lexus",
-    home: "https://www.lexus.com.tr"
-  },
-  {
-    brand: "Porsche",
-    home: "https://www.porsche.com.tr"
-  },
-  {
-    brand: "Land Rover",
-    home: "https://www.landrover.com.tr"
-  },
-  {
-    brand: "Jaguar",
-    home: "https://www.jaguar.com.tr"
-  },
-  {
-    brand: "Alfa Romeo",
-    home: "https://www.alfaromeo.com.tr"
-  },
-  {
-    brand: "Togg",
-    home: "https://www.togg.com.tr"
-  },
-  {
-    brand: "DS Automobiles",
-    home: "https://www.dsautomobiles.com.tr"
-  },
-  {
-    brand: "MINI",
-    home: "https://www.mini.com.tr"
-  },
-  {
-    brand: "Subaru",
-    home: "https://www.subaru.com.tr"
-  },
-  {
-    brand: "Mazda",
-    home: "https://www.mazda.com.tr"
-  },
-  {
-    brand: "Mitsubishi",
-    home: "https://www.mitsubishi-motors.com.tr"
-  },
-  {
-    brand: "KGM",
-    home: "https://www.kgmmobility.com.tr"
-  },
-  {
-    brand: "DFSK",
-    home: "https://www.dfsk.com.tr"
-  },
-  {
-    brand: "Skywell",
-    home: "https://www.skywell.com.tr"
-  },
-  {
-    brand: "Leapmotor",
-    home: "https://www.leapmotor.net/tr"
-  }
+  { brand: "Mercedes-Benz", home: "https://www.mercedes-benz.com.tr" },
+  { brand: "Audi", home: "https://www.audi.com.tr" },
+  { brand: "Volkswagen", home: "https://binekarac.vw.com.tr" },
+  { brand: "Škoda", home: "https://www.skoda.com.tr" },
+  { brand: "Cupra", home: "https://www.cupraofficial.com.tr" },
+  { brand: "Renault", home: "https://www.renault.com.tr" },
+  { brand: "Dacia", home: "https://www.dacia.com.tr" },
+  { brand: "Peugeot", home: "https://www.peugeot.com.tr" },
+  { brand: "Citroën", home: "https://www.citroen.com.tr" },
+  { brand: "Opel", home: "https://www.opel.com.tr" },
+  { brand: "Ford", home: "https://www.ford.com.tr" },
+  { brand: "Fiat", home: "https://www.fiat.com.tr" },
+  { brand: "Hyundai", home: "https://www.hyundai.com/tr/tr" },
+  { brand: "Kia", home: "https://www.kia.com/tr" },
+  { brand: "Nissan", home: "https://www.nissan.com.tr" },
+  { brand: "Honda", home: "https://www.honda.com.tr" },
+  { brand: "Chery", home: "https://www.chery.com.tr" },
+  { brand: "BYD", home: "https://www.bydauto.com.tr" },
+  { brand: "MG", home: "https://www.mg-turkey.com" },
+  { brand: "OMODA", home: "https://www.omodajaecoo.com.tr" },
+  { brand: "JAECOO", home: "https://www.omodajaecoo.com.tr" },
+  { brand: "Suzuki", home: "https://www.suzuki.com.tr" },
+  { brand: "Volvo", home: "https://www.volvocars.com/tr" },
+  { brand: "Lexus", home: "https://www.lexus.com.tr" },
+  { brand: "Porsche", home: "https://www.porsche.com.tr" },
+  { brand: "Land Rover", home: "https://www.landrover.com.tr" },
+  { brand: "Jaguar", home: "https://www.jaguar.com.tr" },
+  { brand: "Alfa Romeo", home: "https://www.alfaromeo.com.tr" },
+  { brand: "Togg", home: "https://www.togg.com.tr" },
+  { brand: "DS Automobiles", home: "https://www.dsautomobiles.com.tr" },
+  { brand: "MINI", home: "https://www.mini.com.tr" },
+  { brand: "Subaru", home: "https://www.subaru.com.tr" },
+  { brand: "Mazda", home: "https://www.mazda.com.tr" },
+  { brand: "Mitsubishi", home: "https://www.mitsubishi-motors.com.tr" },
+  { brand: "KGM", home: "https://www.kgmmobility.com.tr" },
+  { brand: "DFSK", home: "https://www.dfsk.com.tr" },
+  { brand: "Skywell", home: "https://www.skywell.com.tr" },
+  { brand: "Leapmotor", home: "https://www.leapmotor.net/tr" }
+];
+
+const INVALID_LABEL_PATTERNS = [
+  /^liste\s*(fiyatı|fiyati)?$/i,
+  /^kampanyalı\s*(fiyatı|fiyati)?/i,
+  /^kampanya\s*fiyatı/i,
+  /^ötv\s*muaf/i,
+  /^özel\s*tüketim/i,
+  /^anahtar\s*teslim/i,
+  /^tavsiye\s*edilen/i,
+  /^satış\s*fiyatı/i,
+  /^fiyat\s*listesi/i,
+  /^fiyatlar$/i,
+  /^model$/i,
+  /^versiyon$/i,
+  /^donanım$/i,
+  /^motor$/i
 ];
 
 function normalizeText(value) {
@@ -177,12 +80,18 @@ function normalizeText(value) {
     .trim();
 }
 
+function normalizeKey(value) {
+  return normalizeText(value)
+    .toLocaleLowerCase("tr-TR")
+    .replace(/[^\p{L}\p{N}+.-]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function parsePrice(value) {
   if (!value) return null;
 
-  const cleaned = String(value)
-    .replace(/[^\d]/g, "");
-
+  const cleaned = String(value).replace(/[^\d]/g, "");
   if (!cleaned) return null;
 
   const number = Number(cleaned);
@@ -209,19 +118,6 @@ function priceMatches(text) {
     .filter(Boolean);
 }
 
-function makeKey(item) {
-  return [
-    item.brand,
-    item.model,
-    item.version
-  ]
-    .map(x =>
-      normalizeText(x)
-        .toLocaleLowerCase("tr-TR")
-    )
-    .join("|");
-}
-
 function cleanLabel(value) {
   return normalizeText(value)
     .replace(
@@ -232,14 +128,175 @@ function cleanLabel(value) {
     .trim();
 }
 
+function isInvalidLabel(value) {
+  const text = cleanLabel(value);
+
+  if (!text) return true;
+
+  if (text.length < 2 || text.length > 120) {
+    return true;
+  }
+
+  if (INVALID_LABEL_PATTERNS.some(pattern => pattern.test(text))) {
+    return true;
+  }
+
+  if (/^[\d\s.,₺TL%*-]+$/i.test(text)) {
+    return true;
+  }
+
+  return false;
+}
+
+function looksLikeRealVersion(value) {
+  const text = cleanLabel(value);
+
+  if (isInvalidLabel(text)) {
+    return false;
+  }
+
+  const normalized = normalizeKey(text);
+
+  const technicalSignals = [
+    "hybrid",
+    "multidrive",
+    "e-cvt",
+    "cv",
+    "hp",
+    "dsg",
+    "dct",
+    "at",
+    "mt",
+    "4x4",
+    "4x2",
+    "awd",
+    "fwd",
+    "rwd",
+    "electric",
+    "elektrik",
+    "comfort",
+    "premium",
+    "executive",
+    "prestige",
+    "dream",
+    "vision",
+    "flame",
+    "passion",
+    "style",
+    "business",
+    "gt",
+    "line",
+    "amg",
+    "x-pack",
+    "allure",
+    "active",
+    "shine",
+    "ultimate",
+    "long range",
+    "standard range"
+  ];
+
+  if (
+    technicalSignals.some(signal =>
+      normalized.includes(signal)
+    )
+  ) {
+    return true;
+  }
+
+  if (/\d/.test(text)) {
+    return true;
+  }
+
+  return text.split(/\s+/).length >= 2;
+}
+
+function makeKey(item) {
+  return [
+    item.brand,
+    item.model,
+    item.version
+  ]
+    .map(normalizeKey)
+    .join("|");
+}
+
+function recordScore(item) {
+  let score = 0;
+
+  if (item.model) score += 2;
+  if (item.version && item.version !== "Standart") score += 2;
+  if (item.campaignPrice) score += 2;
+
+  if (
+    item.listPrice &&
+    item.campaignPrice &&
+    item.listPrice >= item.campaignPrice
+  ) {
+    score += 2;
+  }
+
+  if (looksLikeRealVersion(item.version)) {
+    score += 2;
+  }
+
+  return score;
+}
+
+function isValidRecord(item) {
+  if (!item.brand || !item.model || !item.listPrice) {
+    return false;
+  }
+
+  if (isInvalidLabel(item.model)) {
+    return false;
+  }
+
+  if (
+    item.version &&
+    item.version !== "Standart" &&
+    !looksLikeRealVersion(item.version)
+  ) {
+    return false;
+  }
+
+  if (
+    item.campaignPrice &&
+    item.campaignPrice > item.listPrice * 1.5
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
+function dedupe(records) {
+  const map = new Map();
+
+  for (const item of records) {
+    if (!isValidRecord(item)) {
+      continue;
+    }
+
+    const key = makeKey(item);
+    const existing = map.get(key);
+
+    if (!existing) {
+      map.set(key, item);
+      continue;
+    }
+
+    if (recordScore(item) > recordScore(existing)) {
+      map.set(key, item);
+    }
+  }
+
+  return [...map.values()];
+}
+
 async function readPrevious() {
   try {
-    const raw =
-      await fs.readFile(
-        OUTPUT_PATH,
-        "utf8"
-      );
-
+    const raw = await fs.readFile(OUTPUT_PATH, "utf8");
     return JSON.parse(raw);
   } catch {
     return {
@@ -252,8 +309,7 @@ async function readPrevious() {
 
 async function configurePage(page) {
   await page.setExtraHTTPHeaders({
-    "Accept-Language":
-      "tr-TR,tr;q=0.9,en;q=0.8"
+    "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8"
   });
 }
 
@@ -265,32 +321,20 @@ async function discoverPriceUrls(page, brand) {
   }
 
   try {
-    await page.goto(
-      brand.home,
-      {
-        waitUntil: "domcontentloaded",
-        timeout: 40000
-      }
-    );
+    await page.goto(brand.home, {
+      waitUntil: "domcontentloaded",
+      timeout: 40000
+    });
 
     await page.waitForTimeout(2500);
 
-    const discovered =
-      await page.evaluate(() => {
-        return Array
-          .from(
-            document.querySelectorAll("a[href]")
-          )
-          .map(a => ({
-            href: a.href,
-            text:
-              (
-                a.innerText ||
-                a.textContent ||
-                ""
-              ).trim()
-          }));
-      });
+    const discovered = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll("a[href]"))
+        .map(a => ({
+          href: a.href,
+          text: (a.innerText || a.textContent || "").trim()
+        }));
+    });
 
     const keywords = [
       "fiyat listesi",
@@ -301,50 +345,32 @@ async function discoverPriceUrls(page, brand) {
       "prices"
     ];
 
-    const scored =
-      discovered
-        .map(item => {
-          const hay =
-            `${item.text} ${item.href}`
-              .toLocaleLowerCase("tr-TR");
+    const scored = discovered
+      .map(item => {
+        const hay =
+          `${item.text} ${item.href}`.toLocaleLowerCase("tr-TR");
 
-          let score = 0;
+        let score = 0;
 
-          for (
-            let i = 0;
-            i < keywords.length;
-            i++
-          ) {
-            if (
-              hay.includes(
-                keywords[i]
-              )
-            ) {
-              score +=
-                100 - i * 10;
-            }
+        for (let i = 0; i < keywords.length; i++) {
+          if (hay.includes(keywords[i])) {
+            score += 100 - i * 10;
           }
+        }
 
-          if (
-            hay.includes("kampanya")
-          ) {
-            score -= 15;
-          }
+        if (hay.includes("kampanya")) {
+          score -= 15;
+        }
 
-          return {
-            ...item,
-            score
-          };
-        })
-        .filter(x => x.score > 0)
-        .sort(
-          (a, b) =>
-            b.score - a.score
-        );
+        return {
+          ...item,
+          score
+        };
+      })
+      .filter(x => x.score > 0)
+      .sort((a, b) => b.score - a.score);
 
-    for (
-      const item of scored.slice(0, 5)
-    ) {
+    for (const item of scored.slice(0, 5)) {
       urls.push(item.href);
     }
   } catch (error) {
@@ -354,138 +380,98 @@ async function discoverPriceUrls(page, brand) {
     );
   }
 
-  return Array.from(
-    new Set(urls)
-  );
+  return Array.from(new Set(urls));
 }
 
-async function extractTables(
-  page,
-  brand,
-  sourceUrl
-) {
-  const rows =
-    await page.evaluate(() => {
+async function extractTables(page, brand, sourceUrl) {
+  const rows = await page.evaluate(() => {
 
-      function previousHeading(el) {
-        let current = el;
+    function previousHeading(el) {
+      let current = el;
 
-        for (
-          let level = 0;
-          level < 6 && current;
-          level++
-        ) {
-          let sibling =
-            current.previousElementSibling;
+      for (let level = 0; level < 6 && current; level++) {
+        let sibling = current.previousElementSibling;
 
-          while (sibling) {
-            if (
-              sibling.matches?.(
-                "h1,h2,h3,h4,[class*='title'],[class*='model']"
-              )
-            ) {
-              const value =
-                (
-                  sibling.innerText ||
-                  sibling.textContent ||
-                  ""
-                ).trim();
+        while (sibling) {
+          if (
+            sibling.matches?.(
+              "h1,h2,h3,h4,[class*='title'],[class*='model']"
+            )
+          ) {
+            const value =
+              (
+                sibling.innerText ||
+                sibling.textContent ||
+                ""
+              ).trim();
 
-              if (value) {
-                return value;
-              }
+            if (value) {
+              return value;
             }
-
-            const nested =
-              sibling.querySelector?.(
-                "h1,h2,h3,h4"
-              );
-
-            if (nested) {
-              const value =
-                (
-                  nested.innerText ||
-                  nested.textContent ||
-                  ""
-                ).trim();
-
-              if (value) {
-                return value;
-              }
-            }
-
-            sibling =
-              sibling.previousElementSibling;
           }
 
-          current =
-            current.parentElement;
+          const nested =
+            sibling.querySelector?.("h1,h2,h3,h4");
+
+          if (nested) {
+            const value =
+              (
+                nested.innerText ||
+                nested.textContent ||
+                ""
+              ).trim();
+
+            if (value) {
+              return value;
+            }
+          }
+
+          sibling = sibling.previousElementSibling;
         }
 
-        return "";
+        current = current.parentElement;
       }
 
-      return Array
-        .from(
-          document.querySelectorAll(
-            "table"
-          )
-        )
-        .flatMap(table => {
-          const heading =
-            previousHeading(table);
+      return "";
+    }
 
-          return Array
-            .from(
-              table.querySelectorAll(
-                "tr"
-              )
+    return Array.from(document.querySelectorAll("table"))
+      .flatMap(table => {
+        const heading = previousHeading(table);
+
+        return Array.from(table.querySelectorAll("tr"))
+          .map(row => ({
+            heading,
+            cells: Array.from(
+              row.querySelectorAll("th,td")
+            ).map(cell =>
+              (
+                cell.innerText ||
+                cell.textContent ||
+                ""
+              ).trim()
             )
-            .map(row => ({
-              heading,
-              cells: Array
-                .from(
-                  row.querySelectorAll(
-                    "th,td"
-                  )
-                )
-                .map(cell =>
-                  (
-                    cell.innerText ||
-                    cell.textContent ||
-                    ""
-                  ).trim()
-                )
-            }));
-        });
-    });
+          }));
+      });
+  });
 
   const output = [];
 
   for (const row of rows) {
-    if (
-      !row.cells ||
-      row.cells.length < 2
-    ) {
+    if (!row.cells || row.cells.length < 2) {
       continue;
     }
 
     const prices = [];
-
     const textCells = [];
 
     for (const cell of row.cells) {
-      const found =
-        priceMatches(cell);
+      const found = priceMatches(cell);
 
       if (found.length) {
         prices.push(...found);
-      } else if (
-        normalizeText(cell)
-      ) {
-        textCells.push(
-          normalizeText(cell)
-        );
+      } else if (normalizeText(cell)) {
+        textCells.push(normalizeText(cell));
       }
     }
 
@@ -493,46 +479,44 @@ async function extractTables(
       continue;
     }
 
-    let model =
-      cleanLabel(
-        row.heading
-      );
+    let model = cleanLabel(row.heading);
+
+    const validTextCells =
+      textCells.filter(cell => !isInvalidLabel(cell));
 
     let version =
-      cleanLabel(
-        textCells.join(" ")
+      cleanLabel(validTextCells.join(" "));
+
+    if (!model && validTextCells.length) {
+      model = cleanLabel(validTextCells[0]);
+
+      version = cleanLabel(
+        validTextCells
+          .slice(1)
+          .join(" ")
       );
+    }
 
-    if (!model && textCells.length) {
-      model =
-        cleanLabel(
-          textCells[0]
-        );
-
-      version =
-        cleanLabel(
-          textCells
-            .slice(1)
-            .join(" ")
-        );
+    if (isInvalidLabel(model)) {
+      continue;
     }
 
     if (
-      !model ||
-      model.length > 150
+      version &&
+      version !== "Standart" &&
+      !looksLikeRealVersion(version)
     ) {
-      continue;
+      version = "Standart";
     }
 
     output.push({
       brand: brand.brand,
       model,
-      version:
-        version || "Standart",
-      listPrice:
-        prices[0] || null,
+      version: version || "Standart",
+      listPrice: prices[0] || null,
       campaignPrice:
-        prices.length > 1
+        prices.length > 1 &&
+        prices[1] <= prices[0]
           ? prices[1]
           : null,
       sourceUrl
@@ -542,60 +526,51 @@ async function extractTables(
   return output;
 }
 
-async function extractCards(
-  page,
-  brand,
-  sourceUrl
-) {
-  const blocks =
-    await page.evaluate(() => {
+async function extractCards(page, brand, sourceUrl) {
+  const blocks = await page.evaluate(() => {
 
-      const selectors = [
-        "article",
-        "li",
-        "[class*='price']",
-        "[class*='model']",
-        "[class*='vehicle']",
-        "[class*='car']"
-      ];
+    const selectors = [
+      "article",
+      "li",
+      "[class*='price']",
+      "[class*='model']",
+      "[class*='vehicle']",
+      "[class*='car']"
+    ];
 
-      const elements =
-        Array.from(
-          document.querySelectorAll(
-            selectors.join(",")
-          )
+    const elements =
+      Array.from(
+        document.querySelectorAll(
+          selectors.join(",")
+        )
+      );
+
+    return elements
+      .map(el => ({
+        text:
+          (
+            el.innerText ||
+            el.textContent ||
+            ""
+          ).trim()
+      }))
+      .filter(item => {
+        const len = item.text.length;
+
+        return (
+          len >= 10 &&
+          len <= 700 &&
+          /(?:TL|₺|\d{1,3}(?:\.\d{3}){2,})/i
+            .test(item.text)
         );
-
-      return elements
-        .map(el => ({
-          text:
-            (
-              el.innerText ||
-              el.textContent ||
-              ""
-            ).trim()
-        }))
-        .filter(item => {
-          const len =
-            item.text.length;
-
-          return (
-            len >= 10 &&
-            len <= 700 &&
-            /(?:TL|₺|\d{1,3}(?:\.\d{3}){2,})/i
-              .test(item.text)
-          );
-        })
-        .slice(0, 500);
-    });
+      })
+      .slice(0, 500);
+  });
 
   const output = [];
 
   for (const block of blocks) {
-    const prices =
-      priceMatches(
-        block.text
-      );
+    const prices = priceMatches(block.text);
 
     if (!prices.length) {
       continue;
@@ -607,18 +582,11 @@ async function extractCards(
         .map(normalizeText)
         .filter(Boolean);
 
-    if (!lines.length) {
-      continue;
-    }
-
     const labels =
-      lines.filter(line => {
-        return (
-          !priceMatches(line).length &&
-          line.length >= 2 &&
-          line.length <= 100
-        );
-      });
+      lines.filter(line =>
+        !priceMatches(line).length &&
+        !isInvalidLabel(line)
+      );
 
     if (!labels.length) {
       continue;
@@ -627,29 +595,32 @@ async function extractCards(
     const model =
       cleanLabel(labels[0]);
 
-    const version =
+    let version =
       cleanLabel(
         labels
           .slice(1, 3)
           .join(" ")
       );
 
-    if (
-      !model ||
-      model.length > 100
-    ) {
+    if (isInvalidLabel(model)) {
       continue;
+    }
+
+    if (
+      version &&
+      !looksLikeRealVersion(version)
+    ) {
+      version = "Standart";
     }
 
     output.push({
       brand: brand.brand,
       model,
-      version:
-        version || "Standart",
-      listPrice:
-        prices[0],
+      version: version || "Standart",
+      listPrice: prices[0],
       campaignPrice:
-        prices.length > 1
+        prices.length > 1 &&
+        prices[1] <= prices[0]
           ? prices[1]
           : null,
       sourceUrl
@@ -659,66 +630,13 @@ async function extractCards(
   return output;
 }
 
-function dedupe(records) {
-  const map = new Map();
+async function scrapeUrl(page, brand, url) {
+  console.log(`[${brand.brand}] deneniyor: ${url}`);
 
-  for (const item of records) {
-    if (
-      !item.brand ||
-      !item.model ||
-      !item.listPrice
-    ) {
-      continue;
-    }
-
-    const key =
-      makeKey(item);
-
-    const existing =
-      map.get(key);
-
-    if (!existing) {
-      map.set(key, item);
-      continue;
-    }
-
-    const existingScore =
-      Number(
-        !!existing.campaignPrice
-      );
-
-    const newScore =
-      Number(
-        !!item.campaignPrice
-      );
-
-    if (
-      newScore >
-      existingScore
-    ) {
-      map.set(key, item);
-    }
-  }
-
-  return [...map.values()];
-}
-
-async function scrapeUrl(
-  page,
-  brand,
-  url
-) {
-  console.log(
-    `[${brand.brand}] deneniyor: ${url}`
-  );
-
-  await page.goto(
-    url,
-    {
-      waitUntil: "domcontentloaded",
-      timeout: 45000
-    }
-  );
+  await page.goto(url, {
+    waitUntil: "domcontentloaded",
+    timeout: 45000
+  });
 
   await page.waitForTimeout(3500);
 
@@ -728,16 +646,11 @@ async function scrapeUrl(
 
       const timer =
         setInterval(() => {
-          window.scrollBy(
-            0,
-            800
-          );
-
+          window.scrollBy(0, 800);
           total += 800;
 
           if (
-            total >
-            document.body.scrollHeight ||
+            total > document.body.scrollHeight ||
             total > 12000
           ) {
             clearInterval(timer);
@@ -769,20 +682,14 @@ async function scrapeUrl(
   ]);
 }
 
-function mergeWithPrevious(
-  fresh,
-  previous
-) {
+function mergeWithPrevious(fresh, previous) {
   const now =
     new Date().toISOString();
 
   const previousMap =
     new Map();
 
-  for (
-    const item of
-    previous.prices || []
-  ) {
+  for (const item of previous.prices || []) {
     previousMap.set(
       makeKey(item),
       item
@@ -807,10 +714,8 @@ function mergeWithPrevious(
     }
 
     const changed =
-      old.listPrice !==
-        item.listPrice ||
-      old.campaignPrice !==
-        item.campaignPrice;
+      old.listPrice !== item.listPrice ||
+      old.campaignPrice !== item.campaignPrice;
 
     return {
       ...item,
@@ -828,8 +733,7 @@ function mergeWithPrevious(
             old.campaignPrice,
 
       firstSeenAt:
-        old.firstSeenAt ||
-        now,
+        old.firstSeenAt || now,
 
       lastSeenAt:
         now,
@@ -837,8 +741,7 @@ function mergeWithPrevious(
       lastChangedAt:
         changed
           ? now
-          : old.lastChangedAt ||
-            now
+          : old.lastChangedAt || now
     };
   });
 }
@@ -863,7 +766,6 @@ async function main() {
     });
 
   const allFresh = [];
-
   const sourceStatus = {};
 
   try {
@@ -881,14 +783,9 @@ async function main() {
           );
 
         let brandRecords = [];
+        let successfulUrl = null;
 
-        let successfulUrl =
-          null;
-
-        for (
-          const url of
-          urls.slice(0, 6)
-        ) {
+        for (const url of urls.slice(0, 6)) {
           try {
             const records =
               await scrapeUrl(
@@ -921,28 +818,22 @@ async function main() {
           }
         }
 
-        if (
-          brandRecords.length
-        ) {
-          allFresh.push(
-            ...brandRecords
-          );
+        brandRecords =
+          dedupe(brandRecords);
 
-          sourceStatus[
-            brand.brand
-          ] = {
+        if (brandRecords.length) {
+          allFresh.push(...brandRecords);
+
+          sourceStatus[brand.brand] = {
             ok: true,
-            count:
-              brandRecords.length,
-            sourceUrl:
-              successfulUrl,
+            count: brandRecords.length,
+            sourceUrl: successfulUrl,
             checkedAt:
-              new Date()
-                .toISOString()
+              new Date().toISOString()
           };
 
           console.log(
-            `[${brand.brand}] ${brandRecords.length} kayıt`
+            `[${brand.brand}] ${brandRecords.length} temiz kayıt`
           );
         } else {
           throw new Error(
@@ -956,30 +847,22 @@ async function main() {
         );
 
         const oldRecords =
-          (
-            previous.prices ||
-            []
-          ).filter(
-            item =>
-              item.brand ===
-              brand.brand
-          );
+          (previous.prices || [])
+            .filter(
+              item =>
+                item.brand ===
+                brand.brand
+            )
+            .filter(isValidRecord);
 
-        allFresh.push(
-          ...oldRecords
-        );
+        allFresh.push(...oldRecords);
 
-        sourceStatus[
-          brand.brand
-        ] = {
+        sourceStatus[brand.brand] = {
           ok: false,
-          count:
-            oldRecords.length,
-          error:
-            String(error),
+          count: oldRecords.length,
+          error: String(error),
           checkedAt:
-            new Date()
-              .toISOString(),
+            new Date().toISOString(),
           preservedPrevious:
             oldRecords.length > 0
         };
@@ -1002,20 +885,17 @@ async function main() {
 
   const payload = {
     updatedAt:
-      new Date()
-        .toISOString(),
+      new Date().toISOString(),
 
     count:
       merged.length,
 
     brands:
-      Array.from(
-        new Set(
-          merged.map(
-            item => item.brand
-          )
+      new Set(
+        merged.map(
+          item => item.brand
         )
-      ).length,
+      ).size,
 
     prices:
       merged,
@@ -1044,7 +924,7 @@ async function main() {
   );
 
   console.log(
-    `Tamamlandı: ${payload.count} fiyat / ${payload.brands} marka`
+    `Tamamlandı: ${payload.count} temiz fiyat / ${payload.brands} marka`
   );
 }
 
