@@ -2,8 +2,13 @@
 <html lang="tr">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>Hesaplama Araçları</title>
 
@@ -43,7 +48,10 @@ body{
     var(--bg);
 
   color:var(--text);
-  font-family:'IBM Plex Sans',sans-serif;
+
+  font-family:
+    'IBM Plex Sans',
+    sans-serif;
 }
 
 .wrap{
@@ -52,8 +60,7 @@ body{
   padding:30px 20px 80px;
 }
 
-
-/* ÜST MENÜ */
+/* NAV */
 
 .topnav{
   display:flex;
@@ -85,12 +92,14 @@ body{
   font-weight:700;
 }
 
-
 /* HERO */
 
 .hero{
   padding:25px;
-  border:1px solid var(--border);
+
+  border:
+    1px solid var(--border);
+
   border-radius:14px;
 
   background:
@@ -105,8 +114,14 @@ body{
 
 h1{
   margin:0 0 8px;
-  font-family:'Oswald',sans-serif;
-  font-size:clamp(28px,5vw,42px);
+
+  font-family:
+    'Oswald',
+    sans-serif;
+
+  font-size:
+    clamp(28px,5vw,42px);
+
   text-transform:uppercase;
 }
 
@@ -116,8 +131,7 @@ h1{
   font-size:13px;
 }
 
-
-/* ANA ARAÇ SEKMELERİ */
+/* TABS */
 
 .tool-tabs{
   display:flex;
@@ -151,9 +165,6 @@ h1{
   font-weight:700;
 }
 
-
-/* PANEL */
-
 .panel{
   display:none;
 }
@@ -164,9 +175,11 @@ h1{
 
 .calc-grid{
   display:grid;
+
   grid-template-columns:
     minmax(0,1fr)
     minmax(0,1fr);
+
   gap:18px;
 }
 
@@ -189,9 +202,6 @@ h1{
   margin:0 0 18px;
   font-size:23px;
 }
-
-
-/* FORM */
 
 .field{
   margin-bottom:15px;
@@ -244,9 +254,6 @@ select:focus{
   color:var(--text);
 }
 
-
-/* SONUÇ */
-
 .result{
   display:flex;
   flex-direction:column;
@@ -274,17 +281,16 @@ select:focus{
   display:flex;
   justify-content:space-between;
   gap:15px;
-  border-top:1px dashed var(--border);
+
+  border-top:
+    1px dashed var(--border);
+
   padding:11px 0;
   font-size:13px;
 }
 
 .result-row span:first-child{
   color:var(--muted);
-}
-
-.result-row strong{
-  text-align:right;
 }
 
 .positive{
@@ -304,7 +310,6 @@ select:focus{
   font-size:11px;
   line-height:1.6;
 }
-
 
 /* MAAŞ */
 
@@ -357,23 +362,22 @@ select:focus{
   padding:10px;
 }
 
-.month-card label{
-  margin-bottom:5px;
-}
-
-.month-card input{
-  padding:9px 10px;
-}
-
 .apply-btn{
   width:100%;
   margin-top:6px;
-  border:1px solid var(--teal);
+
+  border:
+    1px solid var(--teal);
+
   background:transparent;
   color:var(--teal);
+
   border-radius:7px;
+
   padding:7px 5px;
+
   cursor:pointer;
+
   font-size:10px;
 }
 
@@ -382,13 +386,14 @@ select:focus{
   color:#071410;
 }
 
-
-/* MAAŞ TABLOSU */
-
 .salary-table-wrap{
   overflow-x:auto;
-  border:1px solid var(--border);
+
+  border:
+    1px solid var(--border);
+
   border-radius:10px;
+
   margin-top:8px;
 }
 
@@ -402,9 +407,15 @@ select:focus{
 .salary-table th,
 .salary-table td{
   padding:9px 8px;
-  border-bottom:1px solid var(--border);
-  border-right:1px solid var(--border);
+
+  border-bottom:
+    1px solid var(--border);
+
+  border-right:
+    1px solid var(--border);
+
   text-align:right;
+
   white-space:nowrap;
 }
 
@@ -421,15 +432,6 @@ select:focus{
   position:sticky;
   left:0;
   background:#181c22;
-  z-index:2;
-}
-
-.salary-table tbody tr:hover td{
-  background-color:rgba(255,255,255,.02);
-}
-
-.salary-table tbody tr:hover td:first-child{
-  background:#1c2129;
 }
 
 .salary-total{
@@ -437,14 +439,14 @@ select:focus{
   color:var(--teal);
 }
 
-
-/* YILLIK ÖZET */
-
 .salary-summary{
   margin-top:16px;
+
   display:grid;
+
   grid-template-columns:
     repeat(3,minmax(0,1fr));
+
   gap:10px;
 }
 
@@ -457,10 +459,16 @@ select:focus{
 
 .summary-card span{
   display:block;
+
   color:var(--muted);
+
   font-size:10px;
+
   margin-bottom:5px;
-  font-family:'IBM Plex Mono',monospace;
+
+  font-family:
+    'IBM Plex Mono',
+    monospace;
 }
 
 .summary-card strong{
@@ -469,16 +477,12 @@ select:focus{
 }
 
 
-/* MOBİL */
+/* MOBILE */
 
 @media(max-width:800px){
 
   .wrap{
     padding:18px 14px 50px;
-  }
-
-  .hero{
-    padding:21px 18px;
   }
 
   .calc-grid{
@@ -498,10 +502,6 @@ select:focus{
     grid-template-columns:1fr;
   }
 
-  .box{
-    padding:16px;
-  }
-
 }
 
 </style>
@@ -513,8 +513,6 @@ select:focus{
 
 <div class="wrap">
 
-
-  <!-- ÜST MENÜ -->
 
   <div class="topnav">
 
@@ -532,10 +530,15 @@ select:focus{
       Hesaplama Araçları
     </a>
 
+    <a
+      class="nav"
+      href="/altin.html"
+    >
+      Altın Fiyatları
+    </a>
+
   </div>
 
-
-  <!-- BAŞLIK -->
 
   <div class="hero">
 
@@ -549,8 +552,6 @@ select:focus{
 
   </div>
 
-
-  <!-- SEKMELER -->
 
   <div class="tool-tabs">
 
@@ -603,9 +604,7 @@ select:focus{
 
       <div class="box">
 
-        <h2>
-          Zam Hesaplama
-        </h2>
+        <h2>Zam Hesaplama</h2>
 
         <div class="field">
 
@@ -621,6 +620,7 @@ select:focus{
 
         </div>
 
+
         <div class="field">
 
           <label>
@@ -635,38 +635,28 @@ select:focus{
 
           <div class="quick-row">
 
-            <button
-              class="quick"
-              onclick="setValue('zamOran',5)"
-            >
+            <button class="quick"
+              onclick="setValue('zamOran',5)">
               %5
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('zamOran',10)"
-            >
+            <button class="quick"
+              onclick="setValue('zamOran',10)">
               %10
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('zamOran',20)"
-            >
+            <button class="quick"
+              onclick="setValue('zamOran',20)">
               %20
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('zamOran',25)"
-            >
+            <button class="quick"
+              onclick="setValue('zamOran',25)">
               %25
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('zamOran',50)"
-            >
+            <button class="quick"
+              onclick="setValue('zamOran',50)">
               %50
             </button>
 
@@ -696,9 +686,7 @@ select:focus{
             Zam Tutarı
           </span>
 
-          <strong
-            id="zamMiktar"
-          >
+          <strong id="zamMiktar">
             —
           </strong>
 
@@ -776,9 +764,7 @@ select:focus{
             İndirim Tutarı
           </span>
 
-          <strong
-            id="indirimMiktar"
-          >
+          <strong id="indirimMiktar">
             —
           </strong>
 
@@ -856,9 +842,7 @@ select:focus{
             Tutar Farkı
           </span>
 
-          <strong
-            id="farkMiktar"
-          >
+          <strong id="farkMiktar">
             —
           </strong>
 
@@ -923,50 +907,40 @@ select:focus{
           <input
             id="mevduatGun"
             type="number"
-            min="1"
             value="32"
           >
 
           <div class="quick-row">
 
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',1)"
-            >
+            <button class="quick"
+              onclick="setValue('mevduatGun',1)">
               1 Gün
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',7)"
-            >
+            <button class="quick"
+              onclick="setValue('mevduatGun',7)">
               7 Gün
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',30)"
-            >
+            <button class="quick"
+              onclick="setValue('mevduatGun',30)">
               1 Ay
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',32)"
-            >
+            <button class="quick"
+              onclick="setValue('mevduatGun',32)">
               32 Gün
             </button>
 
-            <button
-              class="quick"
-              onclick="setValue('mevduatGun',92)"
-            >
+            <button class="quick"
+              onclick="setValue('mevduatGun',92)">
               92 Gün
             </button>
 
           </div>
 
         </div>
+
 
         <div class="field">
 
@@ -999,46 +973,23 @@ select:focus{
         </div>
 
         <div class="result-row">
-
-          <span>
-            Brüt Faiz
-          </span>
-
-          <strong
-            id="mevduatBrut"
-          >
-            —
-          </strong>
-
+          <span>Brüt Faiz</span>
+          <strong id="mevduatBrut">—</strong>
         </div>
 
         <div class="result-row">
-
-          <span>
-            Stopaj
-          </span>
-
-          <strong
-            id="mevduatVergi"
-          >
-            —
-          </strong>
-
+          <span>Stopaj</span>
+          <strong id="mevduatVergi">—</strong>
         </div>
 
         <div class="result-row">
-
-          <span>
-            Net Kazanç
-          </span>
-
+          <span>Net Kazanç</span>
           <strong
             class="positive"
             id="mevduatNet"
           >
             —
           </strong>
-
         </div>
 
       </div>
@@ -1062,8 +1013,6 @@ select:focus{
       </h2>
 
 
-      <!-- BRÜT / NET MODU -->
-
       <div class="salary-mode">
 
         <button
@@ -1086,15 +1035,11 @@ select:focus{
       </div>
 
 
-      <!-- AYARLAR -->
-
       <div class="salary-toolbar">
 
         <div class="field">
 
-          <label>
-            YIL
-          </label>
+          <label>YIL</label>
 
           <select disabled>
             <option>2026</option>
@@ -1109,9 +1054,7 @@ select:focus{
             İŞVEREN MALİYETİ
           </label>
 
-          <select
-            id="showEmployer"
-          >
+          <select id="showEmployer">
 
             <option value="1">
               Göster
@@ -1128,15 +1071,11 @@ select:focus{
       </div>
 
 
-      <!-- AYLIK MAAŞ GİRİŞLERİ -->
-
       <div
         class="salary-input-grid"
         id="salaryInputs"
       ></div>
 
-
-      <!-- SONUÇ TABLOSU -->
 
       <div class="salary-table-wrap">
 
@@ -1147,42 +1086,15 @@ select:focus{
             <tr>
 
               <th>Ay</th>
-
-              <th>
-                Brüt
-              </th>
-
-              <th>
-                SGK İşçi
-              </th>
-
-              <th>
-                İşsizlik İşçi
-              </th>
-
-              <th>
-                Vergi Matrahı
-              </th>
-
-              <th>
-                Kümülatif Matrah
-              </th>
-
-              <th>
-                Gelir Vergisi
-              </th>
-
-              <th>
-                GV İstisnası
-              </th>
-
-              <th>
-                Damga Vergisi
-              </th>
-
-              <th>
-                Net
-              </th>
+              <th>Brüt</th>
+              <th>SGK İşçi</th>
+              <th>İşsizlik İşçi</th>
+              <th>Vergi Matrahı</th>
+              <th>Kümülatif Matrah</th>
+              <th>Gelir Vergisi</th>
+              <th>GV İstisnası</th>
+              <th>Damga Vergisi</th>
+              <th>Net</th>
 
               <th class="employer-col">
                 SGK İşveren
@@ -1200,7 +1112,6 @@ select:focus{
 
           </thead>
 
-
           <tbody
             id="salaryBody"
           ></tbody>
@@ -1210,8 +1121,6 @@ select:focus{
       </div>
 
 
-      <!-- YILLIK TOPLAMLAR -->
-
       <div class="salary-summary">
 
         <div class="summary-card">
@@ -1220,9 +1129,7 @@ select:focus{
             YILLIK BRÜT
           </span>
 
-          <strong
-            id="yearGross"
-          >
+          <strong id="yearGross">
             —
           </strong>
 
@@ -1235,9 +1142,7 @@ select:focus{
             YILLIK NET
           </span>
 
-          <strong
-            id="yearNet"
-          >
+          <strong id="yearNet">
             —
           </strong>
 
@@ -1252,9 +1157,7 @@ select:focus{
             YILLIK İŞVEREN MALİYETİ
           </span>
 
-          <strong
-            id="yearEmployer"
-          >
+          <strong id="yearEmployer">
             —
           </strong>
 
@@ -1265,11 +1168,10 @@ select:focus{
 
       <div class="note">
 
-        Hesaplama 2026 yılı standart 4/a özel sektör
-        ücret bordrosu mantığına göre yaklaşık sonuç üretir.
-        BES, engellilik indirimi, özel sigorta,
-        prim/ikramiye, Ar-Ge/teknopark ve özel bordro
-        uygulamaları sonucu değiştirebilir.
+        Hesaplama 2026 yılı standart 4/a özel sektör ücret
+        bordrosu mantığına göre yaklaşık sonuç üretir.
+        BES, özel sigorta, engellilik indirimi, prim/ikramiye
+        veya özel bordro uygulamaları sonucu değiştirebilir.
 
       </div>
 
@@ -1283,30 +1185,22 @@ select:focus{
 <script>
 
 
-/* ========================================
-   GENEL
-======================================== */
-
-
 function num(id){
 
-  const element =
+  const el =
     document.getElementById(id);
 
-
-  if(!element){
+  if(!el){
     return 0;
   }
 
-
-  const value =
+  const n =
     Number(
-      element.value
+      el.value
     );
 
-
-  return Number.isFinite(value)
-    ? value
+  return Number.isFinite(n)
+    ? n
     : 0;
 
 }
@@ -1347,56 +1241,32 @@ function percent(value){
 }
 
 
-function setValue(
-  id,
-  value
-){
+function setValue(id,value){
 
-  const element =
-    document.getElementById(id);
-
-
-  if(!element){
-    return;
-  }
-
-
-  element.value =
-    value;
-
+  document
+    .getElementById(id)
+    .value =
+      value;
 
   calculateSimple();
 
 }
 
 
-/* ========================================
-   BASİT HESAPLAMALAR
-======================================== */
-
+/* BASİT */
 
 function calculateSimple(){
 
-
-  /* ZAM */
-
   const zamTutar =
-    num(
-      "zamTutar"
-    );
-
+    num("zamTutar");
 
   const zamOran =
-    num(
-      "zamOran"
-    );
-
+    num("zamOran");
 
   const zam =
     zamTutar *
     zamOran /
     100;
-
 
   document
     .getElementById(
@@ -1404,7 +1274,6 @@ function calculateSimple(){
     )
     .textContent =
       money(zam);
-
 
   document
     .getElementById(
@@ -1417,31 +1286,20 @@ function calculateSimple(){
       );
 
 
-  /* İNDİRİM */
-
   const indirimTutar =
     num(
       "indirimTutar"
     );
 
-
   const indirimOran =
-    Math.min(
-      Math.max(
-        num(
-          "indirimOran"
-        ),
-        0
-      ),
-      100
+    num(
+      "indirimOran"
     );
-
 
   const indirim =
     indirimTutar *
     indirimOran /
     100;
-
 
   document
     .getElementById(
@@ -1449,7 +1307,6 @@ function calculateSimple(){
     )
     .textContent =
       money(indirim);
-
 
   document
     .getElementById(
@@ -1462,32 +1319,22 @@ function calculateSimple(){
       );
 
 
-  /* YÜZDE FARK */
-
   const eski =
-    num(
-      "farkEski"
-    );
-
+    num("farkEski");
 
   const yeni =
-    num(
-      "farkYeni"
-    );
-
+    num("farkYeni");
 
   const fark =
     yeni -
     eski;
 
-
   const oran =
-    eski !== 0
+    eski
       ? fark /
         eski *
         100
       : 0;
-
 
   document
     .getElementById(
@@ -1501,7 +1348,6 @@ function calculateSimple(){
       ) +
       percent(oran);
 
-
   document
     .getElementById(
       "farkMiktar"
@@ -1510,28 +1356,21 @@ function calculateSimple(){
       money(fark);
 
 
-  /* MEVDUAT */
-
   const ana =
     num(
       "mevduatTutar"
     );
-
 
   const faiz =
     num(
       "mevduatFaiz"
     );
 
-
   const gun =
     Math.max(
-      num(
-        "mevduatGun"
-      ),
+      num("mevduatGun"),
       1
     );
-
 
   const stopaj =
     num(
@@ -1539,29 +1378,23 @@ function calculateSimple(){
     );
 
 
-  const brutFaiz =
+  const brut =
     ana *
-    (
-      faiz /
-      100
-    ) *
-    (
-      gun /
-      365
-    );
+    faiz /
+    100 *
+    gun /
+    365;
 
 
-  const stopajTutari =
-    brutFaiz *
-    (
-      stopaj /
-      100
-    );
+  const vergi =
+    brut *
+    stopaj /
+    100;
 
 
-  const netFaiz =
-    brutFaiz -
-    stopajTutari;
+  const net =
+    brut -
+    vergi;
 
 
   document
@@ -1569,24 +1402,21 @@ function calculateSimple(){
       "mevduatBrut"
     )
     .textContent =
-      money(brutFaiz);
-
+      money(brut);
 
   document
     .getElementById(
       "mevduatVergi"
     )
     .textContent =
-      money(stopajTutari);
-
+      money(vergi);
 
   document
     .getElementById(
       "mevduatNet"
     )
     .textContent =
-      money(netFaiz);
-
+      money(net);
 
   document
     .getElementById(
@@ -1595,16 +1425,13 @@ function calculateSimple(){
     .textContent =
       money(
         ana +
-        netFaiz
+        net
       );
 
 }
 
 
-/* ========================================
-   2026 MAAŞ PARAMETRELERİ
-======================================== */
-
+/* 2026 MAAŞ */
 
 const SALARY_2026 = {
 
@@ -1619,11 +1446,6 @@ const SALARY_2026 = {
 
   employeeUnemployment:
     0.01,
-
-  /*
-   * SGK işveren payı.
-   * Kullanıcıya teşvik/indirim seçtirmiyoruz.
-   */
 
   employerSgk:
     0.2175,
@@ -1664,10 +1486,7 @@ let salaryValues =
     .fill(100000);
 
 
-/* ========================================
-   GELİR VERGİSİ
-======================================== */
-
+/* GELİR VERGİSİ */
 
 function annualIncomeTax(base){
 
@@ -1677,22 +1496,14 @@ function annualIncomeTax(base){
       0
     );
 
-
-  if(
-    base <=
-    190000
-  ){
+  if(base <= 190000){
 
     return base *
       0.15;
 
   }
 
-
-  if(
-    base <=
-    400000
-  ){
+  if(base <= 400000){
 
     return 28500 +
       (
@@ -1703,11 +1514,7 @@ function annualIncomeTax(base){
 
   }
 
-
-  if(
-    base <=
-    1500000
-  ){
+  if(base <= 1500000){
 
     return 70500 +
       (
@@ -1718,11 +1525,7 @@ function annualIncomeTax(base){
 
   }
 
-
-  if(
-    base <=
-    5300000
-  ){
+  if(base <= 5300000){
 
     return 367500 +
       (
@@ -1732,7 +1535,6 @@ function annualIncomeTax(base){
       0.35;
 
   }
-
 
   return 1697500 +
     (
@@ -1744,10 +1546,7 @@ function annualIncomeTax(base){
 }
 
 
-/* ========================================
-   BRÜTTEN NETE - TEK AY
-======================================== */
-
+/* BRÜTTEN NETE */
 
 function calculateGrossMonth(
   gross,
@@ -1762,20 +1561,12 @@ function calculateGrossMonth(
     );
 
 
-  /*
-   * SGK prime esas kazanç
-   */
-
   const sgkBase =
     Math.min(
       gross,
       SALARY_2026.sgkCeiling
     );
 
-
-  /*
-   * Çalışan kesintileri
-   */
 
   const employeeSgk =
     sgkBase *
@@ -1786,10 +1577,6 @@ function calculateGrossMonth(
     sgkBase *
     SALARY_2026.employeeUnemployment;
 
-
-  /*
-   * Gelir vergisi matrahı
-   */
 
   const taxBase =
     Math.max(
@@ -1805,10 +1592,6 @@ function calculateGrossMonth(
     taxBase;
 
 
-  /*
-   * İstisna öncesi aylık gelir vergisi
-   */
-
   const grossIncomeTax =
     annualIncomeTax(
       cumulativeBase
@@ -1817,10 +1600,6 @@ function calculateGrossMonth(
       previousCumBase
     );
 
-
-  /*
-   * Asgari ücret gelir vergisi istisnası
-   */
 
   const minimumSgk =
     SALARY_2026.minimumGross *
@@ -1867,11 +1646,6 @@ function calculateGrossMonth(
     );
 
 
-  /*
-   * Damga vergisinde
-   * asgari ücret kısmı istisna
-   */
-
   const stampTax =
     Math.max(
       gross -
@@ -1881,10 +1655,6 @@ function calculateGrossMonth(
     SALARY_2026.stampTax;
 
 
-  /*
-   * NET
-   */
-
   const net =
     gross -
     employeeSgk -
@@ -1892,12 +1662,6 @@ function calculateGrossMonth(
     incomeTax -
     stampTax;
 
-
-  /*
-   * İŞVEREN MALİYETİ
-   *
-   * Kullanıcıya teşvik seçtirmiyoruz.
-   */
 
   const employerSgk =
     sgkBase *
@@ -1918,29 +1682,17 @@ function calculateGrossMonth(
   return {
 
     gross,
-
     employeeSgk,
-
     employeeUnemployment,
-
     taxBase,
-
     cumulativeBase,
-
     grossIncomeTax,
-
     incomeTaxExemption,
-
     incomeTax,
-
     stampTax,
-
     net,
-
     employerSgk,
-
     employerUnemployment,
-
     employerCost,
 
     minimumCumBase:
@@ -1951,10 +1703,7 @@ function calculateGrossMonth(
 }
 
 
-/* ========================================
-   NETTEN BRÜTE
-======================================== */
-
+/* NETTEN BRÜTE */
 
 function solveGrossFromNet(
   wantedNet,
@@ -1969,9 +1718,7 @@ function solveGrossFromNet(
     );
 
 
-  if(
-    wantedNet === 0
-  ){
+  if(wantedNet === 0){
 
     return calculateGrossMonth(
       0,
@@ -1982,19 +1729,13 @@ function solveGrossFromNet(
   }
 
 
-  /*
-   * Net tutardan başlayıp
-   * yeterli üst sınır bul.
-   */
-
   let low =
     wantedNet;
 
 
   let high =
     Math.max(
-      wantedNet *
-      2,
+      wantedNet * 2,
       SALARY_2026.minimumGross
     );
 
@@ -2026,10 +1767,6 @@ function solveGrossFromNet(
 
   }
 
-
-  /*
-   * Binary search
-   */
 
   for(
     let i = 0;
@@ -2080,10 +1817,7 @@ function solveGrossFromNet(
 }
 
 
-/* ========================================
-   AYLIK MAAŞ KUTULARI
-======================================== */
-
+/* AY KUTULARI */
 
 function renderSalaryInputs(){
 
@@ -2114,8 +1848,7 @@ function renderSalaryInputs(){
 
 
       const modeText =
-        salaryMode ===
-        "gross"
+        salaryMode === "gross"
           ? "BRÜT"
           : "NET";
 
@@ -2146,18 +1879,13 @@ function renderSalaryInputs(){
       `;
 
 
-      container
-        .appendChild(
-          card
-        );
+      container.appendChild(
+        card
+      );
 
     }
   );
 
-
-  /*
-   * Maaş input değişikliği
-   */
 
   document
     .querySelectorAll(
@@ -2172,10 +1900,7 @@ function renderSalaryInputs(){
 
             const index =
               Number(
-                event
-                  .target
-                  .dataset
-                  .index
+                event.target.dataset.index
               );
 
 
@@ -2195,10 +1920,6 @@ function renderSalaryInputs(){
     );
 
 
-  /*
-   * Bu aydan itibaren uygula
-   */
-
   document
     .querySelectorAll(
       "[data-apply]"
@@ -2212,10 +1933,7 @@ function renderSalaryInputs(){
 
             const index =
               Number(
-                event
-                  .currentTarget
-                  .dataset
-                  .apply
+                event.currentTarget.dataset.apply
               );
 
 
@@ -2224,9 +1942,8 @@ function renderSalaryInputs(){
 
 
             for(
-              let i =
-                index;
-              i < 12;
+              let i=index;
+              i<12;
               i++
             ){
 
@@ -2249,20 +1966,9 @@ function renderSalaryInputs(){
 }
 
 
-/* ========================================
-   BRÜT / NET MODU
-======================================== */
-
+/* MOD */
 
 function setSalaryMode(mode){
-
-  if(
-    mode !== "gross" &&
-    mode !== "net"
-  ){
-    return;
-  }
-
 
   if(
     mode ===
@@ -2272,47 +1978,23 @@ function setSalaryMode(mode){
   }
 
 
-  /*
-   * Önce mevcut sonuçları hesapla.
-   */
-
   const currentRows =
     calculateSalary(
       true
     );
 
 
-  /*
-   * Mod değiştirirken mevcut
-   * sonuçları karşı tarafa aktar.
-   */
-
-  if(
-    currentRows &&
-    currentRows.length
-  ){
-
-    salaryValues =
-      currentRows.map(
-        row=>{
-
-          const value =
-            mode ===
-            "gross"
-              ? row.gross
-              : row.net;
-
-
-          return Math.round(
-            value *
-            100
-          ) /
-          100;
-
-        }
-      );
-
-  }
+  salaryValues =
+    currentRows.map(
+      row=>
+        mode === "gross"
+          ? Math.round(
+              row.gross * 100
+            ) / 100
+          : Math.round(
+              row.net * 100
+            ) / 100
+    );
 
 
   salaryMode =
@@ -2348,10 +2030,7 @@ function setSalaryMode(mode){
 }
 
 
-/* ========================================
-   12 AY HESAPLA
-======================================== */
-
+/* YILLIK */
 
 function calculateSalary(
   returnOnly = false
@@ -2360,18 +2039,15 @@ function calculateSalary(
   let previousCumBase =
     0;
 
-
   let previousMinimumCumBase =
     0;
 
-
-  const rows =
-    [];
+  const rows = [];
 
 
   for(
-    let i = 0;
-    i < 12;
+    let i=0;
+    i<12;
     i++
   ){
 
@@ -2379,8 +2055,7 @@ function calculateSalary(
 
 
     if(
-      salaryMode ===
-      "gross"
+      salaryMode === "gross"
     ){
 
       result =
@@ -2408,21 +2083,17 @@ function calculateSalary(
 
 
     previousCumBase =
-      result
-        .cumulativeBase;
+      result.cumulativeBase;
 
 
     previousMinimumCumBase =
-      result
-        .minimumCumBase;
+      result.minimumCumBase;
 
   }
 
 
   if(returnOnly){
-
     return rows;
-
   }
 
 
@@ -2436,10 +2107,7 @@ function calculateSalary(
 }
 
 
-/* ========================================
-   TABLOYU ÇİZ
-======================================== */
-
+/* TABLO */
 
 function renderSalaryTable(rows){
 
@@ -2454,25 +2122,15 @@ function renderSalaryTable(rows){
 
 
   let totalGross = 0;
-
   let totalEmployeeSgk = 0;
-
   let totalEmployeeUnemployment = 0;
-
   let totalTaxBase = 0;
-
   let totalIncomeTax = 0;
-
   let totalIncomeTaxExemption = 0;
-
   let totalStampTax = 0;
-
   let totalNet = 0;
-
   let totalEmployerSgk = 0;
-
   let totalEmployerUnemployment = 0;
-
   let totalEmployerCost = 0;
 
 
@@ -2485,42 +2143,32 @@ function renderSalaryTable(rows){
       totalGross +=
         row.gross;
 
-
       totalEmployeeSgk +=
         row.employeeSgk;
-
 
       totalEmployeeUnemployment +=
         row.employeeUnemployment;
 
-
       totalTaxBase +=
         row.taxBase;
-
 
       totalIncomeTax +=
         row.incomeTax;
 
-
       totalIncomeTaxExemption +=
         row.incomeTaxExemption;
-
 
       totalStampTax +=
         row.stampTax;
 
-
       totalNet +=
         row.net;
-
 
       totalEmployerSgk +=
         row.employerSgk;
 
-
       totalEmployerUnemployment +=
         row.employerUnemployment;
-
 
       totalEmployerCost +=
         row.employerCost;
@@ -2597,10 +2245,6 @@ function renderSalaryTable(rows){
   );
 
 
-  /*
-   * TOPLAM SATIRI
-   */
-
   const totalRow =
     document.createElement(
       "tr"
@@ -2613,45 +2257,25 @@ function renderSalaryTable(rows){
 
   totalRow.innerHTML = `
 
-    <td>
-      TOPLAM
-    </td>
+    <td>TOPLAM</td>
 
-    <td>
-      ${money(totalGross)}
-    </td>
+    <td>${money(totalGross)}</td>
 
-    <td>
-      ${money(totalEmployeeSgk)}
-    </td>
+    <td>${money(totalEmployeeSgk)}</td>
 
-    <td>
-      ${money(totalEmployeeUnemployment)}
-    </td>
+    <td>${money(totalEmployeeUnemployment)}</td>
 
-    <td>
-      ${money(totalTaxBase)}
-    </td>
+    <td>${money(totalTaxBase)}</td>
 
-    <td>
-      —
-    </td>
+    <td>—</td>
 
-    <td>
-      ${money(totalIncomeTax)}
-    </td>
+    <td>${money(totalIncomeTax)}</td>
 
-    <td>
-      ${money(totalIncomeTaxExemption)}
-    </td>
+    <td>${money(totalIncomeTaxExemption)}</td>
 
-    <td>
-      ${money(totalStampTax)}
-    </td>
+    <td>${money(totalStampTax)}</td>
 
-    <td>
-      ${money(totalNet)}
-    </td>
+    <td>${money(totalNet)}</td>
 
     <td class="employer-col">
       ${money(totalEmployerSgk)}
@@ -2673,18 +2297,12 @@ function renderSalaryTable(rows){
   );
 
 
-  /*
-   * YILLIK ÖZET
-   */
-
   document
     .getElementById(
       "yearGross"
     )
     .textContent =
-      money(
-        totalGross
-      );
+      money(totalGross);
 
 
   document
@@ -2692,9 +2310,7 @@ function renderSalaryTable(rows){
       "yearNet"
     )
     .textContent =
-      money(
-        totalNet
-      );
+      money(totalNet);
 
 
   document
@@ -2702,9 +2318,7 @@ function renderSalaryTable(rows){
       "yearEmployer"
     )
     .textContent =
-      money(
-        totalEmployerCost
-      );
+      money(totalEmployerCost);
 
 
   updateEmployerVisibility();
@@ -2712,27 +2326,14 @@ function renderSalaryTable(rows){
 }
 
 
-/* ========================================
-   İŞVEREN MALİYETİNİ GÖSTER/GİZLE
-======================================== */
-
-
 function updateEmployerVisibility(){
 
-  const selector =
-    document.getElementById(
-      "showEmployer"
-    );
-
-
-  if(!selector){
-    return;
-  }
-
-
   const visible =
-    selector.value ===
-    "1";
+    document
+      .getElementById(
+        "showEmployer"
+      )
+      .value === "1";
 
 
   document
@@ -2753,10 +2354,7 @@ function updateEmployerVisibility(){
 }
 
 
-/* ========================================
-   ANA SEKMELER
-======================================== */
-
+/* SEKME */
 
 document
   .querySelectorAll(
@@ -2774,15 +2372,10 @@ document
               ".tool-tab"
             )
             .forEach(
-              item=>{
-
-                item
-                  .classList
-                  .remove(
-                    "active"
-                  );
-
-              }
+              item=>
+                item.classList.remove(
+                  "active"
+                )
             );
 
 
@@ -2791,15 +2384,10 @@ document
               ".panel"
             )
             .forEach(
-              panel=>{
-
-                panel
-                  .classList
-                  .remove(
-                    "active"
-                  );
-
-              }
+              panel=>
+                panel.classList.remove(
+                  "active"
+                )
             );
 
 
@@ -2810,32 +2398,20 @@ document
             );
 
 
-          const target =
-            document.getElementById(
+          document
+            .getElementById(
               button.dataset.panel
+            )
+            .classList
+            .add(
+              "active"
             );
-
-
-          if(target){
-
-            target
-              .classList
-              .add(
-                "active"
-              );
-
-          }
 
         }
       );
 
     }
   );
-
-
-/* ========================================
-   BASİT INPUT EVENTLERİ
-======================================== */
 
 
 document
@@ -2846,20 +2422,12 @@ document
     "#mevduat input"
   )
   .forEach(
-    input=>{
-
+    input=>
       input.addEventListener(
         "input",
         calculateSimple
-      );
-
-    }
+      )
   );
-
-
-/* ========================================
-   İŞVEREN GÖSTER/GİZLE
-======================================== */
 
 
 document
@@ -2870,11 +2438,6 @@ document
     "change",
     updateEmployerVisibility
   );
-
-
-/* ========================================
-   BAŞLAT
-======================================== */
 
 
 calculateSimple();
