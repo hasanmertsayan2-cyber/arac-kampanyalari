@@ -1145,6 +1145,20 @@ document
 
 loadData();
 
+/*
+ * Sayfa açık olduğu sürece
+ * her 10 saniyede bir yeni veri var mı kontrol et.
+ *
+ * Gerçek fiyatlar GitHub Actions tarafından
+ * yaklaşık 5 dakikada bir çekilir.
+ */
+setInterval(
+  () => {
+    loadData();
+  },
+  10000
+);
+
 </script>
 
 </body>
