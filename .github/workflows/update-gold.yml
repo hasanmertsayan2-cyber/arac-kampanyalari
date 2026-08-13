@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
 
   schedule:
-    # GitHub Actions'in izin verdiği en kısa zamanlama:
-    # yaklaşık her 5 dakikada bir
     - cron: "*/5 * * * *"
 
 permissions:
@@ -27,6 +25,8 @@ jobs:
 
       - name: Repoyu indir
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Node.js kur
         uses: actions/setup-node@v4
@@ -35,24 +35,28 @@ jobs:
 
       - name: Playwright kur
         run: |
-          npm install playwright
+          npm install --no-save playwright
           npx playwright install --with-deps chromium
 
       - name: Altin fiyatlarini tara
         run: |
           node scripts/update-gold.js
 
-      - name: Degisiklik varsa GitHub'a kaydet
+      - name: Altin verisini GitHub'a kaydet
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # npm install nedeniyle oluşabilecek gereksiz değişiklikleri temizle
+          git restore package.json package-lock.json 2>/dev/null || true
 
           git add data/gold-latest.json
 
           if git diff --cached --quiet; then
             echo "Altin fiyatlarinda degisiklik yok."
-          else
-            git commit -m "data: altin fiyatlarini guncelle"
-            git pull --rebase origin main
-            git push origin main
+            exit 0
           fi
+
+          git commit -m "data: altin fiyatlarini guncelle"
+
+          git push origin HEAD:main
