@@ -4,10 +4,9 @@ on:
   workflow_dispatch:
 
   schedule:
-    # Yaklaşık her 15 dakikada bir çalışır.
-    # 00/15/30/45 yerine yoğunluğu azaltmak için
-    # 07/22/37/52 dakikalarını kullanıyoruz.
-    - cron: "7,22,37,52 * * * *"
+    # GitHub Actions'in izin verdiği en kısa zamanlama:
+    # yaklaşık her 5 dakikada bir
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: write
@@ -29,44 +28,31 @@ jobs:
       - name: Repoyu indir
         uses: actions/checkout@v4
 
-
       - name: Node.js kur
         uses: actions/setup-node@v4
-
         with:
           node-version: "22"
-
 
       - name: Playwright kur
         run: |
           npm install playwright
           npx playwright install --with-deps chromium
 
-
       - name: Altin fiyatlarini tara
         run: |
           node scripts/update-gold.js
 
-
       - name: Degisiklik varsa GitHub'a kaydet
         run: |
-
           git config user.name "github-actions[bot]"
-
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data/gold-latest.json
 
           if git diff --cached --quiet; then
-
             echo "Altin fiyatlarinda degisiklik yok."
-
           else
-
             git commit -m "data: altin fiyatlarini guncelle"
-
             git pull --rebase origin main
-
             git push origin main
-
           fi
