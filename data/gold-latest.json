@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T21:41:30.511Z",
+  "updatedAt": "2026-08-15T22:00:38.070Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -89,6 +89,13 @@
       "spreadPercent": 2.52
     },
     {
+      "institution": "Papara",
+      "buy": 6624.78,
+      "sell": 6804.54,
+      "spread": 179.76,
+      "spreadPercent": 2.71
+    },
+    {
       "institution": "Altınkaynak",
       "buy": 6639.71,
       "sell": 6805,
@@ -96,17 +103,10 @@
       "spreadPercent": 2.49
     },
     {
-      "institution": "Papara",
-      "buy": 6625.98,
-      "sell": 6805.78,
-      "spread": 179.8,
-      "spreadPercent": 2.71
-    },
-    {
       "institution": "Hepsipay",
-      "buy": 6625.97,
-      "sell": 6819.38,
-      "spread": 193.41,
+      "buy": 6625.06,
+      "sell": 6818.44,
+      "spread": 193.38,
       "spreadPercent": 2.92
     },
     {
