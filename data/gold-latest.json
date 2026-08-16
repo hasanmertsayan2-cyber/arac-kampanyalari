@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T15:41:40.300Z",
+  "updatedAt": "2026-08-16T16:01:51.997Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -62,9 +62,9 @@
     },
     {
       "institution": "Harem",
-      "buy": 6661.4,
-      "sell": 6736.51,
-      "spread": 75.11,
+      "buy": 6660.59,
+      "sell": 6735.56,
+      "spread": 74.97,
       "spreadPercent": 1.13
     },
     {
@@ -97,15 +97,15 @@
     },
     {
       "institution": "Papara",
-      "buy": 6626.47,
-      "sell": 6806.32,
+      "buy": 6626.32,
+      "sell": 6806.17,
       "spread": 179.85,
       "spreadPercent": 2.71
     },
     {
       "institution": "Hepsipay",
-      "buy": 6626.51,
-      "sell": 6819.97,
+      "buy": 6626.36,
+      "sell": 6819.82,
       "spread": 193.46,
       "spreadPercent": 2.92
     },
@@ -113,7 +113,7 @@
       "institution": "Türkiye Finans",
       "buy": 6614.25,
       "sell": 6823.03,
-      "spread": 208.79,
+      "spread": 208.78,
       "spreadPercent": 3.16
     },
     {
@@ -127,14 +127,14 @@
       "institution": "Kuveyt Türk",
       "buy": 6291.99,
       "sell": 6903.84,
-      "spread": 611.84,
+      "spread": 611.85,
       "spreadPercent": 9.72
     },
     {
       "institution": "Denizbank",
       "buy": 6518.53,
       "sell": 6914.11,
-      "spread": 395.59,
+      "spread": 395.58,
       "spreadPercent": 6.07
     },
     {
@@ -148,7 +148,7 @@
       "institution": "Enpara",
       "buy": 6550.92,
       "sell": 6936.82,
-      "spread": 385.91,
+      "spread": 385.9,
       "spreadPercent": 5.89
     },
     {
@@ -246,7 +246,7 @@
       "institution": "CEPTETEB",
       "buy": 5768.71,
       "sell": 7739.16,
-      "spread": 1970.44,
+      "spread": 1970.45,
       "spreadPercent": 34.16
     }
   ]
