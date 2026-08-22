@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T04:57:48.286Z",
+  "updatedAt": "2026-08-22T05:57:54.462Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -111,16 +111,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 7017.46,
-      "sell": 7205.37,
-      "spread": 187.91,
+      "buy": 7014.83,
+      "sell": 7202.76,
+      "spread": 187.93,
       "spreadPercent": 2.68
     },
     {
       "institution": "Hepsipay",
-      "buy": 7017.39,
-      "sell": 7219.71,
-      "spread": 202.32,
+      "buy": 7014.83,
+      "sell": 7217.17,
+      "spread": 202.34,
       "spreadPercent": 2.88
     },
     {
@@ -131,18 +131,18 @@
       "spreadPercent": 5.06
     },
     {
+      "institution": "Kuveyt Türk",
+      "buy": 6630.78,
+      "sell": 7278.02,
+      "spread": 647.24,
+      "spreadPercent": 9.76
+    },
+    {
       "institution": "ING Bank",
       "buy": 6888.03,
       "sell": 7285.69,
       "spread": 397.66,
       "spreadPercent": 5.77
-    },
-    {
-      "institution": "Kuveyt Türk",
-      "buy": 6638.35,
-      "sell": 7286.23,
-      "spread": 647.88,
-      "spreadPercent": 9.76
     },
     {
       "institution": "Denizbank",
