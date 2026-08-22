@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T22:53:26.068Z",
+  "updatedAt": "2026-08-22T23:41:37.251Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -36,7 +36,7 @@
       "institution": "TOM Bank Hadi",
       "buy": 6721.55,
       "sell": 7039.93,
-      "spread": 318.39,
+      "spread": 318.38,
       "spreadPercent": 4.74
     },
     {
@@ -50,7 +50,7 @@
       "institution": "Dünya Katılım",
       "buy": 7036.07,
       "sell": 7083.33,
-      "spread": 47.25,
+      "spread": 47.26,
       "spreadPercent": 0.67
     },
     {
@@ -85,7 +85,7 @@
       "institution": "Vakıf Katılım",
       "buy": 6979.76,
       "sell": 7149.3,
-      "spread": 169.55,
+      "spread": 169.54,
       "spreadPercent": 2.43
     },
     {
@@ -111,15 +111,15 @@
     },
     {
       "institution": "Papara",
-      "buy": 7012.9,
-      "sell": 7200.9,
+      "buy": 7012.71,
+      "sell": 7200.71,
       "spread": 188,
       "spreadPercent": 2.68
     },
     {
       "institution": "Hepsipay",
-      "buy": 7012.88,
-      "sell": 7215.28,
+      "buy": 7012.71,
+      "sell": 7215.11,
       "spread": 202.4,
       "spreadPercent": 2.89
     },
@@ -134,7 +134,7 @@
       "institution": "ING Bank",
       "buy": 6888.03,
       "sell": 7285.69,
-      "spread": 397.67,
+      "spread": 397.66,
       "spreadPercent": 5.77
     },
     {
@@ -162,7 +162,7 @@
       "institution": "Garanti BBVA",
       "buy": 6878.81,
       "sell": 7365.39,
-      "spread": 486.59,
+      "spread": 486.58,
       "spreadPercent": 7.07
     },
     {
@@ -225,7 +225,7 @@
       "institution": "Anadolubank",
       "buy": 6472.05,
       "sell": 7684.16,
-      "spread": 1212.12,
+      "spread": 1212.11,
       "spreadPercent": 18.73
     },
     {
@@ -246,7 +246,7 @@
       "institution": "CEPTETEB",
       "buy": 6104.47,
       "sell": 8103.18,
-      "spread": 1998.72,
+      "spread": 1998.71,
       "spreadPercent": 32.74
     }
   ]
