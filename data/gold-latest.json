@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T04:08:52.453Z",
+  "updatedAt": "2026-08-29T04:14:38.700Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -36,7 +36,7 @@
       "institution": "Dünya Katılım",
       "buy": 6835.47,
       "sell": 6875.9,
-      "spread": 40.43,
+      "spread": 40.42,
       "spreadPercent": 0.59
     },
     {
@@ -55,9 +55,9 @@
     },
     {
       "institution": "Harem",
-      "buy": 6802.44,
-      "sell": 6911.69,
-      "spread": 109.25,
+      "buy": 6797.19,
+      "sell": 6907.59,
+      "spread": 110.4,
       "spreadPercent": 1.62
     },
     {
@@ -92,7 +92,7 @@
       "institution": "Türkiye Finans",
       "buy": 6776.92,
       "sell": 6997.41,
-      "spread": 220.49,
+      "spread": 220.48,
       "spreadPercent": 3.25
     },
     {
@@ -104,16 +104,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6842.47,
-      "sell": 7027.52,
+      "buy": 6842.11,
+      "sell": 7027.16,
       "spread": 185.05,
       "spreadPercent": 2.7
     },
     {
       "institution": "Hepsipay",
-      "buy": 6842.53,
-      "sell": 7041.64,
-      "spread": 199.11,
+      "buy": 6842.11,
+      "sell": 7041.21,
+      "spread": 199.1,
       "spreadPercent": 2.91
     },
     {
@@ -141,14 +141,14 @@
       "institution": "ING Bank",
       "buy": 6681.51,
       "sell": 7090.63,
-      "spread": 409.12,
+      "spread": 409.13,
       "spreadPercent": 6.12
     },
     {
       "institution": "Denizbank",
       "buy": 6692.01,
       "sell": 7095.17,
-      "spread": 403.16,
+      "spread": 403.15,
       "spreadPercent": 6.02
     },
     {
@@ -176,7 +176,7 @@
       "institution": "QNB Finansbank",
       "buy": 6563.11,
       "sell": 7195.65,
-      "spread": 632.54,
+      "spread": 632.55,
       "spreadPercent": 9.64
     },
     {
@@ -211,7 +211,7 @@
       "institution": "Anadolubank",
       "buy": 6254.06,
       "sell": 7467.66,
-      "spread": 1213.6,
+      "spread": 1213.59,
       "spreadPercent": 19.4
     },
     {
@@ -253,7 +253,7 @@
       "institution": "CEPTETEB",
       "buy": 6108.59,
       "sell": 8113.88,
-      "spread": 2005.29,
+      "spread": 2005.28,
       "spreadPercent": 32.83
     }
   ]
