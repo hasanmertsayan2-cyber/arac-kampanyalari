@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-30T21:38:40.303Z",
+  "updatedAt": "2026-08-30T21:44:31.364Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
   "bestBuy": {
     "institution": "Dünya Katılım",
     "buy": 6850.98,
-    "sell": 6889.36,
-    "spread": 38.38,
+    "sell": 6889.56,
+    "spread": 38.58,
     "spreadPercent": 0.56
   },
   "bestSell": {
@@ -49,16 +49,16 @@
     {
       "institution": "Dünya Katılım",
       "buy": 6850.98,
-      "sell": 6889.36,
-      "spread": 38.38,
+      "sell": 6889.56,
+      "spread": 38.58,
       "spreadPercent": 0.56
     },
     {
       "institution": "Odacı",
-      "buy": 6838,
-      "sell": 6893,
-      "spread": 55,
-      "spreadPercent": 0.8
+      "buy": 6839,
+      "sell": 6900,
+      "spread": 61,
+      "spreadPercent": 0.89
     },
     {
       "institution": "Harem",
@@ -76,8 +76,8 @@
     },
     {
       "institution": "Vakıf Katılım",
-      "buy": 6778.82,
-      "sell": 6943.49,
+      "buy": 6778.89,
+      "sell": 6943.56,
       "spread": 164.67,
       "spreadPercent": 2.43
     },
@@ -111,16 +111,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6845.69,
-      "sell": 7030.81,
-      "spread": 185.12,
+      "buy": 6845.86,
+      "sell": 7031.01,
+      "spread": 185.15,
       "spreadPercent": 2.7
     },
     {
       "institution": "Hepsipay",
-      "buy": 6845.69,
-      "sell": 7044.87,
-      "spread": 199.18,
+      "buy": 6845.86,
+      "sell": 7045.07,
+      "spread": 199.21,
       "spreadPercent": 2.91
     },
     {
@@ -195,16 +195,16 @@
     },
     {
       "institution": "HSBC",
-      "buy": 6751.54,
-      "sell": 7354.29,
-      "spread": 602.74,
-      "spreadPercent": 8.93
+      "buy": 6750.35,
+      "sell": 7355.62,
+      "spread": 605.27,
+      "spreadPercent": 8.97
     },
     {
       "institution": "Getirfinans",
       "buy": 6643.7,
-      "sell": 7365.73,
-      "spread": 722.03,
+      "sell": 7365.98,
+      "spread": 722.28,
       "spreadPercent": 10.87
     },
     {
