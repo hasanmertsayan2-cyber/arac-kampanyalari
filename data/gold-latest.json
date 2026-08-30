@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T17:34:22.301Z",
+  "updatedAt": "2026-08-30T17:40:13.364Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -104,15 +104,15 @@
     },
     {
       "institution": "Papara",
-      "buy": 6838.56,
-      "sell": 7023.56,
+      "buy": 6838.64,
+      "sell": 7023.64,
       "spread": 185,
       "spreadPercent": 2.71
     },
     {
       "institution": "Hepsipay",
-      "buy": 6838.62,
-      "sell": 7037.67,
+      "buy": 6838.64,
+      "sell": 7037.69,
       "spread": 199.05,
       "spreadPercent": 2.91
     },
@@ -202,10 +202,10 @@
     },
     {
       "institution": "HSBC",
-      "buy": 6735.99,
-      "sell": 7388.63,
-      "spread": 652.63,
-      "spreadPercent": 9.69
+      "buy": 6736.12,
+      "sell": 7388.45,
+      "spread": 652.33,
+      "spreadPercent": 9.68
     },
     {
       "institution": "Anadolubank",
