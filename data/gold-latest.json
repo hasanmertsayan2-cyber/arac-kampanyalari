@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-09-05T20:56:29.425Z",
+  "updatedAt": "2026-09-05T21:03:10.527Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
   "bestBuy": {
     "institution": "TOM Bank Hadi",
-    "buy": 6864.2,
-    "sell": 7379.02,
-    "spread": 514.82,
+    "buy": 6864.09,
+    "sell": 7378.9,
+    "spread": 514.81,
     "spreadPercent": 7.5
   },
   "bestSell": {
@@ -34,9 +34,9 @@
     },
     {
       "institution": "Dünya Katılım",
-      "buy": 6825.26,
-      "sell": 6866.18,
-      "spread": 40.92,
+      "buy": 6832.11,
+      "sell": 6872.92,
+      "spread": 40.82,
       "spreadPercent": 0.6
     },
     {
@@ -104,15 +104,15 @@
     },
     {
       "institution": "Papara",
-      "buy": 6833.92,
-      "sell": 7019.37,
+      "buy": 6833.97,
+      "sell": 7019.42,
       "spread": 185.45,
       "spreadPercent": 2.71
     },
     {
       "institution": "Hepsipay",
-      "buy": 6833.92,
-      "sell": 7033.41,
+      "buy": 6833.94,
+      "sell": 7033.43,
       "spread": 199.49,
       "spreadPercent": 2.92
     },
@@ -124,18 +124,18 @@
       "spreadPercent": 5.22
     },
     {
-      "institution": "Kuveyt Türk",
-      "buy": 6430.04,
-      "sell": 7057.35,
-      "spread": 627.31,
-      "spreadPercent": 9.76
-    },
-    {
       "institution": "Denizbank",
       "buy": 6668.77,
       "sell": 7068.95,
       "spread": 400.18,
       "spreadPercent": 6
+    },
+    {
+      "institution": "Kuveyt Türk",
+      "buy": 6442.26,
+      "sell": 7070.65,
+      "spread": 628.39,
+      "spreadPercent": 9.75
     },
     {
       "institution": "Enpara",
@@ -188,23 +188,23 @@
     },
     {
       "institution": "Getirfinans",
-      "buy": 6611.27,
-      "sell": 7337.4,
-      "spread": 726.13,
-      "spreadPercent": 10.98
+      "buy": 6617.92,
+      "sell": 7345.34,
+      "spread": 727.42,
+      "spreadPercent": 10.99
     },
     {
       "institution": "HSBC",
-      "buy": 6710.16,
-      "sell": 7363.91,
-      "spread": 653.76,
-      "spreadPercent": 9.74
+      "buy": 6717.61,
+      "sell": 7370.64,
+      "spread": 653.03,
+      "spreadPercent": 9.72
     },
     {
       "institution": "TOM Bank Hadi",
-      "buy": 6864.2,
-      "sell": 7379.02,
-      "spread": 514.82,
+      "buy": 6864.09,
+      "sell": 7378.9,
+      "spread": 514.81,
       "spreadPercent": 7.5
     },
     {
