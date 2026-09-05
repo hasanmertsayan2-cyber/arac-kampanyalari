@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T21:03:10.527Z",
+  "updatedAt": "2026-09-05T21:15:18.967Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -104,16 +104,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6833.97,
-      "sell": 7019.42,
-      "spread": 185.45,
+      "buy": 6833.91,
+      "sell": 7019.35,
+      "spread": 185.44,
       "spreadPercent": 2.71
     },
     {
       "institution": "Hepsipay",
-      "buy": 6833.94,
-      "sell": 7033.43,
-      "spread": 199.49,
+      "buy": 6833.9,
+      "sell": 7033.38,
+      "spread": 199.48,
       "spreadPercent": 2.92
     },
     {
@@ -138,6 +138,13 @@
       "spreadPercent": 9.75
     },
     {
+      "institution": "ING Bank",
+      "buy": 6662.76,
+      "sell": 7078.51,
+      "spread": 415.74,
+      "spreadPercent": 6.24
+    },
+    {
       "institution": "Enpara",
       "buy": 6707.38,
       "sell": 7104.13,
@@ -150,13 +157,6 @@
       "sell": 7114.71,
       "spread": 469.64,
       "spreadPercent": 7.07
-    },
-    {
-      "institution": "ING Bank",
-      "buy": 6736.78,
-      "sell": 7129.9,
-      "spread": 393.12,
-      "spreadPercent": 5.84
     },
     {
       "institution": "Yapıkredi",
@@ -188,10 +188,10 @@
     },
     {
       "institution": "Getirfinans",
-      "buy": 6617.92,
-      "sell": 7345.34,
-      "spread": 727.42,
-      "spreadPercent": 10.99
+      "buy": 6611.27,
+      "sell": 7337.4,
+      "spread": 726.13,
+      "spreadPercent": 10.98
     },
     {
       "institution": "HSBC",
@@ -237,9 +237,9 @@
     },
     {
       "institution": "Emlak Katılım",
-      "buy": 5805.25,
-      "sell": 7573.31,
-      "spread": 1768.06,
+      "buy": 5805.24,
+      "sell": 7573.29,
+      "spread": 1768.05,
       "spreadPercent": 30.46
     },
     {
