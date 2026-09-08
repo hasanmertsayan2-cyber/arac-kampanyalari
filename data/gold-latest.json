@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T07:59:47.004Z",
+  "updatedAt": "2026-09-08T08:11:53.918Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -11,47 +11,54 @@
     "spreadPercent": 0.09
   },
   "bestSell": {
-    "institution": "Misyon Bank",
-    "buy": 6787.15,
-    "sell": 6815.2,
-    "spread": 28.05,
-    "spreadPercent": 0.41
+    "institution": "TOM Bank Hadi",
+    "buy": 6803.96,
+    "sell": 6803.96,
+    "spread": 0,
+    "spreadPercent": 0
   },
   "bestSpread": {
-    "institution": "Kapalıçarşı",
-    "buy": 6814.77,
-    "sell": 6821.04,
-    "spread": 6.27,
-    "spreadPercent": 0.09
+    "institution": "TOM Bank Hadi",
+    "buy": 6803.96,
+    "sell": 6803.96,
+    "spread": 0,
+    "spreadPercent": 0
   },
   "prices": [
     {
+      "institution": "TOM Bank Hadi",
+      "buy": 6803.96,
+      "sell": 6803.96,
+      "spread": 0,
+      "spreadPercent": 0
+    },
+    {
       "institution": "Misyon Bank",
-      "buy": 6787.15,
-      "sell": 6815.2,
-      "spread": 28.05,
-      "spreadPercent": 0.41
+      "buy": 6783.43,
+      "sell": 6811.73,
+      "spread": 28.3,
+      "spreadPercent": 0.42
     },
     {
       "institution": "Dünya Katılım",
-      "buy": 6785.37,
-      "sell": 6817.77,
-      "spread": 32.4,
+      "buy": 6780.75,
+      "sell": 6813.2,
+      "spread": 32.45,
       "spreadPercent": 0.48
     },
     {
       "institution": "DestekBank",
-      "buy": 6789.09,
-      "sell": 6818.13,
-      "spread": 29.04,
+      "buy": 6786.74,
+      "sell": 6815.73,
+      "spread": 28.99,
       "spreadPercent": 0.43
     },
     {
       "institution": "Odacı",
-      "buy": 6761,
+      "buy": 6765,
       "sell": 6819,
-      "spread": 58,
-      "spreadPercent": 0.86
+      "spread": 54,
+      "spreadPercent": 0.8
     },
     {
       "institution": "Kapalıçarşı",
@@ -61,200 +68,193 @@
       "spreadPercent": 0.09
     },
     {
-      "institution": "Harem",
-      "buy": 6747.15,
-      "sell": 6830.32,
-      "spread": 83.17,
-      "spreadPercent": 1.23
-    },
-    {
       "institution": "Vakıf Katılım",
-      "buy": 6776.85,
-      "sell": 6831.29,
-      "spread": 54.43,
+      "buy": 6773.21,
+      "sell": 6827.61,
+      "spread": 54.4,
       "spreadPercent": 0.8
     },
     {
+      "institution": "Harem",
+      "buy": 6747.52,
+      "sell": 6828.46,
+      "spread": 80.94,
+      "spreadPercent": 1.23
+    },
+    {
       "institution": "Hayat Finans",
-      "buy": 6797.8,
-      "sell": 6845.81,
+      "buy": 6794,
+      "sell": 6842.01,
       "spread": 48.01,
       "spreadPercent": 0.71
     },
     {
       "institution": "Emlak Katılım",
-      "buy": 6743.07,
-      "sell": 6853.36,
-      "spread": 110.3,
+      "buy": 6744.91,
+      "sell": 6855.24,
+      "spread": 110.33,
       "spreadPercent": 1.64
     },
     {
       "institution": "Getirfinans",
-      "buy": 6807.23,
-      "sell": 6861.66,
-      "spread": 54.43,
+      "buy": 6805.05,
+      "sell": 6859.51,
+      "spread": 54.46,
       "spreadPercent": 0.8
     },
     {
       "institution": "Kuveyt Türk",
-      "buy": 6689.38,
-      "sell": 6866.64,
-      "spread": 177.26,
+      "buy": 6682.63,
+      "sell": 6859.85,
+      "spread": 177.22,
       "spreadPercent": 2.65
     },
     {
-      "institution": "Alternatif Bank",
-      "buy": 6801.79,
-      "sell": 6870.62,
-      "spread": 68.84,
-      "spreadPercent": 1.01
-    },
-    {
       "institution": "Anadolubank",
-      "buy": 6722.62,
-      "sell": 6873.97,
-      "spread": 151.36,
+      "buy": 6717.85,
+      "sell": 6869.04,
+      "spread": 151.19,
       "spreadPercent": 2.25
     },
     {
-      "institution": "TOM Bank Hadi",
-      "buy": 6772.93,
-      "sell": 6875.04,
-      "spread": 102.1,
-      "spreadPercent": 1.51
+      "institution": "Alternatif Bank",
+      "buy": 6805.19,
+      "sell": 6873.47,
+      "spread": 68.28,
+      "spreadPercent": 1
     },
     {
       "institution": "Albaraka Türk",
-      "buy": 6739.82,
-      "sell": 6877.91,
-      "spread": 138.09,
+      "buy": 6736.38,
+      "sell": 6874.65,
+      "spread": 138.27,
       "spreadPercent": 2.05
     },
     {
       "institution": "Ziraat Dinamik",
-      "buy": 6744.71,
-      "sell": 6880.9,
-      "spread": 136.19,
+      "buy": 6738.88,
+      "sell": 6874.95,
+      "spread": 136.07,
       "spreadPercent": 2.02
     },
     {
       "institution": "Altınkaynak",
-      "buy": 6714.23,
-      "sell": 6885,
-      "spread": 170.77,
-      "spreadPercent": 2.54
+      "buy": 6713.67,
+      "sell": 6880,
+      "spread": 166.33,
+      "spreadPercent": 2.51
     },
     {
       "institution": "Odeabank",
-      "buy": 6787.57,
-      "sell": 6887.57,
+      "buy": 6783.89,
+      "sell": 6883.89,
       "spread": 100,
       "spreadPercent": 1.47
     },
     {
+      "institution": "Vakıfbank",
+      "buy": 6740.08,
+      "sell": 6884.68,
+      "spread": 144.6,
+      "spreadPercent": 2.15
+    },
+    {
       "institution": "Enpara",
-      "buy": 6732.97,
-      "sell": 6890,
-      "spread": 157.03,
+      "buy": 6730.35,
+      "sell": 6886.93,
+      "spread": 156.58,
       "spreadPercent": 2.33
     },
     {
-      "institution": "Vakıfbank",
-      "buy": 6749.01,
-      "sell": 6893.61,
-      "spread": 144.6,
-      "spreadPercent": 2.14
-    },
-    {
       "institution": "Akbank",
-      "buy": 6662.92,
-      "sell": 6902.91,
-      "spread": 239.99,
+      "buy": 6656.61,
+      "sell": 6896.4,
+      "spread": 239.79,
       "spreadPercent": 3.6
     },
     {
-      "institution": "QNB Finansbank",
-      "buy": 6709.54,
-      "sell": 6910.83,
-      "spread": 201.29,
-      "spreadPercent": 3
-    },
-    {
       "institution": "Yapıkredi",
-      "buy": 6721.3,
-      "sell": 6911.07,
-      "spread": 189.77,
+      "buy": 6717.42,
+      "sell": 6906.87,
+      "spread": 189.45,
       "spreadPercent": 2.82
     },
     {
+      "institution": "QNB Finansbank",
+      "buy": 6705.13,
+      "sell": 6906.93,
+      "spread": 201.8,
+      "spreadPercent": 2.99
+    },
+    {
       "institution": "CEPTETEB",
-      "buy": 6719.08,
-      "sell": 6913.76,
-      "spread": 194.69,
+      "buy": 6717.66,
+      "sell": 6913.05,
+      "spread": 195.39,
       "spreadPercent": 2.9
     },
     {
       "institution": "Türkiye Finans",
-      "buy": 6737.76,
-      "sell": 6933.89,
-      "spread": 196.13,
+      "buy": 6732.18,
+      "sell": 6928.33,
+      "spread": 196.15,
       "spreadPercent": 2.91
     },
     {
       "institution": "Denizbank",
-      "buy": 6738.84,
-      "sell": 6937.82,
-      "spread": 198.98,
+      "buy": 6732.64,
+      "sell": 6931.28,
+      "spread": 198.64,
       "spreadPercent": 2.95
     },
     {
       "institution": "Halkbank",
-      "buy": 6739.72,
-      "sell": 6946.55,
-      "spread": 206.83,
+      "buy": 6736.75,
+      "sell": 6943.16,
+      "spread": 206.41,
       "spreadPercent": 3.07
     },
     {
       "institution": "Garanti BBVA",
-      "buy": 6704.79,
-      "sell": 6952.34,
-      "spread": 247.55,
+      "buy": 6707,
+      "sell": 6954.63,
+      "spread": 247.63,
       "spreadPercent": 3.69
     },
     {
       "institution": "ING Bank",
-      "buy": 6710.34,
-      "sell": 6962.28,
-      "spread": 251.94,
-      "spreadPercent": 3.75
+      "buy": 6703.86,
+      "sell": 6955.81,
+      "spread": 251.95,
+      "spreadPercent": 3.77
     },
     {
       "institution": "Papara",
-      "buy": 6788.71,
-      "sell": 6973.13,
-      "spread": 184.42,
+      "buy": 6787.14,
+      "sell": 6971.51,
+      "spread": 184.37,
       "spreadPercent": 2.72
     },
     {
       "institution": "Ziraat Katılım",
-      "buy": 6765.42,
-      "sell": 6980.12,
-      "spread": 214.7,
+      "buy": 6758.77,
+      "sell": 6973.21,
+      "spread": 214.44,
       "spreadPercent": 3.17
     },
     {
       "institution": "Hepsipay",
-      "buy": 6788.71,
-      "sell": 6987.08,
-      "spread": 198.37,
+      "buy": 6787.14,
+      "sell": 6985.45,
+      "spread": 198.31,
       "spreadPercent": 2.92
     },
     {
       "institution": "HSBC",
-      "buy": 6742.67,
-      "sell": 7188.31,
-      "spread": 445.64,
-      "spreadPercent": 6.61
+      "buy": 6735.8,
+      "sell": 7181.43,
+      "spread": 445.63,
+      "spreadPercent": 6.62
     }
   ]
 }
