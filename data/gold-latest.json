@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T22:28:55.139Z",
+  "updatedAt": "2026-09-12T00:27:00.970Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -103,13 +103,6 @@
       "spreadPercent": 3.63
     },
     {
-      "institution": "Papara",
-      "buy": 6738.99,
-      "sell": 6921.72,
-      "spread": 182.73,
-      "spreadPercent": 2.71
-    },
-    {
       "institution": "TOM Bank Hadi",
       "buy": 6669.54,
       "sell": 6922.82,
@@ -117,11 +110,11 @@
       "spreadPercent": 3.8
     },
     {
-      "institution": "Hepsipay",
-      "buy": 6740,
-      "sell": 6936.6,
-      "spread": 196.6,
-      "spreadPercent": 2.92
+      "institution": "Papara",
+      "buy": 6755.45,
+      "sell": 6938.46,
+      "spread": 183.01,
+      "spreadPercent": 2.71
     },
     {
       "institution": "Odeabank",
@@ -136,6 +129,13 @@
       "sell": 6951.2,
       "spread": 393.2,
       "spreadPercent": 6
+    },
+    {
+      "institution": "Hepsipay",
+      "buy": 6756.28,
+      "sell": 6953.2,
+      "spread": 196.92,
+      "spreadPercent": 2.91
     },
     {
       "institution": "Kuveyt Türk",
