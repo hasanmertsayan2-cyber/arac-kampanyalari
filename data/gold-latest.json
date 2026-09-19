@@ -1,27 +1,27 @@
 {
-  "updatedAt": "2026-09-19T16:22:15.463Z",
+  "updatedAt": "2026-09-19T18:39:29.625Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
   "bestBuy": {
     "institution": "Odacı",
-    "buy": 6792,
-    "sell": 6861,
-    "spread": 69,
+    "buy": 6793,
+    "sell": 6864,
+    "spread": 71,
     "spreadPercent": 1.05
   },
   "bestSell": {
     "institution": "Kapalıçarşı",
     "buy": 6791.09,
     "sell": 6798.78,
-    "spread": 7.69,
+    "spread": 7.68,
     "spreadPercent": 0.11
   },
   "bestSpread": {
     "institution": "Kapalıçarşı",
     "buy": 6791.09,
     "sell": 6798.78,
-    "spread": 7.69,
+    "spread": 7.68,
     "spreadPercent": 0.11
   },
   "prices": [
@@ -29,14 +29,14 @@
       "institution": "Kapalıçarşı",
       "buy": 6791.09,
       "sell": 6798.78,
-      "spread": 7.69,
+      "spread": 7.68,
       "spreadPercent": 0.11
     },
     {
       "institution": "Dünya Katılım",
       "buy": 6789.71,
       "sell": 6834.63,
-      "spread": 44.92,
+      "spread": 44.93,
       "spreadPercent": 0.66
     },
     {
@@ -55,9 +55,9 @@
     },
     {
       "institution": "Odacı",
-      "buy": 6792,
-      "sell": 6861,
-      "spread": 69,
+      "buy": 6793,
+      "sell": 6864,
+      "spread": 71,
       "spreadPercent": 1.05
     },
     {
@@ -83,9 +83,9 @@
     },
     {
       "institution": "Papara",
-      "buy": 6734.23,
-      "sell": 6916.12,
-      "spread": 181.89,
+      "buy": 6734.38,
+      "sell": 6916.31,
+      "spread": 181.93,
       "spreadPercent": 2.7
     },
     {
@@ -104,9 +104,9 @@
     },
     {
       "institution": "Hepsipay",
-      "buy": 6734.22,
-      "sell": 6929.94,
-      "spread": 195.72,
+      "buy": 6734.38,
+      "sell": 6930.14,
+      "spread": 195.76,
       "spreadPercent": 2.91
     },
     {
@@ -148,7 +148,7 @@
       "institution": "ING Bank",
       "buy": 6638.45,
       "sell": 7048.17,
-      "spread": 409.72,
+      "spread": 409.73,
       "spreadPercent": 6.17
     },
     {
@@ -169,7 +169,7 @@
       "institution": "Garanti BBVA",
       "buy": 6632.99,
       "sell": 7101.32,
-      "spread": 468.33,
+      "spread": 468.32,
       "spreadPercent": 7.06
     },
     {
@@ -246,7 +246,7 @@
       "institution": "Ziraat Katılım",
       "buy": 6075.02,
       "sell": 7660.47,
-      "spread": 1585.45,
+      "spread": 1585.46,
       "spreadPercent": 26.1
     },
     {
