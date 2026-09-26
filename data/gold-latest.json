@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T00:40:21.635Z",
+  "updatedAt": "2026-09-26T05:26:29.250Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -68,18 +68,18 @@
       "spreadPercent": 2.43
     },
     {
-      "institution": "TOM Bank Hadi",
-      "buy": 6658.85,
-      "sell": 6776.26,
-      "spread": 117.41,
-      "spreadPercent": 1.76
-    },
-    {
       "institution": "Harem",
       "buy": 6647.24,
       "sell": 6777.77,
       "spread": 130.53,
       "spreadPercent": 1.96
+    },
+    {
+      "institution": "TOM Bank Hadi",
+      "buy": 6662.78,
+      "sell": 6780.26,
+      "spread": 117.48,
+      "spreadPercent": 1.76
     },
     {
       "institution": "Albaraka Türk",
@@ -104,9 +104,9 @@
     },
     {
       "institution": "Papara",
-      "buy": 6657.62,
-      "sell": 6838.75,
-      "spread": 181.13,
+      "buy": 6655.78,
+      "sell": 6836.92,
+      "spread": 181.14,
       "spreadPercent": 2.72
     },
     {
@@ -118,8 +118,8 @@
     },
     {
       "institution": "Hepsipay",
-      "buy": 6657.62,
-      "sell": 6852.43,
+      "buy": 6655.78,
+      "sell": 6850.59,
       "spread": 194.81,
       "spreadPercent": 2.93
     },
@@ -131,18 +131,18 @@
       "spreadPercent": 5.35
     },
     {
+      "institution": "Kuveyt Türk",
+      "buy": 6280.16,
+      "sell": 6908.6,
+      "spread": 628.44,
+      "spreadPercent": 10.01
+    },
+    {
       "institution": "Denizbank",
       "buy": 6521.11,
       "sell": 6908.79,
       "spread": 387.67,
       "spreadPercent": 5.94
-    },
-    {
-      "institution": "Kuveyt Türk",
-      "buy": 6286.26,
-      "sell": 6915.2,
-      "spread": 628.94,
-      "spreadPercent": 10
     },
     {
       "institution": "ING Bank",
@@ -217,9 +217,9 @@
     {
       "institution": "Vakıfbank",
       "buy": 6403.38,
-      "sell": 7301.38,
-      "spread": 898,
-      "spreadPercent": 14.02
+      "sell": 7297.38,
+      "spread": 894,
+      "spreadPercent": 13.96
     },
     {
       "institution": "Anadolubank",
