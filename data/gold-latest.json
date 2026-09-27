@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T15:21:13.251Z",
+  "updatedAt": "2026-09-27T19:02:35.768Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -76,8 +76,8 @@
     },
     {
       "institution": "TOM Bank Hadi",
-      "buy": 6662.47,
-      "sell": 6779.94,
+      "buy": 6662.24,
+      "sell": 6779.71,
       "spread": 117.47,
       "spreadPercent": 1.76
     },
@@ -90,10 +90,10 @@
     },
     {
       "institution": "Hayat Finans",
-      "buy": 6660.14,
-      "sell": 6828.93,
-      "spread": 168.79,
-      "spreadPercent": 2.53
+      "buy": 6662.04,
+      "sell": 6829.36,
+      "spread": 167.32,
+      "spreadPercent": 2.51
     },
     {
       "institution": "Altınkaynak",
@@ -104,17 +104,10 @@
     },
     {
       "institution": "Papara",
-      "buy": 6652.35,
-      "sell": 6833.14,
-      "spread": 180.79,
+      "buy": 6654.98,
+      "sell": 6835.81,
+      "spread": 180.83,
       "spreadPercent": 2.72
-    },
-    {
-      "institution": "Hepsipay",
-      "buy": 6652.35,
-      "sell": 6846.81,
-      "spread": 194.46,
-      "spreadPercent": 2.92
     },
     {
       "institution": "Türkiye Finans",
@@ -124,9 +117,16 @@
       "spreadPercent": 3.88
     },
     {
+      "institution": "Hepsipay",
+      "buy": 6654.97,
+      "sell": 6849.47,
+      "spread": 194.5,
+      "spreadPercent": 2.92
+    },
+    {
       "institution": "Odeabank",
-      "buy": 6547.68,
-      "sell": 6897.68,
+      "buy": 6547.31,
+      "sell": 6897.31,
       "spread": 350,
       "spreadPercent": 5.35
     },
@@ -201,18 +201,18 @@
       "spreadPercent": 11.51
     },
     {
+      "institution": "HSBC",
+      "buy": 6578.25,
+      "sell": 7221.25,
+      "spread": 643,
+      "spreadPercent": 9.77
+    },
+    {
       "institution": "Halkbank",
       "buy": 6326.92,
       "sell": 7222.42,
       "spread": 895.5,
       "spreadPercent": 14.15
-    },
-    {
-      "institution": "HSBC",
-      "buy": 6573.73,
-      "sell": 7224.69,
-      "spread": 650.97,
-      "spreadPercent": 9.9
     },
     {
       "institution": "Vakıfbank",
