@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T00:52:20.540Z",
+  "updatedAt": "2026-09-27T05:52:56.154Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -7,21 +7,21 @@
     "institution": "Kapalıçarşı",
     "buy": 6701.53,
     "sell": 6707.82,
-    "spread": 6.28,
+    "spread": 6.29,
     "spreadPercent": 0.09
   },
   "bestSell": {
     "institution": "Kapalıçarşı",
     "buy": 6701.53,
     "sell": 6707.82,
-    "spread": 6.28,
+    "spread": 6.29,
     "spreadPercent": 0.09
   },
   "bestSpread": {
     "institution": "Kapalıçarşı",
     "buy": 6701.53,
     "sell": 6707.82,
-    "spread": 6.28,
+    "spread": 6.29,
     "spreadPercent": 0.09
   },
   "prices": [
@@ -29,7 +29,7 @@
       "institution": "Kapalıçarşı",
       "buy": 6701.53,
       "sell": 6707.82,
-      "spread": 6.28,
+      "spread": 6.29,
       "spreadPercent": 0.09
     },
     {
@@ -43,7 +43,7 @@
       "institution": "Misyon Bank",
       "buy": 6643.14,
       "sell": 6728.28,
-      "spread": 85.15,
+      "spread": 85.14,
       "spreadPercent": 1.28
     },
     {
@@ -104,16 +104,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6652.84,
-      "sell": 6833.68,
-      "spread": 180.84,
+      "buy": 6651.88,
+      "sell": 6832.67,
+      "spread": 180.79,
       "spreadPercent": 2.72
     },
     {
       "institution": "Hepsipay",
-      "buy": 6652.76,
-      "sell": 6847.26,
-      "spread": 194.5,
+      "buy": 6651.88,
+      "sell": 6846.34,
+      "spread": 194.46,
       "spreadPercent": 2.92
     },
     {
@@ -134,7 +134,7 @@
       "institution": "Denizbank",
       "buy": 6521.11,
       "sell": 6908.79,
-      "spread": 387.67,
+      "spread": 387.68,
       "spreadPercent": 5.94
     },
     {
@@ -148,7 +148,7 @@
       "institution": "ING Bank",
       "buy": 6524.64,
       "sell": 6922.92,
-      "spread": 398.29,
+      "spread": 398.28,
       "spreadPercent": 6.1
     },
     {
@@ -162,7 +162,7 @@
       "institution": "Alternatif Bank",
       "buy": 6406,
       "sell": 6981.5,
-      "spread": 575.51,
+      "spread": 575.5,
       "spreadPercent": 8.98
     },
     {
@@ -183,7 +183,7 @@
       "institution": "QNB Finansbank",
       "buy": 6414.12,
       "sell": 7023.51,
-      "spread": 609.38,
+      "spread": 609.39,
       "spreadPercent": 9.5
     },
     {
@@ -211,7 +211,7 @@
       "institution": "HSBC",
       "buy": 6573.73,
       "sell": 7224.69,
-      "spread": 650.97,
+      "spread": 650.96,
       "spreadPercent": 9.9
     },
     {
