@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T08:55:48.399Z",
+  "updatedAt": "2026-10-24T12:58:52.628Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -13,9 +13,9 @@
   "bestSell": {
     "institution": "Dünya Katılım",
     "buy": 6301.69,
-    "sell": 6365.59,
-    "spread": 63.9,
-    "spreadPercent": 1.01
+    "sell": 6381.51,
+    "spread": 79.82,
+    "spreadPercent": 1.27
   },
   "bestSpread": {
     "institution": "Kapalıçarşı",
@@ -28,9 +28,9 @@
     {
       "institution": "Dünya Katılım",
       "buy": 6301.69,
-      "sell": 6365.59,
-      "spread": 63.9,
-      "spreadPercent": 1.01
+      "sell": 6381.51,
+      "spread": 79.82,
+      "spreadPercent": 1.27
     },
     {
       "institution": "Misyon Bank",
@@ -62,16 +62,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6258.53,
-      "sell": 6431.04,
-      "spread": 172.51,
+      "buy": 6258.05,
+      "sell": 6430.5,
+      "spread": 172.45,
       "spreadPercent": 2.76
     },
     {
       "institution": "Hepsipay",
-      "buy": 6258.53,
-      "sell": 6443.9,
-      "spread": 185.37,
+      "buy": 6258.06,
+      "sell": 6443.37,
+      "spread": 185.31,
       "spreadPercent": 2.96
     },
     {
@@ -132,9 +132,9 @@
     },
     {
       "institution": "Kuveyt Türk",
-      "buy": 5947.43,
-      "sell": 6545.22,
-      "spread": 597.79,
+      "buy": 5947.51,
+      "sell": 6545.31,
+      "spread": 597.8,
       "spreadPercent": 10.05
     },
     {
