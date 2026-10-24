@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T21:44:59.014Z",
+  "updatedAt": "2026-10-24T00:03:15.758Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -62,16 +62,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6256.4,
-      "sell": 6428.98,
-      "spread": 172.58,
+      "buy": 6256.1,
+      "sell": 6428.72,
+      "spread": 172.62,
       "spreadPercent": 2.76
     },
     {
       "institution": "Hepsipay",
-      "buy": 6256.43,
-      "sell": 6441.87,
-      "spread": 185.44,
+      "buy": 6256.1,
+      "sell": 6441.58,
+      "spread": 185.48,
       "spreadPercent": 2.96
     },
     {
@@ -222,18 +222,18 @@
       "spreadPercent": 14.95
     },
     {
+      "institution": "Vakıfbank",
+      "buy": 6042.12,
+      "sell": 6939.12,
+      "spread": 897,
+      "spreadPercent": 14.85
+    },
+    {
       "institution": "Anadolubank",
       "buy": 5742.96,
       "sell": 6952.76,
       "spread": 1209.8,
       "spreadPercent": 21.07
-    },
-    {
-      "institution": "Vakıfbank",
-      "buy": 6055.86,
-      "sell": 6952.86,
-      "spread": 897,
-      "spreadPercent": 14.81
     },
     {
       "institution": "Ziraat Dinamik",
