@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-25T01:10:03.131Z",
+  "updatedAt": "2026-10-25T06:01:24.177Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
-  "count": 33,
+  "count": 32,
   "bestBuy": {
     "institution": "Kapalıçarşı",
     "buy": 6453.89,
@@ -62,16 +62,16 @@
     },
     {
       "institution": "Papara",
-      "buy": 6258.29,
-      "sell": 6430.79,
-      "spread": 172.5,
+      "buy": 6257.35,
+      "sell": 6429.83,
+      "spread": 172.48,
       "spreadPercent": 2.76
     },
     {
       "institution": "Hepsipay",
-      "buy": 6258.29,
-      "sell": 6443.65,
-      "spread": 185.36,
+      "buy": 6257.35,
+      "sell": 6442.69,
+      "spread": 185.34,
       "spreadPercent": 2.96
     },
     {
@@ -248,13 +248,6 @@
       "sell": 7178.04,
       "spread": 1485.94,
       "spreadPercent": 26.11
-    },
-    {
-      "institution": "CEPTETEB",
-      "buy": 5403.23,
-      "sell": 7412.49,
-      "spread": 2009.26,
-      "spreadPercent": 37.19
     }
   ]
 }
