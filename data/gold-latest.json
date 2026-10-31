@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T18:47:03.762Z",
+  "updatedAt": "2026-10-31T21:53:37.568Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -41,9 +41,9 @@
     },
     {
       "institution": "Dünya Katılım",
-      "buy": 6158.77,
-      "sell": 6226.16,
-      "spread": 67.39,
+      "buy": 6164.75,
+      "sell": 6232.07,
+      "spread": 67.32,
       "spreadPercent": 1.09
     },
     {
@@ -97,8 +97,8 @@
     },
     {
       "institution": "TOM Bank Hadi",
-      "buy": 6113.48,
-      "sell": 6330.16,
+      "buy": 6113.35,
+      "sell": 6330.03,
       "spread": 216.68,
       "spreadPercent": 3.54
     },
@@ -111,24 +111,17 @@
     },
     {
       "institution": "Papara",
-      "buy": 6179.25,
-      "sell": 6350.64,
-      "spread": 171.39,
+      "buy": 6181.31,
+      "sell": 6352.67,
+      "spread": 171.36,
       "spreadPercent": 2.77
     },
     {
       "institution": "Hepsipay",
-      "buy": 6179.25,
-      "sell": 6363.34,
-      "spread": 184.09,
+      "buy": 6181.41,
+      "sell": 6365.48,
+      "spread": 184.07,
       "spreadPercent": 2.98
-    },
-    {
-      "institution": "Kuveyt Türk",
-      "buy": 5804.14,
-      "sell": 6371.31,
-      "spread": 567.17,
-      "spreadPercent": 9.77
     },
     {
       "institution": "Denizbank",
@@ -136,6 +129,13 @@
       "sell": 6377.02,
       "spread": 350.19,
       "spreadPercent": 5.81
+    },
+    {
+      "institution": "Kuveyt Türk",
+      "buy": 5809.77,
+      "sell": 6377.63,
+      "spread": 567.86,
+      "spreadPercent": 9.77
     },
     {
       "institution": "Odeabank",
@@ -153,10 +153,10 @@
     },
     {
       "institution": "ING Bank",
-      "buy": 5984.51,
-      "sell": 6412.55,
-      "spread": 428.04,
-      "spreadPercent": 7.15
+      "buy": 5984.92,
+      "sell": 6422.17,
+      "spread": 437.25,
+      "spreadPercent": 7.31
     },
     {
       "institution": "Garanti BBVA",
@@ -174,10 +174,10 @@
     },
     {
       "institution": "Yapıkredi",
-      "buy": 5982.65,
-      "sell": 6511.81,
-      "spread": 529.16,
-      "spreadPercent": 8.84
+      "buy": 5988.78,
+      "sell": 6517.88,
+      "spread": 529.1,
+      "spreadPercent": 8.83
     },
     {
       "institution": "Alternatif Bank",
@@ -209,10 +209,10 @@
     },
     {
       "institution": "HSBC",
-      "buy": 6053.66,
-      "sell": 6682.9,
-      "spread": 629.24,
-      "spreadPercent": 10.39
+      "buy": 6060.21,
+      "sell": 6688.78,
+      "spread": 628.57,
+      "spreadPercent": 10.37
     },
     {
       "institution": "Halkbank",
