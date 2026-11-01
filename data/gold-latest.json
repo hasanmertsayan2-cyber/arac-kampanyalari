@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T13:44:02.117Z",
+  "updatedAt": "2026-11-01T18:35:01.278Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -83,9 +83,9 @@
     },
     {
       "institution": "Hayat Finans",
-      "buy": 6155.42,
-      "sell": 6289.22,
-      "spread": 133.8,
+      "buy": 6155.03,
+      "sell": 6288.82,
+      "spread": 133.79,
       "spreadPercent": 2.17
     },
     {
@@ -111,17 +111,24 @@
     },
     {
       "institution": "Papara",
-      "buy": 6184.14,
-      "sell": 6355.28,
-      "spread": 171.14,
+      "buy": 6183.3,
+      "sell": 6354.46,
+      "spread": 171.16,
       "spreadPercent": 2.77
     },
     {
       "institution": "Hepsipay",
-      "buy": 6184.14,
-      "sell": 6367.99,
-      "spread": 183.85,
+      "buy": 6183.3,
+      "sell": 6367.17,
+      "spread": 183.87,
       "spreadPercent": 2.97
+    },
+    {
+      "institution": "Kuveyt Türk",
+      "buy": 5809.33,
+      "sell": 6376.95,
+      "spread": 567.62,
+      "spreadPercent": 9.77
     },
     {
       "institution": "Denizbank",
@@ -129,13 +136,6 @@
       "sell": 6377.02,
       "spread": 350.19,
       "spreadPercent": 5.81
-    },
-    {
-      "institution": "Kuveyt Türk",
-      "buy": 5809.77,
-      "sell": 6377.63,
-      "spread": 567.86,
-      "spreadPercent": 9.77
     },
     {
       "institution": "Odeabank",
@@ -195,9 +195,9 @@
     },
     {
       "institution": "Emlak Katılım",
-      "buy": 5253.47,
-      "sell": 6632.94,
-      "spread": 1379.47,
+      "buy": 5253.14,
+      "sell": 6632.52,
+      "spread": 1379.38,
       "spreadPercent": 26.26
     },
     {
@@ -209,9 +209,9 @@
     },
     {
       "institution": "HSBC",
-      "buy": 6060.21,
-      "sell": 6688.78,
-      "spread": 628.57,
+      "buy": 6060.8,
+      "sell": 6689.38,
+      "spread": 628.58,
       "spreadPercent": 10.37
     },
     {
