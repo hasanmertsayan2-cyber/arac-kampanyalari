@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T01:16:54.427Z",
+  "updatedAt": "2026-11-07T07:13:34.430Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 33,
@@ -69,9 +69,9 @@
     },
     {
       "institution": "TOM Bank Hadi",
-      "buy": 6457.91,
-      "sell": 6588.37,
-      "spread": 130.46,
+      "buy": 6458.04,
+      "sell": 6588.51,
+      "spread": 130.47,
       "spreadPercent": 2.02
     },
     {
@@ -82,6 +82,13 @@
       "spreadPercent": 0.72
     },
     {
+      "institution": "Papara",
+      "buy": 6432.53,
+      "sell": 6608.99,
+      "spread": 176.46,
+      "spreadPercent": 2.74
+    },
+    {
       "institution": "Harem",
       "buy": 6529.68,
       "sell": 6613.17,
@@ -89,17 +96,10 @@
       "spreadPercent": 1.28
     },
     {
-      "institution": "Papara",
-      "buy": 6440.23,
-      "sell": 6616.78,
-      "spread": 176.55,
-      "spreadPercent": 2.74
-    },
-    {
       "institution": "Hepsipay",
-      "buy": 6440.1,
-      "sell": 6629.87,
-      "spread": 189.77,
+      "buy": 6432.53,
+      "sell": 6622.21,
+      "spread": 189.68,
       "spreadPercent": 2.95
     },
     {
@@ -131,18 +131,18 @@
       "spreadPercent": 5.78
     },
     {
+      "institution": "Kuveyt Türk",
+      "buy": 6122.06,
+      "sell": 6721.45,
+      "spread": 599.39,
+      "spreadPercent": 9.79
+    },
+    {
       "institution": "Odeabank",
       "buy": 6372.96,
       "sell": 6722.96,
       "spread": 350,
       "spreadPercent": 5.49
-    },
-    {
-      "institution": "Kuveyt Türk",
-      "buy": 6127.81,
-      "sell": 6727.81,
-      "spread": 600,
-      "spreadPercent": 9.79
     },
     {
       "institution": "Enpara",
