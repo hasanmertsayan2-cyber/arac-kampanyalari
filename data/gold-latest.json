@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T14:29:33.183Z",
+  "updatedAt": "2026-11-14T19:22:47.888Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 34,
@@ -11,27 +11,20 @@
     "spreadPercent": 0.73
   },
   "bestSell": {
-    "institution": "Dünya Katılım",
-    "buy": 6222.61,
-    "sell": 6266.83,
-    "spread": 44.22,
-    "spreadPercent": 0.71
+    "institution": "Misyon Bank",
+    "buy": 6203.26,
+    "sell": 6273.95,
+    "spread": 70.69,
+    "spreadPercent": 1.14
   },
   "bestSpread": {
-    "institution": "Dünya Katılım",
-    "buy": 6222.61,
-    "sell": 6266.83,
-    "spread": 44.22,
-    "spreadPercent": 0.71
+    "institution": "Odacı",
+    "buy": 6297,
+    "sell": 6343,
+    "spread": 46,
+    "spreadPercent": 0.73
   },
   "prices": [
-    {
-      "institution": "Dünya Katılım",
-      "buy": 6222.61,
-      "sell": 6266.83,
-      "spread": 44.22,
-      "spreadPercent": 0.71
-    },
     {
       "institution": "Misyon Bank",
       "buy": 6203.26,
@@ -45,6 +38,13 @@
       "sell": 6277.91,
       "spread": 99.65,
       "spreadPercent": 1.61
+    },
+    {
+      "institution": "Dünya Katılım",
+      "buy": 6222.61,
+      "sell": 6282.5,
+      "spread": 59.89,
+      "spreadPercent": 0.96
     },
     {
       "institution": "DestekBank",
@@ -104,17 +104,10 @@
     },
     {
       "institution": "Papara",
-      "buy": 6233.42,
-      "sell": 6405.21,
-      "spread": 171.79,
-      "spreadPercent": 2.76
-    },
-    {
-      "institution": "Hepsipay",
-      "buy": 6233.43,
-      "sell": 6418.03,
-      "spread": 184.6,
-      "spreadPercent": 2.96
+      "buy": 6236.68,
+      "sell": 6408.5,
+      "spread": 171.82,
+      "spreadPercent": 2.75
     },
     {
       "institution": "Altınkaynak",
@@ -122,6 +115,13 @@
       "sell": 6420,
       "spread": 148,
       "spreadPercent": 2.36
+    },
+    {
+      "institution": "Hepsipay",
+      "buy": 6236.68,
+      "sell": 6421.32,
+      "spread": 184.64,
+      "spreadPercent": 2.96
     },
     {
       "institution": "Denizbank",
