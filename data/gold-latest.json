@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T02:34:34.911Z",
+  "updatedAt": "2026-11-15T09:49:41.065Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 34,
@@ -40,18 +40,18 @@
       "spreadPercent": 1.61
     },
     {
-      "institution": "Dünya Katılım",
-      "buy": 6203.66,
-      "sell": 6294.63,
-      "spread": 90.97,
-      "spreadPercent": 1.47
-    },
-    {
       "institution": "DestekBank",
       "buy": 6169.04,
       "sell": 6301.84,
       "spread": 132.8,
       "spreadPercent": 2.15
+    },
+    {
+      "institution": "Dünya Katılım",
+      "buy": 6203.03,
+      "sell": 6309.86,
+      "spread": 106.83,
+      "spreadPercent": 1.72
     },
     {
       "institution": "Albaraka Türk",
@@ -104,10 +104,17 @@
     },
     {
       "institution": "Papara",
-      "buy": 6235.52,
-      "sell": 6407.28,
-      "spread": 171.76,
+      "buy": 6233.95,
+      "sell": 6405.54,
+      "spread": 171.59,
       "spreadPercent": 2.75
+    },
+    {
+      "institution": "Hepsipay",
+      "buy": 6233.95,
+      "sell": 6418.35,
+      "spread": 184.4,
+      "spreadPercent": 2.96
     },
     {
       "institution": "Altınkaynak",
@@ -115,13 +122,6 @@
       "sell": 6420,
       "spread": 148,
       "spreadPercent": 2.36
-    },
-    {
-      "institution": "Hepsipay",
-      "buy": 6235.52,
-      "sell": 6420.09,
-      "spread": 184.57,
-      "spreadPercent": 2.96
     },
     {
       "institution": "Denizbank",
