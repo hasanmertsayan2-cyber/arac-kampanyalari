@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T11:53:31.291Z",
+  "updatedAt": "2026-11-22T18:42:13.855Z",
   "source": "Döviz.com",
   "sourceUrl": "https://altin.doviz.com/gram-altin",
   "count": 32,
@@ -62,31 +62,31 @@
     },
     {
       "institution": "Papara",
-      "buy": 5617.83,
-      "sell": 5777.13,
-      "spread": 159.3,
-      "spreadPercent": 2.84
+      "buy": 5623.05,
+      "sell": 5782.45,
+      "spread": 159.4,
+      "spreadPercent": 2.83
     },
     {
       "institution": "Hepsipay",
-      "buy": 5617.83,
-      "sell": 5788.68,
-      "spread": 170.85,
+      "buy": 5623.18,
+      "sell": 5794.16,
+      "spread": 170.98,
       "spreadPercent": 3.04
     },
     {
       "institution": "HadiBank",
-      "buy": 5652.41,
-      "sell": 5795.15,
-      "spread": 142.74,
+      "buy": 5654.73,
+      "sell": 5797.52,
+      "spread": 142.79,
       "spreadPercent": 2.53
     },
     {
       "institution": "Hayat Finans",
-      "buy": 5684.96,
-      "sell": 5817.09,
-      "spread": 132.13,
-      "spreadPercent": 2.32
+      "buy": 5688.71,
+      "sell": 5812.46,
+      "spread": 123.75,
+      "spreadPercent": 2.18
     },
     {
       "institution": "Türkiye Finans",
@@ -97,10 +97,10 @@
     },
     {
       "institution": "Emlak Katılım",
-      "buy": 4859.48,
-      "sell": 5847.3,
-      "spread": 987.82,
-      "spreadPercent": 20.33
+      "buy": 4862.69,
+      "sell": 5842.64,
+      "spread": 979.95,
+      "spreadPercent": 20.15
     },
     {
       "institution": "Denizbank",
@@ -146,9 +146,9 @@
     },
     {
       "institution": "Kuveyt Türk",
-      "buy": 5450.68,
-      "sell": 5982.59,
-      "spread": 531.91,
+      "buy": 5450.36,
+      "sell": 5982.05,
+      "spread": 531.69,
       "spreadPercent": 9.76
     },
     {
@@ -194,18 +194,18 @@
       "spreadPercent": 2.97
     },
     {
-      "institution": "HSBC",
-      "buy": 5582.32,
-      "sell": 6200.24,
-      "spread": 617.92,
-      "spreadPercent": 11.07
-    },
-    {
       "institution": "Getirfinans",
       "buy": 5476.26,
       "sell": 6201.95,
       "spread": 725.69,
       "spreadPercent": 13.25
+    },
+    {
+      "institution": "HSBC",
+      "buy": 5585.96,
+      "sell": 6203.92,
+      "spread": 617.96,
+      "spreadPercent": 11.06
     },
     {
       "institution": "Ziraat Dinamik",
